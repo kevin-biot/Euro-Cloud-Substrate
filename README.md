@@ -9,6 +9,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Core 10 components: `core10/`
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `CALL_FOR_PARTICIPATION.md`
 - Regulatory mapping (context): `docs/reg-mapping.md`
+- Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose
 Define an open, adoptable Euro Cloud Substrate that delivers portability, governability, auditability, and industrialisation by reusing proven primitives and specifying the missing contract layer (identity, policy, execution envelopes, evidence).
@@ -26,6 +27,7 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Look at `core10/` for the mandatory components.
 - Dive into `ws*/` for per-workstream specs, invariants, conformance, and diagrams.
 - Use `docs/reg-mapping.md` as a contextual guide to EU regulatory drivers.
+- For a high-level overview, see the GitHub wiki.
 
 ## Repository structure
 - `VISION.md` — core paper (v0.2)
