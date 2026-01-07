@@ -298,6 +298,11 @@ The Euro Cloud Substrate, with its Crisis Resilience Profile and Immutable AI Wo
 
 ---
 
+### Regulatory drivers (context)
+ECS is designed to make compliance feasible across evolving EU requirements (e.g., AI Act traceability and refusal semantics, NIS2/DORA resilience and evidence, PSD3 strong authority/authentication) by providing enforceable primitives: authority-before-execution, fail-closed posture, evidence-by-construction (IALP), isolation and data governance, and CRP for continuity under partition. ECS does not encode specific regulations; it provides the substrate controls and evidence needed to satisfy them across providers.
+
+---
+
 ## Appendix — Proposed License (ECS Specification License)
 
 Recommended license: Apache License 2.0 with an Architectural Integrity Addendum
