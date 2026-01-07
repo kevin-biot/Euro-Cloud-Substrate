@@ -18,6 +18,7 @@
 - Iterate specs based on pilot feedback.
 
 ## Deliverables map
+- CRP: `crp/spec.md`, `crp/invariants.md`, `crp/conformance-outline.md`, `crp/diagrams/`
 - Workstreams: `ws*/spec.md`, `ws*/invariants.md`, `ws*/conformance-outline.md`, `ws*/diagrams/`
 - Core 10: `core10/*.md`
 - Architecture pack: `architecture/overview.md` + diagrams

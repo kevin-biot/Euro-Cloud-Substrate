@@ -18,12 +18,15 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Add architectural decisions under `decisions/` (ADR format).
 
 ## Repository structure
-- `VISION.md` — core paper (v0.1 draft)
+- `VISION.md` — core paper (v0.2)
 - `ROADMAP.md` — phases and expected deliverables
-- `architecture/` — reference architecture overview and diagrams (future mermaid/plantuml)
-- `core10/` — placeholders for the mandatory ECS components
+- `architecture/` — reference architecture overview and diagrams
+- `crp/` — Crisis Resilience Profile spec, invariants, conformance, diagrams
+- `core10/` — mandatory ECS components
 - `ws*/` — workstream folders with scope, invariants, conformance outlines, diagrams
 - `decisions/` — architectural decision records
+- `.github/` — issue/PR templates
+- `scripts/` — helper scripts (e.g., labels)
 
 ## Status
-Draft v0.1. Contributors and workstream leads to be added.
+Draft v0.2. Contributors and workstream leads to be added.
