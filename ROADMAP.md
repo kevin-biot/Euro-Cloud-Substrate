@@ -17,6 +17,11 @@
 - Run provider pilots (2–3 vendors) and document migrations.
 - Iterate specs based on pilot feedback.
 
+### Reference stack trajectory (Phase 2+)
+- Publish a reference stack blueprint mapping invariants to OSS components (e.g., K8s, GitOps, CI/CD, object storage, VM envelopes), keeping components swappable.
+- Provide sample manifests/policies demonstrating OLZ-EU, EOSC metadata enforcement, policy/authority gates, evidence emission, and CRP behaviors.
+- Keep the blueprint non-normative: implementations may swap components if they meet the same conformance tests.
+
 ## Deliverables map
 - CRP: `crp/spec.md`, `crp/invariants.md`, `crp/conformance-outline.md`, `crp/diagrams/`
 - Workstreams: `ws*/spec.md`, `ws*/invariants.md`, `ws*/conformance-outline.md`, `ws*/diagrams/`
