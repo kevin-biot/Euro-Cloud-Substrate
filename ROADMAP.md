@@ -1,8 +1,8 @@
 # Roadmap
 
 ## Phase 0 — Definition (current)
-- Publish the v0.1 paper (`VISION.md`).
-- Stand up repo structure, workstream stubs, and Core 10 placeholders.
+- Publish the v0.2 paper (`VISION.md`).
+- Stand up repo structure, workstream stubs, Core 10 placeholders, and CRP profile.
 - Recruit initial contributors/workstream leads.
 - Begin architectural decision log.
 
