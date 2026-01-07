@@ -14,6 +14,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Security policy: `SECURITY.md`
 - Adoption tracking: `ADOPTERS.md`
 - Integration/comparison: `docs/integration-examples.md`, `docs/comparison.md`
+- Starter tasks: `GOOD_FIRST_ISSUES.md`
 
 ## Purpose
 Define an open, adoptable Euro Cloud Substrate that delivers portability, governability, auditability, and industrialisation by reusing proven primitives and specifying the missing contract layer (identity, policy, execution envelopes, evidence).
