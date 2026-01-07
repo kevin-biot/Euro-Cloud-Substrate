@@ -1,20 +1,26 @@
 # CRP Conformance Outline (Draft)
 
-## Local authority and policy
+# WS3 Conformance Outline (Draft)
+
+### Tier 1 — Smoke
 - Simulate loss of upstream identity/control plane; verify authority checks succeed using local cache or fail closed if stale.
 - Validate policy evaluation uses last valid snapshot; if missing/expired, execution refuses.
+- Evidence buffering writes locally during partition.
 
-## Control-plane independence
+### Tier 2 — Integration
 - Disable upstream scheduler/orchestrator; CRP workloads MUST continue under local control-plane or pre-positioned runtime.
-- Verify lifecycle operations (start/stop/restart) function locally for declared CRP envelopes.
+- Cross-partition routing denial: ensure governed traffic does not egress across partitions unless explicitly allowed.
+- Stale cache rejection: force stale policy/authority cache and confirm refusal.
+- Evidence replay after reconnect preserves ordering and integrity.
+
+### Tier 3 — Stress
+- Sustained partition operation: run workloads under partition for extended duration with deterministic degradation modes.
+- Policy conflicts under partition: verify resolution is deterministic and auditable.
+- Evidence volume limits: buffer under load without loss; reconcile cleanly when connectivity returns.
 
 ## Data residency
 - Ensure governed data required for CRP workloads remains in-jurisdiction during partition; block cross-border replication while partitioned.
 - Validate reconciliation resumes only when policy allows after connectivity returns.
-
-## Evidence buffering and reconciliation
-- Under partition, evidence MUST buffer locally with integrity protection; verify no loss on restart.
-- After connectivity restoration, evidence MUST reconcile to the primary audit chain with ordering preserved.
 
 ## Deterministic degradation and refusal
 - Force degraded conditions; verify system enters predefined reduced-capability modes with auditable state.

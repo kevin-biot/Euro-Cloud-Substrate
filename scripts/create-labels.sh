@@ -7,6 +7,7 @@ labels=(
   "conformance:0366d6:Conformance outlines/tests"
   "governance:d93f0b:Governance/ADR/process"
   "diagram:5319e7:Diagram/visual updates"
+  "good-first-issue:fbca04:Starter issues for newcomers"
 )
 
 for entry in "${labels[@]}"; do

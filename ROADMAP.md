@@ -22,6 +22,12 @@
 - Provide sample manifests/policies demonstrating OLZ-EU, EOSC metadata enforcement, policy/authority gates, evidence emission, and CRP behaviors.
 - Keep the blueprint non-normative: implementations may swap components if they meet the same conformance tests.
 
+### Performance baselines (target Q3 2026)
+- IALP policy decision latency target: <10ms.
+- Evidence collection impact: <2% application throughput reduction.
+- CRP partition detection/failover to local authority: <30s.
+- Publish benchmark suite as validation reference.
+
 ## Deliverables map
 - CRP: `crp/spec.md`, `crp/invariants.md`, `crp/conformance-outline.md`, `crp/diagrams/`
 - Workstreams: `ws*/spec.md`, `ws*/invariants.md`, `ws*/conformance-outline.md`, `ws*/diagrams/`
