@@ -8,3 +8,4 @@
 - VM envelope profile, isolation level, and usage criteria.
 - Attestation, logging, and evidence requirements.
 - Interface points with Policy/Authority and Interop APIs.
+- CRP-specific behavior for envelopes under partition (local control-plane, lifecycle, evidence buffering).

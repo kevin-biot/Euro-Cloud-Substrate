@@ -8,3 +8,4 @@
 - Hash chaining and integrity proofs.
 - Query API and access control.
 - Export formats for regulators/customers.
+- CRP support: partition-tolerant buffering and reconciliation semantics.

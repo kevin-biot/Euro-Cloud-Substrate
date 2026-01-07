@@ -10,7 +10,11 @@
 
 ## Storage and retention
 - Test durable storage and retention enforcement for evidence streams.
-- Validate partition-tolerant buffering (for CRP) and later reconciliation.
+- Validate partition-tolerant buffering (CRP) and later reconciliation to the main chain.
+
+## CRP scenarios
+- Under simulated partition, ensure evidence persists locally with integrity protection and no loss on restart.
+- After restoring connectivity, verify reconciliation preserves ordering and integrity proofs.
 
 ## Query and export
 - Audit queries MUST preserve ordering and integrity proofs.
