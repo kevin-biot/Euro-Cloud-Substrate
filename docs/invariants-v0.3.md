@@ -70,3 +70,16 @@ Status values: `defined` | `placeholder` | `planned`
 - PHY-01 Connectivity Dependency Declaration — planned
 - PHY-02 Single-Path Detection — planned
 - PHY-03 Partition Scenario Consideration — planned
+
+---
+
+## Evidence artifact hints (non-normative)
+- AUTH/POL: authority/policy artifacts with versions/provenance; refusal/escalation evidence.
+- EXEC: envelope declarations; admission outcomes; degraded-mode evidence.
+- DATA: residency/classification declarations; key ownership; lineage traces.
+- EVID: event schemas; hash-chained logs; local buffers and reconciliation records.
+- INT/EXIT: API/interface docs; portability/exit plans; exercised exit evidence.
+- DEP: dependency graphs; concentration metrics; non-substitutable declarations.
+- SUP: SBOMs; provenance attestations; upstream disclosures (planned).
+- OPS: runbooks; drills; access independence proofs (planned).
+- PHY: connectivity dependency declarations; single-path detection tests (planned).
