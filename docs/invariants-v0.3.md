@@ -67,9 +67,10 @@ Status values: `defined` | `placeholder` | `planned`
 - OPS-04 Operational Capability Evidence — planned
 
 ## Physical Connectivity (PHY)
-- PHY-01 Connectivity Dependency Declaration — planned
-- PHY-02 Single-Path Detection — planned
-- PHY-03 Partition Scenario Consideration — planned
+- PHY-01 Connectivity Dependency Declaration — defined
+- PHY-02 Single-Path / Single-Operator Detectability — defined
+- PHY-03 Partition Scenario Consideration — defined
+- PHY-04 Connectivity Assumption Evidence — defined
 
 ---
 
