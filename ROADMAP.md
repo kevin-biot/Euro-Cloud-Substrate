@@ -10,6 +10,7 @@
 - Draft v0.5 for each workstream (spec + invariants + conformance outline + diagrams).
 - Publish first reference architecture pack under `architecture/` (Mermaid/PlantUML).
 - Define conformance testing approach (without full implementation).
+- Begin aligning invariants taxonomy (see `docs/invariants-v0.3.md`) with Core 10/CRP for next revision.
 
 ## Phase 2 — Industrialisation (following)
 - Implement conformance tests.
