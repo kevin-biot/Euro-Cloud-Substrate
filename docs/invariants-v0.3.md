@@ -61,10 +61,10 @@ Status values: `defined` | `placeholder` | `planned`
 - SUP-04 Opaque Supply Chain Fails Conformance — defined
 
 ## Human & Operations (OPS)
-- OPS-01 Operational Runbook Availability — planned
-- OPS-02 Role Redundancy — planned
-- OPS-03 Operator Access Independence — planned
-- OPS-04 Operational Capability Evidence — planned
+- OPS-01 Operational Runbook Availability — defined
+- OPS-02 Role Redundancy — defined
+- OPS-03 Operator Access Independence — defined
+- OPS-04 Operational Capability Evidence — defined
 
 ## Physical Connectivity (PHY)
 - PHY-01 Connectivity Dependency Declaration — defined
