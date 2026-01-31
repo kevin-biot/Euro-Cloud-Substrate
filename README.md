@@ -36,6 +36,13 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Use `docs/reg-mapping.md` as a contextual guide to EU regulatory drivers.
 - For a high-level overview, see the GitHub wiki.
 
+## Out of scope by design
+- Executive governance and sponsorship decisions.
+- Legal acceptability determinations.
+- Contract negotiation outcomes.
+- Human resource policies.
+- Risk acceptance decisions.
+
 ## Repository structure
 - `VISION.md` — core paper (v0.2)
 - `ROADMAP.md` — phases and expected deliverables
