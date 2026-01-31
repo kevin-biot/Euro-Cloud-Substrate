@@ -55,10 +55,10 @@ Status values: `defined` | `placeholder` | `planned`
 - DEP-04 Dependency Evidence Exposure — defined
 
 ## Supply Chain (SUP)
-- SUP-01 Software Bill of Materials Availability — planned
-- SUP-02 Build Provenance Verifiability — planned
-- SUP-03 Upstream Dependency Disclosure — planned
-- SUP-04 Unknown Supply Chain Fails Conformance — planned
+- SUP-01 Declared Supply-Chain Inventory — defined
+- SUP-02 Provenance Verifiability — defined
+- SUP-03 Upstream Dependency Disclosure — defined
+- SUP-04 Opaque Supply Chain Fails Conformance — defined
 
 ## Human & Operations (OPS)
 - OPS-01 Operational Runbook Availability — planned
