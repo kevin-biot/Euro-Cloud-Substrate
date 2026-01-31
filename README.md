@@ -1,23 +1,19 @@
 # Euro Cloud Substrate (ECS)
 
-An architectural definition project for a portable, governable, European cloud substrate. This repo hosts the drafts, specs, and workstream materials for defining the minimal shared contracts that European providers can implement.
+An architectural definition project for a portable, governable, European cloud substrate. This repo hosts the specs, invariants, and profiles that define the minimal shared contracts European providers can implement.
 
-- Current paper: `VISION.md` (v0.2)
-- Roadmap: `ROADMAP.md`
-- CRP profile: `crp/` (Crisis Resilience Profile)
+- Core paper: `VISION.md` (v0.2) and `architecture/`
+- Invariants: `docs/invariants-v0.3.md` (authoritative), coverage: `docs/invariant-coverage.md`
+- Profiles: `crp/` (Crisis Resilience Profile), `docs/profiles/README.md`
+- Conformance shape: `docs/conformance-model.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
-- Core 10 components: `core10/`
+- Core 10: `core10/`
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `CALL_FOR_PARTICIPATION.md`
-- Regulatory mapping (context): `docs/reg-mapping.md`
-- Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
-- Scope guardrails: `NON_GOALS.md`, `ANTI_CAPTURE.md`
-- Security policy: `SECURITY.md`
-- Adoption tracking: `ADOPTERS.md`
-- Integration/comparison: `docs/integration-examples.md`, `docs/comparison.md`
+- Guardrails: `NON_GOALS.md`, `ANTI_CAPTURE.md`, `SECURITY.md`
+- Mappings: `docs/reg-mapping.md`, `docs/irn-mapping.md`
+- Comparisons/integration: `docs/comparison.md`, `docs/integration-examples.md`
 - Starter tasks: `GOOD_FIRST_ISSUES.md`
-- Invariants v0.3 draft: `docs/invariants-v0.3.md`
-- IRN crosswalk (draft): `docs/irn-mapping.md`
-- Profiles: `docs/profiles/README.md`
+- Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose
 Define an open, adoptable Euro Cloud Substrate that delivers portability, governability, auditability, and industrialisation by reusing proven primitives and specifying the missing contract layer (identity, policy, execution envelopes, evidence).
@@ -45,18 +41,25 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Risk acceptance decisions.
 
 ## Phase status
-- Phase 0 complete: invariant set v0.3 defined. Further work focuses on profiles, mappings, and conformance (not new invariant families).
+- Phase 0 complete: invariant set v0.3 defined. Further work focuses on profiles, mappings, and conformance (no new invariant families).
 
 ## Repository structure
 - `VISION.md` — core paper (v0.2)
 - `ROADMAP.md` — phases and expected deliverables
 - `architecture/` — reference architecture overview and diagrams
 - `crp/` — Crisis Resilience Profile spec, invariants, conformance, diagrams
+- `docs/invariants-v0.3.md` — authoritative invariant list and statuses
+- `docs/invariants/` — family deep-dives (e.g., DEP, SUP, PHY, OPS)
+- `docs/invariant-coverage.md` — structural coverage matrix
+- `docs/conformance-model.md` — evidence-driven conformance shape
 - `core10/` — mandatory ECS components
 - `ws*/` — workstream folders with scope, invariants, conformance outlines, diagrams
 - `decisions/` — architectural decision records
+- `docs/irn-mapping.md` — IRN crosswalk (draft)
+- `docs/profiles/README.md` — how profiles use invariants
+- `docs/comparison.md`, `docs/integration-examples.md` — complementary positioning and examples
 - `.github/` — issue/PR templates
 - `scripts/` — helper scripts (e.g., labels)
 
 ## Status
-Draft v0.2. Contributors and workstream leads to be added.
+- Invariant surface defined (v0.3). Profiles, mappings, and conformance sharpening in progress. Contributors and workstream leads welcome.
