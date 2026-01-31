@@ -11,6 +11,7 @@
 - Publish first reference architecture pack under `architecture/` (Mermaid/PlantUML).
 - Define conformance testing approach (without full implementation).
 - Begin aligning invariants taxonomy (see `docs/invariants-v0.3.md`) with Core 10/CRP for next revision.
+- Begin compliance mappings (IRN/NIS2/DORA/etc.) using `docs/irn-mapping.md` as a draft crosswalk.
 
 ## Phase 2 — Industrialisation (following)
 - Implement conformance tests.
