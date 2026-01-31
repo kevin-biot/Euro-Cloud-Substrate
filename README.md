@@ -17,6 +17,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Starter tasks: `GOOD_FIRST_ISSUES.md`
 - Invariants v0.3 draft: `docs/invariants-v0.3.md`
 - IRN crosswalk (draft): `docs/irn-mapping.md`
+- Profiles: `docs/profiles/README.md`
 
 ## Purpose
 Define an open, adoptable Euro Cloud Substrate that delivers portability, governability, auditability, and industrialisation by reusing proven primitives and specifying the missing contract layer (identity, policy, execution envelopes, evidence).
@@ -42,6 +43,9 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Contract negotiation outcomes.
 - Human resource policies.
 - Risk acceptance decisions.
+
+## Phase status
+- Phase 0 complete: invariant set v0.3 defined. Further work focuses on profiles, mappings, and conformance (not new invariant families).
 
 ## Repository structure
 - `VISION.md` — core paper (v0.2)

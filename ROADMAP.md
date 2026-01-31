@@ -5,6 +5,7 @@
 - Stand up repo structure, workstream stubs, Core 10 placeholders, and CRP profile.
 - Recruit initial contributors/workstream leads.
 - Begin architectural decision log.
+- Invariant set v0.3 defined; no new invariant families planned.
 
 ## Phase 1 — Architecture Baseline (8–12 weeks)
 - Draft v0.5 for each workstream (spec + invariants + conformance outline + diagrams).
