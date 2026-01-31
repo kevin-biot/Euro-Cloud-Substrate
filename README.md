@@ -31,6 +31,7 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Look at `core10/` for the mandatory components.
 - Dive into `ws*/` for per-workstream specs, invariants, conformance, and diagrams.
 - Use `docs/reg-mapping.md` as a contextual guide to EU regulatory drivers.
+- See `docs/irn-mapping.md` for the draft IRN crosswalk (IRN defines “what”; ECS defines “how” via invariants and evidence).
 - For a high-level overview, see the GitHub wiki.
 
 ## Out of scope by design
