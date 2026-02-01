@@ -88,14 +88,23 @@ Content-Type: application/octet-stream
 ### Immutability and retention
 - Object lock/immutability MUST be supported for governed objects; delete/overwrite refused when lock active.
 - Retention timers and legal holds MUST be enforced; changes must emit evidence events.
+- Example enforcement:
+  - Attempt to delete/overwrite a locked object MUST fail with explicit error and evidence event.
+  - Retention change requests MUST be logged with authority/policy context and evidence pointer.
 
 ### Jurisdiction enforcement
 - Placement MUST honor `x-eosc-jurisdiction`; cross-border replication MUST be blocked unless explicitly allowed and evidenced.
 - Portable metadata: governance metadata MUST travel with the object across providers/regions.
+- Example enforcement:
+  - Replication/copy to a non-permitted region MUST fail with explicit error and evidence.
+  - Placement decisions MUST be auditable (evidence pointer with jurisdiction decision).
 
 ### Integrity
 - On write: validate declared hash; store hash metadata.
 - On read (configurable): option to validate stored hash; failures emit evidence and can trigger refusal.
+- Example enforcement:
+  - Write MUST fail if computed hash does not match `x-eosc-integrity`.
+  - Optional read-verify mode produces evidence of validation or refusal on mismatch.
 
 ### Evidence and audit
 - Operations generating evidence events: PUT, DELETE, COPY/MOVE/REPLICATION, LOCK/UNLOCK, retention changes, metadata updates.
