@@ -3,6 +3,11 @@
 ## Intent
 Define the baseline for tenant creation, identity, network, policy, and audit required for ECS.
 
+## Scope and assumptions
+- Applies to governed workloads/tenants within an ECS deployment.
+- Focuses on authority/policy binding, network posture, and evidence at landing-zone bootstrap.
+- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+
 ## Invariant families (refs)
 - AUTH (authority binding, refusal)
 - POL (policy artifacts/evaluation)
@@ -19,18 +24,15 @@ Define the baseline for tenant creation, identity, network, policy, and audit re
 - Evidence events for control-plane actions; refusal/escalation logs.
 - Declared connectivity dependencies affecting landing zone controls.
 
-## To cover
-- Tenant bootstrap flow and roles.
-- Network segmentation, egress control, service boundaries.
-- Default policy posture and exception handling (fail-closed bias).
-- Audit/event capture for compliance-critical actions.
+## Draft requirements (pass 1)
+- Identity & authority: tenant/project creation MUST bind to explicit authority with refusal semantics (AUTH-01/02/04/05). Authority/policy artifacts are versioned (POL-01).
+- Policy posture: default deny for governed workloads; exceptions are explicit and evidence-backed (POL-02/04).
+- Admission: resource creation/update MUST pass through an admission gate bound to authority/policy (EXEC-01).
+- Network/egress: segmentation and egress controls are declared and enforced; connectivity dependencies are declared (DATA-01, PHY-01).
+- Evidence: control-plane actions emit evidence with policy snapshot/authority context; hash integrity applied where required (EVID-01/03/04).
 
-## Invariants (draft)
-- Tenant creation MUST bind identity and authority before resources are provisioned.
-- Network and egress baselines MUST default to deny for governed workloads.
-- Exceptions to baseline policy MUST be explicitly approved and evidence-backed.
-- Compliance-critical actions MUST emit evidence events at the control plane.
-
-## Next steps
-- Draft spec and invariants.
-- Map to evidence requirements and Control Plane interfaces.
+## Conformance outline (pass 1)
+- Verify authority/policy artifacts exist and are versioned; refusals recorded.
+- Test admission gate blocks/approves per policy; exceptions are explicit and logged.
+- Validate segmentation/egress controls default to deny and match declared dependencies.
+- Confirm control-plane actions emit evidence with policy/authority context and integrity.
