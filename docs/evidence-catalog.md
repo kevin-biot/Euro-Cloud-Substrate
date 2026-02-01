@@ -60,6 +60,28 @@ Definitions (snippet):
   }
 }
 ```
+- Evidence events for ML inference (EVID/SUP/EXEC example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["ml.inference"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "workload_id": { "type": "string" },
+    "model_id": { "type": "string" },
+    "model_sbom_ref": { "type": "string" },
+    "input_hash": { "type": "string" },
+    "context_hash": { "type": "string" },
+    "output_ref": { "type": "string" },
+    "outcome": { "enum": ["success", "refusal"] },
+    "refusal_reason": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["event_type", "timestamp", "workload_id", "model_id", "input_hash", "outcome"]
+}
+```
 
 ## INT
 - Evidence types (tbd)
