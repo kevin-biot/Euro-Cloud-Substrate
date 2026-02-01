@@ -19,6 +19,7 @@
 - Markdown, concise and testable language.
 - Prefer “must/should/may” with rationale.
 - Keep examples vendor-neutral; call out assumptions.
+- Use Mermaid for diagrams by default.
 
 ## Licensing
 - Proposed: Creative Commons BY 4.0 for documentation (to be confirmed).
