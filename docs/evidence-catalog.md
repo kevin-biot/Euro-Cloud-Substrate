@@ -105,6 +105,27 @@ Definitions (snippet):
 }
 ```
 
+- Evidence events for OLZ bootstrap (EVID/AUTH/POL/DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["olz.bootstrap"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "authority_binding": { "type": "string" },
+    "policy_baseline": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification_ceiling": { "type": "string" },
+    "network_namespace_id": { "type": "string" },
+    "initial_quotas": { "type": "object" },
+    "outcome": { "enum": ["success", "refusal"] },
+    "refusal_reason": { "type": "string" }
+  },
+  "required": ["event_type", "timestamp", "tenant_id", "authority_binding", "policy_baseline", "jurisdiction", "outcome"]
+}
+```
+
 ## INT
 - Evidence types (tbd)
 

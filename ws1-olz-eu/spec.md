@@ -11,6 +11,28 @@
 - PHY (connectivity dependencies)
 - DEP (declared critical paths)
 
+## Draft requirements (pass 2)
+
+### Tenant lifecycle (AUTH, POL, EVID)
+- Operations: CREATE, GET, UPDATE, DELETE, SUSPEND tenant/project/workspace.
+- Required fields on CREATE: `tenant_id` (unique), `authority_binding` (authority ref), `jurisdiction` (ISO 3166; may inherit), `classification_ceiling` (max allowed classification), `policy_baseline` (policy template ref).
+- Evidence: tenant lifecycle events MUST include authority/policy snapshot IDs and outcome (success/refusal).
+
+### Identity federation (AUTH)
+- MUST support OIDC 1.0 for external IdPs.
+- Required claims: `sub`, `iss`, `aud`, `exp`, `iat`; recommended: `groups`, `roles`, `jurisdiction`.
+- Token validation: signature, expiry, audience, issuer allowlist. Evidence of validation outcome MUST be recorded.
+
+### Network baseline (EXEC, PHY)
+- Tenant isolation: dedicated network namespace or equivalent; default-deny egress with explicit allowlist.
+- Ingress: policy-gated with evidence of authorization decisions.
+- Cross-tenant flows: MUST be explicitly authorized and evidenced.
+- Connectivity dependencies MUST be declared (e.g., required egress destinations/operators).
+
+### Bootstrap evidence (EVID)
+- On tenant creation, capture: authority binding verification, policy baseline applied, network namespace creation, initial quotas, jurisdiction assignment.
+- Emit an OLZ bootstrap event (see `docs/evidence-catalog.md`) with outcome and refusal reason if applicable.
+
 ## Sections to draft
 - Tenant model and lifecycle.
 - Identity binding and role semantics.
