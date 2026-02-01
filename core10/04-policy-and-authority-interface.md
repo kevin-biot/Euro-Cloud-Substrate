@@ -3,6 +3,11 @@
 ## Intent
 Explicit decision points, escalation hooks, refusal semantics, and authority tracing.
 
+## Invariant families (refs)
+- AUTH (authority verification, refusal)
+- POL (policy artifacts, deterministic evaluation)
+- EVID (evidence of decisions/refusals)
+
 ## To cover
 - How policy is expressed, evaluated, and enforced.
 - Who can approve exceptions; how approvals are recorded as evidence.

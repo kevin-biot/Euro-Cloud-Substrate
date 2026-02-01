@@ -3,6 +3,11 @@
 ## Intent
 Standard event types for authorization, execution, refusal, escalation, policy snapshot, retention duty, etc.
 
+## Invariant families (refs)
+- EVID (evidence schema, integrity, completeness)
+- AUTH/POL (authority/policy context in events)
+- EXEC (execution lifecycle events)
+
 ## To cover
 - Canonical event schema and types.
 - Required fields for evidence-grade logging.

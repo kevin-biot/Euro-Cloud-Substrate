@@ -3,6 +3,10 @@
 ## Intent
 Hash-linked log requirements for compliance-critical flows.
 
+## Invariant families (refs)
+- EVID (integrity, chaining)
+- AUTH/POL/EXEC (context carried in audit chain)
+
 ## To cover
 - Chaining model, integrity proofs, and retention expectations.
 - How evidence events are included and verified.

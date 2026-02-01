@@ -3,6 +3,12 @@
 ## Intent
 S3-compatible surface with governance metadata requirements for portability and auditability.
 
+## Invariant families (refs)
+- DATA (residency, classification)
+- EVID (evidence pointers, integrity)
+- SUP (inventory, provenance)
+- EXIT/INT (portability)
+
 ## To cover
 - API surface and compatibility expectations.
 - Metadata contract: jurisdiction tags, retention/TTL, evidence pointers, integrity hashes.

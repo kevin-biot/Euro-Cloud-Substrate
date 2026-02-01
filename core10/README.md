@@ -1,6 +1,6 @@
 # Core 10 Components (Placeholders)
 
-Each component will gain a spec, invariants, and a conformance outline.
+Each component will gain a spec, invariants, and a conformance outline. Invariants reference the authoritative list in `docs/invariants-v0.3.md`; no new semantics are defined here.
 
 1. `01-open-landing-zone-profile.md`
 2. `02-tenant-isolation-contract.md`

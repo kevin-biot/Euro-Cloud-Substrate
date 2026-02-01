@@ -3,6 +3,13 @@
 ## Intent
 Container and VM profiles, including when stronger isolation is required.
 
+## Invariant families (refs)
+- EXEC (envelope declaration, controls)
+- AUTH/POL (admission gates)
+- EVID (lifecycle events, attestation)
+- DEP (envelope dependencies)
+- CRP tie: EXEC-03/04 for partition/degradation where applicable
+
 ## To cover
 - Kubernetes baseline (controls, admission, policy posture).
 - VM envelope profile (e.g., KubeVirt) for regulated/high-liability workloads.

@@ -3,6 +3,12 @@
 ## Intent
 Define conditions that must block execution for compliance-critical flows.
 
+## Invariant families (refs)
+- POL (fail-closed semantics)
+- AUTH (authority refusal)
+- EVID (refusal/escalation evidence)
+- CRP ties: AUTH-04/POL-04 in partition
+
 ## To cover
 - Preconditions for execution; refusal semantics.
 - Evidence requirements before/after execution.

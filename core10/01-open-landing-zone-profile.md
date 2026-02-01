@@ -3,6 +3,14 @@
 ## Intent
 Define the baseline for tenant creation, identity, network, policy, and audit required for ECS.
 
+## Invariant families (refs)
+- AUTH (authority binding, refusal)
+- POL (policy artifacts/evaluation)
+- EXEC (admission)
+- DATA (segmentation impact)
+- EVID (control-plane evidence)
+- PHY (connectivity dependencies)
+
 ## To cover
 - Tenant bootstrap flow and roles.
 - Network segmentation, egress control, service boundaries.

@@ -3,6 +3,13 @@
 ## Intent
 Minimum portability expectations: how state, objects, and audit artifacts move provider-to-provider.
 
+## Invariant families (refs)
+- EXIT (exit path, validation)
+- INT (interfaces for portability)
+- DEP (dependency declarations affecting migration)
+- SUP (supply-chain visibility for migrated artifacts)
+- EVID (evidence of migration/validation)
+
 ## To cover
 - Data, configuration, and policy snapshot portability.
 - Evidence and audit artifact transfer.
