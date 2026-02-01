@@ -7,6 +7,14 @@ Hash-linked log requirements for compliance-critical flows.
 - EVID (integrity, chaining)
 - AUTH/POL/EXEC (context carried in audit chain)
 
+## Applicable invariant IDs
+- EVID-03/04/05, AUTH-01/02/04, POL-01/02/03/04/05, EXEC-05
+
+## Evidence expectations
+- Hash-linked chains for compliance-critical events.
+- Exportable, verifiable chain state.
+- Inclusion of authority/policy/execution context.
+
 ## To cover
 - Chaining model, integrity proofs, and retention expectations.
 - How evidence events are included and verified.

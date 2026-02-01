@@ -9,6 +9,15 @@ Minimum APIs for workload deployment, identity, storage, and audit queries to en
 - EXIT (portability support)
 - EVID (audit/evidence queries)
 
+## Applicable invariant IDs
+- INT-01/03, AUTH-01/02/04, POL-01/02/03/04/05, EXIT-01/02/03, EVID-01/04
+
+## Evidence expectations
+- API/interface definitions and compatibility docs.
+- Authn/z decisions with authority mapping evidence.
+- Portability/export behaviors with evidence of success/refusal.
+- Audit/evidence query integrity guarantees.
+
 ## To cover
 - API resources and operations per plane.
 - Authentication/authorization expectations.

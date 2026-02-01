@@ -11,6 +11,14 @@ Define the baseline for tenant creation, identity, network, policy, and audit re
 - EVID (control-plane evidence)
 - PHY (connectivity dependencies)
 
+## Applicable invariant IDs
+- AUTH-01/02/04/05, POL-01/02/04, EXEC-01, DATA-01, EVID-01/03/04, PHY-01
+
+## Evidence expectations
+- Authority/policy artifacts (versioned), admission outcomes, segmentation policies.
+- Evidence events for control-plane actions; refusal/escalation logs.
+- Declared connectivity dependencies affecting landing zone controls.
+
 ## To cover
 - Tenant bootstrap flow and roles.
 - Network segmentation, egress control, service boundaries.

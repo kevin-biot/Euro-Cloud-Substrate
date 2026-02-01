@@ -9,6 +9,14 @@ Define conditions that must block execution for compliance-critical flows.
 - EVID (refusal/escalation evidence)
 - CRP ties: AUTH-04/POL-04 in partition
 
+## Applicable invariant IDs
+- POL-04/05, AUTH-04, EVID-01/04, POL-01/02/03, AUTH-01/02/05
+
+## Evidence expectations
+- Preconditions and refusal/escalation events captured with authority/policy context.
+- Exception approvals (time-bound) and audit trail.
+- Proof of fail-closed behavior under uncertainty/partition.
+
 ## To cover
 - Preconditions for execution; refusal semantics.
 - Evidence requirements before/after execution.

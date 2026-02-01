@@ -10,6 +10,15 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - SUP (supply-chain visibility for migrated artifacts)
 - EVID (evidence of migration/validation)
 
+## Applicable invariant IDs
+- EXIT-01/02/03/04, INT-01/03, DEP-01/02/04, SUP-01/02/03/04, EVID-01/04/05
+
+## Evidence expectations
+- Declared exit paths and validation exercises.
+- Export/import behaviors with evidence of success/refusal.
+- Dependency and supply-chain visibility for migrated components.
+- Evidence of state validation before/after migration.
+
 ## To cover
 - Data, configuration, and policy snapshot portability.
 - Evidence and audit artifact transfer.

@@ -8,6 +8,14 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 - POL (policy artifacts, deterministic evaluation)
 - EVID (evidence of decisions/refusals)
 
+## Applicable invariant IDs
+- AUTH-01/02/04/05, POL-01/02/03/04/05, EVID-01/03/04
+
+## Evidence expectations
+- Policy artifacts (versioned, provenance), authority bindings.
+- Decision/refusal/escalation events with policy snapshot IDs.
+- Deterministic evaluation traces for repeatability.
+
 ## To cover
 - How policy is expressed, evaluated, and enforced.
 - Who can approve exceptions; how approvals are recorded as evidence.

@@ -8,6 +8,14 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - AUTH/POL (authority/policy context in events)
 - EXEC (execution lifecycle events)
 
+## Applicable invariant IDs
+- EVID-01/02/03/04/05, AUTH-01/02/04, POL-01/02/03/04/05, EXEC-05
+
+## Evidence expectations
+- Canonical schemas with required fields; hash/integrity mechanisms.
+- Inclusion of authority/policy snapshot IDs and execution context.
+- Ordered, tamper-evident streams with reconciliation support.
+
 ## To cover
 - Canonical event schema and types.
 - Required fields for evidence-grade logging.
