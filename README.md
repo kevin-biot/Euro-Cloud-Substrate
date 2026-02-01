@@ -44,6 +44,14 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 ## Phase status
 - Phase 0 complete: invariant set v0.3 defined. Further work focuses on profiles, mappings, and conformance (no new invariant families).
 
+## Quick start for contributors
+- Implementable now: `ws2-eosc/spec.md` (governed object storage), `docs/profiles/regulated-ml/` (ML governance).
+- Needs more depth: `ws4-interop-api` (OpenAPI/AsyncAPI expansion), conformance/evidence catalog, reference implementations.
+- How to contribute:
+  1. Pick a Core10 component from `docs/core10-status.md`.
+  2. Check open issues/labels for that component.
+  3. Submit PR with invariant references, requirements, and evidence expectations.
+
 ## Repository structure
 - `VISION.md` — core paper (v0.2)
 - `ROADMAP.md` — phases and expected deliverables

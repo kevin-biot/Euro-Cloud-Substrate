@@ -36,6 +36,41 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - Activation: policy evaluation before workload start; refusal on failure.
 - Evidence: import event logged with validation results and any refusals.
 
+### Export package format (draft)
+- Format: OCI artifact or tarball with manifest.
+- Manifest schema (fields):
+  - `version`: package format version.
+  - `created`: RFC 3339 timestamp.
+  - `source_provider`: originating provider ID.
+  - `tenant_id`: source tenant.
+  - `contents`: array of `{ type, path, integrity_hash }` where type ∈ { workload_definition, config, data_snapshot, sbom, evidence_chain_segment }.
+  - `governance_metadata`: jurisdiction, classification, retention.
+  - `authority_snapshot_id`: authority at export time.
+  - `signature`: optional provider signature.
+- Integrity: manifest has SHA-256; each content item has hash; signature if available.
+
+### Example manifest (snippet)
+```json
+{
+  "version": "1.0",
+  "created": "2025-01-01T00:00:00Z",
+  "source_provider": "provider-A",
+  "tenant_id": "tenant-123",
+  "contents": [
+    { "type": "workload_definition", "path": "workload.yaml", "integrity_hash": "sha256:abc..." },
+    { "type": "data_snapshot", "path": "data.tar", "integrity_hash": "sha256:def..." },
+    { "type": "sbom", "path": "model.cdx", "integrity_hash": "sha256:ghi..." }
+  ],
+  "governance_metadata": {
+    "jurisdiction": "FR",
+    "classification": "restricted",
+    "retention": "P30D"
+  },
+  "authority_snapshot_id": "auth-001",
+  "signature": "optional-signature"
+}
+```
+
 ## Conformance outline (draft)
 - Verify export includes required artifacts and governance metadata.
 - Test import validation rejects on integrity/policy failure.

@@ -28,6 +28,48 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 - Interfaces MUST emit evidence for decisions/refusals/escalations, including policy snapshot and authority binding.
 - Evaluation MUST be able to fail-closed on policy uncertainty (POL-04) and log refusal with evidence.
 
+## Policy expression examples (non-normative)
+
+### OPA/Rego
+```rego
+package ecs.authority
+
+default allow = false
+
+allow {
+    input.authority_binding != ""
+    not authority_expired(input.authority_binding)
+    input.action == "deploy"
+}
+
+authority_expired(binding) {
+    binding.expires_at < time.now_ns()
+}
+```
+
+### Kyverno (Kubernetes admission)
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: ecs-authority-binding
+spec:
+  validationFailureAction: enforce
+  rules:
+    - name: require-authority
+      match:
+        resources:
+          kinds: [Deployment, Pod]
+      validate:
+        message: "Authority binding required"
+        pattern:
+          metadata:
+            annotations:
+              ecs.io/authority-binding: "?*"
+```
+
+Examples are illustrative; any policy engine may be used if deterministic and auditable.
+
 ## Conformance outline (draft)
 - Verify policy artifacts are versioned and referenced in decisions/refusals.
 - Confirm authority checks occur before governed actions; refusals are logged with evidence.

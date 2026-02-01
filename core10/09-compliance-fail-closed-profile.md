@@ -24,6 +24,11 @@ Define conditions that must block execution for compliance-critical flows.
 - Exception workflows MUST require explicit approval with time bounds and evidence (per Core10-04).
 - Recovery from fail-closed state MUST be evidenced.
 
+## Scenarios (draft)
+- Authority expired mid-request: request MUST be refused; evidence reason `authority_expired`; recovery by refreshing authority binding.
+- Evidence sink unavailable: configurable behavior (`hard_fail` refuse immediately; `buffered` buffer with integrity then refuse on timeout); log sink unavailability and buffered/flush outcomes.
+- Policy validation failure: deny all governed actions until valid policy restored; evidence for policy integrity failure and subsequent refusals.
+
 ## Conformance outline (draft)
 - Test fail-closed behavior on each trigger condition.
 - Verify refusal evidence includes context and reason.
