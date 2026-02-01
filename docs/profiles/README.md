@@ -19,6 +19,7 @@
 - CRP (Crisis Resilience Profile): a profile over the invariant set with explicit mappings in `crp/invariants.md`.
 
 ## Future profiles (examples, not defined here)
+- Regulated ML (draft in `docs/profiles/regulated-ml/`)
 - Regulated Critical Service
 - Sovereign AI Stack
 
