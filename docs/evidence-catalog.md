@@ -83,6 +83,28 @@ Definitions (snippet):
 }
 ```
 
+- Evidence events for ML training (EVID/SUP/EXEC example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["ml.training.start", "ml.training.checkpoint", "ml.training.complete"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "training_run_id": { "type": "string" },
+    "model_id": { "type": "string" },
+    "dataset_refs": { "type": "array", "items": { "type": "string" } },
+    "code_version": { "type": "string" },
+    "hyperparameters_hash": { "type": "string" },
+    "checkpoint_hash": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["success", "failure", "aborted"] }
+  },
+  "required": ["event_type", "timestamp", "training_run_id", "model_id", "outcome"]
+}
+```
+
 ## INT
 - Evidence types (tbd)
 

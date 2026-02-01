@@ -4,11 +4,12 @@
 Map AI Act expectations to ECS “how” (invariants/evidence). This is mechanism-only; no compliance claims.
 
 ## Mapping (indicative)
-- High-risk system governance → AUTH/POL/EXEC/EVID: authority-before-execution, deterministic policy, evidence by construction.
-- Data governance/quality → DATA/SUP: dataset residency/classification, SBOM/provenance for models/artifacts.
-- Record-keeping/logging → EVID: decision-time logging (input/context hash, model version, policy snapshot), immutable audit chain.
-- Transparency/traceability → SUP/EVID: model lineage, training provenance, inference evidence export.
-- Robustness/accuracy (operational) → EXEC/DEP: declared inference envelopes, dependency declarations, attestation where available.
+- Art. 10 (Data governance/quality): DATA-01/02 (residency/classification), SUP-01/02/03 (SBOM/provenance), EVID-03 (integrity).
+- Art. 11 (Technical documentation): SUP-01/02 (model SBOM, lineage), DATA-04 (lineage traceability).
+- Art. 12 (Record-keeping/logging): EVID-01/03/04 (decision-time logging, immutability, export).
+- Art. 14 (Human oversight): AUTH-01/04 (authority binding/refusal), POL-04 (fail-closed).
+- Art. 15 (Accuracy/robustness): EXEC-01/02 (envelopes, attestation), SUP-04 (integrity), DEP-01/02 (dependency declaration).
+- Transparency/traceability: SUP/EVID (model lineage, training provenance, evidence export).
 
 ## Notes
 - ECS provides mechanism; AI Act obligations remain with the provider/operator.
