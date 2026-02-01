@@ -8,6 +8,10 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 - POL (policy artifacts, deterministic evaluation)
 - EVID (evidence of decisions/refusals)
 
+## Scope and assumptions
+- Applies to governed actions across planes (identity/control/execution/data).
+- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+
 ## Applicable invariant IDs
 - AUTH-01/02/04/05, POL-01/02/03/04/05, EVID-01/03/04
 
@@ -15,6 +19,20 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 - Policy artifacts (versioned, provenance), authority bindings.
 - Decision/refusal/escalation events with policy snapshot IDs.
 - Deterministic evaluation traces for repeatability.
+
+## Requirements (draft)
+- Policy artifacts MUST be versioned, immutable, and have provenance (POL-01).
+- Policy evaluation MUST be deterministic; same inputs produce same outcomes (POL-02).
+- Authority MUST be verified before governed actions; refusals are first-class (AUTH-01/02/04/05).
+- Exceptions MUST be explicit, time-bound, and evidence-backed; approvals recorded with authority/policy context.
+- Interfaces MUST emit evidence for decisions/refusals/escalations, including policy snapshot and authority binding.
+- Evaluation MUST be able to fail-closed on policy uncertainty (POL-04) and log refusal with evidence.
+
+## Conformance outline (draft)
+- Verify policy artifacts are versioned and referenced in decisions/refusals.
+- Confirm authority checks occur before governed actions; refusals are logged with evidence.
+- Test exception workflow: explicit approval with time bound and evidence; ensure defaults fail closed.
+- Replay determinism: given identical inputs/policy snapshot, outcomes are identical; evidence captures snapshot ID.
 
 ## To cover
 - How policy is expressed, evaluated, and enforced.
