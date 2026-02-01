@@ -17,6 +17,19 @@ Define conditions that must block execution for compliance-critical flows.
 - Exception approvals (time-bound) and audit trail.
 - Proof of fail-closed behavior under uncertainty/partition.
 
+## Requirements (draft)
+- Governed actions MUST fail closed on: missing/invalid authority, stale/invalid policy, unavailable evidence sink (for governed actions), integrity verification failure on critical artifacts.
+- Fail-closed conditions MUST be explicitly defined and documented.
+- Refusals MUST emit evidence with reason, authority/policy context, and timestamp.
+- Exception workflows MUST require explicit approval with time bounds and evidence (per Core10-04).
+- Recovery from fail-closed state MUST be evidenced.
+
+## Conformance outline (draft)
+- Test fail-closed behavior on each trigger condition.
+- Verify refusal evidence includes context and reason.
+- Validate exception workflow produces time-bounded approval evidence.
+- Confirm recovery actions are evidenced.
+
 ## To cover
 - Preconditions for execution; refusal semantics.
 - Evidence requirements before/after execution.

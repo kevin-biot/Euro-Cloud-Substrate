@@ -19,6 +19,29 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - Dependency and supply-chain visibility for migrated components.
 - Evidence of state validation before/after migration.
 
+## Requirements (draft)
+- Workloads and data MUST be exportable with governance metadata intact (EXIT-01/02/03).
+- Export MUST include evidence of successful transfer and integrity verification (EVID-01/03/04).
+- Import MUST validate governance metadata and authority binding before activation (AUTH-01, POL-01).
+- Dependency inventory MUST be provided to inform migration feasibility (DEP-01/02, SUP-01).
+- Reversibility: migration MUST support rollback with evidence of state changes (EXIT-03).
+
+### Export process (draft)
+- Package: workload definition, configuration, data, governance metadata, SBOM, evidence chain segment.
+- Integrity: SHA-256 hashes on all artifacts; manifest signed if supported.
+- Evidence: export event logged with authority/policy snapshot and integrity results.
+
+### Import process (draft)
+- Validation: verify integrity, governance metadata, authority binding; refuse on failure.
+- Activation: policy evaluation before workload start; refusal on failure.
+- Evidence: import event logged with validation results and any refusals.
+
+## Conformance outline (draft)
+- Verify export includes required artifacts and governance metadata.
+- Test import validation rejects on integrity/policy failure.
+- Validate rollback capability with evidence.
+- Confirm dependency inventory is accurate and provided.
+
 ## To cover
 - Data, configuration, and policy snapshot portability.
 - Evidence and audit artifact transfer.

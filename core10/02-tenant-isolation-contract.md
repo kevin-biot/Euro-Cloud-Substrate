@@ -18,6 +18,19 @@ Minimum isolation semantics across compute, storage, network, logs, and indexes.
 - Dependency/critical-path declarations; connectivity constraints.
 - Evidence of refusals/violations and integrity-protected logs.
 
+## Requirements (draft)
+- Workloads MUST be isolated by tenant; cross-tenant access MUST be explicitly authorized and evidenced (EXEC-01/02).
+- Network segmentation MUST prevent unintended cross-tenant traffic by default; cross-tenant flows MUST be explicitly authorized (PHY-01/02).
+- Storage/logs MUST enforce tenant boundaries; objects/logs MUST NOT be accessible across tenants without explicit policy (DATA-01/02).
+- Isolation verification MUST be testable; evidence of isolation checks MUST be recorded (EVID-01/03).
+- Dependency declarations MUST identify shared infrastructure that could affect isolation (DEP-01/02).
+
+## Conformance outline (draft)
+- Verify tenant A cannot access tenant B resources without explicit authorization; refusals are evidenced.
+- Test network segmentation blocks cross-tenant traffic by default; authorized flows are evidenced.
+- Validate storage/log boundaries; access respects tenant scope and is evidenced.
+- Confirm isolation verification/tests produce evidence; shared dependencies declared.
+
 ## To cover
 - Isolation guarantees (technical and procedural).
 - Cross-tenant leakage prevention and verification hooks.
