@@ -24,13 +24,21 @@
 
 ### Governance metadata schema
 - Fields (required on write):
-  - `x-eosc-jurisdiction`: ISO country/region code for residency.
-  - `x-eosc-retention-ttl`: retention period or expiration timestamp.
-  - `x-eosc-integrity`: hash algorithm and hash (e.g., sha256:<value>).
-  - `x-eosc-classification`: data classification (controlled vocabulary TBD).
-  - `x-eosc-evidence-pointer`: reference to audit/evidence record(s) for governed objects/ops.
+  - `x-eosc-jurisdiction`: ISO 3166 country/region code for residency (string).
+  - `x-eosc-retention-ttl`: ISO 8601 duration or RFC 3339 timestamp for expiry/retention (string).
+  - `x-eosc-integrity`: algorithm:value (e.g., `sha256:<hex>`) (string).
+  - `x-eosc-classification`: controlled vocabulary (e.g., `public|internal|restricted|secret`) (string).
+  - `x-eosc-evidence-pointer`: URI to evidence/audit record(s) (e.g., `eosc://evidence/<id>` or https URL) (string).
 - Format: conveyed via request headers (or canonical user metadata keys if headers unavailable); must be persisted with the object and preserved on copy/move/replication.
 - Validation: writes MUST fail if required fields are missing/invalid; copies must not strip/alter governance metadata.
+
+### Metadata field definitions (pass 2)
+- Types are strings; validation rules:
+  - `x-eosc-jurisdiction`: must be valid ISO code; provider enforces placement accordingly.
+  - `x-eosc-retention-ttl`: must parse as ISO 8601 duration (e.g., `P30D`) or RFC 3339 timestamp; provider enforces retention/expiry.
+  - `x-eosc-integrity`: must specify supported hash algo (e.g., sha256, sha512); value must match computed hash on write.
+  - `x-eosc-classification`: must be from declared vocabulary published by provider; vocabulary must be documented.
+  - `x-eosc-evidence-pointer`: must be a resolvable URI within provider’s evidence/audit system; clients may store multiple pointers via repeat header/user-metadata if needed.
 
 ### Immutability and retention
 - Object lock/immutability MUST be supported for governed objects; delete/overwrite refused when lock active.
