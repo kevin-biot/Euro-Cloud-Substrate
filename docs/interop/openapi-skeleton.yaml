@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: ECS Interop API (Skeleton)
+  version: v1
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /tenants:
+    post:
+      summary: Create tenant
+      responses:
+        '201':
+          description: Created
+  /tenants/{id}:
+    get:
+      summary: Get tenant
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+    patch:
+      summary: Update tenant
+      responses:
+        '200': { description: Updated }
+    delete:
+      summary: Delete tenant
+      responses:
+        '204': { description: Deleted }
+  /workloads:
+    post:
+      summary: Create workload
+      responses:
+        '201': { description: Created }
+  /workloads/{id}:
+    get:
+      summary: Get workload
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+    delete:
+      summary: Delete workload
+      responses:
+        '204': { description: Deleted }
+  /events:
+    get:
+      summary: List audit events
+      parameters:
+        - name: tenant
+          in: query
+          schema: { type: string }
+        - name: event_type
+          in: query
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+components:
+  securitySchemes:
+    mtls:
+      type: mutualTLS
+    oidc:
+      type: openIdConnect
+      openIdConnectUrl: https://idp.example.com/.well-known/openid-configuration
+security:
+  - mtls: []
