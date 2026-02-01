@@ -36,6 +36,34 @@ Container and VM profiles, including when stronger isolation is required.
 - Boot integrity verification; driver/firmware provenance (SUP-01/04).
 - Enforced network/policy posture consistent with tenant isolation.
 
+## Attestation flow (illustrative)
+```mermaid
+sequenceDiagram
+    participant Caller
+    participant Admission
+    participant Attester
+    participant EvidenceStore
+
+    Caller->>Admission: POST workload (envelope=container|vm)
+    Admission->>Attester: Request attestation (driver/runtime/TEE)
+    Attester-->>Admission: Attestation report (pass/fail)
+    Admission->>EvidenceStore: Record attestation result
+    Admission-->>Caller: permit/refuse with evidence pointer
+```
+
+## Attestation evidence snippet (JSON)
+```json
+{
+  "event_type": "workload.attestation",
+  "timestamp": "2025-01-01T00:00:00Z",
+  "workload_id": "wl-123",
+  "envelope_type": "vm",
+  "attestation_type": "tee",
+  "report_ref": "eosc://evidence/att-123",
+  "outcome": "success"
+}
+```
+
 ## Conformance outline (draft)
 - Verify envelope declaration is required for workload admission.
 - Test admission refusal on policy violation with evidence.

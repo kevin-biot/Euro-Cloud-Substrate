@@ -33,6 +33,44 @@
 - On tenant creation, capture: authority binding verification, policy baseline applied, network namespace creation, initial quotas, jurisdiction assignment.
 - Emit an OLZ bootstrap event (see `docs/evidence-catalog.md`) with outcome and refusal reason if applicable.
 
+### API examples
+- Example `POST /tenants` request:
+```json
+{
+  "tenant_id": "tenant-123",
+  "authority_binding": "auth-001",
+  "jurisdiction": "FR",
+  "classification_ceiling": "restricted",
+  "policy_baseline": "policy-olz-001"
+}
+```
+- Example 201 response:
+```json
+{
+  "id": "tenant-123",
+  "status": "active"
+}
+```
+- Example 400 error (missing authority_binding):
+```json
+{
+  "code": "ECS_MISSING_AUTHORITY",
+  "message": "authority_binding is required",
+  "evidence_pointer": "eosc://evidence/err-001"
+}
+```
+- Example `GET /tenants/{id}` response:
+```json
+{
+  "id": "tenant-123",
+  "authority_binding": "auth-001",
+  "jurisdiction": "FR",
+  "classification_ceiling": "restricted",
+  "policy_baseline": "policy-olz-001",
+  "status": "active"
+}
+```
+
 ## Sections to draft
 - Tenant model and lifecycle.
 - Identity binding and role semantics.

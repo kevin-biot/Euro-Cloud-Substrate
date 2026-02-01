@@ -1,0 +1,37 @@
+asyncapi: '2.6.0'
+info:
+  title: ECS Events (Audit/Async) - Skeleton
+  version: 'v1'
+servers:
+  - url: wss://api.example.com/events
+    protocol: wss
+channels:
+  /events/audit:
+    subscribe:
+      message:
+        name: AuditEvent
+        payload:
+          $ref: '#/components/schemas/AuditEvent'
+  /events/tenant:
+    subscribe:
+      message:
+        name: TenantEvent
+        payload:
+          $ref: '#/components/schemas/TenantEvent'
+  /events/workload:
+    subscribe:
+      message:
+        name: WorkloadEvent
+        payload:
+          $ref: '#/components/schemas/WorkloadEvent'
+components:
+  schemas:
+    AuditEvent:
+      type: object
+      description: Reference to evidence-catalog events.
+    TenantEvent:
+      type: object
+      description: Tenant lifecycle/bootstrap events.
+    WorkloadEvent:
+      type: object
+      description: Workload/envelope lifecycle events.

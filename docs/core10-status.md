@@ -9,7 +9,7 @@
 | 05 Evidence Event Model | Draft v1 | EVID, AUTH/POL, EXEC | Canonical schema added |
 | 06 Audit Chain Baseline | Draft v1 | EVID, AUTH/POL/EXEC | Requirements added |
 | 07 Execution Envelopes | Draft v1 | EXEC, AUTH/POL, EVID, DEP, PHY | Requirements added |
-| 08 Interop API Surface | Placeholder | INT, AUTH/POL, EXIT, EVID | Needs API surface |
+| 08 Interop API Surface | Draft v1 | INT, AUTH/POL, EXIT, EVID | See `ws4-interop-api/spec.md` + OpenAPI skeleton |
 | 09 Fail-Closed Profile | Draft v1 | POL, AUTH, EVID | Requirements added |
 | 10 Migration Baseline | Draft v1 | EXIT, INT, DEP, SUP, EVID | Requirements added |
 

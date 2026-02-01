@@ -143,3 +143,76 @@ Definitions (snippet):
 
 ## PHY
 - Evidence types (tbd)
+
+## Tenant Isolation (EXEC/DATA/PHY/DEP)
+- Evidence events for tenant isolation verification:
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["tenant.isolation.verify"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "target_tenant_id": { "type": "string" },
+    "check_type": { "type": "string", "enum": ["network", "storage", "identity"] },
+    "outcome": { "enum": ["success", "refusal"] },
+    "refusal_reason": { "type": "string" }
+  },
+  "required": ["event_type", "timestamp", "tenant_id", "check_type", "outcome"]
+}
+```
+
+## Execution Envelopes (EXEC/SUP/EVID/DEP)
+- Evidence events for envelope lifecycle:
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["workload.envelope.create", "workload.envelope.start", "workload.envelope.stop", "workload.envelope.destroy"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "workload_id": { "type": "string" },
+    "tenant_id": { "type": "string" },
+    "envelope_type": { "type": "string", "enum": ["container", "vm"] },
+    "attestation_ref": { "type": "string" },
+    "outcome": { "enum": ["success", "refusal"] },
+    "refusal_reason": { "type": "string" }
+  },
+  "required": ["event_type", "timestamp", "workload_id", "envelope_type", "outcome"]
+}
+```
+
+## Audit Chain (EVID)
+- Evidence events for chain reconciliation/tamper detection:
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["chain.reconciliation"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "chain_id": { "type": "string" },
+    "gap_detected": { "type": "boolean" },
+    "tamper_detected": { "type": "boolean" },
+    "details": { "type": "string" }
+  },
+  "required": ["event_type", "timestamp", "chain_id"]
+}
+```
+
+## Migration (EXIT/INT/DEP/SUP/EVID)
+- Evidence events for migration:
+```json
+{
+  "type": "object",
+  "properties": {
+    "event_type": { "enum": ["migration.export", "migration.import"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "workload_id": { "type": "string" },
+    "tenant_id": { "type": "string" },
+    "artifact_manifest_hash": { "type": "string" },
+    "integrity_verified": { "type": "boolean" },
+    "outcome": { "enum": ["success", "refusal"] },
+    "refusal_reason": { "type": "string" }
+  },
+  "required": ["event_type", "timestamp", "workload_id", "artifact_manifest_hash", "outcome"]
+}
+```
