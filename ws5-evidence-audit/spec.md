@@ -3,6 +3,12 @@
 ## Objectives
 - Define the evidence event model, audit chain, and query/export interfaces.
 
+## Invariant families (refs)
+- EVID (schema, integrity, completeness, reconciliation)
+- AUTH/POL (context in evidence)
+- DATA (where evidence resides)
+- CRP ties: EVID-02/05 for partition buffering/reconciliation
+
 ## Sections to draft
 - Event catalog and schemas.
 - Hash chaining and integrity proofs.
