@@ -21,6 +21,7 @@
 - Required operations: PUT, GET, DELETE, LIST, multipart upload, versioning, object lock/immutability.
 - Optional/clarify: presigned URLs (if supported, must enforce metadata requirements).
 - Error semantics: explicit, deterministic errors when governance metadata is missing/invalid.
+  - On metadata failure: 400-style error with reason (missing/invalid field) and a machine-parsable code.
 
 ### Governance metadata schema
 - Fields (required on write):
@@ -39,6 +40,50 @@
   - `x-eosc-integrity`: must specify supported hash algo (e.g., sha256, sha512); value must match computed hash on write.
   - `x-eosc-classification`: must be from declared vocabulary published by provider; vocabulary must be documented.
   - `x-eosc-evidence-pointer`: must be a resolvable URI within provider’s evidence/audit system; clients may store multiple pointers via repeat header/user-metadata if needed.
+
+### Metadata schema example (JSON)
+```json
+{
+  "x-eosc-jurisdiction": "FR",
+  "x-eosc-retention-ttl": "P30D",
+  "x-eosc-integrity": "sha256:abcd1234...",
+  "x-eosc-classification": "restricted",
+  "x-eosc-evidence-pointer": "eosc://evidence/123e4567"
+}
+```
+
+### Example: PUT with required governance headers
+```
+PUT /bucket/object
+x-eosc-jurisdiction: FR
+x-eosc-retention-ttl: P30D
+x-eosc-integrity: sha256:abcd1234...
+x-eosc-classification: restricted
+x-eosc-evidence-pointer: eosc://evidence/123e4567
+Content-Length: ...
+Content-Type: application/octet-stream
+```
+
+### Metadata schema (JSON Schema snippet)
+```json
+{
+  "type": "object",
+  "properties": {
+    "x-eosc-jurisdiction": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "x-eosc-retention-ttl": { "type": "string" },
+    "x-eosc-integrity": { "type": "string", "pattern": "^[a-z0-9]+:[A-Fa-f0-9]+$" },
+    "x-eosc-classification": { "type": "string" },
+    "x-eosc-evidence-pointer": { "type": "string" }
+  },
+  "required": [
+    "x-eosc-jurisdiction",
+    "x-eosc-retention-ttl",
+    "x-eosc-integrity",
+    "x-eosc-classification",
+    "x-eosc-evidence-pointer"
+  ]
+}
+```
 
 ### Immutability and retention
 - Object lock/immutability MUST be supported for governed objects; delete/overwrite refused when lock active.
