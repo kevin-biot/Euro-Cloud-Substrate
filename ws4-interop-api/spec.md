@@ -35,6 +35,7 @@
 - Read-only: `GET /events`, `GET /events/{id}`.
 - Filtering: by `tenant`, time range, `event_type`, `outcome`.
 - Must preserve ordering/integrity guarantees (aligned with WS5).
+- Pagination: cursor-based recommended (`?cursor=...&limit=...`); include `next_cursor` if more results. Default limit 100; max 1000.
 
 ## Authentication & authorization
 - Authn:
@@ -51,6 +52,7 @@
 { "code": "ECS_...", "message": "...", "evidence_pointer": "..." }
 ```
 - Refusals include evidence pointer for audit.
+- Providers SHOULD implement rate limiting and use standard headers (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`); 429 with error body on limit exceeded.
 
 ## Versioning
 - Path-based versioning: e.g., `/v1/tenants`, `/v1/workloads`.

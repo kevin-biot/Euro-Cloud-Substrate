@@ -2,9 +2,9 @@
 
 | Component | Status | Invariant refs | Notes |
 |---|---|---|---|
-| 01 Open Landing Zone | Draft | AUTH, POL, EXEC, DATA, EVID, PHY | Pass-1 requirements added |
+| 01 Open Landing Zone | Draft v1 | AUTH, POL, EXEC, DATA, EVID, PHY | Pass-2 requirements added |
 | 02 Tenant Isolation | Placeholder | EXEC, DATA, DEP, PHY, EVID | Needs detailed requirements |
-| 03 EOSC | Placeholder | DATA, EVID, SUP, INT/EXIT | Needs detailed requirements |
+| 03 EOSC | Draft v1 | DATA, EVID, SUP, INT/EXIT | Near-implementable spec |
 | 04 Policy & Authority | Placeholder | AUTH, POL, EVID | Needs detailed requirements |
 | 05 Evidence Event Model | Placeholder | EVID, AUTH/POL, EXEC | Needs schemas |
 | 06 Audit Chain Baseline | Placeholder | EVID, AUTH/POL/EXEC | Needs chain model |

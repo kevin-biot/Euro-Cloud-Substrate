@@ -10,3 +10,7 @@ All notable changes to this project will be documented here.
 - Core10 and workstreams linked to invariant families/IDs.
 - IRN crosswalk drafted; profiles guardrails defined.
 - Deliverables diagrams added; conformance model drafted.
+- EOSC (storage) spec iterated to implementable with governance metadata and evidence.
+- Regulated ML profile added (SBOM, inference/training evidence, AI Act mapping, conformance).
+- OLZ requirements expanded (tenant lifecycle, OIDC federation, network baseline).
+- Interop API skeleton added (resources, auth, errors, versioning, OpenAPI stub).

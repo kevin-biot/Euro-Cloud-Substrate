@@ -8,6 +8,11 @@ paths:
   /tenants:
     post:
       summary: Create tenant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tenant'
       responses:
         '201':
           description: Created
@@ -20,18 +25,43 @@ paths:
           required: true
           schema: { type: string }
       responses:
-        '200': { description: OK }
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
     patch:
       summary: Update tenant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tenant'
       responses:
         '200': { description: Updated }
     delete:
       summary: Delete tenant
       responses:
         '204': { description: Deleted }
+  /tenants/{id}/suspend:
+    post:
+      summary: Suspend tenant
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '202': { description: Suspension initiated }
   /workloads:
     post:
       summary: Create workload
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workload'
       responses:
         '201': { description: Created }
   /workloads/{id}:
@@ -58,6 +88,12 @@ paths:
         - name: event_type
           in: query
           schema: { type: string }
+        - name: cursor
+          in: query
+          schema: { type: string }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 100, maximum: 1000 }
       responses:
         '200': { description: OK }
 components:
@@ -67,5 +103,33 @@ components:
     oidc:
       type: openIdConnect
       openIdConnectUrl: https://idp.example.com/.well-known/openid-configuration
+  schemas:
+    Tenant:
+      type: object
+      properties:
+        id: { type: string }
+        authority_binding: { type: string }
+        jurisdiction: { type: string }
+        classification_ceiling: { type: string }
+        policy_baseline: { type: string }
+        status: { type: string, enum: [active, suspended, deleted] }
+      required: [id, authority_binding, jurisdiction, policy_baseline]
+    Workload:
+      type: object
+      properties:
+        id: { type: string }
+        tenant_id: { type: string }
+        envelope_type: { type: string, enum: [container, vm] }
+        image_ref: { type: string }
+        policy_ref: { type: string }
+        status: { type: string }
+      required: [id, tenant_id, envelope_type, image_ref]
+    Error:
+      type: object
+      properties:
+        code: { type: string }
+        message: { type: string }
+        evidence_pointer: { type: string }
+      required: [code, message]
 security:
   - mtls: []
