@@ -14,3 +14,5 @@ All notable changes to this project will be documented here.
 - Regulated ML profile added (SBOM, inference/training evidence, AI Act mapping, conformance).
 - OLZ requirements expanded (tenant lifecycle, OIDC federation, network baseline).
 - Interop API skeleton added (resources, auth, errors, versioning, OpenAPI stub).
+- Core10 governance trio drafted (Policy/Authority, Evidence Model, Audit Chain).
+- Tenant isolation, execution envelopes, fail-closed, and migration baselines moved to Draft v1.
