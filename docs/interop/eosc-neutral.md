@@ -23,4 +23,4 @@ Goal: define a semi-standard, interoperable EOSC service that providers can impl
 - Additional metadata fields allowed but MUST NOT weaken required governance fields.
 
 ## Notes
-- This is a draft interop view for EOSC; align with `ws2-eosc/spec.md` for full semantics.***
+- This is a draft interop view for EOSC; align with `ws2-eosc/spec.md` for full semantics.

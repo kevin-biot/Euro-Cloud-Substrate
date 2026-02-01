@@ -22,6 +22,7 @@
 - Optional/clarify: presigned URLs (if supported, must enforce metadata requirements).
 - Error semantics: explicit, deterministic errors when governance metadata is missing/invalid.
   - On metadata failure: 400-style error with reason (missing/invalid field) and a machine-parsable code.
+  - Baseline error codes (examples): `EOSC_MISSING_JURISDICTION`, `EOSC_INVALID_RETENTION_FORMAT`, `EOSC_INTEGRITY_MISMATCH`, `EOSC_CLASSIFICATION_UNKNOWN`, `EOSC_JURISDICTION_BLOCKED`.
 
 ### Governance metadata schema
 - Fields (required on write):
@@ -35,9 +36,9 @@
 
 ### Metadata field definitions (pass 2)
 - Types are strings; validation rules:
-  - `x-eosc-jurisdiction`: must be valid ISO code; provider enforces placement accordingly.
-  - `x-eosc-retention-ttl`: must parse as ISO 8601 duration (e.g., `P30D`) or RFC 3339 timestamp; provider enforces retention/expiry.
-  - `x-eosc-integrity`: must specify supported hash algo (e.g., sha256, sha512); value must match computed hash on write.
+  - `x-eosc-jurisdiction`: must be valid ISO code; provider enforces placement accordingly. Special values MAY include `EU`, `EEA`, or a comma-separated list of allowed jurisdictions (e.g., `DE,FR`); provider must document supported values.
+  - `x-eosc-retention-ttl`: must parse as ISO 8601 duration (e.g., `P30D`) or RFC 3339 timestamp; provider enforces retention/expiry. If parseable as RFC 3339, treat as absolute; otherwise parse as duration.
+  - `x-eosc-integrity`: must specify supported hash algo; providers MUST support `sha256`; MAY support `sha384`, `sha512`, `sha3-256`; MUST reject `md5`, `sha1`. Value must match computed hash on write.
   - `x-eosc-classification`: must be from declared vocabulary published by provider; vocabulary must be documented.
   - `x-eosc-evidence-pointer`: must be a resolvable URI within provider’s evidence/audit system; clients may store multiple pointers via repeat header/user-metadata if needed.
 
