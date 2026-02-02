@@ -37,7 +37,7 @@ Standard event types for authorization, execution, refusal, escalation, policy s
     "authority_snapshot_id": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
     "context": { "type": "object" },
-    "outcome": { "enum": ["success", "refusal", "escalation"] },
+    "outcome": { "type": "string", "enum": ["accepted", "refused", "failed"] },
     "refusal_reason": { "type": "string" },
     "integrity": { "type": "string" }
   },

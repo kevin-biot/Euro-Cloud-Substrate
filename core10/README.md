@@ -1,4 +1,4 @@
-# Core 10 Components (Placeholders)
+# Core 10 Components (Draft v1)
 
 Each component will gain a spec, invariants, and a conformance outline. Invariants reference the authoritative list in `docs/invariants-v0.3.md`; no new semantics are defined here.
 

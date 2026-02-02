@@ -11,7 +11,7 @@ Minimum isolation semantics across compute, storage, network, logs, and indexes.
 - EVID (evidence of isolation controls)
 
 ## Applicable invariant IDs
-- EXEC-01/03/04/05, DATA-01/04, DEP-01/02/04, PHY-01/02, EVID-01/03/04
+- EXEC-01/02/03/04/05, DATA-01/02/04, DEP-01/02/04, PHY-01/02, EVID-01/03/04
 
 ## Evidence expectations
 - Isolation policies and enforcement logs; admission outcomes.

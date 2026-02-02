@@ -17,7 +17,7 @@ Hash-linked log requirements for compliance-critical flows.
 
 ## Requirements (draft)
 - Compliance-critical evidence MUST be hash-linked to provide tamper evidence (EVID-03).
-- Chains MUST include authority/policy/execution context from evidence events (05).
+- Chains MUST include authority/policy/execution context from evidence events (Core10-05 Evidence Event Model).
 - Chain state MUST be exportable and independently verifiable (EVID-04).
 - Retention MUST be enforced and auditable.
 - Reconciliation MUST detect gaps/tampering; detection events MUST be logged.

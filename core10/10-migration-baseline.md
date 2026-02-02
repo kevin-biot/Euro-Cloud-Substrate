@@ -11,7 +11,7 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - EVID (evidence of migration/validation)
 
 ## Applicable invariant IDs
-- EXIT-01/02/03/04, INT-01/03, DEP-01/02/04, SUP-01/02/03/04, EVID-01/04/05
+- EXIT-01/02/03/04, INT-01/03, AUTH-01, POL-01, DEP-01/02/04, SUP-01/02/03/04, EVID-01/04/05
 
 ## Evidence expectations
 - Declared exit paths and validation exercises.

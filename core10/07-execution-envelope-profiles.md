@@ -11,7 +11,7 @@ Container and VM profiles, including when stronger isolation is required.
 - CRP tie: EXEC-03/04 for partition/degradation where applicable
 
 ## Applicable invariant IDs
-- EXEC-01/02/03/04/05, AUTH-01/02/04, POL-01/02/03/04/05, EVID-01/03/04/05, DEP-01/02/04, PHY-01/02/03 (as applicable)
+- EXEC-01/02/03/04/05, AUTH-01/02/04, POL-01/02/03/04/05, EVID-01/03/04/05, DEP-01/02/04, PHY-01/02/03 (as applicable), DATA-01/02, SUP-01/04
 
 ## Evidence expectations
 - Admission/envelope selection evidence; enforcement logs.
