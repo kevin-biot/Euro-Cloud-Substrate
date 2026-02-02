@@ -3,6 +3,16 @@
 ## Intent
 Minimum portability expectations: how state, objects, and audit artifacts move provider-to-provider.
 
+## Scope and assumptions
+- Applies to provider-to-provider migrations for governed workloads and data.
+- Migration MUST preserve governance metadata, authority/policy context, and evidence chains.
+- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+
+## Definitions (draft)
+- Export package: portable bundle of workload definitions, data, governance metadata, and evidence.
+- Validation gate: checks performed before activation in the destination environment.
+- Rollback window: time-bounded ability to revert to source state with evidence.
+
 ## Invariant families (refs)
 - EXIT (exit path, validation)
 - INT (interfaces for portability)
@@ -19,7 +29,15 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - Dependency and supply-chain visibility for migrated components.
 - Evidence of state validation before/after migration.
 
-## Requirements (draft)
+## Migration phases (draft)
+1. Plan: declare exit path, dependencies, and validation checks.
+2. Export: produce portable package with integrity and evidence.
+3. Transfer: move package with verified integrity.
+4. Import: validate governance metadata and authority/policy context.
+5. Activate: only after validation gates pass; emit evidence.
+6. Rollback: if activation fails, revert with evidence.
+
+## Requirements (draft v1)
 - Workloads and data MUST be exportable with governance metadata intact (EXIT-01/02/03).
 - Export MUST include evidence of successful transfer and integrity verification (EVID-01/03/04).
 - Import MUST validate governance metadata and authority binding before activation (AUTH-01, POL-01).

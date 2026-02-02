@@ -3,6 +3,16 @@
 ## Intent
 Container and VM profiles, including when stronger isolation is required.
 
+## Scope and assumptions
+- Applies to workload admission and runtime enforcement of declared envelopes.
+- Envelope selection is policy-driven; refusal is first-class and evidenced.
+- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+
+## Definitions (draft)
+- Execution envelope: declared runtime profile (container/VM/TEE) with required controls.
+- Admission gate: decision point that validates envelope declaration against policy.
+- Attestation evidence: proof of runtime integrity (TEE/vTPM/driver manifest).
+
 ## Invariant families (refs)
 - EXEC (envelope declaration, controls)
 - AUTH/POL (admission gates)
@@ -19,7 +29,12 @@ Container and VM profiles, including when stronger isolation is required.
 - Dependency declarations for envelope-critical paths.
 - Degradation/partition behavior evidence where CRP applies.
 
-## Requirements (draft)
+## Envelope selection rules (draft)
+- Container profile is DEFAULT for low/medium risk workloads.
+- VM/TEE profile is REQUIRED for regulated/high-liability workloads or when policy mandates stronger isolation.
+- Policy MUST explicitly define triggers for VM/TEE selection (data classification, tenant tier, compliance profile).
+
+## Requirements (draft v1)
 - Workloads MUST declare an execution envelope (container, VM, or other profile) (EXEC-01).
 - Admission MUST validate envelope declaration against policy; refusals are first-class and evidenced (AUTH-01/04, POL-01/04).
 - Envelope lifecycle events (create/start/stop/destroy) MUST emit evidence (EVID-01/03).
@@ -28,13 +43,21 @@ Container and VM profiles, including when stronger isolation is required.
 
 ### Container profile (draft)
 - Runtime isolation (e.g., gVisor, Kata, or standard runc hardened with seccomp/AppArmor).
+- Mandatory controls: seccomp/apparmor or equivalent; read-only filesystem where feasible.
 - Image provenance and integrity verification (SUP-01/04).
 - Network/policy enforcement aligned with tenant isolation.
+- Evidence: admission decision, image integrity check, and policy snapshot id.
 
 ### VM profile (draft)
 - Hypervisor isolation; vTPM/TEE attestation where available.
 - Boot integrity verification; driver/firmware provenance (SUP-01/04).
 - Enforced network/policy posture consistent with tenant isolation.
+- Evidence: attestation report reference and pass/fail outcome.
+
+### TEE/Confidential profile (draft)
+- Required when policy mandates hardware-backed isolation (e.g., regulated ML or sensitive data).
+- Attestation MUST include report reference, platform type, and verification result.
+- Evidence MUST be recorded for admission and periodic re-attestation.
 
 ## Attestation flow (illustrative)
 ```mermaid
