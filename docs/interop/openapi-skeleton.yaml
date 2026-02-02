@@ -208,6 +208,4 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
 security:
-  - mtls: []
   - oidc: []
-  - apiKey: []
