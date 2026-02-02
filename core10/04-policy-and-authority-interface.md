@@ -12,6 +12,59 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 - Applies to governed actions across planes (identity/control/execution/data).
 - Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
 
+## Definitions (draft)
+- Authority binding: verifiable link between a subject and an authority scope (who can do what, when).
+- Policy snapshot: immutable, versioned policy artifact used for deterministic evaluation.
+- Decision event: evidence record of allow/refuse/escalate with authority/policy context.
+
+## Minimal interface surface (draft)
+- Policy registry:
+  - Submit policy artifact with metadata (version, hash, scope).
+  - Retrieve policy snapshot by id/hash.
+  - Deprecate/replace policy versions with an audit trail.
+- Decision interface:
+  - Evaluate governed action with inputs + policy snapshot id.
+  - Return outcome + evidence pointer + snapshot ids.
+- Evidence emission:
+  - Emit decision/refusal/escalation events with authority/policy context.
+
+## Authority binding schema (draft JSON)
+```json
+{
+  "issuer": "authority.example",
+  "subject": "tenant-123",
+  "scope": ["workload.deploy", "data.export"],
+  "valid_from": "2025-01-01T00:00:00Z",
+  "valid_to": "2026-01-01T00:00:00Z",
+  "proof": "sig-or-attestation-ref"
+}
+```
+
+## Policy snapshot schema (draft JSON)
+```json
+{
+  "policy_id": "pol-001",
+  "version": "v1.2.3",
+  "hash": "sha256:...",
+  "created_at": "2025-01-01T00:00:00Z",
+  "issuer": "policy-authority",
+  "scope": ["workload.deploy", "tenant.update"],
+  "ruleset_ref": "registry://policies/pol-001@v1.2.3"
+}
+```
+
+## Refusal reasons (draft)
+- `authority_invalid` / `authority_expired`
+- `policy_missing` / `policy_invalid` / `policy_uncertain`
+- `input_incomplete` / `scope_mismatch`
+- `evidence_unavailable` (when evidence sink is required for the action)
+
+## Decision event fields (draft)
+- `event_type`, `timestamp`, `actor`, `tenant_id`, `action`
+- `authority_snapshot_id`, `policy_snapshot_id`
+- `outcome` (accepted/refused/failed), `refusal_reason` (if refused)
+- `evidence_pointer`, `integrity` (hash/chain ref)
+
 ## Applicable invariant IDs
 - AUTH-01/02/04/05, POL-01/02/03/04/05, EVID-01/03/04
 

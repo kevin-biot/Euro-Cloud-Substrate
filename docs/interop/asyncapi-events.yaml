@@ -33,15 +33,18 @@ components:
         id: { type: string, format: uuid, description: Unique event id }
         sequence: { type: integer, description: Monotonic per-channel sequence }
         prev_hash: { type: string, description: Hash of previous envelope for chain integrity }
+        correlation_id: { type: string, description: Shared id for governed action traceability }
         tenant: { type: string }
         type: { type: string, description: Event category }
         outcome: { type: string, enum: [accepted, refused, failed] }
         occurred_at: { type: string, format: date-time }
         evidence_pointer: { type: string, description: URI/hashlink to immutable evidence }
         evidence_hash: { type: string, description: Optional hash of canonical payload/evidence }
+        monotonic_time_ns: { type: integer, description: Optional monotonic clock value for local ordering }
         payload: { type: object, description: Event-specific fields }
       required:
         - id
+        - sequence
         - tenant
         - type
         - outcome

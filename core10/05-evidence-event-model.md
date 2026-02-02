@@ -3,6 +3,16 @@
 ## Intent
 Standard event types for authorization, execution, refusal, escalation, policy snapshot, retention duty, etc.
 
+## Scope and assumptions
+- Applies to all governed actions across planes; evidence is first-class output.
+- Evidence events are exported in provider-neutral formats.
+- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+
+## Definitions (draft)
+- Evidence event: immutable record of a governed action or system state change.
+- Event envelope: minimal set of fields required for integrity, ordering, and audit.
+- Evidence pointer: URI/hashlink to immutable evidence artifact or log segment.
+
 ## Invariant families (refs)
 - EVID (evidence schema, integrity, completeness)
 - AUTH/POL (authority/policy context in events)
@@ -16,6 +26,31 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - Inclusion of authority/policy snapshot IDs and execution context.
 - Ordered, tamper-evident streams with reconciliation support.
 
+## Event envelope (draft)
+- Required fields:
+  - `id` (uuid)
+  - `event_type` (string)
+  - `occurred_at` (RFC 3339)
+  - `tenant_id`
+  - `actor` (subject or system)
+  - `outcome` (accepted/refused/failed)
+  - `evidence_pointer`
+  - `sequence` (monotonic per stream)
+- Required for governed actions:
+  - `correlation_id` (shared across all events for a governed action)
+- Optional integrity fields:
+  - `prev_hash` (hash chain)
+  - `evidence_hash` (hash of canonical payload)
+  - `monotonic_time_ns` (monotonic clock value for local ordering)
+
+## Canonical event types (draft)
+- `authority.check` / `authority.refusal`
+- `policy.evaluate` / `policy.refusal`
+- `workload.admit` / `workload.refuse` / `workload.terminate`
+- `storage.write` / `storage.read` / `storage.delete`
+- `evidence.export` / `evidence.reconcile`
+- `audit.chain.verify`
+
 ## Requirements (draft)
 - Evidence events MUST follow a canonical schema with required fields (who/what/when/why/outcome).
 - Events MUST include policy snapshot and authority context for governed actions.
@@ -28,20 +63,26 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "type": "string" },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
     "actor": { "type": "string" },
     "tenant_id": { "type": "string" },
     "resource_id": { "type": "string" },
     "action": { "type": "string" },
+    "correlation_id": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
     "context": { "type": "object" },
     "outcome": { "type": "string", "enum": ["accepted", "refused", "failed"] },
     "refusal_reason": { "type": "string" },
-    "integrity": { "type": "string" }
+    "evidence_pointer": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "prev_hash": { "type": "string" },
+    "evidence_hash": { "type": "string" },
+    "monotonic_time_ns": { "type": "integer" }
   },
-  "required": ["event_type", "timestamp", "actor", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "actor", "tenant_id", "outcome", "evidence_pointer", "sequence"]
 }
 ```
 
