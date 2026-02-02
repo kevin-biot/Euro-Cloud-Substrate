@@ -13,9 +13,9 @@ Structural view of how invariant families relate to ECS artifacts. This is not p
 | EXIT | Migration Baseline | — | RES-6.2 |
 | DEP | Dependency invariants | — | RES-2.3/2.4 |
 | SUP | Supply-chain invariants | — | RES-5.1 |
-| OPS | (planned) | — | Meta/OPS (tbd) |
+| OPS | OPS invariants (draft) | — | Meta/OPS (runbooks, drills) |
 | PHY | Connectivity invariants | CRP-6 | RES-4.4 |
 
 Notes:
 - IRN column is mechanism support, not compliance mapping.
-- OPS remains to be defined; meta/governance items stay out-of-scope for ECS.***
+- OPS invariants are drafted in `docs/invariants/ops.md`; detailed coverage mapping remains to-do. Meta/governance items stay out-of-scope for ECS.***

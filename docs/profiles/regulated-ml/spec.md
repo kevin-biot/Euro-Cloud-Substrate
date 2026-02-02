@@ -13,7 +13,7 @@
 - OPS: runbooks/drills for ML operations.
 
 ## Applicable invariant IDs
-- DATA-01/02/05, SUP-01/02/03/04, EVID-01/03/04, EXEC-01/02/05, DEP-01/02/04, AUTH-01/04, POL-01/02/04, OPS-01/02/04
+- DATA-01/02/05, SUP-01/02/03/04, EVID-01/03/04, EXEC-01/02/05, DEP-01/02/04, AUTH-01/04, POL-01/02/04, OPS-01/02/04, PHY-01/03, EXIT-01/02
 
 ## Requirements (draft)
 

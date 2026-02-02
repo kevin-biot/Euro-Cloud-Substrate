@@ -28,10 +28,42 @@ components:
   schemas:
     AuditEvent:
       type: object
-      description: Reference to evidence-catalog events.
+      description: Evidence-grade audit stream entry (aligned with WS5 evidence catalog)
+      properties:
+        id: { type: string, description: Unique event id }
+        tenant: { type: string }
+        type: { type: string, description: Audit event type/category }
+        outcome: { type: string, enum: [accepted, refused, failed] }
+        occurred_at: { type: string, format: date-time }
+        evidence_pointer: { type: string, description: URI/hash to immutable evidence }
+        evidence_hash: { type: string, description: Optional hash of event payload/evidence }
+        payload: { type: object, description: Event-specific fields (see catalog) }
+      required: [id, tenant, type, outcome, occurred_at, evidence_pointer]
     TenantEvent:
       type: object
-      description: Tenant lifecycle/bootstrap events.
+      description: Tenant lifecycle/bootstrap events with evidence linkage.
+      properties:
+        id: { type: string }
+        tenant: { type: string }
+        type: { type: string, enum: [created, updated, suspended, deleted] }
+        outcome: { type: string, enum: [accepted, refused, failed] }
+        occurred_at: { type: string, format: date-time }
+        evidence_pointer: { type: string }
+        payload:
+          type: object
+          description: Tenant snapshot (authority/policy context) at event time.
+      required: [id, tenant, type, outcome, occurred_at, evidence_pointer]
     WorkloadEvent:
       type: object
-      description: Workload/envelope lifecycle events.
+      description: Workload/envelope lifecycle events with integrity hooks.
+      properties:
+        id: { type: string }
+        tenant: { type: string }
+        type: { type: string, enum: [admitted, updated, terminated] }
+        outcome: { type: string, enum: [accepted, refused, failed] }
+        occurred_at: { type: string, format: date-time }
+        evidence_pointer: { type: string }
+        payload:
+          type: object
+          description: Envelope declaration, policy snapshot, attestation refs.
+      required: [id, tenant, type, outcome, occurred_at, evidence_pointer]
