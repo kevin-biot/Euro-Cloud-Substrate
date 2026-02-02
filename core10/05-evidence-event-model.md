@@ -26,6 +26,9 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - Inclusion of authority/policy snapshot IDs and execution context.
 - Ordered, tamper-evident streams with reconciliation support.
 
+## EU AI Act alignment (non-normative)
+- Evidence for governed actions MUST be generated contemporaneously with the action (pre-hoc), and retained for post-market monitoring and audit. Logging capability is a design-time requirement and logs must be preserved for the required retention period.
+
 ## Event envelope (draft)
 - Required fields:
   - `id` (uuid)
