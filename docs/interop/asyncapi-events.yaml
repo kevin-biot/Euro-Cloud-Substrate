@@ -26,44 +26,54 @@ channels:
           $ref: '#/components/schemas/WorkloadEvent'
 components:
   schemas:
+    EventEnvelope:
+      type: object
+      description: Minimal audit-ready envelope with integrity hooks
+      properties:
+        id: { type: string, format: uuid, description: Unique event id }
+        sequence: { type: integer, description: Monotonic per-channel sequence }
+        prev_hash: { type: string, description: Hash of previous envelope for chain integrity }
+        tenant: { type: string }
+        type: { type: string, description: Event category }
+        outcome: { type: string, enum: [accepted, refused, failed] }
+        occurred_at: { type: string, format: date-time }
+        evidence_pointer: { type: string, description: URI/hashlink to immutable evidence }
+        evidence_hash: { type: string, description: Optional hash of canonical payload/evidence }
+        payload: { type: object, description: Event-specific fields }
+      required:
+        - id
+        - tenant
+        - type
+        - outcome
+        - occurred_at
+        - evidence_pointer
+        - payload
     AuditEvent:
-      type: object
-      description: Evidence-grade audit stream entry (aligned with WS5 evidence catalog)
-      properties:
-        id: { type: string, description: Unique event id }
-        tenant: { type: string }
-        type: { type: string, description: Audit event type/category }
-        outcome: { type: string, enum: [accepted, refused, failed] }
-        occurred_at: { type: string, format: date-time }
-        evidence_pointer: { type: string, description: URI/hash to immutable evidence }
-        evidence_hash: { type: string, description: Optional hash of event payload/evidence }
-        payload: { type: object, description: Event-specific fields (see catalog) }
-      required: [id, tenant, type, outcome, occurred_at, evidence_pointer]
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          description: Evidence-grade audit stream entry (aligned with WS5 evidence catalog)
     TenantEvent:
-      type: object
-      description: Tenant lifecycle/bootstrap events with evidence linkage.
-      properties:
-        id: { type: string }
-        tenant: { type: string }
-        type: { type: string, enum: [created, updated, suspended, deleted] }
-        outcome: { type: string, enum: [accepted, refused, failed] }
-        occurred_at: { type: string, format: date-time }
-        evidence_pointer: { type: string }
-        payload:
-          type: object
-          description: Tenant snapshot (authority/policy context) at event time.
-      required: [id, tenant, type, outcome, occurred_at, evidence_pointer]
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [created, updated, suspended, deleted]
+            payload:
+              type: object
+              description: Tenant snapshot (authority/policy context) at event time.
+          description: Tenant lifecycle/bootstrap events with evidence linkage.
     WorkloadEvent:
-      type: object
-      description: Workload/envelope lifecycle events with integrity hooks.
-      properties:
-        id: { type: string }
-        tenant: { type: string }
-        type: { type: string, enum: [admitted, updated, terminated] }
-        outcome: { type: string, enum: [accepted, refused, failed] }
-        occurred_at: { type: string, format: date-time }
-        evidence_pointer: { type: string }
-        payload:
-          type: object
-          description: Envelope declaration, policy snapshot, attestation refs.
-      required: [id, tenant, type, outcome, occurred_at, evidence_pointer]
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            type:
+              type: string
+              enum: [admitted, updated, terminated]
+            payload:
+              type: object
+              description: Envelope declaration, policy snapshot, attestation refs.
+          description: Workload/envelope lifecycle events with integrity hooks.
