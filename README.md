@@ -11,6 +11,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `CALL_FOR_PARTICIPATION.md`
 - Guardrails: `NON_GOALS.md`, `ANTI_CAPTURE.md`, `SECURITY.md`
 - Mappings: `docs/reg-mapping.md`, `docs/irn-mapping.md`
+- Gaia-X alignment note (draft): `docs/gaia-x/README.md`
 - Comparisons/integration: `docs/comparison.md`, `docs/integration-examples.md`
 - Compliance patterns (draft): `docs/compliance-pattern-library.md`
 - Starter tasks: `GOOD_FIRST_ISSUES.md`

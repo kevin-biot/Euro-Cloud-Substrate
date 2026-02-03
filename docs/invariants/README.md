@@ -18,3 +18,4 @@ This folder holds per-family notes. The authoritative list and statuses remain i
 ## Notes
 - No new invariants are added here; reference IDs as defined in `docs/invariants-v0.3.md`.
 - Use these for scope/evidence/ non-goals per family; conformance shape is in `docs/conformance-model.md`.
+- Data-space alignment notes: `docs/gaia-x/README.md` (non-normative).
