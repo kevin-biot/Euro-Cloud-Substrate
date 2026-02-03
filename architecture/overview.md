@@ -184,3 +184,6 @@ These archetypes map the ECS planes to common provider architectures so vendors 
 - VM-first / IaaS-centric: `architecture/archetypes/iaas-vm.md`
 - Managed platform competitor: `architecture/archetypes/managed-platform.md`
 - SlapOS (master/compute, partitions): `architecture/archetypes/slapos.md`
+
+## Compliance pattern library (draft)
+- `docs/compliance-pattern-library.md` (non-normative)

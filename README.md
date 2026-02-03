@@ -12,6 +12,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Guardrails: `NON_GOALS.md`, `ANTI_CAPTURE.md`, `SECURITY.md`
 - Mappings: `docs/reg-mapping.md`, `docs/irn-mapping.md`
 - Comparisons/integration: `docs/comparison.md`, `docs/integration-examples.md`
+- Compliance patterns (draft): `docs/compliance-pattern-library.md`
 - Starter tasks: `GOOD_FIRST_ISSUES.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
