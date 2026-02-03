@@ -153,3 +153,9 @@ Each pattern includes:
 ## Notes
 - This library is a draft reference; patterns will evolve with delegated acts and standards work.
 - Implementations SHOULD align to ECS invariants and evidence export schema.
+
+## Versioning & governance (draft)
+- **Host institutions:** DG CONNECT (policy alignment), JRC (technical stewardship), ENISA (security & integrity), optionally an EDIC.
+- **Standardisation anchors:** CEN/CENELEC, ETSI, ISO/IEC, W3C, eIDAS expert groups.
+- **Versioning model:** major versions align to new regulations; minor versions align to delegated acts; patch versions align to security/operational updates.
+- **Conformance:** each pattern includes schema validation, evidence reproducibility, security/provenance checks, and cross‑law semantic consistency.
