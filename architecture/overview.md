@@ -92,6 +92,13 @@ flowchart TB
     Profiles --> WS
 ```
 
+## Archetypes (non-normative)
+These archetypes map the ECS planes to common provider architectures so vendors can align existing stacks to ECS without prescribing a single universal design.
+
+- OpenShift/Kubernetes-based: `architecture/archetypes/openshift.md`
+- VM-first / IaaS-centric: `architecture/archetypes/iaas-vm.md`
+- Managed platform competitor: `architecture/archetypes/managed-platform.md`
+
 ## To-do
 - Add Mermaid/PlantUML diagrams for plane boundaries and flows.
 - Map Core 10 to planes.
