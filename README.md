@@ -6,6 +6,8 @@ An architectural definition project for a portable, governable, European cloud s
 - Invariants: `docs/invariants-v0.3.md` (authoritative), coverage: `docs/invariant-coverage.md`
 - Profiles: `crp/` (Crisis Resilience Profile), `docs/profiles/README.md`
 - Conformance shape: `docs/conformance-model.md`
+- Conformance checklists (draft): `docs/conformance/README.md`
+- Minimal metrics (draft): `docs/metrics.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
 - Core 10: `core10/`
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `CALL_FOR_PARTICIPATION.md`
