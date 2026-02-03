@@ -267,6 +267,43 @@ Each pattern includes:
 
 ---
 
+## Pattern 8 — Usage Receipt Pattern (URP)
+**Legal norm (contextual):** Data Act access conditions; PSD3 transparency; GDPR accountability (for lawful access records).
+
+**Purpose:** Provide a neutral, evidence-grade usage record that can support billing, attribution, or revenue sharing without prescribing a business model.
+
+**Inputs:** data product id, consumer id, purpose id, policy snapshot id, consent token ref.
+
+**Outputs:** Usage receipt record.
+
+**Runtime artefact:** Receipt bound to evidence bundle for the access event.
+
+**Evidence:** Receipt included in evidence export bundles.
+
+**Applicable across:** Data Act, GDPR accountability, sectoral data-space schemes.
+
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "receipt_id": { "type": "string" },
+    "data_product_id": { "type": "string" },
+    "consumer_id": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "consent_token_ref": { "type": "string" },
+    "usage_quantity": { "type": "number" },
+    "usage_unit": { "type": "string" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["receipt_id", "data_product_id", "consumer_id", "purpose_id", "policy_snapshot_id", "occurred_at", "evidence_pointer"]
+}
+```
+
+---
+
 ## Pattern → Invariant mapping (draft)
 | Pattern | Primary invariant families | Evidence artifacts |
 |---|---|---|

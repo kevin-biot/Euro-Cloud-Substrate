@@ -57,6 +57,10 @@
 - Governed data sharing MUST include standardized metadata and exportable bundles (INT/EXIT).
 - Export packages MUST preserve classification, residency, and policy bindings.
 
+## Usage metering evidence (draft)
+- Governed data access SHOULD emit a usage receipt record suitable for attribution or billing, without prescribing pricing.
+- Usage receipts MUST be exportable as evidence bundles and tied to policy/consent references.
+
 ## Non-goals
 - No mandated encryption algorithm or KMS vendor.
 - No data governance policy beyond enforceable controls.

@@ -31,3 +31,4 @@ Provide a lightweight mapping between ECS data invariants and data-space concern
 ## Notes
 - This document is intended to help reviewers understand how ECS can serve as a technical substrate for data-space initiatives.
 - It does not assert compatibility with any single governance regime; mappings are conceptual.
+- ECS is business-model neutral but provides evidence-grade primitives that enable usage attribution and monetisation without prescribing pricing.
