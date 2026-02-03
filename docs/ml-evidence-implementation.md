@@ -51,4 +51,38 @@ These provide the minimum contract vendors can implement and deployers can reque
 ## Recommended next steps (non-normative)
 - Providers: publish evidence hooks and export packages for ML endpoints.
 - Deployers: require evidence export clauses in ML service contracts.
-- OSS communities: build adapters for common ML stacks (K8s, Kubeflow, SageMaker wrappers).
+- OSS communities: build adapters for common ML stacks (K8s, Kubeflow, model servers, managed-ML wrappers).
+
+## OSS adapter guide (draft)
+This guide outlines a practical path for open source maintainers to close the evidence gap without redesigning ML platforms.
+
+### Minimal adapter deliverables
+- **Evidence emitter**: library or sidecar that emits Core10-05 envelope events.
+- **Policy snapshot binder**: resolves and attaches policy snapshot ids at admission or inference time.
+- **Consent/purpose binder**: attaches CITP references where required.
+- **Evidence exporter**: bundles events and artifacts per `docs/evidence-export-schema.md`.
+
+### Kubernetes/OpenShift insertion points
+- **Admission webhook**: enforce policy snapshot binding and attach correlation ids.
+- **Ingress gateway / service mesh**: capture inference request/response hashes.
+- **Sidecar or model server plugin**: emit inference evidence events with model version metadata.
+- **Jobs/Pipelines**: emit training evidence events at start/checkpoint/complete.
+
+### Kubeflow / pipeline tooling
+- **Pipeline step wrappers**: compute dataset hashes, capture code version, record hyperparameter hashes.
+- **Artifact store hooks**: emit checkpoint evidence on artifact write.
+- **Metadata store sync**: map pipeline metadata to evidence export bundles.
+
+### Managed ML wrappers (client-side)
+- **Request proxy**: client wrapper that captures input/context hashes and binds policy snapshot id.
+- **Response recorder**: records model output refs and outcome evidence.
+- **Contract helper**: attaches usage receipts for governed access.
+
+### Suggested initial artifacts
+- Reference adapter for K8s model servers (e.g., Triton, TF Serving).
+- Kubeflow pipeline component templates with evidence emission.
+- Exporter tool that generates evidence bundles from logs + metadata stores.
+
+### Messaging to vendors and customers
+- This is not a replacement for vendor features; it is a **minimal evidence substrate** customers can demand.
+- The goal is portability: evidence should be exportable and verifiable across providers.
