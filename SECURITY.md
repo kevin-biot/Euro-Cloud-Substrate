@@ -13,6 +13,6 @@
 - **Governance metadata:** EOSC ensures jurisdiction/retention/integrity travel with data.
 
 ## Vulnerability reporting
-Report suspected security issues privately to: security@lane2.tech
+Report suspected security issues via GitHub Security Advisories (preferred for private disclosure). If you cannot use advisories, open a GitHub issue and label it `security`.
 
 Please include: affected components/files, reproduction steps, and impact assessment if known. We will acknowledge receipt and coordinate a fix/response.
