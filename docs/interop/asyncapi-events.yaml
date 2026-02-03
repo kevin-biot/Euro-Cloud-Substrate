@@ -24,6 +24,20 @@ channels:
         name: WorkloadEvent
         payload:
           $ref: '#/components/schemas/WorkloadEvent'
+  /events/ml:
+    subscribe:
+      message:
+        name: MlEvidenceEvent
+        payload:
+          oneOf:
+            - $ref: '#/components/schemas/MlInferenceEvent'
+            - $ref: '#/components/schemas/MlTrainingEvent'
+  /events/no-control:
+    subscribe:
+      message:
+        name: NoControlEvent
+        payload:
+          $ref: '#/components/schemas/NoControlEvent'
 components:
   schemas:
     EventEnvelope:
@@ -31,25 +45,36 @@ components:
       description: Minimal audit-ready envelope with integrity hooks
       properties:
         id: { type: string, format: uuid, description: Unique event id }
-        sequence: { type: integer, description: Monotonic per-channel sequence }
-        prev_hash: { type: string, description: Hash of previous envelope for chain integrity }
-        correlation_id: { type: string, description: Shared id for governed action traceability }
-        tenant: { type: string }
-        type: { type: string, description: Event category }
-        outcome: { type: string, enum: [accepted, refused, failed] }
         occurred_at: { type: string, format: date-time }
+        tenant_id: { type: string }
+        actor: { type: string }
+        actor_details:
+          type: object
+          properties:
+            id: { type: string }
+            type: { type: string, enum: [human, service, delegate] }
+            org_id: { type: string }
+            credential_ref: { type: string }
+            jurisdiction: { type: string }
+        event_type: { type: string, description: Event category }
+        correlation_id: { type: string, description: Shared id for governed action traceability }
+        sequence: { type: integer, description: Monotonic per-channel sequence }
+        chain_id: { type: string, description: Evidence chain identifier }
+        event_hash: { type: string, description: Hash of canonical event payload }
+        prev_hash: { type: string, description: Hash of previous envelope for chain integrity }
+        outcome: { type: string, enum: [accepted, refused, failed] }
         evidence_pointer: { type: string, description: URI/hashlink to immutable evidence }
         evidence_hash: { type: string, description: Optional hash of canonical payload/evidence }
         monotonic_time_ns: { type: integer, description: Optional monotonic clock value for local ordering }
         payload: { type: object, description: Event-specific fields }
       required:
         - id
-        - sequence
-        - tenant
-        - type
-        - outcome
         - occurred_at
+        - tenant_id
+        - event_type
+        - outcome
         - evidence_pointer
+        - sequence
         - payload
     AuditEvent:
       allOf:
@@ -61,7 +86,7 @@ components:
         - $ref: '#/components/schemas/EventEnvelope'
         - type: object
           properties:
-            type:
+            event_type:
               type: string
               enum: [created, updated, suspended, deleted]
             payload:
@@ -73,10 +98,71 @@ components:
         - $ref: '#/components/schemas/EventEnvelope'
         - type: object
           properties:
-            type:
+            event_type:
               type: string
               enum: [admitted, updated, terminated]
             payload:
               type: object
               description: Envelope declaration, policy snapshot, attestation refs.
           description: Workload/envelope lifecycle events with integrity hooks.
+    MlInferenceEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            event_type:
+              type: string
+              enum: [ml.inference]
+            payload:
+              type: object
+              properties:
+                model_id: { type: string }
+                model_sbom_ref: { type: string }
+                input_hash: { type: string }
+                context_hash: { type: string }
+                hash_profile_id: { type: string }
+                output_ref: { type: string }
+                authority_snapshot_id: { type: string }
+                policy_snapshot_id: { type: string }
+          description: ML inference evidence event with hash profile guidance.
+    MlTrainingEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            event_type:
+              type: string
+              enum: [ml.training.start, ml.training.checkpoint, ml.training.complete]
+            payload:
+              type: object
+              properties:
+                training_run_id: { type: string }
+                model_id: { type: string }
+                dataset_refs:
+                  type: array
+                  items: { type: string }
+                code_version: { type: string }
+                hyperparameters_hash: { type: string }
+                hash_profile_id: { type: string }
+                checkpoint_hash: { type: string }
+                authority_snapshot_id: { type: string }
+                policy_snapshot_id: { type: string }
+          description: ML training evidence event with hash profile guidance.
+    NoControlEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            event_type:
+              type: string
+              enum: [authority.graph.publish, key.custody.declare, controlplane.ownership.declare, telemetry.path.audit]
+            payload:
+              type: object
+              properties:
+                subject_id: { type: string }
+                artifact_type:
+                  type: string
+                  enum: [authority_graph, key_custody_model, controlplane_ownership, telemetry_egress_map]
+                artifact_ref: { type: string }
+                artifact_hash: { type: string }
+          description: No-control profile proof event with attached artifact references.

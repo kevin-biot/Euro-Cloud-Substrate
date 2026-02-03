@@ -52,7 +52,7 @@ ECS defines:
 These provide the minimum contract vendors can implement and deployers can request.
 
 ## Hashing profile guidance (draft)
-Hashes are only portable if their canonicalization rules are explicit. Providers SHOULD emit a `hash_profile_id` (e.g., `ecs-hash-v1`) and document what is included/excluded, how PII is handled, and how hashes are recomputed.
+Hashes are only portable if their canonicalization rules are explicit. Providers SHOULD emit a `hash_profile_id` (e.g., `ecs-hash-v1`) and document what is included/excluded, how PII is handled, and how hashes are recomputed. See `docs/hash-profiles.md`.
 
 ## Recommended next steps (non-normative)
 - Providers: publish evidence hooks and export packages for ML endpoints.

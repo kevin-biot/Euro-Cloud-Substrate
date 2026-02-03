@@ -108,6 +108,7 @@ AI/agent workloads MAY include an extension object:
     "model_sbom_ref": "eosc://sbom/model-001",
     "input_hash": "sha256:...",
     "context_hash": "sha256:...",
+    "hash_profile_id": "ecs-hash-v1",
     "output_ref": "eosc://output/obj-123"
   }
 }
@@ -158,3 +159,6 @@ Evidence bundles SHOULD include storage class artifacts when access or export cr
 - Deterministic recomputation of `bundle_hash` from event hashes.
 - Chain continuity validation (`prev_hash`, sequence).
 - Artifact resolution and integrity verification.
+
+## Verifier responsibilities (draft)
+Independent verifiers SHOULD validate evidence bundles using the checks in `docs/verifier-responsibilities.md`.

@@ -295,7 +295,7 @@ Definitions (snippet):
   }
 }
 ```
-Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles. `hash_profile_id` SHOULD identify the canonicalization/hash rules used. See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
+Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles. `hash_profile_id` SHOULD identify the canonicalization/hash rules used (see `docs/hash-profiles.md`). See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
 
 - Evidence events for ML inference (EVID/SUP/EXEC example):
 ```json
@@ -325,7 +325,7 @@ Evidence for ML inference is required for regulatory traceability (e.g., decisio
 }
 ```
 
-Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape. `hash_profile_id` SHOULD identify the canonicalization/hash rules used for dataset and checkpoint hashes. See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
+Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape. `hash_profile_id` SHOULD identify the canonicalization/hash rules used for dataset and checkpoint hashes (see `docs/hash-profiles.md`). See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
 
 - Evidence events for ML training (EVID/SUP/EXEC example):
 ```json

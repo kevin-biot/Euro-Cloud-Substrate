@@ -158,7 +158,12 @@ paths:
             type: string
             description: Optional filter (e.g., data.usage.receipt)
       responses:
-        '200': { description: OK }
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvidenceEventList'
         '401': { $ref: '#/components/responses/ErrorResponse' }
         '403': { $ref: '#/components/responses/ErrorResponse' }
         '429': { $ref: '#/components/responses/ErrorResponse' }
@@ -175,6 +180,84 @@ components:
       in: header
       name: X-API-Key
   schemas:
+    EvidenceEventList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceEvent'
+        next_cursor: { type: string }
+    EvidenceEvent:
+      type: object
+      description: Core10-05 evidence envelope with event-specific payload.
+      properties:
+        id: { type: string, format: uuid }
+        event_type: { type: string }
+        occurred_at: { type: string, format: date-time }
+        tenant_id: { type: string }
+        actor: { type: string }
+        actor_details:
+          $ref: '#/components/schemas/ActorDetails'
+        correlation_id: { type: string }
+        sequence: { type: integer }
+        outcome: { type: string, enum: [accepted, refused, failed] }
+        evidence_pointer: { type: string }
+        chain_id: { type: string }
+        event_hash: { type: string }
+        prev_hash: { type: string }
+        evidence_hash: { type: string }
+        monotonic_time_ns: { type: integer }
+        payload:
+          description: Event-specific fields (ML, NCP, etc.).
+          anyOf:
+            - $ref: '#/components/schemas/MlInferencePayload'
+            - $ref: '#/components/schemas/MlTrainingPayload'
+            - $ref: '#/components/schemas/NoControlProofPayload'
+            - type: object
+      required: [id, event_type, occurred_at, tenant_id, outcome, evidence_pointer, sequence]
+    ActorDetails:
+      type: object
+      properties:
+        id: { type: string }
+        type: { type: string, enum: [human, service, delegate] }
+        org_id: { type: string }
+        credential_ref: { type: string }
+        jurisdiction: { type: string }
+    MlInferencePayload:
+      type: object
+      properties:
+        model_id: { type: string }
+        model_sbom_ref: { type: string }
+        input_hash: { type: string }
+        context_hash: { type: string }
+        hash_profile_id: { type: string }
+        output_ref: { type: string }
+        authority_snapshot_id: { type: string }
+        policy_snapshot_id: { type: string }
+    MlTrainingPayload:
+      type: object
+      properties:
+        training_run_id: { type: string }
+        model_id: { type: string }
+        dataset_refs:
+          type: array
+          items: { type: string }
+        code_version: { type: string }
+        hyperparameters_hash: { type: string }
+        hash_profile_id: { type: string }
+        checkpoint_hash: { type: string }
+        authority_snapshot_id: { type: string }
+        policy_snapshot_id: { type: string }
+    NoControlProofPayload:
+      type: object
+      properties:
+        subject_id: { type: string }
+        artifact_type:
+          type: string
+          enum: [authority_graph, key_custody_model, controlplane_ownership, telemetry_egress_map]
+        artifact_ref: { type: string }
+        artifact_hash: { type: string }
     Tenant:
       type: object
       properties:
