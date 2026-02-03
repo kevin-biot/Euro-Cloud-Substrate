@@ -15,7 +15,7 @@ This revision adds three concrete elements requested by early reviewers:
 
 This document remains intentionally non-implementational. Its goal is to define the execution contract that enables interoperability, portability, and governance-by-design across European cloud providers.
 
-For regulatory context and how ECS primitives map to EU obligations, see `docs/reg-mapping.md`.
+For regulatory context and how ECS primitives map to EU obligations, see `docs/reg-mapping.md`. For the French IRN “what” versus ECS “how” crosswalk, see `docs/irn-mapping.md`.
 
 ---
 
