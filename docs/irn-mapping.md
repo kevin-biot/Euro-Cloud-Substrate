@@ -4,6 +4,17 @@
 **Purpose:** map the IRN grid (“what”) to ECS (“how” via invariants and evidence).  
 **Non-goals:** does not reproduce IRN scoring; no compliance scoring. Links IRN criteria to ECS controls/invariants and evidence.
 
+## Context (IRN)
+The IRN (Indice de Résilience Numérique) is an open, public assessment grid led by aDRI (association loi 1901) to measure digital dependency and resilience. It applies a multi‑criteria method across eight dimensions and produces comparable scores (0–100 per dimension) to help organizations identify vulnerabilities and regain control of their digital infrastructure. The methodology and referential are published as open, auditable artifacts. IRN is a “what” framework for executive scoring and decision‑making, while ECS provides a “how” layer: enforceable controls, evidence primitives, and conformance‑grade mechanisms.
+
+Reference sites (non‑normative):
+- https://thedigitalresilience.org
+- https://resiliencenumerique.com
+
+## Why this mapping exists
+- IRN highlights **risk areas** and dependencies; ECS defines **technical controls and evidence** to reduce those risks.
+- The crosswalk is intended for **mechanism alignment**, not scoring or certification.
+
 ## How to read this
 - **IRN criterion:** IRN matrix item (e.g., Meta-1, RES-2.2).
 - **ECS invariant families:** v0.3 taxonomy (AUTH/POL/EXEC/DATA/EVID/INT/EXIT/DEP/SUP/OPS/PHY).
