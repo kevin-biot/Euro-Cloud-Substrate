@@ -15,35 +15,35 @@ See `architecture/control-plane.md` for control-plane capability definitions (po
 ## Conceptual diagram (Mermaid)
 ```mermaid
 flowchart TB
-    subgraph A[Plane A: Authority & Identity]
-      A1[Org/Tenant/Project Identity]
-      A2[Authority Binding (Human/Institutional)]
-      A3[Decision Rights]
+    subgraph A["Plane A: Authority & Identity"]
+      A1["Org/Tenant/Project Identity"]
+      A2["Authority Binding (Human/Institutional)"]
+      A3["Decision Rights"]
     end
 
-    subgraph B[Plane B: Control Plane / Landing Zone]
-      B1[Network & Egress Baseline]
-      B2[Policy Enforcement & Refusal]
-      B3[Audit & Evidence Emission]
-      B4[Deterministic Routing]
+    subgraph B["Plane B: Control Plane / Landing Zone"]
+      B1["Network & Egress Baseline"]
+      B2["Policy Enforcement & Refusal"]
+      B3["Audit & Evidence Emission"]
+      B4["Deterministic Routing"]
     end
 
-    subgraph C[Plane C: Execution Envelopes]
-      C1[Kubernetes Envelope]
-      C2[VM-class Envelope]
-      C3[Lifecycle Boundaries]
+    subgraph C["Plane C: Execution Envelopes"]
+      C1["Kubernetes Envelope"]
+      C2["VM-class Envelope"]
+      C3["Lifecycle Boundaries"]
     end
 
-    subgraph D[Plane D: Data & Evidence Substrate]
-      D1[EOSC Object Storage]
-      D2[Governance Metadata]
-      D3[Immutable Evidence Chains]
+    subgraph D["Plane D: Data & Evidence Substrate"]
+      D1["EOSC Object Storage"]
+      D2["Governance Metadata"]
+      D3["Immutable Evidence Chains"]
     end
 
-    subgraph E[Plane E: Interop & Portability]
-      E1[Interop API Surface]
-      E2[Export/Import Jobs]
-      E3[Migration Validation]
+    subgraph E["Plane E: Interop & Portability"]
+      E1["Interop API Surface"]
+      E2["Export/Import Jobs"]
+      E3["Migration Validation"]
     end
 
     A -->|Authority check| B
