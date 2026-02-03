@@ -49,6 +49,7 @@ Minimum isolation semantics across compute, storage, network, logs, and indexes.
 - All cross-tenant requests MUST emit evidence (allow/refuse) with authority/policy snapshot ids.
 
 ## Conformance outline (draft v1)
+- Declare selected evidence profile for tenant isolation evidence.
 - Verify tenant A cannot access tenant B resources without explicit authorization; refusals are evidenced.
 - Test network segmentation blocks cross-tenant traffic by default; authorized flows are evidenced.
 - Validate storage/log boundaries; access respects tenant scope and is evidenced.

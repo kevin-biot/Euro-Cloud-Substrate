@@ -88,6 +88,7 @@ sequenceDiagram
 ```
 
 ## Conformance outline (draft)
+- Declare selected evidence profile for execution envelope evidence.
 - Verify envelope declaration is required for workload admission.
 - Test admission refusal on policy violation with evidence.
 - Validate lifecycle evidence events.

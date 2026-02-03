@@ -52,6 +52,7 @@ Define conditions that must block execution for compliance-critical flows.
 - Policy validation failure: deny all governed actions until valid policy restored; evidence for policy integrity failure and subsequent refusals.
 
 ## Conformance outline (draft)
+- Declare selected evidence profile for fail-closed refusal evidence.
 - Test fail-closed behavior on each trigger condition.
 - Verify refusal evidence includes context and reason.
 - Validate exception workflow produces time-bounded approval evidence.

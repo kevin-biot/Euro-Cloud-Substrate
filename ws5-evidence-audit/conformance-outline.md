@@ -1,5 +1,9 @@
 # WS5 Conformance Outline (Draft)
 
+## Evidence profile selection
+- Declare `evidence_profile_id` and default `hash_profile_id` in export manifests.
+- Validate emitted events and verifier checks against the selected evidence profile.
+
 ## Event schema and completeness
 - Validate required fields (who/what/when/why/outcome, policy snapshot, authority context) are present.
 - Ensure refusal/escalation outcomes are emitted as first-class events.

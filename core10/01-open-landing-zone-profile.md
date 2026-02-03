@@ -70,6 +70,7 @@ OLZ‑EU is intended as a **provider‑agnostic landing zone contract** that can
 - Evidence events MUST include authority and policy snapshot ids and be integrity-protected where required (EVID-01/03/04).
 
 ## Conformance outline (draft v1)
+- Declare selected evidence profile for OLZ evidence outputs and bundle exports.
 - Verify authority binding validation and refusal evidence on invalid/expired bindings.
 - Verify policy baseline validation and default-deny enforcement prior to workload admission.
 - Test admission gate decisions with evidence pointers for allow/refuse outcomes.

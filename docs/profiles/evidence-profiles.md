@@ -3,6 +3,15 @@
 ## Intent
 Define profile-level evidence requirements without duplicating invariant semantics. Profiles constrain required fields, event families, hash profiles, and verifier checks.
 
+## Profile identifiers (draft)
+Export bundles SHOULD declare one of the following `evidence_profile_id` values:
+- `ecs-evidence-baseline`
+- `ecs-evidence-admissible`
+- `ecs-evidence-ncp`
+- `ecs-evidence-regulated-ml`
+
+Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitted (see `docs/hash-profiles.md`).
+
 ## Baseline profile
 **Scope:** default evidence envelope for governed actions.
 

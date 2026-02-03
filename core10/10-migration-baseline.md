@@ -91,6 +91,7 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 ```
 
 ## Conformance outline (draft)
+- Declare selected evidence profile for export/import evidence bundles.
 - Verify export includes required artifacts and governance metadata.
 - Test import validation rejects on integrity/policy failure.
 - Validate rollback capability with evidence.

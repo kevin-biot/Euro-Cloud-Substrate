@@ -27,6 +27,8 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - Ordered, tamper-evident streams with reconciliation support.
 - Export bundles MUST follow `docs/evidence-export-schema.md`.
 
+Core10-05 defines the canonical event envelope and is profile-agnostic. Additional integrity, chaining, and domain-specific requirements are applied via Evidence Profiles (`docs/profiles/evidence-profiles.md`). Implementers MUST select an evidence profile and ensure emitted events satisfy both Core10-05 and the selected profile.
+
 ## Evidence pointer contract (draft)
 Evidence pointers MUST be trustworthy, not just present:
 - **Immutability:** pointer resolves to content‑addressed artifacts (hash‑based).
@@ -118,6 +120,7 @@ For legal admissibility or subpoena‑resilience, providers SHOULD emit:
 ```
 
 ## Conformance outline (draft)
+- Declare the selected evidence profile and validate events against its requirements.
 - Validate required fields and inclusion of authority/policy context for governed events.
 - Verify ordering/tamper evidence (e.g., hash chaining) and reconciliation behavior.
 - Confirm exportability and integrity of exported evidence.

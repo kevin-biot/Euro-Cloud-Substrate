@@ -124,6 +124,7 @@ spec:
 Examples are illustrative; any policy engine may be used if deterministic and auditable.
 
 ## Conformance outline (draft)
+- Declare selected evidence profile for policy/authority decision evidence.
 - Verify policy artifacts are versioned and referenced in decisions/refusals.
 - Confirm authority checks occur before governed actions; refusals are logged with evidence.
 - Test exception workflow: explicit approval with time bound and evidence; ensure defaults fail closed.

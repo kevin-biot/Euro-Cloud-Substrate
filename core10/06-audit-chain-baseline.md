@@ -74,6 +74,7 @@ Hash-linked log requirements for compliance-critical flows.
   4. Resolve evidence pointers for selected events and validate evidence hashes.
 
 ## Conformance outline (draft)
+- Declare the selected evidence profile and confirm chain requirements align with it.
 - Validate hash chaining over compliance-critical events; detect tampering on replay.
 - Verify inclusion of context (authority/policy/execution) in chain records.
 - Test export and independent verification of chain segments.

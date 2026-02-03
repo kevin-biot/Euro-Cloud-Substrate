@@ -56,6 +56,7 @@ S3-compatible surface with governance metadata requirements for portability and 
 - Evidence pointers MUST be generated for compliance-relevant objects/operations.
 
 ## Conformance outline (draft)
+- Declare selected evidence profile for EOSC evidence exports.
 - PUT without required governance headers MUST be refused with evidence.
 - PUT/GET/HEAD MUST round-trip governance metadata and integrity hash.
 - Retention enforcement MUST block early deletion and log refusal evidence.

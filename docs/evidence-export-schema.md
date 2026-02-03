@@ -28,6 +28,8 @@ An export package MUST include:
   "created_at": "2025-01-01T00:00:00Z",
   "provider_id": "provider-A",
   "tenant_id": "tenant-123",
+  "evidence_profile_id": "ecs-evidence-baseline",
+  "hash_profile_id": "ecs-hash-v1",
   "scope": {
     "from_sequence": 100,
     "to_sequence": 200
@@ -54,6 +56,7 @@ An export package MUST include:
 - Evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions).
 - Outcome values MUST be `accepted`, `refused`, or `failed`.
 - Evidence events MUST reference relevant artifacts (policy snapshot, authority binding, consent token, duty token, corridor proof, risk rubric) when applicable.
+- Export manifests MUST declare `evidence_profile_id` and SHOULD declare a default `hash_profile_id` when hashes are used (see `docs/profiles/evidence-profiles.md`).
 
 ## Evidence pointer contract (normative)
 Evidence pointers MUST be trustworthy, not just present:

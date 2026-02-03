@@ -16,9 +16,11 @@ Scope: define how ECS conformance is expressed without scoring or certification.
 - Declarative artifacts (policies, profiles, dependency declarations, residency boundaries).
 - Operational evidence (logs/events per IALP/WS5, audit chains).
 - Tests/exercises (drills, fail-closed refusals, partition scenarios) with captured evidence.
+- Evidence bundles annotate `evidence_profile_id` and `hash_profile_id` when applicable.
 
 ## Claims
-- A conformance claim specifies: scope, invariants included/excluded (with rationale), evidence locations/ids, and date/version of policies used.
+- A conformance claim specifies: scope, invariants included/excluded (with rationale), evidence locations/ids, date/version of policies used, and the selected evidence profile.
+- Evidence profile selection (e.g., baseline, admissible, NCP, regulated‑ML) constrains required fields, hash profile ids, and verifier checks (see `docs/profiles/evidence-profiles.md`).
 - Profiles (e.g., CRP) should reference invariant IDs to indicate their required subset.
 
 ## Out of scope

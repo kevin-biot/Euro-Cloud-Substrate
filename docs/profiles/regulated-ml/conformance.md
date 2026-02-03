@@ -3,6 +3,7 @@
 Conformance is evidence-driven. No scoring/certification.
 
 ## Criteria (draft)
+- Declared evidence profile: `ecs-evidence-regulated-ml`, with `hash_profile_id` included in ML evidence events.
 - SBOM/provenance: Model artifacts include SBOM (e.g., CycloneDX) with base model, training data identifiers, and code version.
 - Training evidence: Training runs record dataset hashes/IDs, hyperparameters, checkpoints with integrity and residency evidence.
 - Inference envelope: Inference workloads declare accelerator envelope; isolation/attestation evidence captured.
