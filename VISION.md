@@ -17,6 +17,11 @@ This document remains intentionally non-implementational. Its goal is to define 
 
 For regulatory context and how ECS primitives map to EU obligations, see `docs/reg-mapping.md`. For the French IRN “what” versus ECS “how” crosswalk, see `docs/irn-mapping.md`.
 
+### External context (aDRI)
+aDRI is a non-profit organization founded to promote technological independence and digital sovereignty for European companies. Its mission is to provide free, transparent, and scientifically rigorous assessment tools to help organizations identify their vulnerabilities and regain control over their digital infrastructure.
+
+Website: https://thedigitalresilience.org
+
 ---
 
 ## 2. Conceptual Architecture (Textual Diagram)
