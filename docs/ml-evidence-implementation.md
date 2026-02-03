@@ -128,6 +128,14 @@ An open‑source SDK to standardize evidence emission across ML stacks.
 - Package and export bundles per `docs/evidence-export-schema.md`.
 - Support optional chain anchoring to qualified archive services (evidence admissibility).
 
+### Emitter configuration (example)
+```json
+{
+  "evidence_profile_id": "ecs-evidence-regulated-ml",
+  "hash_profile_id": "ecs-hash-v1"
+}
+```
+
 ### SDK interfaces (sketch)
 ```json
 {

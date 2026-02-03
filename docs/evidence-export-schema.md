@@ -34,6 +34,7 @@ An export package MUST include:
     "from_sequence": 100,
     "to_sequence": 200
   },
+  "chain_id": "chain-001",
   "chain_segment_ref": "eosc://evidence/chain/seg-001",
   "bundle_hash": "sha256:...",
   "artifacts": {
@@ -48,7 +49,11 @@ An export package MUST include:
   },
   "signatures": [
     { "key_id": "key-001", "signature": "base64..." }
-  ]
+  ],
+  "trust_services": {
+    "archive_ref": "qes://archive/archive-001",
+    "anchor_interval": "P1D"
+  }
 }
 ```
 
@@ -57,6 +62,13 @@ An export package MUST include:
 - Outcome values MUST be `accepted`, `refused`, or `failed`.
 - Evidence events MUST reference relevant artifacts (policy snapshot, authority binding, consent token, duty token, corridor proof, risk rubric) when applicable.
 - Export manifests MUST declare `evidence_profile_id` and SHOULD declare a default `hash_profile_id` when hashes are used (see `docs/profiles/evidence-profiles.md`).
+
+### Procurement clause (example)
+```
+Selected evidence profile: ecs-evidence-admissible.
+Export manifests MUST include evidence_profile_id=ecs-evidence-admissible and hash_profile_id=ecs-hash-v1.
+Verifier MUST execute checks defined for the selected profile.
+```
 
 ## Evidence pointer contract (normative)
 Evidence pointers MUST be trustworthy, not just present:

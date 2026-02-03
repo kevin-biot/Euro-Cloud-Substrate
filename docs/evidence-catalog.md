@@ -16,6 +16,10 @@ This catalog lists event families and shapes; Evidence Profiles determine which 
     "occurred_at": { "type": "string", "format": "date-time" },
     "tenant_id": { "type": "string" },
     "actor": { "type": "string" },
+    "evidence_profile_id": {
+      "type": "string",
+      "description": "Required in export manifests; optional if copied into events."
+    },
     "actor_details": {
       "type": "object",
       "properties": {
@@ -32,7 +36,7 @@ This catalog lists event families and shapes; Evidence Profiles determine which 
     "evidence_pointer": { "type": "string" },
     "chain_id": { "type": "string" },
     "event_hash": { "type": "string" },
-    "prev_hash": { "type": "string" }
+    "prev_hash": { "type": "string", "description": "Previous event hash (prev_event_hash)." }
   },
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
 }

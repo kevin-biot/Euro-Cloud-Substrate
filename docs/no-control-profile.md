@@ -27,6 +27,19 @@ This profile is particularly relevant where integrators or managed‑service par
 
 Each “declare”/“publish” event is expected to **reference a verifiable artifact** (e.g., authority graph, custody model, ownership map, telemetry egress map) via an artifact reference and hash, not just a statement.
 
+### NCP event example (snippet)
+```json
+{
+  "event_type": "authority.graph.publish",
+  "subject_id": "integrator-123",
+  "artifact_type": "authority_graph",
+  "artifact_ref": "eosc://artifacts/authority-graph-001",
+  "artifact_hash": "sha256:...",
+  "evidence_pointer": "eosc://evidence/evt-123"
+}
+```
+Export bundles that contain NCP events MUST declare `evidence_profile_id: ecs-evidence-ncp` in their manifest.
+
 ## Subpoena pressure‑test (illustrative)
 **Scenario:** A foreign subpoena demands customer data from an integrator.  
 **Expected outcome:** The integrator demonstrates **inability** (not refusal) using ECS evidence:

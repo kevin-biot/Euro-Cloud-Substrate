@@ -14,6 +14,7 @@ Without a shared pipeline contract, deployers must build bespoke wrappers for ev
   "action": "apply",
   "workload_id": "wl-123",
   "artifact_ref": "oci://image@sha256:...",
+  "evidence_profile_id": "ecs-evidence-baseline",
   "policy_snapshot_id": "pol-001",
   "authority_snapshot_id": "auth-789",
   "correlation_id": "corr-456",
