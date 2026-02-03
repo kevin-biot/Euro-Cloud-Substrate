@@ -165,6 +165,40 @@ Definitions (snippet):
 }
 ```
 
+- Evidence artifacts for block storage (EVID/DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "volume_id": { "type": "string" },
+    "snapshot_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "integrity_hash": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["volume_id", "jurisdiction", "classification", "integrity_hash", "policy_snapshot_id", "evidence_pointer"]
+}
+```
+
+- Evidence artifacts for file storage (EVID/DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "share_id": { "type": "string" },
+    "export_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "integrity_hash": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["share_id", "jurisdiction", "classification", "integrity_hash", "policy_snapshot_id", "evidence_pointer"]
+}
+```
+
 - Evidence events for usage receipts (EVID/DATA example):
 ```json
 {
