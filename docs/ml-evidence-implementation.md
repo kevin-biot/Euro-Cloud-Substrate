@@ -116,6 +116,7 @@ An open‑source SDK to standardize evidence emission across ML stacks.
 - Bind policy/authority snapshot ids and consent/usage references.
 - Compute input/context hashes and attach model version metadata.
 - Package and export bundles per `docs/evidence-export-schema.md`.
+- Support optional chain anchoring to qualified archive services (evidence admissibility).
 
 ### SDK interfaces (sketch)
 ```json

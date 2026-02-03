@@ -71,7 +71,9 @@ An export package MUST include:
   "trust_services": {
     "timestamp_ref": "tsp://qualified-timestamp/tsr-123",
     "seal_ref": "tsp://qualified-seal/seal-456",
-    "evidence_record_ref": "tsp://ers/ers-789"
+    "evidence_record_ref": "tsp://ers/ers-789",
+    "archive_ref": "qes://archive/archive-001",
+    "anchor_interval": "P1D"
   }
 }
 ```

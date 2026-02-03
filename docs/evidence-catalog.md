@@ -565,6 +565,28 @@ Evidence for ML training is required to demonstrate dataset provenance, model li
 }
 ```
 
+- Evidence events for chain anchoring (EVID example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["chain.anchor"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "from_sequence": { "type": "integer" },
+    "to_sequence": { "type": "integer" },
+    "anchor_hash": { "type": "string" },
+    "archive_ref": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "from_sequence", "to_sequence", "anchor_hash", "archive_ref", "outcome", "evidence_pointer"]
+}
+```
+
 ## Migration (EXIT/INT/DEP/SUP/EVID)
 - Evidence events for migration:
 ```json

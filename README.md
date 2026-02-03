@@ -15,6 +15,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Comparisons/integration: `docs/comparison.md`, `docs/integration-examples.md`
 - Compliance patterns (draft): `docs/compliance-pattern-library.md`
 - ML evidence implementation gap (draft): `docs/ml-evidence-implementation.md`
+- Qualified archiving note (draft): `docs/qualified-archiving.md`
 - Starter tasks: `GOOD_FIRST_ISSUES.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
