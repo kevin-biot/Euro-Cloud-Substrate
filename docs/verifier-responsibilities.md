@@ -2,6 +2,7 @@
 
 ## Intent
 Define what an independent verifier must be able to validate **without platform access** to treat ECS evidence as auditable.
+See `docs/terms.md` for evidence event/artifact/bundle definitions.
 
 ## Required checks
 1. **Chain continuity**

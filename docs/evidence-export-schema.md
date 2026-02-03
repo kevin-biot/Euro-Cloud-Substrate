@@ -2,6 +2,7 @@
 
 ## Intent
 Define a portable, deterministic export package for compliance evidence, aligned to pre-hoc evidence generation and post-market monitoring requirements.
+See `docs/terms.md` for canonical definitions of evidence event, artifact, and bundle.
 
 ## Scope and assumptions
 - Applies to governed actions and their evidence across ECS planes.
