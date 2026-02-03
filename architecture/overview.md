@@ -2,9 +2,10 @@
 
 ## Planes
 - **Plane A — Identity, Tenancy, Authority:** tenant model, identity binding, explicit authority points, accountable ownership.
-- **Plane B — Control Plane & Landing Zone:** network/policy baseline, observability baseline, audit baseline.
-- **Plane C — Execution Envelopes:** container orchestration baseline (Kubernetes), VM envelope profile (e.g., KubeVirt) for stronger isolation.
-- **Plane D — Data Substrate:** S3-like interface, governance metadata, evidence-grade storage semantics.
+- **Plane B — Control Plane & Landing Zone:** network/policy baseline, observability baseline, audit baseline, admission gates.
+- **Plane C — Execution Envelopes:** container orchestration baseline (Kubernetes), VM/TEE envelope profiles for stronger isolation.
+- **Plane D — Data & Evidence Substrate:** EOSC object storage, governance metadata, evidence chain persistence.
+- **Plane E — Interop & Portability:** versioned interop APIs, export/import flows, migration validation gates.
 
 ## Diagram convention
 - Mermaid is the baseline for diagrams in this repo.
@@ -32,9 +33,15 @@ flowchart TB
     end
 
     subgraph D[Plane D: Data & Evidence Substrate]
-      D1[S3-like Object Storage]
+      D1[EOSC Object Storage]
       D2[Governance Metadata]
       D3[Immutable Evidence Chains]
+    end
+
+    subgraph E[Plane E: Interop & Portability]
+      E1[Interop API Surface]
+      E2[Export/Import Jobs]
+      E3[Migration Validation]
     end
 
     A -->|Authority check| B
@@ -43,6 +50,8 @@ flowchart TB
     B -->|Evidence events| D
     C -->|Read/write data| D
     C -->|Integrity hashes| D
+    B -->|Interop API| E
+    D -->|Evidence export| E
 ```
 
 ## Deliverables map (Mermaid)

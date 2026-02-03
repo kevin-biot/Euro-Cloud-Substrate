@@ -17,6 +17,9 @@ flowchart LR
     A --> B1
     A --> B2
     A --> B3
+    B --> B1
+    B --> B2
+    B --> B3
     B --> B4
     B3 --> C
 ```
