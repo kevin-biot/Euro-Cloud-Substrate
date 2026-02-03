@@ -23,4 +23,8 @@
 - Regulated Critical Service
 - Sovereign AI Stack
 
+## Evidence profiles (draft)
+- Evidence profiles define required evidence fields, event families, allowed hash profiles, and verifier checks.
+- Draft definition in `docs/profiles/evidence-profiles.md`.
+
 Profiles are how ECS becomes context-usable without fragmenting the invariant contract.***
