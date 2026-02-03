@@ -31,6 +31,9 @@
   - `x-eosc-integrity`: algorithm:value (e.g., `sha256:<hex>`) (string).
   - `x-eosc-classification`: controlled vocabulary (e.g., `public|internal|restricted|secret`) (string).
   - `x-eosc-evidence-pointer`: URI to evidence/audit record(s) (e.g., `eosc://evidence/<id>` or https URL) (string).
+  - `x-eosc-data-product-id`: data product identifier for governed sharing (string).
+  - `x-eosc-usage-policy-snapshot-id`: policy snapshot governing access (string).
+  - `x-eosc-consent-token-ref`: consent/intent token reference (string).
 - Format: conveyed via request headers (or canonical user metadata keys if headers unavailable); must be persisted with the object and preserved on copy/move/replication.
 - Validation: writes MUST fail if required fields are missing/invalid; copies must not strip/alter governance metadata.
 
@@ -49,7 +52,10 @@
   "x-eosc-retention-ttl": "P30D",
   "x-eosc-integrity": "sha256:abcd1234...",
   "x-eosc-classification": "restricted",
-  "x-eosc-evidence-pointer": "eosc://evidence/123e4567"
+  "x-eosc-evidence-pointer": "eosc://evidence/123e4567",
+  "x-eosc-data-product-id": "dp-001",
+  "x-eosc-usage-policy-snapshot-id": "pol-001",
+  "x-eosc-consent-token-ref": "consent-123"
 }
 ```
 
@@ -74,14 +80,20 @@ Content-Type: application/octet-stream
     "x-eosc-retention-ttl": { "type": "string" },
     "x-eosc-integrity": { "type": "string", "pattern": "^[a-z0-9]+:[A-Fa-f0-9]+$" },
     "x-eosc-classification": { "type": "string" },
-    "x-eosc-evidence-pointer": { "type": "string" }
+    "x-eosc-evidence-pointer": { "type": "string" },
+    "x-eosc-data-product-id": { "type": "string" },
+    "x-eosc-usage-policy-snapshot-id": { "type": "string" },
+    "x-eosc-consent-token-ref": { "type": "string" }
   },
   "required": [
     "x-eosc-jurisdiction",
     "x-eosc-retention-ttl",
     "x-eosc-integrity",
     "x-eosc-classification",
-    "x-eosc-evidence-pointer"
+    "x-eosc-evidence-pointer",
+    "x-eosc-data-product-id",
+    "x-eosc-usage-policy-snapshot-id",
+    "x-eosc-consent-token-ref"
   ]
 }
 ```
@@ -109,8 +121,9 @@ Content-Type: application/octet-stream
 
 ### Evidence and audit
 - Operations generating evidence events: PUT, DELETE, COPY/MOVE/REPLICATION, LOCK/UNLOCK, retention changes, metadata updates.
-- Evidence events MUST include: authority/policy snapshot IDs, object identifier/version, governance metadata values, integrity info, outcome (success/refusal).
-- Audit/export: provide a standard export of evidence/audit related to objects (aligned with WS5).
+- Evidence events MUST include: authority/policy snapshot IDs, object identifier/version, governance metadata values, integrity info, outcome (accepted/refused/failed).
+- Data access events (GET/EXPORT) MUST emit evidence including data product id, policy snapshot id, consent token ref, and usage receipt reference when applicable.
+- Audit/export: provide a standard export of evidence/audit related to objects (aligned with WS5) and `docs/evidence-export-schema.md`.
 
 ### Conformance outline (pass 1)
 - Writes without required governance metadata fail.
@@ -118,4 +131,4 @@ Content-Type: application/octet-stream
 - Jurisdiction enforcement blocks placement outside declared boundary unless explicitly allowed.
 - Integrity hash validated on write; optional on read; failures produce evidence/refusal as configured.
 - Immutability/retention behaviors enforced; related actions emit evidence.
-- Evidence is generated for governed operations with required context fields.
+- Evidence is generated for governed operations with required context fields, including usage receipts where applicable.
