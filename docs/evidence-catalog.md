@@ -45,6 +45,28 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
 }
 ```
 
+- Evidence events for wallet credential verification (AUTH example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["wallet.credential.verify"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "credential_id": { "type": "string" },
+    "proof_type": { "type": "string", "enum": ["device_se", "esim", "token", "hsm", "other"] },
+    "policy_snapshot_id": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "credential_id", "proof_type", "policy_snapshot_id", "outcome", "evidence_pointer"]
+}
+```
+
 ## POL
 - Evidence types (draft):
 ```json

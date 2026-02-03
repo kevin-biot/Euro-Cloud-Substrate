@@ -70,3 +70,6 @@ Response:
 - Kubernetes admission controllers + OPA/Gatekeeper or Kyverno.
 - Service mesh policy engines (where deterministic and evidence-backed).
 - Provider-native policy services if they meet determinism and evidence requirements.
+
+## EUDI wallet integration (non-normative)
+- See `docs/eudi-wallet-integration.md` for minimum evidence expectations and delegation notes.
