@@ -3,7 +3,16 @@
 All notable changes to this project will be documented here.
 
 ## Unreleased
-- Initial changelog created.
+- Core10 deep-dives expanded (01–10) with requirements, evidence, and conformance outlines.
+- Evidence export schema added; evidence catalog aligned to envelopes, outcomes, usage receipts, and anchoring.
+- Compliance pattern library drafted with JSON schema snippets and governance notes.
+- ML evidence implementation note, deployer checklist, SDK proposal, and risk guidance added.
+- Architecture updated with archetypes, control-plane capabilities, and flow diagrams.
+- EOSC spec extended for data sharing, usage receipts, and block/file storage evidence.
+- IRN mapping context expanded; conformance checklists/metrics and SOC/log control profile added.
+- EUDI wallet integration note added with delegation/payment evidence events.
+- Qualified archiving guidance added with chain anchoring references.
+- SECURITY policy updated (reporting, scope, response expectations).
 
 ## 2025-01-XX
 - Phase 0 declared complete; invariant set v0.3 frozen (docs/invariants-v0.3.md).
