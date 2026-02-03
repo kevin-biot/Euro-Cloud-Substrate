@@ -2,6 +2,27 @@
 
 Evidence types should be tied to invariant IDs. This skeleton lists families with placeholders for future detail.
 
+All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions) and export bundles MUST follow `docs/evidence-export-schema.md`.
+
+## Base envelope (draft)
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "type": "string" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "actor": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
+}
+```
+
 ## AUTH
 - Evidence types (tbd)
 
@@ -20,8 +41,12 @@ Evidence types should be tied to invariant IDs. This skeleton lists families wit
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["object.put", "object.delete", "object.copy", "object.replicate", "object.lock", "object.unlock", "object.retention-update"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "object_id": { "type": "string" },
     "version_id": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
@@ -29,10 +54,11 @@ Evidence types should be tied to invariant IDs. This skeleton lists families wit
     "governance_metadata": {
       "$ref": "#/definitions/eosc-metadata"
     },
-    "outcome": { "enum": ["success", "refusal"] },
-    "refusal_reason": { "type": "string" }
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "object_id", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "object_id", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -65,21 +91,25 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["ml.inference"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "workload_id": { "type": "string" },
     "model_id": { "type": "string" },
     "model_sbom_ref": { "type": "string" },
     "input_hash": { "type": "string" },
     "context_hash": { "type": "string" },
     "output_ref": { "type": "string" },
-    "outcome": { "enum": ["success", "refusal"] },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
     "refusal_reason": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
     "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "workload_id", "model_id", "input_hash", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "workload_id", "model_id", "input_hash", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -88,8 +118,12 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["ml.training.start", "ml.training.checkpoint", "ml.training.complete"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "training_run_id": { "type": "string" },
     "model_id": { "type": "string" },
     "dataset_refs": { "type": "array", "items": { "type": "string" } },
@@ -99,9 +133,10 @@ Definitions (snippet):
     "jurisdiction": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
-    "outcome": { "enum": ["success", "failure", "aborted"] }
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "training_run_id", "model_id", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "training_run_id", "model_id", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -110,19 +145,23 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["olz.bootstrap"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
     "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "authority_binding": { "type": "string" },
     "policy_baseline": { "type": "string" },
     "jurisdiction": { "type": "string" },
     "classification_ceiling": { "type": "string" },
     "network_namespace_id": { "type": "string" },
     "initial_quotas": { "type": "object" },
-    "outcome": { "enum": ["success", "refusal"] },
-    "refusal_reason": { "type": "string" }
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "tenant_id", "authority_binding", "policy_baseline", "jurisdiction", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "authority_binding", "policy_baseline", "jurisdiction", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -150,15 +189,19 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["tenant.isolation.verify"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
     "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "target_tenant_id": { "type": "string" },
     "check_type": { "type": "string", "enum": ["network", "storage", "identity"] },
-    "outcome": { "enum": ["success", "refusal"] },
-    "refusal_reason": { "type": "string" }
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "tenant_id", "check_type", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "check_type", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -168,16 +211,20 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["workload.envelope.create", "workload.envelope.start", "workload.envelope.stop", "workload.envelope.destroy"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
     "workload_id": { "type": "string" },
     "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "envelope_type": { "type": "string", "enum": ["container", "vm"] },
     "attestation_ref": { "type": "string" },
-    "outcome": { "enum": ["success", "refusal"] },
-    "refusal_reason": { "type": "string" }
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "workload_id", "envelope_type", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "workload_id", "envelope_type", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -187,14 +234,20 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["chain.reconciliation"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "chain_id": { "type": "string" },
     "gap_detected": { "type": "boolean" },
     "tamper_detected": { "type": "boolean" },
-    "details": { "type": "string" }
+    "details": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "chain_id"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "chain_id", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -204,15 +257,19 @@ Definitions (snippet):
 {
   "type": "object",
   "properties": {
+    "id": { "type": "string", "format": "uuid" },
     "event_type": { "enum": ["migration.export", "migration.import"] },
-    "timestamp": { "type": "string", "format": "date-time" },
+    "occurred_at": { "type": "string", "format": "date-time" },
     "workload_id": { "type": "string" },
     "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
     "artifact_manifest_hash": { "type": "string" },
     "integrity_verified": { "type": "boolean" },
-    "outcome": { "enum": ["success", "refusal"] },
-    "refusal_reason": { "type": "string" }
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
   },
-  "required": ["event_type", "timestamp", "workload_id", "artifact_manifest_hash", "outcome"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "workload_id", "artifact_manifest_hash", "outcome", "evidence_pointer"]
 }
 ```

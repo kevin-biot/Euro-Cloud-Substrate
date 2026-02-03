@@ -28,6 +28,7 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - Export/import behaviors with evidence of success/refusal.
 - Dependency and supply-chain visibility for migrated components.
 - Evidence of state validation before/after migration.
+- Evidence export bundles MUST follow `docs/evidence-export-schema.md`.
 
 ## Migration phases (draft)
 1. Plan: declare exit path, dependencies, and validation checks.

@@ -24,6 +24,7 @@ Hash-linked log requirements for compliance-critical flows.
 - Hash-linked chains for compliance-critical events.
 - Exportable, verifiable chain state.
 - Inclusion of authority/policy/execution context.
+- Export bundles MUST follow `docs/evidence-export-schema.md`.
 
 ## EU AI Act alignment (non-normative)
 - Evidence for governed actions MUST be generated contemporaneously with the action (pre-hoc), and retained for post-market monitoring and audit. Logging capability is a design-time requirement and logs must be preserved for the required retention period.
