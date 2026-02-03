@@ -164,6 +164,8 @@ Definitions (snippet):
   }
 }
 ```
+Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles.
+
 - Evidence events for ML inference (EVID/SUP/EXEC example):
 ```json
 {
@@ -190,6 +192,8 @@ Definitions (snippet):
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "workload_id", "model_id", "input_hash", "outcome", "evidence_pointer"]
 }
 ```
+
+Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape.
 
 - Evidence events for ML training (EVID/SUP/EXEC example):
 ```json
@@ -303,22 +307,128 @@ Definitions (snippet):
 ```
 
 ## INT
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["interop.profile.declare", "interop.compatibility.test"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "profile_id": { "type": "string" },
+    "version": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "profile_id", "version", "outcome", "evidence_pointer"]
+}
+```
 
 ## EXIT
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["exit.path.declare", "exit.validation.run"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "exit_plan_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "exit_plan_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## DEP
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["dependency.graph.publish", "dependency.exception.accept"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "service_id": { "type": "string" },
+    "graph_ref": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "service_id", "graph_ref", "outcome", "evidence_pointer"]
+}
+```
 
 ## SUP
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["supplychain.sbom.publish", "supplychain.provenance.attest"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "component_id": { "type": "string" },
+    "sbom_ref": { "type": "string" },
+    "provenance_ref": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "component_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## OPS
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["ops.runbook.publish", "ops.drill.complete"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "service_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "service_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## PHY
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["phy.dependency.declare", "phy.partition.exercise"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "service_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "service_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## Tenant Isolation (EXEC/DATA/PHY/DEP)
 - Evidence events for tenant isolation verification:
