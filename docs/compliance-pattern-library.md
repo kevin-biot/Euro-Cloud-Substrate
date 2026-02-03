@@ -89,6 +89,24 @@ Each pattern includes:
 
 **Applicable across:** AI Act, PSD3/PSR, NIS2, GDPR, eIDAS2.
 
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "policy_snapshot_id": { "type": "string" },
+    "version": { "type": "string" },
+    "hash": { "type": "string" },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "issuer": { "type": "string" },
+    "scope": { "type": "array", "items": { "type": "string" } },
+    "ruleset_ref": { "type": "string" },
+    "signature": { "type": "string" }
+  },
+  "required": ["policy_snapshot_id", "version", "hash", "issued_at", "issuer", "ruleset_ref", "signature"]
+}
+```
+
 ---
 
 ## Pattern 4 — Risk Rubric Pattern (RRP)
@@ -227,6 +245,25 @@ Each pattern includes:
 **Evidence:** Included in post-modification bundles.
 
 **Applicable across:** AI Act, DORA, NIS2, cybersecurity.
+
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "delta_id": { "type": "string" },
+    "old_version": { "type": "string" },
+    "new_version": { "type": "string" },
+    "old_hash": { "type": "string" },
+    "new_hash": { "type": "string" },
+    "delta_hash": { "type": "string" },
+    "artifact_type": { "type": "string", "enum": ["model", "policy", "dataset", "runtime"] },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["delta_id", "old_version", "new_version", "old_hash", "new_hash", "delta_hash", "artifact_type", "issued_at", "evidence_pointer"]
+}
+```
 
 ---
 
