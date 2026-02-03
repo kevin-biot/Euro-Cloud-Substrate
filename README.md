@@ -24,6 +24,7 @@ An architectural definition project for a portable, governable, European cloud s
 - ML evidence implementation gap (draft): `docs/ml-evidence-implementation.md`
 - Qualified archiving note (draft): `docs/qualified-archiving.md`
 - Open source alignment targets (draft): `docs/opensource-targets.md`
+- Landing zone reference (draft): `docs/landing-zone-reference.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose

@@ -39,6 +39,9 @@ Provide a non‑normative list of open‑source projects that could align to ECS
 - Storage: Ceph (object/block/file) + EOSC metadata overlays
 - Evidence: ECS evidence export schema + chain anchoring adapter
 
+## Open‑source landing zone gap (draft)
+There is no widely adopted open‑source “landing zone” reference implementation that bundles identity, network baseline, policy admission, and evidence export in a portable way. ECS treats this as a community gap to be filled via adapters and reference stacks aligned with OLZ‑EU.
+
 ## Alignment guidance (high level)
 1. **Expose governance metadata** at write/admission time.
 2. **Emit evidence events** with policy snapshot and authority bindings.
