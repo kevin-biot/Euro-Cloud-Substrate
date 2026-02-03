@@ -56,6 +56,81 @@ flowchart TB
     D -->|Evidence export| E
 ```
 
+## Plane boundaries and flows (Mermaid)
+```mermaid
+flowchart TB
+    subgraph A["Plane A: Identity & Authority"]
+      A0["Authority Binding Registry"]
+    end
+    subgraph B["Plane B: Control Plane"]
+      B0["Admission Gate"]
+      B1["Policy Engine"]
+      B2["Control Plane API"]
+    end
+    subgraph C["Plane C: Execution"]
+      C0["Runtime Envelopes"]
+    end
+    subgraph D["Plane D: Data & Evidence"]
+      D0["EOSC Storage"]
+      D1["Evidence Chain"]
+    end
+    subgraph E["Plane E: Interop & Portability"]
+      E0["Interop API"]
+      E1["Export/Import"]
+    end
+
+    A0 -->|Authority check| B0
+    B2 -->|Governed action| B0
+    B0 -->|Allow/Refuse| B2
+    B0 -->|Admission decision| D1
+    B2 -->|Start/Stop workloads| C0
+    C0 -->|Read/Write| D0
+    D1 -->|Evidence export| E1
+    B2 -->|Interop surface| E0
+```
+
+## Core10-to-plane mapping (draft)
+| Core10 component | Primary plane(s) | Cross-plane dependencies |
+|---|---|---|
+| 01 Open Landing Zone | A, B | D (evidence) |
+| 02 Tenant Isolation | C | B (admission), D (evidence) |
+| 03 EOSC Object Storage | D | E (export), B (policy) |
+| 04 Policy & Authority | A, B | D (evidence) |
+| 05 Evidence Event Model | D | B/C (emitters), E (export) |
+| 06 Audit Chain Baseline | D | B/C (evidence sources) |
+| 07 Execution Envelopes | C | B (admission), D (evidence) |
+| 08 Interop API Surface | E | A/B (authz), D (evidence) |
+| 09 Fail-Closed Profile | B | A (authority), D (evidence) |
+| 10 Migration Baseline | E | D (evidence), B (policy), A (authority) |
+
+## Evidence and control flows (fail-closed + escalation)
+```mermaid
+sequenceDiagram
+    participant Caller as "Caller"
+    participant Admission as "Admission Gate"
+    participant Policy as "Policy Engine"
+    participant Authority as "Authority Binding"
+    participant Evidence as "Evidence Store"
+    participant Escalation as "Escalation Path"
+
+    Caller->>Admission: Request governed action
+    Admission->>Authority: Validate authority binding
+    Authority-->>Admission: Valid/Invalid
+    Admission->>Policy: Evaluate policy snapshot
+    Policy-->>Admission: Allow/Refuse/Uncertain
+    alt Allow
+        Admission->>Evidence: Emit allow decision (with snapshots)
+        Admission-->>Caller: Permit with evidence pointer
+    else Refuse
+        Admission->>Evidence: Emit refusal decision (reason + snapshots)
+        Admission-->>Caller: Refuse with evidence pointer
+    else Uncertain
+        Admission->>Evidence: Emit fail-closed decision
+        Admission-->>Caller: Refuse (fail-closed)
+        Admission->>Escalation: Optional escalation workflow
+    end
+```
+
 ## Deliverables map (Mermaid)
 ```mermaid
 flowchart LR
@@ -101,8 +176,3 @@ These archetypes map the ECS planes to common provider architectures so vendors 
 - VM-first / IaaS-centric: `architecture/archetypes/iaas-vm.md`
 - Managed platform competitor: `architecture/archetypes/managed-platform.md`
 - SlapOS (master/compute, partitions): `architecture/archetypes/slapos.md`
-
-## To-do
-- Add Mermaid/PlantUML diagrams for plane boundaries and flows.
-- Map Core 10 to planes.
-- Define evidence and control flows (fail-closed, escalation hooks).
