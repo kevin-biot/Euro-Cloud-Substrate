@@ -86,3 +86,43 @@ This guide outlines a practical path for open source maintainers to close the ev
 ### Messaging to vendors and customers
 - This is not a replacement for vendor features; it is a **minimal evidence substrate** customers can demand.
 - The goal is portability: evidence should be exportable and verifiable across providers.
+
+## Deployer checklist (draft)
+Use this as a minimum checklist when consuming managed ML services or deploying on a cloud platform.
+1. **Policy snapshot binding**: evidence includes policy snapshot id for each governed action.
+2. **Authority binding**: evidence includes authority snapshot id or binding reference.
+3. **Inference evidence**: input/context hashes, model version/SBOM ref, outcome, evidence pointer.
+4. **Training evidence**: dataset hashes, code version, hyperparameter hash, checkpoint hashes.
+5. **Usage receipts**: data access and sharing events emit usage receipts (URP).
+6. **Exportability**: evidence bundles can be exported via `docs/evidence-export-schema.md`.
+7. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
+8. **Retention**: evidence retained for required period; export is available on request.
+
+## Minimal evidence SDK proposal (draft)
+An open‑source SDK to standardize evidence emission across ML stacks.
+
+### SDK responsibilities
+- Emit Core10‑05 envelope events.
+- Bind policy/authority snapshot ids and consent/usage references.
+- Compute input/context hashes and attach model version metadata.
+- Package and export bundles per `docs/evidence-export-schema.md`.
+
+### SDK interfaces (sketch)
+```json
+{
+  "emit_inference_event": {
+    "model_id": "model-123",
+    "model_sbom_ref": "eosc://sbom/model-123",
+    "input_hash": "sha256:...",
+    "context_hash": "sha256:...",
+    "policy_snapshot_id": "pol-001",
+    "authority_snapshot_id": "auth-789",
+    "outcome": "accepted",
+    "evidence_pointer": "eosc://evidence/evt-123"
+  }
+}
+```
+
+### Packaging and export
+- `export_bundle(from_sequence, to_sequence)` → evidence bundle + manifest.
+- Optional: `sign_bundle(key_id)` for non‑repudiation.
