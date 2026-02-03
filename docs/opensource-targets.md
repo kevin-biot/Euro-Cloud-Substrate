@@ -12,10 +12,12 @@ Provide a non‑normative list of open‑source projects that could align to ECS
 
 ### Plane A — Identity & Authority
 - **Keycloak** (OIDC/SAML IAM) as a candidate authority/identity system; requires evidence event emission and policy snapshot binding.
+- **OpenStack Keystone** as VM‑first identity/tenant authority; requires evidence emission and policy binding.
 
 ### Plane B — Control Plane & Policy
 - **OKD** (community Kubernetes distribution) as an OpenShift‑adjacent control plane target.
 - **OPA** (general‑purpose policy engine) and **Kyverno** (Kubernetes policy engine) as policy evaluation/admission targets.
+- **OpenStack Nova/Neutron** as VM‑first control plane; requires admission/evidence overlays.
 
 ### Plane C — Execution Envelopes
 - **Kubernetes/OKD** runtime with policy‑driven envelope selection and evidence hooks.
@@ -25,6 +27,7 @@ Provide a non‑normative list of open‑source projects that could align to ECS
 - **Ceph** (object, block, file) as a unified storage substrate; align governance metadata and evidence export.
 - **MinIO** as S3‑compatible object storage; align EOSC metadata and evidence events.
 - **Longhorn** and **OpenEBS** as block storage targets; align block‑evidence events and export manifests.
+- **OpenStack Swift** (object) and **Cinder** (block) as storage targets; align EOSC metadata, block evidence events, and export manifests.
 
 ### Plane E — Interop & Portability
 - Interop API exposure and evidence export adapters layered on top of the above systems.
