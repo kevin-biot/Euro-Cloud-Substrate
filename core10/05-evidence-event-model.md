@@ -27,6 +27,14 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - Ordered, tamper-evident streams with reconciliation support.
 - Export bundles MUST follow `docs/evidence-export-schema.md`.
 
+## Evidence pointer contract (draft)
+Evidence pointers MUST be trustworthy, not just present:
+- **Immutability:** pointer resolves to content‑addressed artifacts (hash‑based).
+- **Retrievability class:** online / nearline / archive indicated in metadata.
+- **Tenant scoping:** pointers must not be dereferenceable across tenants.
+- **Retention & legal hold:** TTL/hold flags are enforced, not merely declared.
+- **Verification:** independent verifier can validate integrity without trusting the emitter.
+
 ## EU AI Act alignment (non-normative)
 - Evidence for governed actions MUST be generated contemporaneously with the action (pre-hoc), and retained for post-market monitoring and audit. Logging capability is a design-time requirement and logs must be preserved for the required retention period.
 
@@ -43,9 +51,16 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - Required for governed actions:
   - `correlation_id` (shared across all events for a governed action)
 - Optional integrity fields:
+  - `chain_id` (evidence chain identifier)
+  - `event_hash` (hash of canonical event payload)
   - `prev_hash` (hash chain)
   - `evidence_hash` (hash of canonical payload)
   - `monotonic_time_ns` (monotonic clock value for local ordering)
+
+## Admissible evidence profile (draft)
+For legal admissibility or subpoena‑resilience, providers SHOULD emit:
+- `chain_id`, `event_hash`, and `prev_hash` for each event.
+- Export bundles anchored to qualified archiving when applicable.
 
 ## Canonical event types (draft)
 - `authority.check` / `authority.refusal`
@@ -71,6 +86,16 @@ Standard event types for authorization, execution, refusal, escalation, policy s
     "event_type": { "type": "string" },
     "occurred_at": { "type": "string", "format": "date-time" },
     "actor": { "type": "string" },
+    "actor_details": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["human", "service", "delegate"] },
+        "org_id": { "type": "string" },
+        "credential_ref": { "type": "string" },
+        "jurisdiction": { "type": "string" }
+      }
+    },
     "tenant_id": { "type": "string" },
     "resource_id": { "type": "string" },
     "action": { "type": "string" },
@@ -82,6 +107,8 @@ Standard event types for authorization, execution, refusal, escalation, policy s
     "refusal_reason": { "type": "string" },
     "evidence_pointer": { "type": "string" },
     "sequence": { "type": "integer" },
+    "chain_id": { "type": "string" },
+    "event_hash": { "type": "string" },
     "prev_hash": { "type": "string" },
     "evidence_hash": { "type": "string" },
     "monotonic_time_ns": { "type": "integer" }

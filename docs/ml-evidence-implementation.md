@@ -22,6 +22,8 @@ High‑risk and regulated AI systems require **traceable, verifiable evidence** 
 **What to capture:**
 - `model_id`, `model_sbom_ref`
 - `input_hash` / `context_hash`
+- `hash_profile_id` (canonicalization rules)
+- `output_ref` (subject to data policy and evidence pointer contract)
 - `policy_snapshot_id` / `authority_snapshot_id`
 - `outcome` (accepted/refused/failed) + evidence pointer
 
@@ -34,6 +36,7 @@ High‑risk and regulated AI systems require **traceable, verifiable evidence** 
 **What to capture:**
 - `dataset_refs` + hashes
 - `code_version`, `hyperparameters_hash`
+- `hash_profile_id` (canonicalization rules)
 - `checkpoint_hash` events
 - `policy_snapshot_id` + evidence pointer
 
@@ -47,6 +50,9 @@ ECS defines:
 - **ML inference/training event shapes** (`docs/evidence-catalog.md`).
 
 These provide the minimum contract vendors can implement and deployers can request.
+
+## Hashing profile guidance (draft)
+Hashes are only portable if their canonicalization rules are explicit. Providers SHOULD emit a `hash_profile_id` (e.g., `ecs-hash-v1`) and document what is included/excluded, how PII is handled, and how hashes are recomputed.
 
 ## Recommended next steps (non-normative)
 - Providers: publish evidence hooks and export packages for ML endpoints.
@@ -94,10 +100,11 @@ Use this as a minimum checklist when consuming managed ML services or deploying 
 2. **Authority binding**: evidence includes authority snapshot id or binding reference.
 3. **Inference evidence**: input/context hashes, model version/SBOM ref, outcome, evidence pointer.
 4. **Training evidence**: dataset hashes, code version, hyperparameter hash, checkpoint hashes.
-5. **Usage receipts**: data access and sharing events emit usage receipts (URP).
-6. **Exportability**: evidence bundles can be exported via `docs/evidence-export-schema.md`.
-7. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
-8. **Retention**: evidence retained for required period; export is available on request.
+5. **Hashing profile**: evidence includes `hash_profile_id` so hashes can be recomputed deterministically.
+6. **Usage receipts**: data access and sharing events emit usage receipts (URP).
+7. **Exportability**: evidence bundles can be exported via `docs/evidence-export-schema.md`.
+8. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
+9. **Retention**: evidence retained for required period; export is available on request.
 
 ## Regulatory risk if evidence is missing (draft)
 - **AI Act:** inability to demonstrate decision traceability, model version lineage, or post‑market monitoring can trigger non‑compliance findings.
@@ -129,6 +136,8 @@ An open‑source SDK to standardize evidence emission across ML stacks.
     "model_sbom_ref": "eosc://sbom/model-123",
     "input_hash": "sha256:...",
     "context_hash": "sha256:...",
+    "hash_profile_id": "ecs-hash-v1",
+    "output_ref": "eosc://output/obj-123",
     "policy_snapshot_id": "pol-001",
     "authority_snapshot_id": "auth-789",
     "outcome": "accepted",

@@ -55,9 +55,31 @@ An export package MUST include:
 - Outcome values MUST be `accepted`, `refused`, or `failed`.
 - Evidence events MUST reference relevant artifacts (policy snapshot, authority binding, consent token, duty token, corridor proof, risk rubric) when applicable.
 
+## Evidence pointer contract (normative)
+Evidence pointers MUST be trustworthy, not just present:
+- **Immutability:** pointer resolves to content‑addressed artifacts (hash‑based).
+- **Retrievability class:** online / nearline / archive indicated in pointer metadata.
+- **Tenant scoping:** pointers must not be dereferenceable across tenants.
+- **Retention & legal hold:** TTL/hold flags are enforced, not merely declared.
+- **Verification:** independent verifier can validate integrity without trusting the emitter.
+
+### Pointer metadata (optional JSON)
+```json
+{
+  "evidence_pointer_metadata": {
+    "retrievability": "online",
+    "tenant_id": "tenant-123",
+    "retention_ttl": "P1Y",
+    "legal_hold": true,
+    "hash": "sha256:..."
+  }
+}
+```
+
 ## Integrity rules (normative)
 - `bundle_hash` MUST be a Merkle root over the ordered evidence event hashes.
 - Each event MUST include `prev_hash` to support chain continuity checks.
+- Events SHOULD include `event_hash` (or equivalent hash in the chain segment) and a `chain_id` to support cross‑bundle continuity.
 - Chain segments MUST be exportable and independently verifiable (see Core10-06).
 - Signatures are OPTIONAL but, if present, MUST cover the manifest and bundle hash.
 

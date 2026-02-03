@@ -14,14 +14,29 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
     "occurred_at": { "type": "string", "format": "date-time" },
     "tenant_id": { "type": "string" },
     "actor": { "type": "string" },
+    "actor_details": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["human", "service", "delegate"] },
+        "org_id": { "type": "string" },
+        "credential_ref": { "type": "string" },
+        "jurisdiction": { "type": "string" }
+      }
+    },
     "correlation_id": { "type": "string" },
     "sequence": { "type": "integer" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
-    "evidence_pointer": { "type": "string" }
+    "evidence_pointer": { "type": "string" },
+    "chain_id": { "type": "string" },
+    "event_hash": { "type": "string" },
+    "prev_hash": { "type": "string" }
   },
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
 }
 ```
+
+Evidence pointers are expected to be content‑addressed and tenant‑scoped; see `docs/evidence-export-schema.md` for pointer contract details.
 
 ## AUTH
 - Evidence types (draft):
@@ -124,10 +139,16 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
     "correlation_id": { "type": "string" },
     "sequence": { "type": "integer" },
     "subject_id": { "type": "string" },
+    "artifact_type": {
+      "type": "string",
+      "enum": ["authority_graph", "key_custody_model", "controlplane_ownership", "telemetry_egress_map"]
+    },
+    "artifact_ref": { "type": "string" },
+    "artifact_hash": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
     "evidence_pointer": { "type": "string" }
   },
-  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "subject_id", "outcome", "evidence_pointer"]
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "artifact_type", "artifact_ref", "outcome", "evidence_pointer"]
 }
 ```
 
@@ -199,6 +220,30 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
 }
 ```
 
+- Evidence events for purpose/consent/terms/lineage binding (DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["data.purpose.bind", "data.consent.bind", "data.terms.attach", "data.lineage.link"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "data_product_id": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "consent_token_ref": { "type": "string" },
+    "terms_snapshot_id": { "type": "string" },
+    "lineage_sources": { "type": "array", "items": { "type": "string" } },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "data_product_id", "outcome", "evidence_pointer"]
+}
+```
+Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpose_id` for `data.purpose.bind`, `consent_token_ref` for `data.consent.bind`, `terms_snapshot_id` for `data.terms.attach`, `lineage_sources` for `data.lineage.link`).
+
 ## EVID
 - Evidence events for storage (EVID/DATA/SUP example):
 ```json
@@ -250,7 +295,7 @@ Definitions (snippet):
   }
 }
 ```
-Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles. See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
+Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles. `hash_profile_id` SHOULD identify the canonicalization/hash rules used. See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
 
 - Evidence events for ML inference (EVID/SUP/EXEC example):
 ```json
@@ -268,6 +313,7 @@ Evidence for ML inference is required for regulatory traceability (e.g., decisio
     "model_sbom_ref": { "type": "string" },
     "input_hash": { "type": "string" },
     "context_hash": { "type": "string" },
+    "hash_profile_id": { "type": "string" },
     "output_ref": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
     "refusal_reason": { "type": "string" },
@@ -279,7 +325,7 @@ Evidence for ML inference is required for regulatory traceability (e.g., decisio
 }
 ```
 
-Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape. See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
+Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape. `hash_profile_id` SHOULD identify the canonicalization/hash rules used for dataset and checkpoint hashes. See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
 
 - Evidence events for ML training (EVID/SUP/EXEC example):
 ```json
@@ -297,6 +343,7 @@ Evidence for ML training is required to demonstrate dataset provenance, model li
     "dataset_refs": { "type": "array", "items": { "type": "string" } },
     "code_version": { "type": "string" },
     "hyperparameters_hash": { "type": "string" },
+    "hash_profile_id": { "type": "string" },
     "checkpoint_hash": { "type": "string" },
     "jurisdiction": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },

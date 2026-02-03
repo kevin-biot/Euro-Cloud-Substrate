@@ -12,10 +12,10 @@ This profile is particularly relevant where integrators or managed‑service par
 3. **No control** — the integrator cannot reconfigure, redeploy, or extract data via control‑plane APIs.
 
 ## Required evidence artifacts (examples)
-- **Authority graph**: explicit mapping of who can assume which roles and how.
-- **Key custody proof**: evidence that keys are generated and controlled outside integrator reach.
-- **Control‑plane ownership**: proof that root identities and policy snapshots are customer‑owned.
-- **Telemetry exclusion**: evidence of absence of out‑of‑band replication or “phone‑home” control paths.
+- **Authority graph**: machine‑checkable mapping of who can assume which roles and how.
+- **Key custody proof**: artifact showing keys are generated and controlled outside integrator reach.
+- **Control‑plane ownership**: artifact proving root identities and policy snapshots are customer‑owned.
+- **Telemetry exclusion**: audited egress map showing absence of out‑of‑band replication or “phone‑home” control paths.
 - **Delegation logs**: all integrator access is time‑bounded, scoped, and revocable.
 
 ## Evidence events (examples)
@@ -24,6 +24,8 @@ This profile is particularly relevant where integrators or managed‑service par
 - `controlplane.ownership.declare`
 - `telemetry.path.audit`
 - `delegation.access.grant` / `delegation.access.revoke`
+
+Each “declare”/“publish” event is expected to **reference a verifiable artifact** (e.g., authority graph, custody model, ownership map, telemetry egress map) via an artifact reference and hash, not just a statement.
 
 ## Subpoena pressure‑test (illustrative)
 **Scenario:** A foreign subpoena demands customer data from an integrator.  
