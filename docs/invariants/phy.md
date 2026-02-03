@@ -11,7 +11,7 @@
   Single-path or single-operator dependencies MUST be detectable from declared connectivity state.
 - **PHY-03 — Partition Scenario Consideration**  
   At least one network partition scenario MUST be declared for each critical service.
-- **PHY-04 — Connectivity Assumption Evidence** (optional)  
+- **PHY-04 — Connectivity Assumption Evidence**  
   Connectivity assumptions MUST be supported by observable evidence (tests, topology snapshots).
 
 ## Evidence expectations
