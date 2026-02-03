@@ -33,6 +33,26 @@ Each pattern includes:
 
 **Applicable across:** GDPR, PSD3/PSR, AI Act (transparency), eIDAS2, Data Act.
 
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "token_id": { "type": "string" },
+    "issuer": { "type": "string" },
+    "subject": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "legal_basis": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "valid_from": { "type": "string", "format": "date-time" },
+    "valid_to": { "type": "string", "format": "date-time" },
+    "policy_snapshot_id": { "type": "string" },
+    "signature": { "type": "string" }
+  },
+  "required": ["token_id", "issuer", "subject", "purpose_id", "legal_basis", "valid_from", "valid_to", "policy_snapshot_id", "signature"]
+}
+```
+
 ---
 
 ## Pattern 2 — Cryptographic Evidence Bundle Pattern (CEBP)
@@ -86,6 +106,33 @@ Each pattern includes:
 
 **Applicable across:** AI Act, DORA, PSD3/PSR, NIS2.
 
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "rubric_id": { "type": "string" },
+    "version": { "type": "string" },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "factor": { "type": "string" },
+          "weight": { "type": "number" },
+          "threshold": { "type": "number" }
+        },
+        "required": ["factor", "weight"]
+      }
+    },
+    "score": { "type": "number" },
+    "outcome": { "type": "string", "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["rubric_id", "version", "criteria", "score", "outcome", "evidence_pointer"]
+}
+```
+
 ---
 
 ## Pattern 5 — Jurisdictional Routing Pattern (SCRP)
@@ -103,6 +150,23 @@ Each pattern includes:
 
 **Applicable across:** GDPR transfers, PSD3, AI Act, DSA, Data Act.
 
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "corridor_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "route": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "approval": { "type": "string", "enum": ["approved", "denied"] },
+    "evidence_pointer": { "type": "string" },
+    "signature": { "type": "string" }
+  },
+  "required": ["corridor_id", "jurisdiction", "route", "policy_snapshot_id", "approval", "evidence_pointer", "signature"]
+}
+```
+
 ---
 
 ## Pattern 6 — Duty Propagation Pattern (MDPP)
@@ -119,6 +183,33 @@ Each pattern includes:
 **Evidence:** Duty signatures included in evidence bundle.
 
 **Applicable across:** AI Act, PSD3/PSR, DORA, NIS2.
+
+**JSON schema snippet (draft):**
+```json
+{
+  "type": "object",
+  "properties": {
+    "duty_token_id": { "type": "string" },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "party_id": { "type": "string" },
+          "role": { "type": "string" },
+          "duty_weight": { "type": "number" },
+          "signature": { "type": "string" }
+        },
+        "required": ["party_id", "role", "duty_weight", "signature"]
+      }
+    },
+    "threshold": { "type": "number" },
+    "policy_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["duty_token_id", "parties", "threshold", "policy_snapshot_id", "evidence_pointer"]
+}
+```
 
 ---
 
