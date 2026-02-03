@@ -105,6 +105,9 @@ Use this as a minimum checklist when consuming managed ML services or deploying 
 - **DORA / NIS2:** missing operational evidence undermines resilience and audit obligations.
 - **Commercial impact:** procurement requirements and regulated customers may reject platforms without portable evidence exports.
 
+## Deployer risk note (non-normative)
+When deployers consume managed LLM services, liability for outputs often remains with the deployer, while evidence for provenance or policy enforcement may be unavailable. Without portable evidence bundles, deployers can be left in a weak position in copyright or liability disputes. This is a key reason to require evidence export clauses and standardized evidence outputs in service contracts.
+
 ## Copyright/IP note (non-normative)
 While not the primary focus here, the same evidence substrate (training provenance, policy snapshots, usage receipts) can help demonstrate rights and provenance for model training and inference, which may be useful in copyright or IP disputes.
 
