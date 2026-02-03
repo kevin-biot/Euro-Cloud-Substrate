@@ -146,15 +146,17 @@ paths:
         - name: tenant
           in: query
           schema: { type: string }
-        - name: event_type
-          in: query
-          schema: { type: string }
         - name: cursor
           in: query
           schema: { type: string }
         - name: limit
           in: query
           schema: { type: integer, default: 100, maximum: 1000 }
+        - name: event_type
+          in: query
+          schema:
+            type: string
+            description: Optional filter (e.g., data.usage.receipt)
       responses:
         '200': { description: OK }
         '401': { $ref: '#/components/responses/ErrorResponse' }

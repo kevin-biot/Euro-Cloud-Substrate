@@ -165,6 +165,31 @@ Definitions (snippet):
 }
 ```
 
+- Evidence events for usage receipts (EVID/DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["data.usage.receipt"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "data_product_id": { "type": "string" },
+    "consumer_id": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "consent_token_ref": { "type": "string" },
+    "usage_quantity": { "type": "number" },
+    "usage_unit": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "data_product_id", "consumer_id", "purpose_id", "policy_snapshot_id", "outcome", "evidence_pointer"]
+}
+```
+
 ## INT
 - Evidence types (tbd)
 
