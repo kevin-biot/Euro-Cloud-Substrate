@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "export_id": "exp-baseline-001",
+  "created_at": "2025-01-01T00:00:00Z",
+  "provider_id": "provider-A",
+  "tenant_id": "tenant-123",
+  "evidence_profile_id": "ecs-evidence-baseline",
+  "scope": {
+    "from_sequence": 100,
+    "to_sequence": 102
+  },
+  "chain_id": "chain-baseline-001",
+  "chain_segment_ref": "eosc://evidence/chain/sha256:12575e220ebfd17b6e5f60db0b291695fca55425e10b29b5ae59d6de8a1f889b",
+  "bundle_hash": "sha256:a405b3c896a179221fef1b5f28dfaf06a9b8434967bc677d01ab0730305d4958",
+  "artifacts": {
+    "policy_snapshots": [
+      "eosc://artifact/sha256:4127651f40c8f1dcff9943caf8c2e0e8240d80ab19f4fa7b60fda9dde0faefab"
+    ],
+    "authority_bindings": [
+      "eosc://artifact/sha256:5e19449b984e67de26e92ab2404b714754af77ea6436f24aefb97b76eaac223d"
+    ],
+    "evidence_artifacts": [
+      "eosc://artifact/sha256:4f0ee8b3a9e0342a53b6659d1bbbc60832ae84d563822788bc78fbef73b8b85e",
+      "eosc://artifact/sha256:14c556da873aec6488410f7ea747661b3c64ec331795d95a5e9df87812969066",
+      "eosc://artifact/sha256:78cb14d7793a6e600b1856fe3efcb3a9769457e7528d760034396d44a5d9395d"
+    ]
+  },
+  "signatures": [
+    {
+      "key_id": "key-001",
+      "signature": "base64..."
+    }
+  ]
+}

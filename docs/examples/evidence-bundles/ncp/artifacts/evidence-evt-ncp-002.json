@@ -1,0 +1,11 @@
+{
+  "event_type": "key.custody.declare",
+  "sequence": 301,
+  "timestamp": "2025-01-01T01:10:00Z",
+  "details": {
+    "subject_id": "integrator-123",
+    "artifact_type": "key_custody_model",
+    "artifact_ref": "eosc://artifact/sha256:32615b59270256402eb8489c80f516124c7e7c18ace635d14e0e9ec7cee0dc12",
+    "artifact_hash": "sha256:32615b59270256402eb8489c80f516124c7e7c18ace635d14e0e9ec7cee0dc12"
+  }
+}

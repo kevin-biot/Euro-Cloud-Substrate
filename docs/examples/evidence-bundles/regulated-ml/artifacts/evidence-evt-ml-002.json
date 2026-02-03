@@ -1,0 +1,14 @@
+{
+  "event_type": "ml.inference",
+  "sequence": 201,
+  "timestamp": "2025-01-01T00:20:00Z",
+  "details": {
+    "model_id": "model-123",
+    "model_sbom_ref": "eosc://sbom/model-123",
+    "input_hash": "sha256:beadfeed",
+    "context_hash": "sha256:beadf00d",
+    "hash_profile_id": "ecs-hash-v1",
+    "policy_snapshot_id": "pol-ml-001",
+    "authority_snapshot_id": "auth-ml-001"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "implements": {
+    "evidence_profiles": [
+      "ecs-evidence-ncp"
+    ],
+    "default_evidence_profile": "ecs-evidence-ncp",
+    "hash_profiles": [],
+    "export_endpoints": [
+      "/v1/events",
+      "/v1/exports"
+    ],
+    "verifier_inputs_supported": [
+      "chain_id",
+      "prev_hash",
+      "event_hash",
+      "archive_ref"
+    ]
+  }
+}

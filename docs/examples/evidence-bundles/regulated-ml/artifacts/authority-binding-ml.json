@@ -1,0 +1,8 @@
+{
+  "id": "auth-ml-001",
+  "subject": "tenant-ml",
+  "scope": [
+    "ml.inference",
+    "ml.training"
+  ]
+}

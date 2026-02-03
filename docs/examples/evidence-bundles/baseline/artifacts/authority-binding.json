@@ -1,0 +1,7 @@
+{
+  "id": "auth-001",
+  "subject": "tenant-123",
+  "scope": [
+    "workload.deploy"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "event_type": "telemetry.path.audit",
+  "sequence": 302,
+  "timestamp": "2025-01-01T01:20:00Z",
+  "details": {
+    "subject_id": "integrator-123",
+    "artifact_type": "telemetry_egress_map",
+    "artifact_ref": "eosc://artifact/sha256:834fb568cb1f5fc60d54c0840db988cb5bd45c7bb299696e17ed818a116b30cf",
+    "artifact_hash": "sha256:834fb568cb1f5fc60d54c0840db988cb5bd45c7bb299696e17ed818a116b30cf"
+  }
+}

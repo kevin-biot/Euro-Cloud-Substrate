@@ -1,0 +1,9 @@
+{
+  "event_type": "workload.admit",
+  "sequence": 102,
+  "timestamp": "2025-01-01T00:00:03Z",
+  "details": {
+    "workload_id": "wl-123",
+    "envelope_type": "container"
+  }
+}

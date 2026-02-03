@@ -1,0 +1,11 @@
+{
+  "event_type": "authority.graph.publish",
+  "sequence": 300,
+  "timestamp": "2025-01-01T01:00:00Z",
+  "details": {
+    "subject_id": "integrator-123",
+    "artifact_type": "authority_graph",
+    "artifact_ref": "eosc://artifact/sha256:1ddf1d31190da6e68449f240aefa5e9b87896f675196008d26c8ea7431ec8b4c",
+    "artifact_hash": "sha256:1ddf1d31190da6e68449f240aefa5e9b87896f675196008d26c8ea7431ec8b4c"
+  }
+}

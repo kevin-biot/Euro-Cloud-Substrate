@@ -1,0 +1,9 @@
+{
+  "event_type": "policy.evaluate",
+  "sequence": 101,
+  "timestamp": "2025-01-01T00:00:02Z",
+  "details": {
+    "policy_snapshot_id": "pol-001",
+    "action": "workload.deploy"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "event_type": "ml.training.complete",
+  "sequence": 202,
+  "timestamp": "2025-01-01T00:30:00Z",
+  "details": {
+    "training_run_id": "train-001",
+    "model_id": "model-123",
+    "checkpoint_hash": "sha256:cafebabe",
+    "hash_profile_id": "ecs-hash-v1"
+  }
+}

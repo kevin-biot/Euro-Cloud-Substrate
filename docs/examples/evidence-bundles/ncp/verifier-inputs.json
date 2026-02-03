@@ -1,0 +1,11 @@
+{
+  "evidence_profile_id": "ecs-evidence-ncp",
+  "hash_profile_id": null,
+  "chain_id": "chain-ncp-001",
+  "from_sequence": 300,
+  "to_sequence": 302,
+  "event_hash_method": "sha256(canonical_json(event) without event_hash)",
+  "segment_hash_method": "sha256(newline-joined event_hash values)",
+  "bundle_hash_method": "sha256(newline-joined event_hash values)",
+  "chain_segment_ref": "eosc://evidence/chain/sha256:142d9257c6186c06ed66694ad4beb4a28ce799fd623457c6745aaca7bb7de40d"
+}

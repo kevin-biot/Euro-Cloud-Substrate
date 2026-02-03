@@ -1,0 +1,15 @@
+{
+  "evidence_profile_id": "ecs-evidence-regulated-ml",
+  "hash_profile_id": "ecs-hash-v1",
+  "chain_id": "chain-regulated-ml-001",
+  "from_sequence": 200,
+  "to_sequence": 202,
+  "event_hash_method": "sha256(canonical_json(event) without event_hash)",
+  "segment_hash_method": "sha256(newline-joined event_hash values)",
+  "bundle_hash_method": "sha256(newline-joined event_hash values)",
+  "chain_segment_ref": "eosc://evidence/chain/sha256:3f172468c175d0d12b38997f954bb6b2c9d58c152421355a67063259975e6490",
+  "trust_services": {
+    "archive_ref": "qes://archive/archive-ml-001",
+    "anchor_interval": "P1D"
+  }
+}

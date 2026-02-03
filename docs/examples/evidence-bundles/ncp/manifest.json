@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "export_id": "exp-ncp-001",
+  "created_at": "2025-01-01T00:00:00Z",
+  "provider_id": "integrator-ops",
+  "tenant_id": "tenant-ncp",
+  "evidence_profile_id": "ecs-evidence-ncp",
+  "scope": {
+    "from_sequence": 300,
+    "to_sequence": 302
+  },
+  "chain_id": "chain-ncp-001",
+  "chain_segment_ref": "eosc://evidence/chain/sha256:142d9257c6186c06ed66694ad4beb4a28ce799fd623457c6745aaca7bb7de40d",
+  "bundle_hash": "sha256:723ca08f76e594474e4eca6016c7ca049bf69ac783f170ab786b462b03cb8f9f",
+  "artifacts": {
+    "authority_graphs": [
+      "eosc://artifact/sha256:1ddf1d31190da6e68449f240aefa5e9b87896f675196008d26c8ea7431ec8b4c"
+    ],
+    "key_custody_models": [
+      "eosc://artifact/sha256:32615b59270256402eb8489c80f516124c7e7c18ace635d14e0e9ec7cee0dc12"
+    ],
+    "telemetry_egress_maps": [
+      "eosc://artifact/sha256:834fb568cb1f5fc60d54c0840db988cb5bd45c7bb299696e17ed818a116b30cf"
+    ],
+    "evidence_artifacts": [
+      "eosc://artifact/sha256:1018dd6a915fab2d4490c07cb3083a65c65fd5c6f96fbfcb324feb5cdb05a736",
+      "eosc://artifact/sha256:fadf115e0e2faafe4db727594948e3785f5cfddd0a8500e795276177d57c950d",
+      "eosc://artifact/sha256:2f653f341e0ae050e211b5c4b7c7ec3d1149a29f8e6c0387c4f523cb23f28035"
+    ]
+  },
+  "signatures": [
+    {
+      "key_id": "key-001",
+      "signature": "base64..."
+    }
+  ]
+}

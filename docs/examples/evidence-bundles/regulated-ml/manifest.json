@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "export_id": "exp-regulated-ml-001",
+  "created_at": "2025-01-01T00:00:00Z",
+  "provider_id": "provider-A",
+  "tenant_id": "tenant-ml",
+  "evidence_profile_id": "ecs-evidence-regulated-ml",
+  "scope": {
+    "from_sequence": 200,
+    "to_sequence": 202
+  },
+  "chain_id": "chain-regulated-ml-001",
+  "chain_segment_ref": "eosc://evidence/chain/sha256:3f172468c175d0d12b38997f954bb6b2c9d58c152421355a67063259975e6490",
+  "bundle_hash": "sha256:0f27e4480a15f0a998da0962773213824e652db503408564ed19d0c4167318b6",
+  "artifacts": {
+    "policy_snapshots": [
+      "eosc://artifact/sha256:16f424873661fd818c26faedb6b8c36ecdae07fa1fcf2daa17e7f46bdee96971"
+    ],
+    "authority_bindings": [
+      "eosc://artifact/sha256:13aca3f2dae5858ca045af4eba56b4ebc8872f54d7fd6473de3af42087fc251d"
+    ],
+    "sbom_refs": [
+      "eosc://artifact/sha256:9fe66cb206f4758a06eb500b978728189ad2c315f7b789b3b00611ce61e988d5"
+    ],
+    "evidence_artifacts": [
+      "eosc://artifact/sha256:2280c1c61ba90ce589455be94cb6036ee2fbed3db8e1a1478abc00883d443a5a",
+      "eosc://artifact/sha256:3e01bc85b43d545e4c136ad383b25ad23fe08cf6905f187833cdcde9ff09b6c7",
+      "eosc://artifact/sha256:9fff5e958eef73ca6127a311877b53d9eb1a67d930421534462337370ebe7c21"
+    ]
+  },
+  "signatures": [
+    {
+      "key_id": "key-001",
+      "signature": "base64..."
+    }
+  ],
+  "hash_profile_id": "ecs-hash-v1",
+  "trust_services": {
+    "archive_ref": "qes://archive/archive-ml-001",
+    "anchor_interval": "P1D"
+  }
+}

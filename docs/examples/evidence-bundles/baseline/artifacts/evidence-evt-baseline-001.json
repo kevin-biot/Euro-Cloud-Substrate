@@ -1,0 +1,9 @@
+{
+  "event_type": "authority.check",
+  "sequence": 100,
+  "timestamp": "2025-01-01T00:00:01Z",
+  "details": {
+    "authority_snapshot_id": "auth-001",
+    "action": "workload.deploy"
+  }
+}

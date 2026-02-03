@@ -1,0 +1,36 @@
+{
+  "segment_id": "seg-regulated-ml-001",
+  "tenant_id": "tenant-ml",
+  "evidence_profile_id": "ecs-evidence-regulated-ml",
+  "from_sequence": 200,
+  "to_sequence": 202,
+  "algorithm": "sha256",
+  "events": [
+    {
+      "id": "evt-ml-001",
+      "sequence": 200,
+      "prev_hash": null,
+      "event_hash": "sha256:344cc9cebb0a555ede26fcb5f251c6667d2e7d9e10691251c84099fbd5871ee4",
+      "evidence_profile_id": "ecs-evidence-regulated-ml",
+      "event_ref": "eosc://evidence/sha256:2280c1c61ba90ce589455be94cb6036ee2fbed3db8e1a1478abc00883d443a5a"
+    },
+    {
+      "id": "evt-ml-002",
+      "sequence": 201,
+      "prev_hash": "sha256:344cc9cebb0a555ede26fcb5f251c6667d2e7d9e10691251c84099fbd5871ee4",
+      "event_hash": "sha256:b52d158a98f55c9b69c07c5b42a02df4a8b373138e2264e61caa6fa1d3169b1c",
+      "evidence_profile_id": "ecs-evidence-regulated-ml",
+      "event_ref": "eosc://evidence/sha256:3e01bc85b43d545e4c136ad383b25ad23fe08cf6905f187833cdcde9ff09b6c7"
+    },
+    {
+      "id": "evt-ml-003",
+      "sequence": 202,
+      "prev_hash": "sha256:b52d158a98f55c9b69c07c5b42a02df4a8b373138e2264e61caa6fa1d3169b1c",
+      "event_hash": "sha256:099f960ce6efc68dfeb138ad3c71879db97acd3bdf8b05291be3d920a76fbc33",
+      "evidence_profile_id": "ecs-evidence-regulated-ml",
+      "event_ref": "eosc://evidence/sha256:9fff5e958eef73ca6127a311877b53d9eb1a67d930421534462337370ebe7c21"
+    }
+  ],
+  "segment_hash": "sha256:0f27e4480a15f0a998da0962773213824e652db503408564ed19d0c4167318b6",
+  "signature": "optional-signature"
+}
