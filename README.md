@@ -25,6 +25,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Qualified archiving note (draft): `docs/qualified-archiving.md`
 - Open source alignment targets (draft): `docs/opensource-targets.md`
 - Landing zone reference (draft): `docs/landing-zone-reference.md`
+- Minimal pipeline schema (draft): `docs/pipeline-schema.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose

@@ -32,6 +32,8 @@ A practical ECS landing zone should include a portable **control surface** for p
 
 If ECS APIs are standardized, open‑source pipelines can implement **portable workflows** to move workloads and data across providers without provider‑specific tooling.
 
+See `docs/pipeline-schema.md` for a minimal pipeline schema and evidence hook guidance.
+
 ## Reference stack candidates (non‑normative)
 - Identity: Keycloak or equivalent OIDC provider.
 - Policy: OPA/Kyverno admission controls.
