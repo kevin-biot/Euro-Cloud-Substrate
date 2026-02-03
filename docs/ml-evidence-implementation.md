@@ -104,6 +104,9 @@ Use this as a minimum checklist when consuming managed ML services or deploying 
 - **DORA / NIS2:** missing operational evidence undermines resilience and audit obligations.
 - **Commercial impact:** procurement requirements and regulated customers may reject platforms without portable evidence exports.
 
+## Copyright/IP note (non-normative)
+While not the primary focus here, the same evidence substrate (training provenance, policy snapshots, usage receipts) can help demonstrate rights and provenance for model training and inference, which may be useful in copyright or IP disputes.
+
 ## Minimal evidence SDK proposal (draft)
 An open‑source SDK to standardize evidence emission across ML stacks.
 
