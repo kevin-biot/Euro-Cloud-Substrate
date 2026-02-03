@@ -98,6 +98,12 @@ Use this as a minimum checklist when consuming managed ML services or deploying 
 7. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
 8. **Retention**: evidence retained for required period; export is available on request.
 
+## Regulatory risk if evidence is missing (draft)
+- **AI Act:** inability to demonstrate decision traceability, model version lineage, or post‑market monitoring can trigger non‑compliance findings.
+- **GDPR:** lack of lawful basis evidence and purpose binding weakens accountability and auditability.
+- **DORA / NIS2:** missing operational evidence undermines resilience and audit obligations.
+- **Commercial impact:** procurement requirements and regulated customers may reject platforms without portable evidence exports.
+
 ## Minimal evidence SDK proposal (draft)
 An open‑source SDK to standardize evidence emission across ML stacks.
 
