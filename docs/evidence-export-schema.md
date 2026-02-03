@@ -74,6 +74,46 @@ AI/agent workloads MAY include an extension object:
 }
 ```
 
+## Storage class artifacts (draft)
+Evidence bundles SHOULD include storage class artifacts when access or export crosses storage types:
+- **Object storage:** data product descriptor, object metadata, evidence pointer.
+- **Block storage:** volume manifest, snapshot/export manifest, integrity hashes.
+- **File storage:** share manifest, mount/export manifest, integrity hashes.
+
+### Block storage manifest (draft JSON)
+```json
+{
+  "type": "object",
+  "properties": {
+    "volume_id": { "type": "string" },
+    "snapshot_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "integrity_hash": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["volume_id", "jurisdiction", "classification", "integrity_hash", "policy_snapshot_id", "evidence_pointer"]
+}
+```
+
+### File storage manifest (draft JSON)
+```json
+{
+  "type": "object",
+  "properties": {
+    "share_id": { "type": "string" },
+    "export_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "integrity_hash": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["share_id", "jurisdiction", "classification", "integrity_hash", "policy_snapshot_id", "evidence_pointer"]
+}
+```
+
 ## Conformance checks (draft)
 - Manifest schema validation and required artifacts present.
 - Deterministic recomputation of `bundle_hash` from event hashes.
