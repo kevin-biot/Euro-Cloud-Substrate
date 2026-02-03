@@ -6,7 +6,10 @@ Create these labels in GitHub to match templates and workflows:
 - `conformance` — for conformance outline/tests.
 - `governance` — for ADRs and process changes.
 - `diagram` — for visual assets updates.
-- `good-first-issue` — for starter issues newcomers can tackle.
+- `evidence` — for evidence schemas, export, and audit artifacts.
+- `architecture` — for architecture diagrams, archetypes, and control-plane docs.
+- `compliance` — for mappings, patterns, and regulatory alignment notes.
+- `interop` — for API surfaces and portability work.
 
 If using GitHub CLI and already authenticated, run:
 ```bash
