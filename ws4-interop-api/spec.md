@@ -37,6 +37,7 @@
 - Must preserve ordering/integrity guarantees (aligned with WS5).
 - Pagination: cursor-based recommended (`?cursor=...&limit=...`); include `next_cursor` if more results. Default limit 100; max 1000.
 - Async events: providers MAY offer real-time subscription (see `docs/interop/asyncapi-events.yaml`).
+- Export endpoints SHOULD support No‑Control Profile (NCP) evidence bundles when applicable.
 
 ## Authentication & authorization
 - Authn:

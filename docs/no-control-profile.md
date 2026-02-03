@@ -3,6 +3,9 @@
 ## Intent
 Define a portable profile for integrators or service partners to demonstrate **absence of possession, custody, or control** over customer systems and data.
 
+## Context
+This profile is particularly relevant where integrators or managed‑service partners may be subject to **non‑EU judicial or administrative orders** (e.g., foreign subpoenas or intelligence requests). The goal is to demonstrate **operational inability**, not contractual refusal.
+
 ## Core conditions (system invariants)
 1. **No possession** — the integrator does not hold customer data at rest or in transit outside customer‑controlled execution envelopes.
 2. **No custody** — the integrator cannot administer or operate without explicit, time‑bound delegation.

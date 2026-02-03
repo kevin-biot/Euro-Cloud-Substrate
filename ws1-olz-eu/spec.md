@@ -33,6 +33,11 @@
 - On tenant creation, capture: authority binding verification, policy baseline applied, network namespace creation, initial quotas, jurisdiction assignment.
 - Emit an OLZ bootstrap event (see `docs/evidence-catalog.md`) with outcome and refusal reason if applicable.
 
+### No‑Control Profile (NCP) alignment (non‑normative)
+- NCP can be applied to integrators or managed‑service partners; see `docs/no-control-profile.md`.
+- Evidence SHOULD include authority graphs, delegation logs, key custody proofs, and control‑plane ownership declarations.
+- This is especially relevant where integrators are subject to non‑EU judicial or administrative orders; NCP focuses on operational inability rather than contractual refusal.
+
 ### API examples
 - Example `POST /tenants` request:
 ```json
