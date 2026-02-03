@@ -1,0 +1,119 @@
+# ECS admission binder reference manifest (minimal)
+# NOTE: Replace TLS placeholders before applying.
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ecs-evidence-system
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ecs-admission-tls
+  namespace: ecs-evidence-system
+# Replace the base64 values with your generated cert/key.
+# For local dev, generate a self-signed cert and update caBundle below.
+type: kubernetes.io/tls
+data:
+  tls.crt: REPLACE_WITH_BASE64_CERT
+  tls.key: REPLACE_WITH_BASE64_KEY
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecs-admission-binder
+  namespace: ecs-evidence-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecs-admission-binder
+  template:
+    metadata:
+      labels:
+        app: ecs-admission-binder
+    spec:
+      containers:
+        - name: binder
+          image: ghcr.io/kevin-biot/ecs-admission-binder:dev
+          imagePullPolicy: IfNotPresent
+          args:
+            - "--listen=0.0.0.0"
+            - "--port=8443"
+            - "--store=/var/lib/ecs-evidence"
+            - "--profile=ecs-evidence-baseline"
+            - "--provider=provider-A"
+            - "--tenant=tenant-123"
+          env:
+            - name: ECS_EVIDENCE_PROFILE
+              value: "ecs-evidence-baseline"
+            - name: ECS_HASH_PROFILE
+              value: ""
+            - name: ECS_EVIDENCE_STORE
+              value: "/var/lib/ecs-evidence"
+            - name: ECS_EVIDENCE_SINK
+              value: "filesystem"
+          ports:
+            - containerPort: 8443
+              name: https
+          volumeMounts:
+            - name: evidence-store
+              mountPath: /var/lib/ecs-evidence
+            - name: tls
+              mountPath: /tls
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              scheme: HTTPS
+              path: /
+              port: https
+          livenessProbe:
+            httpGet:
+              scheme: HTTPS
+              path: /
+              port: https
+      volumes:
+        - name: evidence-store
+          emptyDir: {}
+        - name: tls
+          secret:
+            secretName: ecs-admission-tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecs-admission-binder
+  namespace: ecs-evidence-system
+spec:
+  selector:
+    app: ecs-admission-binder
+  ports:
+    - name: https
+      port: 443
+      targetPort: https
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: ecs-admission-binder
+webhooks:
+  - name: ecs-admission.euro-cloud-substrate
+    failurePolicy: Ignore
+    sideEffects: None
+    admissionReviewVersions: ["v1"]
+    matchPolicy: Equivalent
+    namespaceSelector:
+      matchLabels:
+        ecs.evidence/enabled: "true"
+    rules:
+      - apiGroups: ["", "apps"]
+        apiVersions: ["v1"]
+        operations: ["CREATE", "UPDATE"]
+        resources: ["pods", "deployments"]
+        scope: "Namespaced"
+    clientConfig:
+      service:
+        name: ecs-admission-binder
+        namespace: ecs-evidence-system
+        path: /
+      caBundle: REPLACE_WITH_BASE64_CA

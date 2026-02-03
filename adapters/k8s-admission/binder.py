@@ -33,6 +33,9 @@ def resolve_hash_profile(meta: dict, evidence_profile_id: str) -> Optional[str]:
     explicit = get_annotation(meta, "ecs.hash/profile") or get_label(meta, "ecs.hash/profile")
     if explicit:
         return explicit
+    env_hash = os.getenv("ECS_HASH_PROFILE")
+    if env_hash:
+        return env_hash
     if "regulated-ml" in evidence_profile_id:
         return DEFAULT_HASH_PROFILE
     return None
@@ -164,7 +167,7 @@ def main():
     parser = argparse.ArgumentParser(description="ECS K8s admission binder (reference)")
     parser.add_argument("--listen", default="0.0.0.0", help="Listen address")
     parser.add_argument("--port", type=int, default=8080, help="Listen port")
-    parser.add_argument("--store", default="./evidence-store", help="Evidence store path")
+    parser.add_argument("--store", default=os.getenv("ECS_EVIDENCE_STORE", "./evidence-store"), help="Evidence store path")
     parser.add_argument("--profile", default=DEFAULT_PROFILE, help="Default evidence profile")
     parser.add_argument("--provider", default="provider-A", help="Provider id")
     parser.add_argument("--tenant", default="tenant-123", help="Tenant id")

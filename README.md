@@ -2,6 +2,12 @@
 
 An architectural definition project for a portable, governable, European cloud substrate. This repo hosts the specs, invariants, and profiles that define the minimal shared contracts European providers can implement.
 
+## Start here
+1. Evidence Profiles (what to claim): `docs/profiles/evidence-profiles.md`
+2. Golden Bundles (what correct looks like): `docs/examples/evidence-bundles/`
+3. Reference Adapter (how to emit it): `adapters/k8s-admission/`
+4. RFP Guide (how to buy it): `docs/rfp-evidence-support.md`
+
 - Core paper: `VISION.md` (v0.2) and `architecture/`
 - Invariants: `docs/invariants-v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/invariant-coverage.md`
 - Profiles: `crp/` (Crisis Resilience Profile), `docs/profiles/README.md`
@@ -27,6 +33,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Landing zone reference (draft): `docs/landing-zone-reference.md`
 - Minimal pipeline schema (draft): `docs/pipeline-schema.md`
 - No‑control profile (draft): `docs/no-control-profile.md`
+- Demo flow (draft): `docs/demo-flow.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose
