@@ -1,6 +1,6 @@
 # CRP Conformance Outline (Draft)
 
-# WS3 Conformance Outline (Draft)
+# CRP Conformance Outline (Draft)
 
 ### Tier 1 — Smoke
 - Simulate loss of upstream identity/control plane; verify authority checks succeed using local cache or fail closed if stale.
