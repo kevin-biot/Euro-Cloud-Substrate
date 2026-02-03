@@ -79,14 +79,14 @@ flowchart TB
       E1["Export/Import"]
     end
 
-    A0 -->|Authority check| B0
-    B2 -->|Governed action| B0
-    B0 -->|Allow/Refuse| B2
-    B0 -->|Admission decision| D1
-    B2 -->|Start/Stop workloads| C0
-    C0 -->|Read/Write| D0
-    D1 -->|Evidence export| E1
-    B2 -->|Interop surface| E0
+    A0 -->|Control: authority check| B0
+    B2 -->|Control: governed action| B0
+    B0 -->|Control: allow/refuse| B2
+    B0 -->|Evidence: admission decision| D1
+    B2 -->|Control: start/stop workloads| C0
+    C0 -->|Data: read/write| D0
+    D1 -->|Evidence: export/verify| E1
+    B2 -->|Interop: API surface| E0
 ```
 
 ## Core10-to-plane mapping (draft)
@@ -102,6 +102,14 @@ flowchart TB
 | 08 Interop API Surface | E | A/B (authz), D (evidence) |
 | 09 Fail-Closed Profile | B | A (authority), D (evidence) |
 | 10 Migration Baseline | E | D (evidence), B (policy), A (authority) |
+
+## Architecture upgrade roadmap (draft)
+1. **Baseline clarity:** finalize plane boundaries, control/evidence interfaces, and glossary alignment.
+2. **Control plane hardening:** specify policy engine and admission gate requirements with conformance tests.
+3. **Evidence chain maturity:** define canonical event types, chain verification format, and export schema.
+4. **Interop/API hardening:** publish minimal OpenAPI/AsyncAPI surfaces with error and auth semantics.
+5. **Portability at scale:** define migration workflows, validation gates, and reference export package format.
+6. **Archetype validation:** map OpenShift/VM/Managed/SlapOS stacks to the planes and highlight gaps.
 
 ## Evidence and control flows (fail-closed + escalation)
 ```mermaid
