@@ -62,6 +62,8 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
   - `created`: RFC 3339 timestamp.
   - `source_provider`: originating provider ID.
   - `tenant_id`: source tenant.
+  - `evidence_profile_id`: evidence profile applied to the included evidence bundle/chain segment.
+  - `hash_profile_id`: hash profile used for evidence hashes (if applicable).
   - `contents`: array of `{ type, path, integrity_hash }` where type ∈ { workload_definition, config, data_snapshot, sbom, evidence_chain_segment }.
   - `governance_metadata`: jurisdiction, classification, retention.
   - `authority_snapshot_id`: authority at export time.
@@ -75,6 +77,8 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
   "created": "2025-01-01T00:00:00Z",
   "source_provider": "provider-A",
   "tenant_id": "tenant-123",
+  "evidence_profile_id": "ecs-evidence-admissible",
+  "hash_profile_id": "ecs-hash-v1",
   "contents": [
     { "type": "workload_definition", "path": "workload.yaml", "integrity_hash": "sha256:abc..." },
     { "type": "data_snapshot", "path": "data.tar", "integrity_hash": "sha256:def..." },

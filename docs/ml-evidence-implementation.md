@@ -147,5 +147,19 @@ An open‑source SDK to standardize evidence emission across ML stacks.
 ```
 
 ### Packaging and export
-- `export_bundle(from_sequence, to_sequence)` → evidence bundle + manifest.
+- `export_bundle(from_sequence, to_sequence, evidence_profile_id, hash_profile_id)` → evidence bundle + manifest.
 - Optional: `sign_bundle(key_id)` for non‑repudiation.
+
+Example manifest (snippet):
+```json
+{
+  "export_id": "exp-ml-001",
+  "created_at": "2025-01-01T00:00:00Z",
+  "provider_id": "provider-A",
+  "tenant_id": "tenant-123",
+  "evidence_profile_id": "ecs-evidence-regulated-ml",
+  "hash_profile_id": "ecs-hash-v1",
+  "scope": { "from_sequence": 100, "to_sequence": 200 },
+  "bundle_hash": "sha256:..."
+}
+```

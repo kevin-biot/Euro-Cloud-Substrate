@@ -11,7 +11,7 @@ Explain how evidence chains can be anchored to qualified archiving services with
 1. **Local evidence chain** emits events with `sequence` + `prev_hash`.
 2. **Periodic anchor** computes a Merkle root or chain head hash for a segment.
 3. **Archive submission** stores the anchor in a qualified archiving service.
-4. **Export manifest** records `archive_ref` + `anchor_interval`.
+4. **Export manifest** records `archive_ref` + `anchor_interval` (and declares `evidence_profile_id` / `hash_profile_id`).
 5. **Verification** recomputes the anchor hash and confirms it matches the qualified archive record.
 
 ## Recommended fields (aligned with ECS)

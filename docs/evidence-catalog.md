@@ -4,6 +4,8 @@ Evidence types should be tied to invariant IDs. This skeleton lists families wit
 
 All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions) and export bundles MUST follow `docs/evidence-export-schema.md`. Evidence bundles MAY include qualified timestamp/seal references in the export manifest to support legal admissibility.
 
+This catalog lists event families and shapes; Evidence Profiles determine which events and fields are required. Emitters MUST declare the selected `evidence_profile_id` in exports/manifests, and verifiers validate against the declared profile (`docs/profiles/evidence-profiles.md`).
+
 ## Base envelope (draft)
 ```json
 {
