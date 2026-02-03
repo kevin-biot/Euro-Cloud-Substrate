@@ -7,6 +7,8 @@
 - **Plane D — Data & Evidence Substrate:** EOSC object storage, governance metadata, evidence chain persistence.
 - **Plane E — Interop & Portability:** versioned interop APIs, export/import flows, migration validation gates.
 
+See `architecture/control-plane.md` for control-plane capability definitions (policy engine, admission gate, evidence hooks).
+
 ## Diagram convention
 - Mermaid is the baseline for diagrams in this repo.
 
