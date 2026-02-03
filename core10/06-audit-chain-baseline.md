@@ -47,6 +47,7 @@ Hash-linked log requirements for compliance-critical flows.
 {
   "segment_id": "seg-001",
   "tenant_id": "tenant-123",
+  "evidence_profile_id": "ecs-evidence-admissible",
   "from_sequence": 100,
   "to_sequence": 200,
   "algorithm": "sha256",
@@ -56,6 +57,7 @@ Hash-linked log requirements for compliance-critical flows.
       "sequence": 101,
       "prev_hash": "sha256:prev...",
       "event_hash": "sha256:this...",
+      "evidence_profile_id": "ecs-evidence-admissible",
       "event_ref": "eosc://evidence/evt-101"
     }
   ],

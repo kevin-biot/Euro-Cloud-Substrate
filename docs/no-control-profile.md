@@ -35,6 +35,7 @@ Each “declare”/“publish” event is expected to **reference a verifiable a
   "artifact_type": "authority_graph",
   "artifact_ref": "eosc://artifacts/authority-graph-001",
   "artifact_hash": "sha256:...",
+  "evidence_profile_id": "ecs-evidence-ncp",
   "evidence_pointer": "eosc://evidence/evt-123"
 }
 ```

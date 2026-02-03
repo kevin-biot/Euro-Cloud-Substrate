@@ -83,6 +83,7 @@ sequenceDiagram
   "envelope_type": "vm",
   "attestation_type": "tee",
   "report_ref": "eosc://evidence/att-123",
+  "evidence_profile_id": "ecs-evidence-admissible",
   "outcome": "success"
 }
 ```

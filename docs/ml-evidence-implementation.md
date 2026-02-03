@@ -146,6 +146,7 @@ An open‑source SDK to standardize evidence emission across ML stacks.
     "context_hash": "sha256:...",
     "hash_profile_id": "ecs-hash-v1",
     "output_ref": "eosc://output/obj-123",
+    "evidence_profile_id": "ecs-evidence-regulated-ml",
     "policy_snapshot_id": "pol-001",
     "authority_snapshot_id": "auth-789",
     "outcome": "accepted",
