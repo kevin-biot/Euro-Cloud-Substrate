@@ -125,6 +125,23 @@ Content-Type: application/octet-stream
 - Data access events (GET/EXPORT) MUST emit evidence including data product id, policy snapshot id, consent token ref, and usage receipt reference when applicable.
 - Audit/export: provide a standard export of evidence/audit related to objects (aligned with WS5) and `docs/evidence-export-schema.md`.
 
+### Non-object storage alignment (block/file) — draft
+- Block and file storage are out of scope for EOSC as a strict object contract, but MUST align on governance metadata, evidence emission, and exportability.
+- **Block storage (example requirements):**
+  - Volume create/attach/detach/delete MUST emit evidence with policy snapshot id, authority binding, and classification.
+  - Residency and classification MUST be enforced for volume placement.
+  - Snapshot/export MUST include evidence pointers and integrity hashes.
+- **File storage (example requirements):**
+  - Mount and access controls MUST enforce tenant and policy bindings.
+  - Governance metadata MUST be associated with file shares and preserved on export.
+  - Access and export events MUST emit evidence with outcome and snapshot ids.
+
+### Backend mapping (non-normative)
+- Ceph: RGW (object), RBD (block), CephFS (file); OpenShift Data Foundation wraps Ceph for ODF deployments.
+- MinIO/SeaweedFS: object storage surfaces compatible with EOSC object contract.
+- OpenEBS/Longhorn: block storage surfaces; evidence and metadata requirements apply via control-plane integration.
+- NFS/Gluster: file storage surfaces; evidence and metadata requirements apply via gateway or policy layer.
+
 ### Conformance outline (pass 1)
 - Writes without required governance metadata fail.
 - Governance metadata is preserved across copy/move/replication.
