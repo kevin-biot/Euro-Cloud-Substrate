@@ -15,11 +15,11 @@ Map ECS planes to the SlapOS master/compute architecture (ERP5 master, SlapGRID,
 ## Control and evidence flow (Mermaid)
 ```mermaid
 flowchart TB
-    Master[SlapOS Master (ERP5)] -->|Allocation decisions| SlapGRID[SlapGRID]
-    SlapGRID -->|Install software| Buildout[Buildout]
-    SlapGRID -->|Run services| Supervisord[Supervisord]
-    Supervisord --> Partitions[Computer Partitions]
-    Partitions --> Storage[Data/Evidence Storage]
+    Master["SlapOS Master (ERP5)"] -->|Allocation decisions| SlapGRID["SlapGRID"]
+    SlapGRID -->|Install software| Buildout["Buildout"]
+    SlapGRID -->|Run services| Supervisord["Supervisord"]
+    Supervisord --> Partitions["Computer Partitions"]
+    Partitions --> Storage["Data/Evidence Storage"]
     SlapGRID -->|Accounting/Evidence| Master
 ```
 
