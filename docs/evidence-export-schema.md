@@ -21,6 +21,7 @@ An export package MUST include:
 4. **Referenced artifacts** (required for governed actions)
 
 ## Manifest schema (draft JSON)
+Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.
 ```json
 {
   "schema_version": "1.0",

@@ -7,6 +7,7 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
 This catalog lists event families and shapes; Evidence Profiles determine which events and fields are required. Emitters MUST declare the selected `evidence_profile_id` in exports/manifests, and verifiers validate against the declared profile (`docs/profiles/evidence-profiles.md`).
 
 ## Base envelope (draft)
+Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.
 ```json
 {
   "type": "object",

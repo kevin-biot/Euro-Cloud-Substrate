@@ -137,6 +137,7 @@ An open‑source SDK to standardize evidence emission across ML stacks.
 ```
 
 ### SDK interfaces (sketch)
+Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.
 ```json
 {
   "emit_inference_event": {

@@ -7,6 +7,7 @@ Define a portable, evidence‑aware pipeline schema for provisioning, deployment
 Without a shared pipeline contract, deployers must build bespoke wrappers for evidence emission and portability. A minimal schema enables ECS‑aligned adapters across CI/CD and GitOps tools.
 
 ## Pipeline record (draft JSON)
+Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.
 ```json
 {
   "pipeline_id": "pipe-001",
