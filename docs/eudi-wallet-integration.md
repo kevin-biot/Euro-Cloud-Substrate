@@ -28,6 +28,11 @@ Describe minimum platform capabilities for integrating with EUDI wallets without
 - Delegation MUST be time‑bounded and evidenced.
 - Agent actions MUST bind to delegated credential proofs and policy snapshots.
 
+## Agentic delegation and payment binding (draft)
+- Delegation SHOULD include scope, time window, and permitted payment/usage policies.
+- Usage receipts SHOULD bind to delegated credential id and payment reference.
+- Evidence MUST be exportable to show who acted, under what authority, and under what payment terms.
+
 ## Notes
 - This document does not prescribe wallet vendors or device implementations.
 - ECS requires evidence, not a specific root of trust.

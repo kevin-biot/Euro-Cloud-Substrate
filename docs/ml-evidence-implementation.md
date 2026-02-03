@@ -52,6 +52,7 @@ These provide the minimum contract vendors can implement and deployers can reque
 - Providers: publish evidence hooks and export packages for ML endpoints.
 - Deployers: require evidence export clauses in ML service contracts.
 - OSS communities: build adapters for common ML stacks (K8s, Kubeflow, model servers, managed-ML wrappers).
+- Ensure evidence bundles can be timestamped/sealed by qualified trust services where required for legal admissibility.
 
 ## OSS adapter guide (draft)
 This guide outlines a practical path for open source maintainers to close the evidence gap without redesigning ML platforms.

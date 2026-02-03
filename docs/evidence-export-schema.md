@@ -61,6 +61,21 @@ An export package MUST include:
 - Chain segments MUST be exportable and independently verifiable (see Core10-06).
 - Signatures are OPTIONAL but, if present, MUST cover the manifest and bundle hash.
 
+## ETSI/eIDAS alignment (non-normative)
+- Evidence bundles MAY be sealed or timestamped using qualified trust services to increase legal admissibility.
+- Implementations SHOULD support references to qualified electronic timestamps, seals, or evidence records in the export manifest.
+
+### Trust service references (optional JSON)
+```json
+{
+  "trust_services": {
+    "timestamp_ref": "tsp://qualified-timestamp/tsr-123",
+    "seal_ref": "tsp://qualified-seal/seal-456",
+    "evidence_record_ref": "tsp://ers/ers-789"
+  }
+}
+```
+
 ## AI/agent extension (non-normative)
 AI/agent workloads MAY include an extension object:
 ```json

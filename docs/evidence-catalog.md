@@ -2,7 +2,7 @@
 
 Evidence types should be tied to invariant IDs. This skeleton lists families with placeholders for future detail.
 
-All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions) and export bundles MUST follow `docs/evidence-export-schema.md`.
+All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions) and export bundles MUST follow `docs/evidence-export-schema.md`. Evidence bundles MAY include qualified timestamp/seal references in the export manifest to support legal admissibility.
 
 ## Base envelope (draft)
 ```json
@@ -64,6 +64,51 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
     "evidence_pointer": { "type": "string" }
   },
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "credential_id", "proof_type", "policy_snapshot_id", "outcome", "evidence_pointer"]
+}
+```
+
+- Evidence events for delegated agent credentials (AUTH example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["wallet.delegation.issue", "wallet.delegation.revoke"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "delegation_id": { "type": "string" },
+    "delegator_id": { "type": "string" },
+    "delegate_id": { "type": "string" },
+    "scope": { "type": "array", "items": { "type": "string" } },
+    "valid_from": { "type": "string", "format": "date-time" },
+    "valid_to": { "type": "string", "format": "date-time" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "delegation_id", "delegator_id", "delegate_id", "scope", "valid_from", "valid_to", "outcome", "evidence_pointer"]
+}
+```
+
+- Evidence events for payment/usage binding (AUTH/DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["payment.usage.bind"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "delegation_id": { "type": "string" },
+    "receipt_id": { "type": "string" },
+    "payment_ref": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "receipt_id", "payment_ref", "outcome", "evidence_pointer"]
 }
 ```
 
