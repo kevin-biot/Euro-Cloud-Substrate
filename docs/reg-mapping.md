@@ -25,3 +25,4 @@ ECS does not encode specific regulations. It provides enforceable primitives (au
 - Use this as context for spec authors; do not turn regulations into invariants.
 - Keep mappings updated as regulations and guidance evolve.
 - IRN crosswalk (draft): see `docs/irn-mapping.md`.
+- Data Act as architecture constraint (draft): see `docs/data-act-architecture-constraint.md`.
