@@ -24,6 +24,14 @@ Outline the minimum components an open‑source landing zone implementation woul
    - Standard interop API surface for tenant operations.
    - Explicit exit/migration hooks for governance artifacts.
 
+## Portable control surface (draft)
+A practical ECS landing zone should include a portable **control surface** for provisioning and workload movement:
+- **CLI/IaC** for repeatable provisioning across providers.
+- **GitOps/CD pipelines** for deployment, rollback, and migration.
+- **Evidence hooks** integrated into pipelines to emit ECS events.
+
+If ECS APIs are standardized, open‑source pipelines can implement **portable workflows** to move workloads and data across providers without provider‑specific tooling.
+
 ## Reference stack candidates (non‑normative)
 - Identity: Keycloak or equivalent OIDC provider.
 - Policy: OPA/Kyverno admission controls.

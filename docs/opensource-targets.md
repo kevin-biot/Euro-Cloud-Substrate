@@ -48,3 +48,12 @@ There is no widely adopted open‑source “landing zone” reference implementa
 3. **Export evidence bundles** using `docs/evidence-export-schema.md`.
 4. **Implement usage receipts** for governed data access.
 5. **Optionally anchor chains** to qualified archiving services.
+
+## CLI + GitOps targets (non‑normative)
+To make ECS portable in practice, target existing open‑source control surfaces and delivery pipelines:
+- **Provisioning/IaC:** OpenTofu/Terraform, Ansible, Crossplane, Cluster API.
+- **GitOps:** Argo CD, Flux.
+- **CI/CD:** Tekton, Argo Workflows.
+- **Packaging:** Helm, Kustomize.
+
+These are candidates for **evidence‑aware adapters** that emit ECS events during provisioning, deployment, and rollback.
