@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented here.
 
-## Unreleased
+## 2026-02-03
 - Core10 deep-dives expanded (01–10) with requirements, evidence, and conformance outlines.
 - Evidence export schema added; evidence catalog aligned to envelopes, outcomes, usage receipts, and anchoring.
 - Compliance pattern library drafted with JSON schema snippets and governance notes.
