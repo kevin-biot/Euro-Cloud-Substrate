@@ -136,6 +136,56 @@ Content-Type: application/octet-stream
   - Governance metadata MUST be associated with file shares and preserved on export.
   - Access and export events MUST emit evidence with outcome and snapshot ids.
 
+#### Block storage evidence events (draft JSON)
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["block.volume.create", "block.volume.attach", "block.volume.detach", "block.volume.snapshot", "block.volume.export"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "volume_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "volume_id", "outcome", "evidence_pointer"]
+}
+```
+
+#### File storage evidence events (draft JSON)
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["file.share.create", "file.share.mount", "file.share.unmount", "file.share.export"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "share_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "share_id", "outcome", "evidence_pointer"]
+}
+```
+
+#### Usage receipts for block/file (draft)
+- Governed read/export operations SHOULD emit `data.usage.receipt` events with `data_product_id`, `purpose_id`, and `policy_snapshot_id`.
+- Usage receipts SHOULD be included in evidence export bundles to support neutral usage attribution.
+
 ### Backend mapping (non-normative)
 - Ceph: RGW (object), RBD (block), CephFS (file); OpenShift Data Foundation wraps Ceph for ODF deployments.
 - MinIO/SeaweedFS: object storage surfaces compatible with EOSC object contract.
