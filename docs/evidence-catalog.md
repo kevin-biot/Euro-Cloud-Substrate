@@ -24,16 +24,94 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
 ```
 
 ## AUTH
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["authority.binding", "authority.refusal"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "authority_snapshot_id": { "type": "string" },
+    "scope": { "type": "array", "items": { "type": "string" } },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "authority_snapshot_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## POL
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["policy.snapshot.publish", "policy.evaluate"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "policy_snapshot_id": { "type": "string" },
+    "action": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "policy_snapshot_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## EXEC
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["execution.admit", "execution.refuse", "runtime.dependency.declare"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "workload_id": { "type": "string" },
+    "envelope_type": { "type": "string" },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "workload_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## DATA
-- Evidence types (tbd)
+- Evidence types (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["data.residency.enforce", "data.export", "data.erasure"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "data_product_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "data_product_id", "outcome", "evidence_pointer"]
+}
+```
 
 ## EVID
 - Evidence events for storage (EVID/DATA/SUP example):
