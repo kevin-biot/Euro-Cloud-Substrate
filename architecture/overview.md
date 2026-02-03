@@ -98,6 +98,7 @@ These archetypes map the ECS planes to common provider architectures so vendors 
 - OpenShift/Kubernetes-based: `architecture/archetypes/openshift.md`
 - VM-first / IaaS-centric: `architecture/archetypes/iaas-vm.md`
 - Managed platform competitor: `architecture/archetypes/managed-platform.md`
+- SlapOS (master/compute, partitions): `architecture/archetypes/slapos.md`
 
 ## To-do
 - Add Mermaid/PlantUML diagrams for plane boundaries and flows.
