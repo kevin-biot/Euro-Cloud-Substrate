@@ -26,6 +26,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Open source alignment targets (draft): `docs/opensource-targets.md`
 - Landing zone reference (draft): `docs/landing-zone-reference.md`
 - Minimal pipeline schema (draft): `docs/pipeline-schema.md`
+- No‑control profile (draft): `docs/no-control-profile.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose

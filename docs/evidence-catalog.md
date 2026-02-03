@@ -112,6 +112,25 @@ All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, seq
 }
 ```
 
+- Evidence events for no‑control profile (AUTH/DEP example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["authority.graph.publish", "key.custody.declare", "controlplane.ownership.declare", "telemetry.path.audit"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "subject_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "subject_id", "outcome", "evidence_pointer"]
+}
+```
+
 ## POL
 - Evidence types (draft):
 ```json

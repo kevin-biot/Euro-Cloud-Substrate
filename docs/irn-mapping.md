@@ -45,4 +45,5 @@ Reference sites (non‑normative):
 ## Notes & roadmap hooks
 - Strongest alignment today: rupture tolerance (CRP) and evidence/auditability (Core10-05/06/09).
 - Draft conformance checklists and metrics now exist for DEP/SUP/OPS/PHY; SOC/log control profile added; remaining gaps include operationalization guidance.
+- No‑Control Profile (draft): see `docs/no-control-profile.md` for possession/custody/control evidence.
 - Treat this as guidance; full alignment work belongs in Phase 1 compliance mappings.
