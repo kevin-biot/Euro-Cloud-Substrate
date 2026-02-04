@@ -1,6 +1,7 @@
 # EU Compliance Pattern Library (Draft, Non-Normative)
 
 Supporting reference patterns for translating legal obligations into runtime-enforceable, evidence-generating design primitives. This draft is intended to guide architecture review and future standardisation work; it is not a binding standard.
+See `docs/grc-domain.md` for the GRC domain overview and evidence expectations.
 
 ## Purpose
 - Provide reusable, deterministic compliance patterns for EU regulations.
