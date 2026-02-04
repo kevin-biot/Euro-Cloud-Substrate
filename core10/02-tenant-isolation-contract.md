@@ -1,4 +1,4 @@
-# Tenant Isolation Contract — Placeholder
+# Tenant Isolation Contract — Draft v1
 
 ## Intent
 Minimum isolation semantics across compute, storage, network, logs, and indexes.
@@ -13,6 +13,7 @@ Minimum isolation semantics across compute, storage, network, logs, and indexes.
 - Isolation domain: a control plane or data plane surface where tenant separation must be enforced.
 - Cross-tenant access: any read/write/execute action that crosses a tenant boundary.
 - Shared infrastructure: components used by multiple tenants (hypervisors, storage clusters, control planes).
+- Isolation test: verification activity that attempts cross-tenant access and records refusal evidence.
 
 ## Isolation domains (draft)
 - Compute: workloads run in isolated envelopes; no cross-tenant memory, process, or runtime access.
@@ -47,6 +48,7 @@ Minimum isolation semantics across compute, storage, network, logs, and indexes.
 - Cross-tenant access MUST be time-bounded, least-privilege, and tied to explicit authority.
 - Grants MUST include scope, duration, and evidence pointer; default remains deny.
 - All cross-tenant requests MUST emit evidence (allow/refuse) with authority/policy snapshot ids.
+ - Cross-tenant access MUST declare `evidence_profile_id` in export contexts.
 
 ## Conformance outline (draft v1)
 - Declare selected evidence profile for tenant isolation evidence.

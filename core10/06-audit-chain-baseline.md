@@ -1,4 +1,4 @@
-# Audit Chain Baseline — Placeholder
+# Audit Chain Baseline — Draft v1
 
 ## Intent
 Hash-linked log requirements for compliance-critical flows.
@@ -35,6 +35,7 @@ Hash-linked log requirements for compliance-critical flows.
 - Chain state MUST be exportable and independently verifiable (EVID-04).
 - Retention MUST be enforced and auditable.
 - Reconciliation MUST detect gaps/tampering; detection events MUST be logged.
+- When required by the selected profile, chain segments SHOULD be anchored to qualified archiving (`docs/evidence/qualified-archiving.md`).
 
 ## Chain model (draft)
 - Integrity: hash chaining using approved algorithms (e.g., sha256) over ordered events.

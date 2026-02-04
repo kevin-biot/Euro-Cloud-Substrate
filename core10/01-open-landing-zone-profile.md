@@ -1,4 +1,4 @@
-# Open Landing Zone Profile (OLZ-EU) — Placeholder
+# Open Landing Zone Profile (OLZ-EU) — Draft v1
 
 ## Intent
 Define the baseline for tenant creation, identity, network, policy, and audit required for ECS.
@@ -16,6 +16,7 @@ OLZ‑EU is intended as a **provider‑agnostic landing zone contract** that can
 - Authority binding: verifiable link between tenant and an issuing authority with scope and validity.
 - Policy baseline: default-deny policy snapshot applied at tenant bootstrap.
 - Control-plane action: any tenant or policy operation that changes authority, access, network, or workload admission.
+- Identity federation: external IdP integration (OIDC) and S2S identity (mTLS) used for tenant governance actions.
 
 ## Inputs and artifacts (draft)
 - Tenant request: tenant id, jurisdiction, classification ceiling, owner/contact, requested policy baseline.
@@ -68,6 +69,7 @@ OLZ‑EU is intended as a **provider‑agnostic landing zone contract** that can
 - Control-plane actions (create/update/delete/suspend) MUST pass through an admission gate bound to authority/policy (EXEC-01).
 - Segmentation and egress controls MUST be declared and enforced; dependencies MUST be declared (DATA-01, PHY-01).
 - Evidence events MUST include authority and policy snapshot ids and be integrity-protected where required (EVID-01/03/04).
+- OIDC federation SHOULD be supported for external IdPs; S2S identity SHOULD use mTLS with evidence of validation.
 
 ## Conformance outline (draft v1)
 - Declare selected evidence profile for OLZ evidence outputs and bundle exports.

@@ -1,4 +1,4 @@
-# Euro Object Storage Contract (EOSC) — Placeholder
+# Euro Object Storage Contract (EOSC) — Draft v1
 
 ## Intent
 S3-compatible surface with governance metadata requirements for portability and auditability.
@@ -11,7 +11,7 @@ S3-compatible surface with governance metadata requirements for portability and 
 ## Definitions (draft)
 - Governance metadata: jurisdiction, classification, retention/TTL, evidence pointer, integrity hash.
 - Compliance-relevant object: objects containing regulated data or used in governed workflows.
-- Evidence pointer: URI/hashlink referencing immutable evidence for the operation.
+- Evidence pointer: URI/hashlink referencing immutable evidence for the operation (see pointer contract in `docs/evidence/export-schema.md`).
 
 ## Invariant families (refs)
 - DATA (residency, classification)
@@ -29,11 +29,11 @@ S3-compatible surface with governance metadata requirements for portability and 
 - Data security posture (at-rest/in-transit/in-use encryption, key custody, DLP decisions) SHOULD be declared and evidenced; see `docs/domains/data-security.md`.
 
 ## Required metadata (draft)
-- `x-ecs-jurisdiction` (ISO country/region)
-- `x-ecs-classification` (classification ceiling)
-- `x-ecs-retention` (RFC 3339 duration or policy id)
-- `x-ecs-integrity` (sha256 hash of object payload)
-- `x-ecs-evidence` (evidence pointer for write)
+- `x-eosc-jurisdiction` (ISO country/region)
+- `x-eosc-classification` (classification ceiling)
+- `x-eosc-retention-ttl` (RFC 3339 timestamp or ISO 8601 duration)
+- `x-eosc-integrity` (sha256 hash of object payload)
+- `x-eosc-evidence-pointer` (evidence pointer for write)
 
 ## EOSC API expectations (draft)
 - Compatible with S3 object CRUD operations (PUT/GET/HEAD/DELETE).

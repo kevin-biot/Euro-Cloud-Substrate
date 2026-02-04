@@ -1,4 +1,4 @@
-# Policy & Authority Interface — Placeholder
+# Policy & Authority Interface — Draft v1
 
 ## Intent
 Explicit decision points, escalation hooks, refusal semantics, and authority tracing.
@@ -27,6 +27,7 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
   - Return outcome + evidence pointer + snapshot ids.
 - Evidence emission:
   - Emit decision/refusal/escalation events with authority/policy context.
+  - Decision events MUST use the Core10‑05 envelope.
 
 ## Authority binding schema (draft JSON)
 ```json
@@ -64,6 +65,7 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 - `authority_snapshot_id`, `policy_snapshot_id`
 - `outcome` (accepted/refused/failed), `refusal_reason` (if refused)
 - `evidence_pointer`, `integrity` (hash/chain ref)
+ - `evidence_profile_id` (required in export manifests; optional if copied into events)
 
 ## Applicable invariant IDs
 - AUTH-01/02/04/05, POL-01/02/03/04/05, EVID-01/03/04

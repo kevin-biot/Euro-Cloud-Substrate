@@ -1,4 +1,4 @@
-# Execution Envelope Profiles — Placeholder
+# Execution Envelope Profiles — Draft v1
 
 ## Intent
 Container and VM profiles, including when stronger isolation is required.
@@ -7,6 +7,7 @@ Container and VM profiles, including when stronger isolation is required.
 - Applies to workload admission and runtime enforcement of declared envelopes.
 - Envelope selection is policy-driven; refusal is first-class and evidenced.
 - Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
+- References `ws3-exec-envelopes/spec.md` for execution envelope expectations.
 
 ## Definitions (draft)
 - Execution envelope: declared runtime profile (container/VM/TEE) with required controls.

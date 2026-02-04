@@ -1,4 +1,4 @@
-# Evidence Event Model — Placeholder
+# Evidence Event Model — Draft v1
 
 ## Intent
 Standard event types for authorization, execution, refusal, escalation, policy snapshot, retention duty, etc.
@@ -55,7 +55,7 @@ Evidence pointers MUST be trustworthy, not just present:
 - Optional integrity fields:
   - `chain_id` (evidence chain identifier)
   - `event_hash` (hash of canonical event payload)
-  - `prev_hash` (hash chain)
+  - `prev_event_hash` (hash chain; also referenced as `prev_hash`)
   - `evidence_hash` (hash of canonical payload)
   - `monotonic_time_ns` (monotonic clock value for local ordering)
 

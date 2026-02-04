@@ -1,4 +1,4 @@
-# Migration Baseline — Placeholder
+# Migration Baseline — Draft v1
 
 ## Intent
 Minimum portability expectations: how state, objects, and audit artifacts move provider-to-provider.
@@ -38,12 +38,18 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 5. Activate: only after validation gates pass; emit evidence.
 6. Rollback: if activation fails, revert with evidence.
 
+## Stateful portability limits (draft)
+- Some stateful assets (e.g., PVCs, managed database internals) may not be portable across providers.
+- Providers MUST declare such limits and emit refusal evidence when migration is not possible.
+- Where possible, an alternative portability path SHOULD be offered (snapshot/object export or evidence-only export).
+
 ## Requirements (draft v1)
 - Workloads and data MUST be exportable with governance metadata intact (EXIT-01/02/03).
 - Export MUST include evidence of successful transfer and integrity verification (EVID-01/03/04).
 - Import MUST validate governance metadata and authority binding before activation (AUTH-01, POL-01).
 - Dependency inventory MUST be provided to inform migration feasibility (DEP-01/02, SUP-01).
 - Reversibility: migration MUST support rollback with evidence of state changes (EXIT-03).
+ - Non-portable stateful assets MUST emit refusal evidence and declare alternatives where applicable.
 
 ### Export process (draft)
 - Package: workload definition, configuration, data, governance metadata, SBOM, evidence chain segment.

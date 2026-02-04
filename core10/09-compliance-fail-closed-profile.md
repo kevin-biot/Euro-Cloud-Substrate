@@ -1,4 +1,4 @@
-# Compliance Fail-Closed Profile — Placeholder
+# Compliance Fail-Closed Profile — Draft v1
 
 ## Intent
 Define conditions that must block execution for compliance-critical flows.

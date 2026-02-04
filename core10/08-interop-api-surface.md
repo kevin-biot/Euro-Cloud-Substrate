@@ -1,4 +1,4 @@
-# Interop API Surface — Placeholder
+# Interop API Surface — Draft v1
 
 ## Intent
 Minimum APIs for workload deployment, identity, storage, and audit queries to enable portability.
@@ -13,6 +13,7 @@ Minimum APIs for workload deployment, identity, storage, and audit queries to en
 - Interop API: versioned, documented API surface for core ECS resources.
 - Evidence query: read-only interface for audit events with integrity guarantees.
 - Portability interface: APIs that enable export/import and validation of governed artifacts.
+- Federation claims: optional capability declaration that surfaces interop differences rather than hiding them (see `ws4-interop-api/spec.md`).
 
 ## Invariant families (refs)
 - INT (standard interfaces)
