@@ -45,6 +45,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Core 10: `core10/`
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `docs/call-for-participation.md`
 - Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
+- Competition & differentiation: `docs/positioning/competition.md`
 - Mappings: `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`
 - IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
 - Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`
