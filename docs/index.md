@@ -36,6 +36,7 @@
 - Metrics: `docs/conformance/metrics.md`
 
 ## Mappings
+- Mappings index: `docs/mappings/README.md`
 - Regulatory mapping: `docs/mappings/reg-mapping.md`
 - IPCEI‑CIS mapping: `docs/mappings/ipcei-cis-mapping.md`
 - IRN crosswalk: `docs/mappings/irn-mapping.md`

@@ -4,21 +4,21 @@
 Provide a practical mapping between the Tech Sovereignty Catalogue and ECS, so providers can supply evidence for catalogue visibility without changing ECS semantics.
 
 ## Catalogue summary (public)
-- The Tech Sovereignty Catalogue is positioned as Europe’s showcase of trusted digital solutions. citeturn1view0  
-- Submission flow includes eligibility checks for market readiness (TRL 9), EU/EFTA presence (legal, R&D), and capacity/capability/control, followed by independent expert evaluation and inclusion/visibility in the catalogue. citeturn1view0  
-- The catalogue highlights two related labels: **Software Made in Europe** and **Software Hosted in Europe**. citeturn1view0turn1view1  
+- The Tech Sovereignty Catalogue is positioned as Europe’s showcase of trusted digital solutions.
+- Submission flow includes eligibility checks for market readiness (TRL 9), EU/EFTA presence (legal, R&D), and capacity/capability/control, followed by independent expert evaluation and inclusion/visibility in the catalogue.
+- The catalogue highlights two related labels: **Software Made in Europe** and **Software Hosted in Europe**.
 
 ## Label criteria (public)
 **Software Made in Europe** (summary):
 - Company headquartered and majority‑owned in Europe.
 - Solution developed/tested mainly in Europe.
 - Majority of R&D and staff in EU/EFTA.
-- Key stages of development carried out in Europe. citeturn1view1turn2view0  
+- Key stages of development carried out in Europe.
 
 **Software Hosted in Europe** (summary):
 - Hosting and data within EU/EFTA.
 - Transparency about data transfers and EU regulatory compliance.
-- Commitment to privacy and European digital sovereignty. citeturn1view1  
+- Commitment to privacy and European digital sovereignty.
 
 ## ECS alignment table
 | Catalogue element | What ECS can evidence | Out of scope for ECS |
@@ -39,4 +39,4 @@ Provide a practical mapping between the Tech Sovereignty Catalogue and ECS, so p
 4. **Optional**: SBOM/provenance artifacts for supply‑chain visibility.
 
 ## Notes
-ECS is a contract layer and does not replace catalogue governance or label eligibility. It provides a **verifiable evidence trail** that can support catalogue evaluation without changing ECS semantics. citeturn1view0
+ECS is a contract layer and does not replace catalogue governance or label eligibility. It provides a **verifiable evidence trail** that can support catalogue evaluation without changing ECS semantics.
