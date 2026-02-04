@@ -33,4 +33,5 @@ Define inter‑cloud federation that enables collaboration and resource sharing 
 - **Drift is expected, not hidden**: federation preserves autonomy; differences between providers must be surfaced via claims and refusal evidence rather than masked.
 
 ## Notes
-ECS defines the **contract layer** for federation. It does not mandate a broker product; any Federation Manager/Broker implementation is acceptable if it can produce the required evidence artifacts and profile claims.
+ECS defines the **contract layer** for federation. It does not mandate a broker product; any Federation Manager/Broker implementation is acceptable if it can produce the required evidence artifacts and profile claims.  
+See `ws4-interop-api/spec.md` for the federation claims endpoint (non‑normative) and `ws6-migration/spec.md` for stateful portability limits.
