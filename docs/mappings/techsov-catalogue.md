@@ -38,5 +38,28 @@ Provide a practical mapping between the Tech Sovereignty Catalogue and ECS, so p
 3. **Conformance checklist** pointing to invariant coverage and refusal evidence.  
 4. **Optional**: SBOM/provenance artifacts for supply‑chain visibility.
 
+### Submission pack layout (example)
+```
+catalogue-pack/
+  profile-claims.json
+  evidence-bundle/
+    manifest.json
+    events.jsonl
+    chain-segment.json
+    verifier-inputs.json
+    artifacts/
+  conformance/
+    invariant-coverage.md
+    refusal-evidence-summary.md
+  sbom/
+    platform-sbom.json
+    runtime-sbom.json
+```
+
+### Notes for the pack
+- `profile-claims.json` should declare supported `evidence_profile_id` values and defaults.
+- `manifest.json` should include `evidence_profile_id` and any `hash_profile_id` if ML evidence is present.
+- Include refusal evidence for unsupported portability or jurisdictional constraints.
+
 ## Notes
 ECS is a contract layer and does not replace catalogue governance or label eligibility. It provides a **verifiable evidence trail** that can support catalogue evaluation without changing ECS semantics.
