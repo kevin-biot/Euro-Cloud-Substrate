@@ -52,6 +52,7 @@ An architectural definition project for a portable, governable, European cloud s
 - ML evidence implementation gap (draft): `docs/ml-evidence-implementation.md`
 - Qualified archiving note (draft): `docs/qualified-archiving.md`
 - Open source alignment targets (draft): `docs/opensource-targets.md`
+- Open-source adoption note (draft): `OSS_ADOPTION.md`
 - Landing zone reference (draft): `docs/landing-zone-reference.md`
 - Minimal pipeline schema (draft): `docs/pipeline-schema.md`
 - No‑control profile (draft): `docs/no-control-profile.md`
