@@ -252,6 +252,7 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
 }
 ```
 Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpose_id` for `data.purpose.bind`, `consent_token_ref` for `data.consent.bind`, `terms_snapshot_id` for `data.terms.attach`, `lineage_sources` for `data.lineage.link`).
+`data.purpose.bind` and `data.consent.bind` are **decision events**: they MUST emit `accepted`/`refused`/`failed` outcomes with policy/authority snapshot references and occur **before** governed access.
 
 ## EVID
 - Evidence events for storage (EVID/DATA/SUP example):
