@@ -28,7 +28,7 @@ An architectural definition project for a portable, governable, European cloud s
 
 - Core paper: `VISION.md` (v0.2) and `docs/architecture/`
 - Invariants: `docs/invariants/v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/conformance/invariant-coverage.md`
-- Profiles: `crp/` (Crisis Resilience Profile), `docs/profiles/README.md`
+- Profiles: `crp/README.md` (Crisis Resilience Profile), `docs/profiles/README.md`
 - Conformance shape: `docs/conformance/model.md`
 - Conformance checklists (draft): `docs/conformance/README.md`
 - Minimal metrics (draft): `docs/conformance/metrics.md`
