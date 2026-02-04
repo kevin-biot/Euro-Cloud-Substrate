@@ -15,6 +15,8 @@ This revision adds three concrete elements requested by early reviewers:
 
 This document remains intentionally non-implementational. Its goal is to define the execution contract that enables interoperability, portability, and governance-by-design across European cloud providers.
 
+ECS standardizes **verifiable governance and portability**, not the commercial layer. Conformance is a minimum contract; providers still compete on performance, managed services, UX, pricing, and regional specialization.
+
 For regulatory context and how ECS primitives map to EU obligations, see `docs/mappings/reg-mapping.md`. For the French IRN “what” versus ECS “how” crosswalk, see `docs/mappings/irn-mapping.md`.
 
 ### External context (aDRI)
