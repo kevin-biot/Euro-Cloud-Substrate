@@ -42,7 +42,7 @@ ECS organizes system responsibilities into planes. This is an **architectural de
 - **Plane E — Interop & Portability**
   - Versioned APIs + export/import validation
 
-See `architecture/overview.md` for plane diagrams.
+See `docs/architecture/overview.md` for plane diagrams.
 
 ### Control & Evidence Flow (core loop)
 1. **Authority binding** is checked (Plane A)
@@ -151,7 +151,7 @@ ECS enables multiple archetypes without a mandated stack:
 | VM‑first | Virtualization + Network + Physical | VM envelope + data export + evidence |
 | Managed platform | App + Orchestration + Data/AI | Interop APIs + evidence profiles |
 
-See `architecture/overview.md` for a compact view.
+See `docs/architecture/overview.md` for a compact view.
 
 ---
 

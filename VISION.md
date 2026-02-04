@@ -241,7 +241,7 @@ CRP formalises edge execution as a continuity requirement, not a latency optimis
 
 The “edge” is defined as the last point at which lawful authority, operational control, and accountability remain intact. CRP ensures that this point can continue to function autonomously until coordination is restored.
 
-See `architecture/crp.md` for a diagram of CRP operational modes.
+See `docs/architecture/crp.md` for a diagram of CRP operational modes.
 
 ---
 
@@ -293,7 +293,7 @@ IALP enables:
 
 IALP transforms logging from observability into legal evidence infrastructure.
 
-See `architecture/ialp.md` for a diagram of IALP flows.
+See `docs/architecture/ialp.md` for a diagram of IALP flows.
 
 ---
 

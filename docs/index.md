@@ -8,8 +8,8 @@
 - RFP guide: `docs/procurement/rfp-guide.md`
 
 ## Architecture
-- Planes & diagrams: `architecture/overview.md`
-- Control plane definition: `architecture/control-plane.md`
+- Planes & diagrams: `docs/architecture/overview.md`
+- Control plane definition: `docs/architecture/control-plane.md`
 - Core10 status: `docs/architecture/core10-status.md`
 
 ## Domains

@@ -7,7 +7,7 @@
 - **Plane D — Data & Evidence Substrate:** EOSC object storage, governance metadata, evidence chain persistence.
 - **Plane E — Interop & Portability:** versioned interop APIs, export/import flows, migration validation gates.
 
-See `architecture/control-plane.md` for control-plane capability definitions (policy engine, admission gate, evidence hooks).
+See `docs/architecture/control-plane.md` for control-plane capability definitions (policy engine, admission gate, evidence hooks).
 
 ## Diagram convention
 - Mermaid is the baseline for diagrams in this repo.
@@ -157,7 +157,7 @@ flowchart LR
     Profiles[Profiles<br/>crp/, docs/profiles/]
     Core10[Core10<br/>core10/]
     WS[Workstreams<br/>ws*/]
-    Arch[Architecture pack<br/>architecture/]
+    Arch[Architecture pack<br/>docs/architecture/]
     Gov[Governance & Process<br/>GOVERNANCE.md, CONTRIBUTING.md, decisions/]
     Conf[Conformance Model<br/>docs/conformance/model.md]
 
@@ -191,10 +191,10 @@ flowchart TB
 ## Archetypes (non-normative)
 These archetypes map the ECS planes to common provider architectures so vendors can align existing stacks to ECS without prescribing a single universal design.
 
-- OpenShift/Kubernetes-based: `architecture/archetypes/openshift.md`
-- VM-first / IaaS-centric: `architecture/archetypes/iaas-vm.md`
-- Managed platform competitor: `architecture/archetypes/managed-platform.md`
-- SlapOS (master/compute, partitions): `architecture/archetypes/slapos.md`
+- OpenShift/Kubernetes-based: `docs/architecture/archetypes/openshift.md`
+- VM-first / IaaS-centric: `docs/architecture/archetypes/iaas-vm.md`
+- Managed platform competitor: `docs/architecture/archetypes/managed-platform.md`
+- SlapOS (master/compute, partitions): `docs/architecture/archetypes/slapos.md`
 
 ## Compliance pattern library (draft)
 - `docs/compliance/pattern-library.md` (non-normative)

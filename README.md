@@ -25,7 +25,7 @@ An architectural definition project for a portable, governable, European cloud s
 5. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
 6. Docs index (navigation): `docs/index.md`
 
-- Core paper: `VISION.md` (v0.2) and `architecture/`
+- Core paper: `VISION.md` (v0.2) and `docs/architecture/`
 - Invariants: `docs/invariants/v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/conformance/invariant-coverage.md`
 - Profiles: `crp/` (Crisis Resilience Profile), `docs/profiles/README.md`
 - Conformance shape: `docs/conformance/model.md`
@@ -38,7 +38,7 @@ An architectural definition project for a portable, governable, European cloud s
 - GRC domain note (draft): `docs/domains/grc.md`
 - Privacy & user control note (draft): `docs/domains/privacy.md`
 - Federation domain note (draft): `docs/domains/federation.md`
-- Control-plane capabilities: `architecture/control-plane.md`
+- Control-plane capabilities: `docs/architecture/control-plane.md`
 - EUDI wallet integration note (draft): `docs/domains/eudi-wallet-integration.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
 - Core 10: `core10/`
@@ -103,7 +103,7 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 ## Repository structure
 - `VISION.md` — core paper (v0.2)
 - `ROADMAP.md` — phases and expected deliverables
-- `architecture/` — reference architecture overview and diagrams
+- `docs/architecture/` — reference architecture overview and diagrams
 - `crp/` — Crisis Resilience Profile spec, invariants, conformance, diagrams
 - `docs/invariants/v0.3.md` — authoritative invariant list and statuses
 - `docs/invariants/` — family deep-dives (e.g., DEP, SUP, PHY, OPS)

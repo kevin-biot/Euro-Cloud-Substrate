@@ -9,7 +9,7 @@
 
 ## Phase 1 — Architecture Baseline (8–12 weeks)
 - Draft v0.5 for each workstream (spec + invariants + conformance outline + diagrams).
-- Publish first reference architecture pack under `architecture/` (Mermaid/PlantUML).
+- Publish first reference architecture pack under `docs/architecture/` (Mermaid/PlantUML).
 - Define conformance testing approach (without full implementation).
 - Begin aligning invariants taxonomy (see `docs/invariants/v0.3.md`) with Core 10/CRP for next revision.
 - Begin compliance mappings (IRN/NIS2/DORA/etc.) using `docs/mappings/irn-mapping.md` as a draft crosswalk.
@@ -35,5 +35,5 @@
 - CRP: `crp/spec.md`, `crp/invariants.md`, `crp/conformance-outline.md`, `crp/diagrams/`
 - Workstreams: `ws*/spec.md`, `ws*/invariants.md`, `ws*/conformance-outline.md`, `ws*/diagrams/`
 - Core 10: `core10/*.md`
-- Architecture pack: `architecture/overview.md` + diagrams
+- Architecture pack: `docs/architecture/overview.md` + diagrams
 - Governance & process: `GOVERNANCE.md`, `CONTRIBUTING.md`, `decisions/`
