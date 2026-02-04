@@ -40,6 +40,7 @@
 - IPCEI‑CIS mapping: `docs/mappings/ipcei-cis-mapping.md`
 - IRN crosswalk: `docs/mappings/irn-mapping.md`
 - Data Act constraint: `docs/mappings/data-act-architecture-constraint.md`
+- SUSE CSF mapping: `docs/mappings/suse-csf-mapping.md`
 - Gaia‑X alignment: `docs/mappings/gaia-x/README.md`
 
 ## Guides & Adoption
