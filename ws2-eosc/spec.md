@@ -9,6 +9,12 @@
 - SUP (inventory, provenance)
 - INT/EXIT (portability)
 
+## Terms (WS2 scope)
+- **data_product_id**: Identifier for a governed data product used for sharing/usage accounting.
+- **usage_policy_snapshot_id**: Policy snapshot governing access to the data product at decision time.
+- **consent_token_ref**: Reference to an intent/consent token used in access decisions.
+- **evidence_pointer**: Must conform to the evidence pointer contract in `docs/evidence/export-schema.md`.
+
 ## Sections to draft
 - API surface and compatibility expectations.
 - Metadata contract (jurisdiction, retention/TTL, evidence pointers, integrity hashes).
@@ -30,7 +36,7 @@
   - `x-eosc-retention-ttl`: ISO 8601 duration or RFC 3339 timestamp for expiry/retention (string).
   - `x-eosc-integrity`: algorithm:value (e.g., `sha256:<hex>`) (string).
   - `x-eosc-classification`: controlled vocabulary (e.g., `public|internal|restricted|secret`) (string).
-  - `x-eosc-evidence-pointer`: URI to evidence/audit record(s) (e.g., `eosc://evidence/<id>` or https URL) (string).
+  - `x-eosc-evidence-pointer`: URI to evidence/audit record(s) (e.g., `eosc://evidence/<id>` or https URL) (string, must satisfy evidence pointer contract).
   - `x-eosc-data-product-id`: data product identifier for governed sharing (string).
   - `x-eosc-usage-policy-snapshot-id`: policy snapshot governing access (string).
   - `x-eosc-consent-token-ref`: consent/intent token reference (string).
@@ -124,6 +130,7 @@ Content-Type: application/octet-stream
 - Evidence events MUST include: authority/policy snapshot IDs, object identifier/version, governance metadata values, integrity info, outcome (accepted/refused/failed).
 - Data access events (GET/EXPORT) MUST emit evidence including data product id, policy snapshot id, consent token ref, and usage receipt reference when applicable.
 - Audit/export: provide a standard export of evidence/audit related to objects (aligned with WS5) and `docs/evidence/export-schema.md`.
+- Export bundles MUST declare `evidence_profile_id` and include chain fields where required by the selected profile.
 
 ### Non-object storage alignment (block/file) — draft
 - Block and file storage are out of scope for EOSC as a strict object contract, but MUST align on governance metadata, evidence emission, and exportability.
