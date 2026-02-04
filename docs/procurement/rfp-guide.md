@@ -5,7 +5,7 @@ Provide procurement-ready language to request ECS evidence support in a measurab
 
 ## Required declarations (profile claims)
 Suppliers MUST provide a profile claim using the template in `docs/conformance/model.md`, including:
-- Supported evidence profiles (e.g., baseline, admissible, regulated-ML, NCP).
+- Supported evidence profiles (e.g., baseline, admissible, regulated-ML, NCP (No‑Control Profile)).
 - Default evidence profile.
 - Supported hash profiles.
 - Export endpoints or mechanisms.
