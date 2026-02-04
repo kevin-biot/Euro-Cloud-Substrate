@@ -9,6 +9,11 @@
 - EXIT (portability support)
 - EVID (audit/evidence queries)
 
+## Terms (WS4 scope)
+- **interop resource**: API surface that is portable across providers (tenant, workload, storage, audit).
+- **evidence export**: Bundle of events/artifacts per `docs/evidence/export-schema.md`.
+- **Core10-05 envelope**: Canonical evidence event envelope used by audit APIs.
+
 ## Sections to draft
 - Resources and operations per plane (identity, control, execution, data).
 - Authentication/authorization model and required claims.
@@ -35,6 +40,7 @@
 - Read-only: `GET /events`, `GET /events/{id}`.
 - Filtering: by `tenant`, time range, `event_type`, `outcome`.
 - Must preserve ordering/integrity guarantees (aligned with WS5).
+- Events MUST conform to Core10-05 and include chain fields when required by the selected evidence profile.
 - Pagination: cursor-based recommended (`?cursor=...&limit=...`); include `next_cursor` if more results. Default limit 100; max 1000.
 - Async events: providers MAY offer real-time subscription (see `docs/interop/asyncapi-events.yaml`).
 - Export endpoints SHOULD support No‑Control Profile (NCP) evidence bundles when applicable.
@@ -63,6 +69,7 @@ See `docs/domains/federation.md` for the federation domain summary and evidence 
   - API keys: OPTIONAL; if supported, MUST be scoped to tenant and least privilege.
 - Authz:
   - Policy evaluation per POL invariants; refusals are first-class and MUST emit evidence with policy/authority snapshot.
+  - Auth decisions MUST emit evidence using the Core10-05 envelope.
 
 ## Error model
 - Standard HTTP status codes.
@@ -71,6 +78,7 @@ See `docs/domains/federation.md` for the federation domain summary and evidence 
 { "code": "ECS_...", "message": "...", "evidence_pointer": "..." }
 ```
 - Refusals include evidence pointer for audit.
+- Error bodies SHOULD include `evidence_profile_id` when refusal is governed by a declared profile.
 - Providers SHOULD implement rate limiting and use standard headers (`X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After`); 429 with error body on limit exceeded.
 
 ## Versioning
