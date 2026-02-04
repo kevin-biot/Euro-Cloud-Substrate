@@ -39,3 +39,8 @@ ECS adds:
 ## Notes
 This mapping does **not** claim ICRA and ECS are equivalent; it shows how ECS supplies the missing contract layer (evidence and export semantics) within the ICRA’s conceptual structure.
 See `docs/federation-domain.md` for the ECS federation domain summary and evidence expectations.
+Related domain notes:
+- IAM: `docs/iam-domain.md`
+- Data security: `docs/data-security-domain.md`
+- GRC: `docs/grc-domain.md`
+- Privacy & user control: `docs/privacy-domain.md`
