@@ -14,4 +14,4 @@ The IRN crosswalk (`docs/mappings/irn-mapping.md`) maps IRN “what” to ECS �
 ## Consequences
 - Prevents ECS from being treated as a certification scheme.
 - Keeps IRN alignment grounded in existing invariants and evidence.
-- Changes to IRN mappings do not alter ECS semantics; they update crosswalk guidance only.***
+- Changes to IRN mappings do not alter ECS semantics; they update crosswalk guidance only.

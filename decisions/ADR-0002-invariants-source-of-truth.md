@@ -15,4 +15,4 @@ The invariant taxonomy (AUTH, POL, EXEC, DATA, EVID, INT, EXIT, DEP, SUP, OPS, P
 ## Consequences
 - Prevents scope drift and duplicate semantics.
 - Profiles and mappings must bind to invariant IDs.
-- Changes to invariants require a deliberate revision and ADR if semantics change.***
+- Changes to invariants require a deliberate revision and ADR if semantics change.

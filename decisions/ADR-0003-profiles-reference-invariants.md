@@ -15,4 +15,4 @@ Profiles (e.g., CRP) make ECS usable in context. Without guardrails, profiles co
 ## Consequences
 - Profiles remain compatible and composable.
 - Prevents fragmentation and semantic drift.
-- New profiles must declare scope, applicable invariant IDs, and any stricter evidence requirements.***
+- New profiles must declare scope, applicable invariant IDs, and any stricter evidence requirements.
