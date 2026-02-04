@@ -7,6 +7,7 @@ An architectural definition project for a portable, governable, European cloud s
 2. Golden Bundles (what correct looks like): `docs/examples/evidence-bundles/`
 3. Reference Adapter (how to emit it): `adapters/k8s-admission/`
 4. RFP Guide (how to buy it): `docs/rfp-evidence-support.md`
+5. Architecture Overview (big picture): `docs/architecture-overview.md`
 
 - Core paper: `VISION.md` (v0.2) and `architecture/`
 - Invariants: `docs/invariants-v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/invariant-coverage.md`
