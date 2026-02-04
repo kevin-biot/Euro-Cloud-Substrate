@@ -14,7 +14,7 @@ Define privacy‑by‑design expectations and user control across the cloud‑ed
 - **Core10‑03 EOSC** — governance metadata for data handling.
 - **Core10‑05/06** — evidence events and audit chain.
 - **Compliance patterns** — consent/intent token (CITP) and usage receipt (URP).
-- **Regulatory mapping** — `docs/reg-mapping.md` (GDPR alignment).
+- **Regulatory mapping** — `docs/mappings/reg-mapping.md` (GDPR alignment).
 
 ## Evidence expectations (privacy‑grade)
 - **Consent tokens** bound to purpose and policy snapshot.

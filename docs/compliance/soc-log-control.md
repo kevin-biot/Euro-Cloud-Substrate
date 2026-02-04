@@ -11,7 +11,7 @@ Define minimum controls for log residency, access, integrity, and export to sati
 - **Log residency:** logs and evidence MUST be stored in declared jurisdictions.
 - **Access control:** access to logs MUST be governed by policy/authority checks and least‑privilege.
 - **Integrity:** logs MUST be integrity‑protected (hash chain and/or signatures).
-- **Exportability:** logs and evidence MUST be exportable as bundles (`docs/evidence-export-schema.md`).
+- **Exportability:** logs and evidence MUST be exportable as bundles (`docs/evidence/export-schema.md`).
 - **Timely access:** providers MUST supply access within stated SLAs for regulated workloads.
 - **Retention:** retention periods MUST be enforced and evidenced.
 

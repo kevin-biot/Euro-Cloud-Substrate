@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-The IRN crosswalk (`docs/irn-mapping.md`) maps IRN “what” to ECS “how” via invariants and evidence. ECS is not a certification or scoring scheme.
+The IRN crosswalk (`docs/mappings/irn-mapping.md`) maps IRN “what” to ECS “how” via invariants and evidence. ECS is not a certification or scoring scheme.
 
 ## Decision
 - IRN mapping is non-normative and mechanism-only; it does not define scoring, compliance labels, or certification.

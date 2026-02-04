@@ -22,9 +22,9 @@ Provide a lightweight mapping between ECS data invariants and data-space concern
 ## ECS components that address these gaps
 | Gap | ECS component | Reference |
 |---|---|---|
-| Evidence export | Evidence Export Schema | `docs/evidence-export-schema.md` |
-| Policy binding | Policy Snapshot Pattern | `docs/compliance-pattern-library.md` |
-| Consent binding | Consent/Intent Token Pattern | `docs/compliance-pattern-library.md` |
+| Evidence export | Evidence Export Schema | `docs/evidence/export-schema.md` |
+| Policy binding | Policy Snapshot Pattern | `docs/compliance/pattern-library.md` |
+| Consent binding | Consent/Intent Token Pattern | `docs/compliance/pattern-library.md` |
 | Data product metadata | DATA invariants (descriptor) | `docs/invariants/data.md` |
 | Pre-hoc evidence | Evidence Event Model / Audit Chain | `core10/05-evidence-event-model.md`, `core10/06-audit-chain-baseline.md` |
 

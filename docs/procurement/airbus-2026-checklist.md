@@ -15,7 +15,7 @@ Supplier MUST provide:
 - Export endpoints and mechanisms
 - Verifier inputs supported (chain_id, prev_hash, event_hash, archive_ref)
 
-Template: `docs/conformance-model.md` (Profile claims)
+Template: `docs/conformance/model.md` (Profile claims)
 
 ## Evidence bundle acceptance criteria
 Supplier MUST provide example bundles (or live exports) that include:
@@ -47,11 +47,11 @@ Supplier MUST demonstrate:
 
 ## Demonstration requirement (recommended)
 Supplier SHOULD run the reference demo flow:
-- `docs/demo-flow.md`
+- `docs/examples/demo-flow.md`
 - Provide exported bundle and verifier inputs for review
 
 ## References
-- RFP Guide: `docs/rfp-evidence-support.md`
+- RFP Guide: `docs/procurement/rfp-guide.md`
 - Evidence profiles: `docs/profiles/evidence-profiles.md`
-- Verifier responsibilities: `docs/verifier-responsibilities.md`
+- Verifier responsibilities: `docs/evidence/verifier-responsibilities.md`
 - Example bundles: `docs/examples/evidence-bundles/`

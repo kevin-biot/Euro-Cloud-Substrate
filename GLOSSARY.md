@@ -8,4 +8,4 @@
 - **Audit Chain:** Hash-linked evidence stream providing tamper evidence and exportability (Core10-06, EVID-03/04/05).
 - **CRP:** Crisis Resilience Profile; a profile over invariants for partition/rupture tolerance.
 - **Profile:** A subset/tightening of invariants; references invariant IDs; no new semantics (see `docs/profiles/`).
-- **IRN Crosswalk:** Non-normative mapping of IRN “what” to ECS “how” via invariants/evidence (docs/irn-mapping.md).
+- **IRN Crosswalk:** Non-normative mapping of IRN “what” to ECS “how” via invariants/evidence (docs/mappings/irn-mapping.md).

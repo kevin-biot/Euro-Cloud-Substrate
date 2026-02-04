@@ -6,7 +6,7 @@ Define the baseline for tenant creation, identity, network, policy, and audit re
 ## Scope and assumptions
 - Applies to governed workloads/tenants within an ECS deployment.
 - Focuses on authority/policy binding, network posture, and evidence at landing-zone bootstrap.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## OLZ‑EU as portable standard (draft)
 OLZ‑EU is intended as a **provider‑agnostic landing zone contract** that can be implemented across different control planes (Kubernetes/OKD, OpenStack, managed platforms). It defines the minimum identity, network, policy, and evidence posture required to onboard tenants in a portable way. A reference open‑source implementation does not yet exist; ECS treats this as a gap to be filled by community adapters rather than a mandated stack.

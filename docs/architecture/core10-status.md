@@ -13,4 +13,4 @@
 | 09 Fail-Closed Profile | Draft v1 | POL, AUTH, EVID | Requirements added |
 | 10 Migration Baseline | Draft v1 | EXIT, INT, DEP, SUP, EVID | Requirements added |
 
-Status: placeholder | draft | stable (none stable yet). Invariants per `docs/invariants-v0.3.md`.
+Status: placeholder | draft | stable (none stable yet). Invariants per `docs/invariants/v0.3.md`.

@@ -18,7 +18,7 @@ Outline the minimum components an open‑source landing zone implementation woul
 
 4. **Evidence emission**
    - Evidence events for all control‑plane actions.
-   - Exportable evidence bundles per `docs/evidence-export-schema.md`.
+   - Exportable evidence bundles per `docs/evidence/export-schema.md`.
 
 5. **Portability hooks**
    - Standard interop API surface for tenant operations.
@@ -32,7 +32,7 @@ A practical ECS landing zone should include a portable **control surface** for p
 
 If ECS APIs are standardized, open‑source pipelines can implement **portable workflows** to move workloads and data across providers without provider‑specific tooling.
 
-See `docs/pipeline-schema.md` for a minimal pipeline schema and evidence hook guidance.
+See `docs/guides/pipeline-schema.md` for a minimal pipeline schema and evidence hook guidance.
 
 ## Reference stack candidates (non‑normative)
 - Identity: Keycloak or equivalent OIDC provider.

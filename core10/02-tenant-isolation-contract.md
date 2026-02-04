@@ -6,7 +6,7 @@ Minimum isolation semantics across compute, storage, network, logs, and indexes.
 ## Scope and assumptions
 - Applies to multi-tenant ECS deployments where tenant boundaries are enforced by policy and technical controls.
 - Covers isolation by default; explicit cross-tenant access is treated as an exception with evidence.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Tenant boundary: logical and technical separation across identity, compute, storage, network, and telemetry.

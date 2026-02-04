@@ -54,7 +54,7 @@ The IPCEI‑CIS reference architecture defines Federation Manager and Federation
 
 This framing allows a provider, marketplace, or consortium to play the FM/FB roles without requiring a new broker product; the ECS contract is the binding layer.
 
-See `docs/federation-domain.md` for the federation domain summary and evidence expectations.
+See `docs/domains/federation.md` for the federation domain summary and evidence expectations.
 
 ## Authentication & authorization
 - Authn:

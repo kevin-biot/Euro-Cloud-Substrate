@@ -21,8 +21,8 @@ Explain how evidence chains can be anchored to qualified archiving services with
 - `from_sequence` / `to_sequence`: segment boundaries.
 
 ## ECS references
-- Evidence export: `docs/evidence-export-schema.md`
-- Evidence events: `docs/evidence-catalog.md` (chain.anchor)
+- Evidence export: `docs/evidence/export-schema.md`
+- Evidence events: `docs/evidence/catalog.md` (chain.anchor)
 - Audit chain baseline: `core10/06-audit-chain-baseline.md`
 
 ## Notes

@@ -2,7 +2,7 @@
 
 This folder will host detailed mappings per IRN dimension (resilience, supply chain, governance, etc.).
 
-For now, see the draft crosswalk: `docs/irn-mapping.md`.
+For now, see the draft crosswalk: `docs/mappings/irn-mapping.md`.
 
 ## Structure & status (placeholders)
 - `resilience.md` — placeholder (not populated)

@@ -129,4 +129,4 @@ Simple framing:
 - Evidence profiles: `docs/profiles/evidence-profiles.md`
 - Evidence bundles: `docs/examples/evidence-bundles/`
 - Reference adapter: `adapters/k8s-admission/`
-- RFP guide: `docs/rfp-evidence-support.md`
+- RFP guide: `docs/procurement/rfp-guide.md`

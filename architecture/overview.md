@@ -153,13 +153,13 @@ sequenceDiagram
 ## Deliverables map (Mermaid)
 ```mermaid
 flowchart LR
-    Invariants[Invariants v0.3<br/>docs/invariants-v0.3.md]
+    Invariants[Invariants v0.3<br/>docs/invariants/v0.3.md]
     Profiles[Profiles<br/>crp/, docs/profiles/]
     Core10[Core10<br/>core10/]
     WS[Workstreams<br/>ws*/]
     Arch[Architecture pack<br/>architecture/]
     Gov[Governance & Process<br/>GOVERNANCE.md, CONTRIBUTING.md, decisions/]
-    Conf[Conformance Model<br/>docs/conformance-model.md]
+    Conf[Conformance Model<br/>docs/conformance/model.md]
 
     Invariants --> Profiles
     Invariants --> Core10
@@ -177,7 +177,7 @@ flowchart LR
 ## Invariants-to-components overview (Mermaid)
 ```mermaid
 flowchart TB
-    Inv[Invariants v0.3<br/>docs/invariants-v0.3.md]
+    Inv[Invariants v0.3<br/>docs/invariants/v0.3.md]
     Core10[Core10 Components<br/>core10/]
     WS[Workstreams<br/>ws*/]
     Profiles[Profiles<br/>crp/]
@@ -197,4 +197,4 @@ These archetypes map the ECS planes to common provider architectures so vendors 
 - SlapOS (master/compute, partitions): `architecture/archetypes/slapos.md`
 
 ## Compliance pattern library (draft)
-- `docs/compliance-pattern-library.md` (non-normative)
+- `docs/compliance/pattern-library.md` (non-normative)

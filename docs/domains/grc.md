@@ -15,7 +15,7 @@ Define Governance, Risk & Compliance (GRC) expectations across the cloud‑edge 
 - **Core10‑06 Audit Chain Baseline** — tamper‑evident chains + export.
 - **Core10‑09 Fail‑Closed Profile** — refusal evidence on missing/invalid policy.
 - **Conformance model + evidence profiles** — profile claims, verifier checks.
-- **Regulatory mapping** — `docs/reg-mapping.md`, `docs/compliance-pattern-library.md`.
+- **Regulatory mapping** — `docs/mappings/reg-mapping.md`, `docs/compliance/pattern-library.md`.
 
 ## Evidence expectations (GRC‑grade)
 - **Policy snapshots**: versioned, immutable, referenced in decisions.

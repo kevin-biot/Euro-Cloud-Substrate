@@ -1,8 +1,8 @@
 # EU Compliance Pattern Library (Draft, Non-Normative)
 
 Supporting reference patterns for translating legal obligations into runtime-enforceable, evidence-generating design primitives. This draft is intended to guide architecture review and future standardisation work; it is not a binding standard.
-See `docs/grc-domain.md` for the GRC domain overview and evidence expectations.
-See `docs/privacy-domain.md` for privacy-by-design, consent, and minimization expectations.
+See `docs/domains/grc.md` for the GRC domain overview and evidence expectations.
+See `docs/domains/privacy.md` for privacy-by-design, consent, and minimization expectations.
 
 ## Purpose
 - Provide reusable, deterministic compliance patterns for EU regulations.
@@ -72,7 +72,7 @@ Each pattern includes:
 
 **Applicable across:** AI Act, PSD3/PSR, DORA, NIS2, GDPR (Art. 30).
 
-**ECS alignment:** Bundles MUST conform to `docs/evidence-export-schema.md`.
+**ECS alignment:** Bundles MUST conform to `docs/evidence/export-schema.md`.
 
 ---
 

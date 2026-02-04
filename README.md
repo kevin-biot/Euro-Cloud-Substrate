@@ -21,42 +21,43 @@ An architectural definition project for a portable, governable, European cloud s
 1. Evidence Profiles (what to claim): `docs/profiles/evidence-profiles.md`
 2. Golden Bundles (what correct looks like): `docs/examples/evidence-bundles/`
 3. Reference Adapter (how to emit it): `adapters/k8s-admission/`
-4. RFP Guide (how to buy it): `docs/rfp-evidence-support.md`
-5. Architecture Overview (big picture): `docs/architecture-overview.md`
+4. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
+5. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
+6. Docs index (navigation): `docs/index.md`
 
 - Core paper: `VISION.md` (v0.2) and `architecture/`
-- Invariants: `docs/invariants-v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/invariant-coverage.md`
+- Invariants: `docs/invariants/v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/conformance/invariant-coverage.md`
 - Profiles: `crp/` (Crisis Resilience Profile), `docs/profiles/README.md`
-- Conformance shape: `docs/conformance-model.md`
+- Conformance shape: `docs/conformance/model.md`
 - Conformance checklists (draft): `docs/conformance/README.md`
-- Minimal metrics (draft): `docs/metrics.md`
-- SOC/log control profile (draft): `docs/soc-log-control.md`
-- Evidence export: `docs/evidence-export-schema.md`, catalog: `docs/evidence-catalog.md`
-- Data security domain note (draft): `docs/data-security-domain.md`
-- IAM domain note (draft): `docs/iam-domain.md`
-- GRC domain note (draft): `docs/grc-domain.md`
-- Privacy & user control note (draft): `docs/privacy-domain.md`
-- Federation domain note (draft): `docs/federation-domain.md`
+- Minimal metrics (draft): `docs/conformance/metrics.md`
+- SOC/log control profile (draft): `docs/compliance/soc-log-control.md`
+- Evidence export: `docs/evidence/export-schema.md`, catalog: `docs/evidence/catalog.md`
+- Data security domain note (draft): `docs/domains/data-security.md`
+- IAM domain note (draft): `docs/domains/iam.md`
+- GRC domain note (draft): `docs/domains/grc.md`
+- Privacy & user control note (draft): `docs/domains/privacy.md`
+- Federation domain note (draft): `docs/domains/federation.md`
 - Control-plane capabilities: `architecture/control-plane.md`
-- EUDI wallet integration note (draft): `docs/eudi-wallet-integration.md`
+- EUDI wallet integration note (draft): `docs/domains/eudi-wallet-integration.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
 - Core 10: `core10/`
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `CALL_FOR_PARTICIPATION.md`
 - Guardrails: `NON_GOALS.md`, `ANTI_CAPTURE.md`, `SECURITY.md`
-- Mappings: `docs/reg-mapping.md`, `docs/irn-mapping.md`
-- IPCEI‑CIS mapping (draft): `docs/ipcei-cis-mapping.md`
-- Data Act architecture constraint (draft): `docs/data-act-architecture-constraint.md`
-- Gaia-X alignment note (draft): `docs/gaia-x/README.md`
-- Comparisons/integration: `docs/comparison.md`, `docs/integration-examples.md`
-- Compliance patterns (draft): `docs/compliance-pattern-library.md`
-- ML evidence implementation gap (draft): `docs/ml-evidence-implementation.md`
-- Qualified archiving note (draft): `docs/qualified-archiving.md`
-- Open source alignment targets (draft): `docs/opensource-targets.md`
+- Mappings: `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`
+- IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
+- Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`
+- Gaia-X alignment note (draft): `docs/mappings/gaia-x/README.md`
+- Comparisons/integration: `docs/guides/comparison.md`, `docs/guides/integration-examples.md`
+- Compliance patterns (draft): `docs/compliance/pattern-library.md`
+- ML evidence implementation gap (draft): `docs/guides/ml-evidence-implementation.md`
+- Qualified archiving note (draft): `docs/evidence/qualified-archiving.md`
+- Open source alignment targets (draft): `docs/guides/opensource-targets.md`
 - Open-source adoption note (draft): `OSS_ADOPTION.md`
-- Landing zone reference (draft): `docs/landing-zone-reference.md`
-- Minimal pipeline schema (draft): `docs/pipeline-schema.md`
-- No‑control profile (draft): `docs/no-control-profile.md`
-- Demo flow (draft): `docs/demo-flow.md`
+- Landing zone reference (draft): `docs/guides/landing-zone-reference.md`
+- Minimal pipeline schema (draft): `docs/guides/pipeline-schema.md`
+- No‑control profile (draft): `docs/profiles/no-control-profile.md`
+- Demo flow (draft): `docs/examples/demo-flow.md`
 - Overview wiki: https://github.com/kevin-biot/Euro-Cloud-Substrate/wiki
 
 ## Purpose
@@ -74,11 +75,11 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Check `crp/` for the Crisis Resilience Profile details and conformance.
 - Look at `core10/` for the mandatory components.
 - Dive into `ws*/` for per-workstream specs, invariants, conformance, and diagrams.
-- Use `docs/reg-mapping.md` as a contextual guide to EU regulatory drivers.
-- See `docs/irn-mapping.md` for the draft IRN crosswalk (IRN defines “what”; ECS defines “how” via invariants and evidence).
-- For evidence export and admissibility, see `docs/evidence-export-schema.md`, `docs/qualified-archiving.md`, and `docs/evidence-catalog.md`.
-- For ML-specific evidence gaps and implementation guidance, see `docs/ml-evidence-implementation.md`.
-- For wallet/identity binding guidance, see `docs/eudi-wallet-integration.md`.
+- Use `docs/mappings/reg-mapping.md` as a contextual guide to EU regulatory drivers.
+- See `docs/mappings/irn-mapping.md` for the draft IRN crosswalk (IRN defines “what”; ECS defines “how” via invariants and evidence).
+- For evidence export and admissibility, see `docs/evidence/export-schema.md`, `docs/evidence/qualified-archiving.md`, and `docs/evidence/catalog.md`.
+- For ML-specific evidence gaps and implementation guidance, see `docs/guides/ml-evidence-implementation.md`.
+- For wallet/identity binding guidance, see `docs/domains/eudi-wallet-integration.md`.
 - For a high-level overview, see the GitHub wiki.
 
 ## Out of scope by design
@@ -95,7 +96,7 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - Implementable now: `ws2-eosc/spec.md` (governed object storage), `docs/profiles/regulated-ml/` (ML governance).
 - Needs more depth: `ws4-interop-api` (OpenAPI/AsyncAPI expansion), conformance/evidence catalog, reference implementations.
 - How to contribute:
-  1. Pick a Core10 component from `docs/core10-status.md`.
+  1. Pick a Core10 component from `docs/architecture/core10-status.md`.
   2. Check open issues/labels for that component.
   3. Submit PR with invariant references, requirements, and evidence expectations.
 
@@ -104,25 +105,25 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - `ROADMAP.md` — phases and expected deliverables
 - `architecture/` — reference architecture overview and diagrams
 - `crp/` — Crisis Resilience Profile spec, invariants, conformance, diagrams
-- `docs/invariants-v0.3.md` — authoritative invariant list and statuses
+- `docs/invariants/v0.3.md` — authoritative invariant list and statuses
 - `docs/invariants/` — family deep-dives (e.g., DEP, SUP, PHY, OPS)
-- `docs/invariant-coverage.md` — structural coverage matrix
-- `docs/conformance-model.md` — evidence-driven conformance shape
+- `docs/conformance/invariant-coverage.md` — structural coverage matrix
+- `docs/conformance/model.md` — evidence-driven conformance shape
 - `docs/conformance/` — draft conformance checklists
-- `docs/metrics.md` — minimal metrics (draft)
-- `docs/soc-log-control.md` — SOC/log control profile (draft)
+- `docs/conformance/metrics.md` — minimal metrics (draft)
+- `docs/compliance/soc-log-control.md` — SOC/log control profile (draft)
 - `core10/` — mandatory ECS components
 - `ws*/` — workstream folders with scope, invariants, conformance outlines, diagrams
 - `decisions/` — architectural decision records
-- `docs/irn-mapping.md` — IRN crosswalk (draft)
-- `docs/evidence-export-schema.md` — portable evidence bundles
-- `docs/evidence-catalog.md` — evidence event/artefact catalog
-- `docs/compliance-pattern-library.md` — compliance pattern library (draft)
-- `docs/ml-evidence-implementation.md` — ML evidence implementation gap (draft)
-- `docs/qualified-archiving.md` — qualified archiving note (draft)
-- `docs/eudi-wallet-integration.md` — wallet integration note (draft)
+- `docs/mappings/irn-mapping.md` — IRN crosswalk (draft)
+- `docs/evidence/export-schema.md` — portable evidence bundles
+- `docs/evidence/catalog.md` — evidence event/artefact catalog
+- `docs/compliance/pattern-library.md` — compliance pattern library (draft)
+- `docs/guides/ml-evidence-implementation.md` — ML evidence implementation gap (draft)
+- `docs/evidence/qualified-archiving.md` — qualified archiving note (draft)
+- `docs/domains/eudi-wallet-integration.md` — wallet integration note (draft)
 - `docs/profiles/README.md` — how profiles use invariants
-- `docs/comparison.md`, `docs/integration-examples.md` — complementary positioning and examples
+- `docs/guides/comparison.md`, `docs/guides/integration-examples.md` — complementary positioning and examples
 - `.github/` — issue/PR templates
 - `scripts/` — helper scripts (e.g., labels)
 

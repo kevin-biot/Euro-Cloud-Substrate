@@ -6,7 +6,7 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 ## Scope and assumptions
 - Applies to all governed actions across planes; evidence is first-class output.
 - Evidence events are exported in provider-neutral formats.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Evidence event: immutable record of a governed action or system state change.
@@ -25,7 +25,7 @@ Standard event types for authorization, execution, refusal, escalation, policy s
 - Canonical schemas with required fields; hash/integrity mechanisms.
 - Inclusion of authority/policy snapshot IDs and execution context.
 - Ordered, tamper-evident streams with reconciliation support.
-- Export bundles MUST follow `docs/evidence-export-schema.md`.
+- Export bundles MUST follow `docs/evidence/export-schema.md`.
 
 Core10-05 defines the canonical event envelope and is profile-agnostic. Additional integrity, chaining, and domain-specific requirements are applied via Evidence Profiles (`docs/profiles/evidence-profiles.md`). Implementers MUST select an evidence profile and ensure emitted events satisfy both Core10-05 and the selected profile.
 

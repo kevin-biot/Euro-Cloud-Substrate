@@ -2,11 +2,11 @@
 
 Evidence types should be tied to invariant IDs. This skeleton lists families with placeholders for future detail.
 
-All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions) and export bundles MUST follow `docs/evidence-export-schema.md`. Evidence bundles MAY include qualified timestamp/seal references in the export manifest to support legal admissibility.
+All evidence events MUST conform to the Core10-05 envelope (id, occurred_at, sequence, outcome, tenant_id, evidence_pointer, correlation_id for governed actions) and export bundles MUST follow `docs/evidence/export-schema.md`. Evidence bundles MAY include qualified timestamp/seal references in the export manifest to support legal admissibility.
 
 This catalog lists event families and shapes; Evidence Profiles determine which events and fields are required. Emitters MUST declare the selected `evidence_profile_id` in exports/manifests, and verifiers validate against the declared profile (`docs/profiles/evidence-profiles.md`).
-For data security expectations (encryption posture, key custody, DLP evidence), see `docs/data-security-domain.md`.
-For privacy expectations (consent, purpose binding, minimization), see `docs/privacy-domain.md`.
+For data security expectations (encryption posture, key custody, DLP evidence), see `docs/domains/data-security.md`.
+For privacy expectations (consent, purpose binding, minimization), see `docs/domains/privacy.md`.
 
 ## Base envelope (draft)
 Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.
@@ -45,7 +45,7 @@ Verifier input: `evidence_profile_id` MUST match the declared profile in the exp
 }
 ```
 
-Evidence pointers are expected to be content‑addressed and tenant‑scoped; see `docs/evidence-export-schema.md` for pointer contract details.
+Evidence pointers are expected to be content‑addressed and tenant‑scoped; see `docs/evidence/export-schema.md` for pointer contract details.
 
 ## AUTH
 - Evidence types (draft):
@@ -305,7 +305,7 @@ Definitions (snippet):
   }
 }
 ```
-Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles. `hash_profile_id` SHOULD identify the canonicalization/hash rules used (see `docs/hash-profiles.md`). See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
+Evidence for ML inference is required for regulatory traceability (e.g., decision accountability, model version lineage, and refusal semantics). A common industry gap is the lack of standardized, portable evidence for inference decisions, so this schema defines a minimal, exportable record aligned with ECS evidence bundles. `hash_profile_id` SHOULD identify the canonicalization/hash rules used (see `docs/evidence/hash-profiles.md`). See `docs/guides/ml-evidence-implementation.md` for implementation gaps and insertion points.
 
 - Evidence events for ML inference (EVID/SUP/EXEC example):
 ```json
@@ -335,7 +335,7 @@ Evidence for ML inference is required for regulatory traceability (e.g., decisio
 }
 ```
 
-Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape. `hash_profile_id` SHOULD identify the canonicalization/hash rules used for dataset and checkpoint hashes (see `docs/hash-profiles.md`). See `docs/ml-evidence-implementation.md` for implementation gaps and insertion points.
+Evidence for ML training is required to demonstrate dataset provenance, model lineage, and governance controls across the training lifecycle. This schema addresses the frequent absence of deterministic, reusable training evidence artifacts in cloud platforms by defining a portable event shape. `hash_profile_id` SHOULD identify the canonicalization/hash rules used for dataset and checkpoint hashes (see `docs/evidence/hash-profiles.md`). See `docs/guides/ml-evidence-implementation.md` for implementation gaps and insertion points.
 
 - Evidence events for ML training (EVID/SUP/EXEC example):
 ```json

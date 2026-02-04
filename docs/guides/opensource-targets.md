@@ -45,7 +45,7 @@ There is no widely adopted open‑source “landing zone” reference implementa
 ## Alignment guidance (high level)
 1. **Expose governance metadata** at write/admission time.
 2. **Emit evidence events** with policy snapshot and authority bindings.
-3. **Export evidence bundles** using `docs/evidence-export-schema.md`.
+3. **Export evidence bundles** using `docs/evidence/export-schema.md`.
 4. **Implement usage receipts** for governed data access.
 5. **Optionally anchor chains** to qualified archiving services.
 

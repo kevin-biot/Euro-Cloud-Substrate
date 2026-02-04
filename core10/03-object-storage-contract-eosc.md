@@ -6,7 +6,7 @@ S3-compatible surface with governance metadata requirements for portability and 
 ## Scope and assumptions
 - Applies to object storage interfaces that claim EOSC compatibility.
 - Does not mandate a specific S3 provider; requires compatible surface and governance semantics.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Governance metadata: jurisdiction, classification, retention/TTL, evidence pointer, integrity hash.
@@ -26,7 +26,7 @@ S3-compatible surface with governance metadata requirements for portability and 
 - Metadata enforcement (jurisdiction, retention/TTL, integrity) on write/read.
 - Evidence pointers and hash integrity; SBOM/provenance for storage stack.
 - Portability/export interfaces with evidence of success/refusal.
-- Data security posture (at-rest/in-transit/in-use encryption, key custody, DLP decisions) SHOULD be declared and evidenced; see `docs/data-security-domain.md`.
+- Data security posture (at-rest/in-transit/in-use encryption, key custody, DLP decisions) SHOULD be declared and evidenced; see `docs/domains/data-security.md`.
 
 ## Required metadata (draft)
 - `x-ecs-jurisdiction` (ISO country/region)

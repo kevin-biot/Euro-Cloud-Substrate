@@ -10,7 +10,7 @@ Export bundles SHOULD declare one of the following `evidence_profile_id` values:
 - `ecs-evidence-ncp`
 - `ecs-evidence-regulated-ml`
 
-Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitted (see `docs/hash-profiles.md`).
+Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitted (see `docs/evidence/hash-profiles.md`).
 
 ## Baseline profile
 **Scope:** default evidence envelope for governed actions.
@@ -65,7 +65,7 @@ Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitte
 **Scope:** ML inference/training evidence for regulated or high‑risk AI.
 
 **Required fields (in addition to baseline):**
-- ML inference/training payload fields as defined in `docs/evidence-catalog.md`.
+- ML inference/training payload fields as defined in `docs/evidence/catalog.md`.
 - `hash_profile_id` required on ML events.
 
 **Required event families:**
@@ -80,4 +80,4 @@ Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitte
 
 ## Notes
 - Profiles MAY tighten requirements but MUST NOT redefine invariants.
-- See `docs/verifier-responsibilities.md` for the verifier checklist used by these profiles.
+- See `docs/evidence/verifier-responsibilities.md` for the verifier checklist used by these profiles.

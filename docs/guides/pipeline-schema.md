@@ -39,4 +39,4 @@ Evidence hooks SHOULD emit events at:
 
 ## Notes
 - This schema is intentionally minimal; tools may extend it.
-- Evidence bundles SHOULD follow `docs/evidence-export-schema.md`.
+- Evidence bundles SHOULD follow `docs/evidence/export-schema.md`.

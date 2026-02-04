@@ -24,4 +24,4 @@ In the IPCEI‑CIS reference architecture, the Federation Manager role coordinat
 
 The Federation Broker role maps to discoverability and claims (profile claims, bundle examples), which ECS treats as contract inputs rather than a mandated broker product.
 
-See `docs/federation-domain.md` for the federation domain summary and evidence expectations.
+See `docs/domains/federation.md` for the federation domain summary and evidence expectations.

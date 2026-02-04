@@ -4,7 +4,7 @@
 Provide procurement-ready language to request ECS evidence support in a measurable, testable way.
 
 ## Required declarations (profile claims)
-Suppliers MUST provide a profile claim using the template in `docs/conformance-model.md`, including:
+Suppliers MUST provide a profile claim using the template in `docs/conformance/model.md`, including:
 - Supported evidence profiles (e.g., baseline, admissible, regulated-ML, NCP).
 - Default evidence profile.
 - Supported hash profiles.
@@ -39,9 +39,9 @@ A third-party verifier MUST be able to:
 - Bundles MUST include NCP proof artifacts (authority graph, custody model, ownership map, telemetry egress map).
 
 ## Reference materials
-- Evidence export schema: `docs/evidence-export-schema.md`
+- Evidence export schema: `docs/evidence/export-schema.md`
 - Evidence profiles: `docs/profiles/evidence-profiles.md`
-- Verifier responsibilities: `docs/verifier-responsibilities.md`
+- Verifier responsibilities: `docs/evidence/verifier-responsibilities.md`
 - Example bundles: `docs/examples/evidence-bundles/`
 - Reference adapter: `adapters/k8s-admission/`
-- Airbus‑style 2026 checklist (draft): `docs/rfp-airbus-2026-checklist.md`
+- Airbus‑style 2026 checklist (draft): `docs/procurement/airbus-2026-checklist.md`

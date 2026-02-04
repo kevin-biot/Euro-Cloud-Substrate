@@ -47,7 +47,7 @@
 - Lineage records and export/erasure evidence.
 - Data product descriptors and usage policy binding (POL/EVID).
 - Consent/intent token references for governed access (CITP).
-- Export bundles per `docs/evidence-export-schema.md`.
+- Export bundles per `docs/evidence/export-schema.md`.
 
 ## Deterministic evidence export (draft)
 - Data access events and lineage MUST be exportable as evidence bundles.
@@ -56,7 +56,7 @@
 ## Privacy-by-design evidence (draft)
 - Consent and purpose binding evidence SHOULD be emitted for governed data access.
 - Minimization/redaction decisions SHOULD be evidenced where applicable.
-See `docs/privacy-domain.md` for privacy domain expectations.
+See `docs/domains/privacy.md` for privacy domain expectations.
 
 ## Interoperability & portability (draft)
 - Governed data sharing MUST include standardized metadata and exportable bundles (INT/EXIT).

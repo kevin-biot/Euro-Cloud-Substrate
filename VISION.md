@@ -15,7 +15,7 @@ This revision adds three concrete elements requested by early reviewers:
 
 This document remains intentionally non-implementational. Its goal is to define the execution contract that enables interoperability, portability, and governance-by-design across European cloud providers.
 
-For regulatory context and how ECS primitives map to EU obligations, see `docs/reg-mapping.md`. For the French IRN “what” versus ECS “how” crosswalk, see `docs/irn-mapping.md`.
+For regulatory context and how ECS primitives map to EU obligations, see `docs/mappings/reg-mapping.md`. For the French IRN “what” versus ECS “how” crosswalk, see `docs/mappings/irn-mapping.md`.
 
 ### External context (aDRI)
 aDRI is a non-profit organization founded to promote technological independence and digital sovereignty for European companies. Its mission is to provide free, transparent, and scientifically rigorous assessment tools to help organizations identify their vulnerabilities and regain control over their digital infrastructure.

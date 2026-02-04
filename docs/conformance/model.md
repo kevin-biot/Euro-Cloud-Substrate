@@ -1,7 +1,7 @@
 # Conformance Model (Draft)
 
 Scope: define how ECS conformance is expressed without scoring or certification.
-See `docs/terms.md` for canonical evidence event/artifact/bundle terminology.
+See `docs/evidence/terms.md` for canonical evidence event/artifact/bundle terminology.
 
 ## Principles
 - Evidence-driven: claims are backed by evidence artifacts, not assertions.

@@ -2,7 +2,7 @@
 
 ## Intent
 Define a portable, deterministic export package for compliance evidence, aligned to pre-hoc evidence generation and post-market monitoring requirements.
-See `docs/terms.md` for canonical definitions of evidence event, artifact, and bundle.
+See `docs/evidence/terms.md` for canonical definitions of evidence event, artifact, and bundle.
 
 ## Scope and assumptions
 - Applies to governed actions and their evidence across ECS planes.
@@ -178,4 +178,4 @@ Evidence bundles SHOULD include storage class artifacts when access or export cr
 - Artifact resolution and integrity verification.
 
 ## Verifier responsibilities (draft)
-Independent verifiers SHOULD validate evidence bundles using the checks in `docs/verifier-responsibilities.md`.
+Independent verifiers SHOULD validate evidence bundles using the checks in `docs/evidence/verifier-responsibilities.md`.

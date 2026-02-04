@@ -94,7 +94,7 @@ A bundle is the **portable unit of audit**:
 - verifier inputs
 - referenced artifacts
 
-See `docs/evidence-export-schema.md` and `docs/examples/evidence-bundles/`.
+See `docs/evidence/export-schema.md` and `docs/examples/evidence-bundles/`.
 
 ### Verifier Inputs
 A third‑party verifier must be able to validate:
@@ -103,7 +103,7 @@ A third‑party verifier must be able to validate:
 - profile compliance
 - artifact immutability
 
-See `docs/verifier-responsibilities.md`.
+See `docs/evidence/verifier-responsibilities.md`.
 
 ---
 
@@ -115,7 +115,7 @@ ECS treats federation as a **contract surface**, not a broker product.
 - **Federation Manager** → interop + migration control plane (WS4/WS6)
 - **Federation Broker** → discovery + profile claims + bundle examples
 
-See `docs/federation-domain.md` and `docs/ipcei-cis-mapping.md`.
+See `docs/domains/federation.md` and `docs/mappings/ipcei-cis-mapping.md`.
 
 ### Interop & Migration
 - **WS4** defines minimal APIs for tenant/workload/storage/audit
@@ -138,7 +138,7 @@ See `docs/federation-domain.md` and `docs/ipcei-cis-mapping.md`.
 - Consent and purpose binding are decision events
 - Minimization evidence is required when applicable
 
-See `docs/privacy-domain.md`, `docs/data-security-domain.md`, and `docs/ml-evidence-implementation.md`.
+See `docs/domains/privacy.md`, `docs/domains/data-security.md`, and `docs/guides/ml-evidence-implementation.md`.
 
 ---
 
@@ -159,8 +159,8 @@ See `architecture/overview.md` for a compact view.
 
 1. **Golden bundles** — `docs/examples/evidence-bundles/`
 2. **Reference adapter** — `adapters/k8s-admission/`
-3. **Demo flow** — `docs/demo-flow.md`
-4. **RFP guide** — `docs/rfp-evidence-support.md`
+3. **Demo flow** — `docs/examples/demo-flow.md`
+4. **RFP guide** — `docs/procurement/rfp-guide.md`
 
 This is the recommended “close the loop” path for first adopters.
 
@@ -168,9 +168,9 @@ This is the recommended “close the loop” path for first adopters.
 
 ## External Alignment
 
-- **IRN**: ECS provides the “how” controls for IRN’s “what.” See `docs/irn-mapping.md`.
-- **IPCEI‑CIS**: ECS supplies contract‑level evidence for ICRA’s conceptual layers. See `docs/ipcei-cis-mapping.md`.
-- **EU regulations**: ECS maps to GDPR/NIS2/DORA/AI Act through evidence primitives. See `docs/reg-mapping.md`.
+- **IRN**: ECS provides the “how” controls for IRN’s “what.” See `docs/mappings/irn-mapping.md`.
+- **IPCEI‑CIS**: ECS supplies contract‑level evidence for ICRA’s conceptual layers. See `docs/mappings/ipcei-cis-mapping.md`.
+- **EU regulations**: ECS maps to GDPR/NIS2/DORA/AI Act through evidence primitives. See `docs/mappings/reg-mapping.md`.
 
 ---
 
@@ -184,7 +184,7 @@ A vendor claims support by publishing:
 - export endpoints
 - verifier inputs supported
 
-See `docs/conformance-model.md` for the claims template.
+See `docs/conformance/model.md` for the claims template.
 
 ---
 

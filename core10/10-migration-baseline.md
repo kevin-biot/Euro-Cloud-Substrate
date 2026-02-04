@@ -6,7 +6,7 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 ## Scope and assumptions
 - Applies to provider-to-provider migrations for governed workloads and data.
 - Migration MUST preserve governance metadata, authority/policy context, and evidence chains.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Export package: portable bundle of workload definitions, data, governance metadata, and evidence.
@@ -28,7 +28,7 @@ Minimum portability expectations: how state, objects, and audit artifacts move p
 - Export/import behaviors with evidence of success/refusal.
 - Dependency and supply-chain visibility for migrated components.
 - Evidence of state validation before/after migration.
-- Evidence export bundles MUST follow `docs/evidence-export-schema.md`.
+- Evidence export bundles MUST follow `docs/evidence/export-schema.md`.
 
 ## Migration phases (draft)
 1. Plan: declare exit path, dependencies, and validation checks.

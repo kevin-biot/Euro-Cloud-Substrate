@@ -20,7 +20,7 @@
 - Canonical event schemas and required fields.
 - Hash-chain or signature proofs.
 - Buffering and reconciliation records.
-- Export bundles per `docs/evidence-export-schema.md`.
+- Export bundles per `docs/evidence/export-schema.md`.
 
 ## Non-goals
 - No mandated storage backend or logging technology.

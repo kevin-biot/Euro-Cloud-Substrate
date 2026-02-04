@@ -27,4 +27,4 @@ Profile goal: tighten ECS invariants for regulated ML workloads (e.g., AI Act, f
 - No policy/ethics content beyond enforceable invariants.
 
 ## Status
-- Draft; no additional invariants introduced. References existing invariant IDs per `docs/invariants-v0.3.md`.
+- Draft; no additional invariants introduced. References existing invariant IDs per `docs/invariants/v0.3.md`.

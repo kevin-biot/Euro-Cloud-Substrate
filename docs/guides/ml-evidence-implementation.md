@@ -46,13 +46,13 @@ If you consume a managed ML service for an **agentic workload**, you are still r
 ## How ECS helps
 ECS defines:
 - A **canonical evidence envelope** (Core10-05).
-- A **portable export schema** (`docs/evidence-export-schema.md`).
-- **ML inference/training event shapes** (`docs/evidence-catalog.md`).
+- A **portable export schema** (`docs/evidence/export-schema.md`).
+- **ML inference/training event shapes** (`docs/evidence/catalog.md`).
 
 These provide the minimum contract vendors can implement and deployers can request.
 
 ## Hashing profile guidance (draft)
-Hashes are only portable if their canonicalization rules are explicit. Providers SHOULD emit a `hash_profile_id` (e.g., `ecs-hash-v1`) and document what is included/excluded, how PII is handled, and how hashes are recomputed. See `docs/hash-profiles.md`.
+Hashes are only portable if their canonicalization rules are explicit. Providers SHOULD emit a `hash_profile_id` (e.g., `ecs-hash-v1`) and document what is included/excluded, how PII is handled, and how hashes are recomputed. See `docs/evidence/hash-profiles.md`.
 
 ## Recommended next steps (non-normative)
 - Providers: publish evidence hooks and export packages for ML endpoints.
@@ -67,7 +67,7 @@ This guide outlines a practical path for open source maintainers to close the ev
 - **Evidence emitter**: library or sidecar that emits Core10-05 envelope events.
 - **Policy snapshot binder**: resolves and attaches policy snapshot ids at admission or inference time.
 - **Consent/purpose binder**: attaches CITP references where required.
-- **Evidence exporter**: bundles events and artifacts per `docs/evidence-export-schema.md`.
+- **Evidence exporter**: bundles events and artifacts per `docs/evidence/export-schema.md`.
 
 ### Kubernetes/OpenShift insertion points
 - **Admission webhook**: enforce policy snapshot binding and attach correlation ids.
@@ -102,7 +102,7 @@ Use this as a minimum checklist when consuming managed ML services or deploying 
 4. **Training evidence**: dataset hashes, code version, hyperparameter hash, checkpoint hashes.
 5. **Hashing profile**: evidence includes `hash_profile_id` so hashes can be recomputed deterministically.
 6. **Usage receipts**: data access and sharing events emit usage receipts (URP).
-7. **Exportability**: evidence bundles can be exported via `docs/evidence-export-schema.md`.
+7. **Exportability**: evidence bundles can be exported via `docs/evidence/export-schema.md`.
 8. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
 9. **Retention**: evidence retained for required period; export is available on request.
 
@@ -125,7 +125,7 @@ An open‑source SDK to standardize evidence emission across ML stacks.
 - Emit Core10‑05 envelope events.
 - Bind policy/authority snapshot ids and consent/usage references.
 - Compute input/context hashes and attach model version metadata.
-- Package and export bundles per `docs/evidence-export-schema.md`.
+- Package and export bundles per `docs/evidence/export-schema.md`.
 - Support optional chain anchoring to qualified archive services (evidence admissibility).
 
 ### Emitter configuration (example)

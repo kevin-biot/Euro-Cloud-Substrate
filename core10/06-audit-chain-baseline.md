@@ -6,7 +6,7 @@ Hash-linked log requirements for compliance-critical flows.
 ## Scope and assumptions
 - Applies to compliance-critical events emitted under Core10-05.
 - Chains are per-tenant or per-domain streams with monotonic ordering.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Audit chain: ordered, hash-linked sequence of evidence events.
@@ -24,7 +24,7 @@ Hash-linked log requirements for compliance-critical flows.
 - Hash-linked chains for compliance-critical events.
 - Exportable, verifiable chain state.
 - Inclusion of authority/policy/execution context.
-- Export bundles MUST follow `docs/evidence-export-schema.md`.
+- Export bundles MUST follow `docs/evidence/export-schema.md`.
 
 ## EU AI Act alignment (non-normative)
 - Evidence for governed actions MUST be generated contemporaneously with the action (pre-hoc), and retained for post-market monitoring and audit. Logging capability is a design-time requirement and logs must be preserved for the required retention period.

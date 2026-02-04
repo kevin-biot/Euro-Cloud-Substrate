@@ -72,4 +72,4 @@ Response:
 - Provider-native policy services if they meet determinism and evidence requirements.
 
 ## EUDI wallet integration (non-normative)
-- See `docs/eudi-wallet-integration.md` for minimum evidence expectations and delegation notes.
+- See `docs/domains/eudi-wallet-integration.md` for minimum evidence expectations and delegation notes.

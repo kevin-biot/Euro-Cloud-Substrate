@@ -8,14 +8,14 @@ Describe minimum platform capabilities for integrating with EUDI wallets without
 - Covers both human users and delegated agentic workloads.
 - Root of trust is implementation‑agnostic (device SE, eSIM, hardware token, HSM).
 
-See `docs/iam-domain.md` for the broader IAM domain mapping and baseline capabilities.
+See `docs/domains/iam.md` for the broader IAM domain mapping and baseline capabilities.
 
 ## Minimum platform capabilities
 - **Credential verification interface**: verify credential signatures and validity.
 - **Proof‑of‑possession validation**: ensure credential holder controls the presented key.
 - **Revocation/validity checks**: offline/online checks with evidence.
 - **Evidence emission**: emit events that bind credential verification to policy snapshots.
-- **Exportability**: evidence events must be exportable per `docs/evidence-export-schema.md`.
+- **Exportability**: evidence events must be exportable per `docs/evidence/export-schema.md`.
 
 ## Evidence fields (draft)
 - `credential_id` or hash

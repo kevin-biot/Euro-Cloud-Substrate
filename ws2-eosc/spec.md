@@ -123,7 +123,7 @@ Content-Type: application/octet-stream
 - Operations generating evidence events: PUT, DELETE, COPY/MOVE/REPLICATION, LOCK/UNLOCK, retention changes, metadata updates.
 - Evidence events MUST include: authority/policy snapshot IDs, object identifier/version, governance metadata values, integrity info, outcome (accepted/refused/failed).
 - Data access events (GET/EXPORT) MUST emit evidence including data product id, policy snapshot id, consent token ref, and usage receipt reference when applicable.
-- Audit/export: provide a standard export of evidence/audit related to objects (aligned with WS5) and `docs/evidence-export-schema.md`.
+- Audit/export: provide a standard export of evidence/audit related to objects (aligned with WS5) and `docs/evidence/export-schema.md`.
 
 ### Non-object storage alignment (block/file) — draft
 - Block and file storage are out of scope for EOSC as a strict object contract, but MUST align on governance metadata, evidence emission, and exportability.

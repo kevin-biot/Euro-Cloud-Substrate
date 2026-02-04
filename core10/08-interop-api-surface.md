@@ -7,7 +7,7 @@ Minimum APIs for workload deployment, identity, storage, and audit queries to en
 - Applies to external and intra-provider APIs that expose ECS portability surfaces.
 - References `ws4-interop-api/spec.md` and `docs/interop/openapi-skeleton.yaml` for concrete shapes.
 - Evidence event envelopes MUST anchor to Core10-05 (see `core10/05-evidence-event-model.md`); API schemas should reference the Core10-05 envelope component rather than redefining it.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Interop API: versioned, documented API surface for core ECS resources.

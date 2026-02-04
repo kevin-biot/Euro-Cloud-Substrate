@@ -6,7 +6,7 @@ Define conditions that must block execution for compliance-critical flows.
 ## Scope and assumptions
 - Applies to governed actions where policy, authority, or evidence prerequisites are required.
 - Fail-closed is mandatory under uncertainty; exceptions are explicit and evidenced.
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Fail-closed: default denial when prerequisites cannot be verified.

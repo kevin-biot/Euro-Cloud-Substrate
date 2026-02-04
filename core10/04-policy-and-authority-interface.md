@@ -10,7 +10,7 @@ Explicit decision points, escalation hooks, refusal semantics, and authority tra
 
 ## Scope and assumptions
 - Applies to governed actions across planes (identity/control/execution/data).
-- Uses invariant IDs from `docs/invariants-v0.3.md`; no new semantics introduced.
+- Uses invariant IDs from `docs/invariants/v0.3.md`; no new semantics introduced.
 
 ## Definitions (draft)
 - Authority binding: verifiable link between a subject and an authority scope (who can do what, when).

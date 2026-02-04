@@ -1,6 +1,6 @@
 # Invariant Family Deep-Dives
 
-This folder holds per-family notes. The authoritative list and statuses remain in `docs/invariants-v0.3.md`.
+This folder holds per-family notes. The authoritative list and statuses remain in `docs/invariants/v0.3.md`.
 
 ## Families (all defined)
 - `auth.md` — Authority invariants (local authority satisfiability, refusal, boundary declaration)
@@ -16,6 +16,6 @@ This folder holds per-family notes. The authoritative list and statuses remain i
 - `ops.md` — Human/operations invariants (runbooks, role redundancy, access independence, operational evidence)
 
 ## Notes
-- No new invariants are added here; reference IDs as defined in `docs/invariants-v0.3.md`.
-- Use these for scope/evidence/ non-goals per family; conformance shape is in `docs/conformance-model.md`.
-- Data-space alignment notes: `docs/gaia-x/README.md` (non-normative).
+- No new invariants are added here; reference IDs as defined in `docs/invariants/v0.3.md`.
+- Use these for scope/evidence/ non-goals per family; conformance shape is in `docs/conformance/model.md`.
+- Data-space alignment notes: `docs/mappings/gaia-x/README.md` (non-normative).
