@@ -26,6 +26,7 @@ S3-compatible surface with governance metadata requirements for portability and 
 - Metadata enforcement (jurisdiction, retention/TTL, integrity) on write/read.
 - Evidence pointers and hash integrity; SBOM/provenance for storage stack.
 - Portability/export interfaces with evidence of success/refusal.
+- Data security posture (at-rest/in-transit/in-use encryption, key custody, DLP decisions) SHOULD be declared and evidenced; see `docs/data-security-domain.md`.
 
 ## Required metadata (draft)
 - `x-ecs-jurisdiction` (ISO country/region)

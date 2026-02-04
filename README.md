@@ -16,6 +16,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Minimal metrics (draft): `docs/metrics.md`
 - SOC/log control profile (draft): `docs/soc-log-control.md`
 - Evidence export: `docs/evidence-export-schema.md`, catalog: `docs/evidence-catalog.md`
+- Data security domain note (draft): `docs/data-security-domain.md`
 - IAM domain note (draft): `docs/iam-domain.md`
 - Control-plane capabilities: `architecture/control-plane.md`
 - EUDI wallet integration note (draft): `docs/eudi-wallet-integration.md`
