@@ -6,3 +6,4 @@
 - ECS will not weaken invariants for adoption speed.
 - ECS is not a policy framework or ethics guideline.
 - ECS is not a compliance consulting pack.
+- ECS does not define energy, carbon, or environmental reporting requirements.
