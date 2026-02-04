@@ -39,6 +39,11 @@
 - **Data‑only**: governed data export with metadata, usage receipts, and evidence bundle.
 - **Evidence‑only**: export evidence chain segments and verifier inputs without data movement.
 
+## Stateful portability limits (draft)
+- Some stateful assets (e.g., PVCs, managed database internals) may not be portable across providers.
+- Providers MUST declare such limits in capability claims and refuse unsupported migrations with evidence.
+- Where possible, provide an alternative portability path (object export, snapshot export, or evidence‑only export).
+
 ## Evidence and export alignment
 - Evidence events MUST use the Core10‑05 envelope.
 - Export manifests MUST include `evidence_profile_id`, range (from/to sequence), and verifier inputs.

@@ -85,3 +85,11 @@ See `docs/domains/federation.md` for the federation domain summary and evidence 
 - Path-based versioning: e.g., `/v1/tenants`, `/v1/workloads`.
 - Deprecation policy: minimum 6 months notice; use `Sunset` header on deprecated endpoints.
 - Backward-compatible changes documented; breaking changes in new major versions.
+
+## Federation claims (non‑normative)
+Providers MAY expose a capability declaration to surface federation‑relevant differences rather than hide them. Example:
+- `GET /v1/federation/claims`
+  - identity federation model and claim mappings
+  - storage classes and portability limits
+  - policy enforcement scope (admission, egress, evidence)
+  - audit/export capabilities (profiles, chain support)
