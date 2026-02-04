@@ -116,7 +116,7 @@ Define an open, adoptable Euro Cloud Substrate that delivers portability, govern
 - `docs/compliance/soc-log-control.md` — SOC/log control profile (draft)
 - `core10/` — mandatory ECS components
 - `ws*/` — workstream folders with scope, invariants, conformance outlines, diagrams
-- `decisions/` — architectural decision records
+- `decisions/` — architectural decision records (`decisions/README.md`)
 - `docs/mappings/irn-mapping.md` — IRN crosswalk (draft)
 - `docs/evidence/export-schema.md` — portable evidence bundles
 - `docs/evidence/catalog.md` — evidence event/artefact catalog
