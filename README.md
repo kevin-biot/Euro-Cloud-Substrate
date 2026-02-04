@@ -18,6 +18,7 @@ An architectural definition project for a portable, governable, European cloud s
 - Evidence export: `docs/evidence-export-schema.md`, catalog: `docs/evidence-catalog.md`
 - Data security domain note (draft): `docs/data-security-domain.md`
 - IAM domain note (draft): `docs/iam-domain.md`
+- GRC domain note (draft): `docs/grc-domain.md`
 - Control-plane capabilities: `architecture/control-plane.md`
 - EUDI wallet integration note (draft): `docs/eudi-wallet-integration.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`

@@ -2,6 +2,8 @@
 
 ECS does not encode specific regulations. It provides enforceable primitives (authority-before-execution, fail-closed posture, evidence-by-construction, isolation, data governance, CRP resilience) that help satisfy multiple EU obligations. This mapping is indicative and should be maintained as regulations evolve.
 
+See `docs/grc-domain.md` for the GRC domain overview and evidence expectations.
+
 ## AI Act (traceability, risk, refusal)
 - Traceability/logging: IALP primitives (authority assertion, policy snapshot, input/context hashes, decision/refusal logs, temporal ordering).
 - Refusal semantics: Core invariant (fail-closed) + CRP-7 explicit refusal.
