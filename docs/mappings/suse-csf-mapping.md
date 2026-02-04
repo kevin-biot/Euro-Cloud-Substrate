@@ -29,7 +29,7 @@ If any of these conditions are not met, treat the outcome as a likely SEAL‑2�
 - **Interop/exit paths undefined** (no migration/export path for governed workloads/data) → SOV‑6
 
 ## ECS gaps vs CSF (current)
-- **Environmental (SOV‑8):** ECS does not yet define energy or carbon reporting requirements.
+- **Environmental (SOV‑8):** ECS does not define energy or carbon reporting requirements; this is intentionally out of scope.
 - **Strategic (SOV‑1):** ECS provides governance documentation and profile claims, but does not quantify ownership/control structures.
 
 ## Notes
