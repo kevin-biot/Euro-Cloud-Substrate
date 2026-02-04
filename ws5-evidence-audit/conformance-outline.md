@@ -7,10 +7,12 @@
 ## Event schema and completeness
 - Validate required fields (who/what/when/why/outcome, policy snapshot, authority context) are present.
 - Ensure refusal/escalation outcomes are emitted as first-class events.
+ - Validate evidence pointers satisfy the pointer contract (content-addressed, tenant-scoped).
 
 ## Integrity and chaining
 - Verify hash chaining for compliance-critical flows; detect tampering on replay.
 - Confirm time-ordering is monotonic and auditable.
+ - Validate chain_id and prev_event_hash continuity where required by profile.
 
 ## Storage and retention
 - Test durable storage and retention enforcement for evidence streams.
@@ -23,3 +25,4 @@
 ## Query and export
 - Audit queries MUST preserve ordering and integrity proofs.
 - Exports MUST be in a documented, provider-neutral format suitable for regulators/customers.
+ - Export bundles MUST include verifier inputs and declare `evidence_profile_id`.
