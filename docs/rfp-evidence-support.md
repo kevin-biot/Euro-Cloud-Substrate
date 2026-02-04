@@ -44,3 +44,4 @@ A third-party verifier MUST be able to:
 - Verifier responsibilities: `docs/verifier-responsibilities.md`
 - Example bundles: `docs/examples/evidence-bundles/`
 - Reference adapter: `adapters/k8s-admission/`
+- Airbus‑style 2026 checklist (draft): `docs/rfp-airbus-2026-checklist.md`
