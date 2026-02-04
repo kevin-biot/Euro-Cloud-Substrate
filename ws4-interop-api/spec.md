@@ -39,6 +39,21 @@
 - Async events: providers MAY offer real-time subscription (see `docs/interop/asyncapi-events.yaml`).
 - Export endpoints SHOULD support No‑Control Profile (NCP) evidence bundles when applicable.
 
+## Federation roles (non-normative)
+The IPCEI‑CIS reference architecture defines Federation Manager and Federation Broker roles. ECS does not mandate an implementation, but requires contract‑level capabilities that map cleanly to these roles:
+
+- **Federation Manager (FM)** → ECS interop + migration control surface:
+  - Onboarding and access negotiation via interop APIs (Core10‑08, WS4).
+  - Portability/export/import with evidence of success/refusal (Core10‑10, WS6).
+  - Audit/evidence queries and integrity guarantees (Core10‑05/06, WS5).
+
+- **Federation Broker (FB)** → ECS discovery + claims surface:
+  - Publish supported evidence profiles and profile claims.
+  - Provide example evidence bundles and verifier inputs for procurement/testing.
+  - Advertise export endpoints and interop capabilities (WS4).
+
+This framing allows a provider, marketplace, or consortium to play the FM/FB roles without requiring a new broker product; the ECS contract is the binding layer.
+
 ## Authentication & authorization
 - Authn:
   - mTLS for service-to-service.

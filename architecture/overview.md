@@ -103,6 +103,17 @@ flowchart TB
 | 09 Fail-Closed Profile | B | A (authority), D (evidence) |
 | 10 Migration Baseline | E | D (evidence), B (policy), A (authority) |
 
+## Stack view for archetypes (non-normative)
+The IPCEI‑CIS reference architecture uses a layered stack (Application → Data → AI → Service Orchestration → Cloud‑Edge Platform → Virtualization → Network → Physical). ECS can map archetypes to that stack without prescribing a platform.
+
+| Archetype | ICRA layer emphasis | ECS focus (contract layer) |
+|---|---|---|
+| OpenShift‑like | Service Orchestration + Cloud‑Edge Platform + Virtualization | OLZ‑EU baseline, admission evidence, execution envelopes, export bundles |
+| VM‑first | Virtualization + Network + Physical | VM envelope profile, data governance metadata, evidence export/migration |
+| Managed‑platform | Application + Service Orchestration + Data/AI | Interop API surface, evidence profiles, regulated‑ML evidence exports |
+
+This provides a neutral “stack view” so vendors can self‑place while implementing the same ECS contract layer.
+
 ## Architecture upgrade roadmap (draft)
 1. **Baseline clarity:** finalize plane boundaries, control/evidence interfaces, and glossary alignment.
 2. **Control plane hardening:** specify policy engine and admission gate requirements with conformance tests.
