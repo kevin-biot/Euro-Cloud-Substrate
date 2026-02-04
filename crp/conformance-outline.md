@@ -1,11 +1,10 @@
 # CRP Conformance Outline (Draft)
 
-# CRP Conformance Outline (Draft)
-
 ### Tier 1 — Smoke
 - Simulate loss of upstream identity/control plane; verify authority checks succeed using local cache or fail closed if stale.
 - Validate policy evaluation uses last valid snapshot; if missing/expired, execution refuses.
 - Evidence buffering writes locally during partition.
+ - Export bundle declares `evidence_profile_id` and chain fields where required by profile.
 
 ### Tier 2 — Integration
 - Disable upstream scheduler/orchestrator; CRP workloads MUST continue under local control-plane or pre-positioned runtime.
