@@ -45,7 +45,7 @@
 ## Guides & Adoption
 - Demo flow: `docs/examples/demo-flow.md`
 - Open‑source targets: `docs/guides/opensource-targets.md`
-- OSS adoption: `OSS_ADOPTION.md`
+- OSS adoption: `docs/oss-adoption.md`
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
 - Pipeline schema: `docs/guides/pipeline-schema.md`
 - ML evidence implementation: `docs/guides/ml-evidence-implementation.md`

@@ -42,8 +42,8 @@ An architectural definition project for a portable, governable, European cloud s
 - EUDI wallet integration note (draft): `docs/domains/eudi-wallet-integration.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
 - Core 10: `core10/`
-- Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `CALL_FOR_PARTICIPATION.md`
-- Guardrails: `NON_GOALS.md`, `ANTI_CAPTURE.md`, `SECURITY.md`
+- Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `docs/call-for-participation.md`
+- Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
 - Mappings: `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`
 - IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
 - Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`
@@ -53,7 +53,7 @@ An architectural definition project for a portable, governable, European cloud s
 - ML evidence implementation gap (draft): `docs/guides/ml-evidence-implementation.md`
 - Qualified archiving note (draft): `docs/evidence/qualified-archiving.md`
 - Open source alignment targets (draft): `docs/guides/opensource-targets.md`
-- Open-source adoption note (draft): `OSS_ADOPTION.md`
+- Open-source adoption note (draft): `docs/oss-adoption.md`
 - Landing zone reference (draft): `docs/guides/landing-zone-reference.md`
 - Minimal pipeline schema (draft): `docs/guides/pipeline-schema.md`
 - No‑control profile (draft): `docs/profiles/no-control-profile.md`

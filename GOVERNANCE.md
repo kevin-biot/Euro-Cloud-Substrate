@@ -15,7 +15,7 @@
 - Discuss: async in issues; synchronous notes published.
 - Decide: TSG (or delegated workstream lead) records decision in an ADR under `decisions/`.
 - Revisit: decisions can be superseded with a new ADR referencing the prior one.
-- Guardrails: see `ANTI_CAPTURE.md` and `NON_GOALS.md` for scope and anti-capture principles.
+- Guardrails: see `docs/anti-capture.md` and `docs/non-goals.md` for scope and anti-capture principles.
 
 ## Meetings
 - Cadence to be defined; published notes required.
