@@ -17,6 +17,7 @@
 
 ## Existing profile
 - CRP (Crisis Resilience Profile): a profile over the invariant set with explicit mappings in `crp/invariants.md`.
+- Data Space Compatibility (draft): `docs/profiles/data-space-compatibility.md`.
 
 ## Future profiles (examples, not defined here)
 - Regulated ML (draft in `docs/profiles/regulated-ml/`)
@@ -27,4 +28,4 @@
 - Evidence profiles define required evidence fields, event families, allowed hash profiles, and verifier checks.
 - Draft definition in `docs/profiles/evidence-profiles.md`.
 
-Profiles are how ECS becomes context-usable without fragmenting the invariant contract.***
+Profiles are how ECS becomes context-usable without fragmenting the invariant contract.

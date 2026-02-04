@@ -17,14 +17,21 @@
   "properties": {
     "data_product_id": { "type": "string" },
     "provider_id": { "type": "string" },
+    "owner_id": { "type": "string" },
+    "data_space_id": { "type": "string" },
+    "version": { "type": "string" },
+    "schema_ref": { "type": "string" },
     "jurisdiction": { "type": "string" },
     "classification": { "type": "string" },
     "retention": { "type": "string" },
     "usage_policy_snapshot_id": { "type": "string" },
+    "purpose_id": { "type": "string" },
     "consent_token_ref": { "type": "string" },
+    "obligations_ref": { "type": "string" },
+    "lineage_ref": { "type": "string" },
     "evidence_pointer": { "type": "string" }
   },
-  "required": ["data_product_id", "provider_id", "jurisdiction", "classification", "usage_policy_snapshot_id", "evidence_pointer"]
+  "required": ["data_product_id", "provider_id", "owner_id", "jurisdiction", "classification", "usage_policy_snapshot_id", "evidence_pointer"]
 }
 ```
 

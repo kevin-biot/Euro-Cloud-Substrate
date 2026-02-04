@@ -31,6 +31,7 @@
 ## Profiles & Conformance
 - Evidence profiles: `docs/profiles/evidence-profiles.md`
 - No‑Control Profile (NCP): `docs/profiles/no-control-profile.md`
+- Data Space Compatibility (draft): `docs/profiles/data-space-compatibility.md`
 - Conformance model: `docs/conformance/model.md`
 - Conformance checklists: `docs/conformance/README.md`
 - Metrics: `docs/conformance/metrics.md`

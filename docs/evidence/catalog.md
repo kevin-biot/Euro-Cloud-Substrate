@@ -254,6 +254,42 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
 Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpose_id` for `data.purpose.bind`, `consent_token_ref` for `data.consent.bind`, `terms_snapshot_id` for `data.terms.attach`, `lineage_sources` for `data.lineage.link`).
 `data.purpose.bind` and `data.consent.bind` are **decision events**: they MUST emit `accepted`/`refused`/`failed` outcomes with policy/authority snapshot references and occur **before** governed access.
 
+- Evidence events for data‑space sharing and obligations (DATA example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": {
+      "enum": [
+        "data.product.publish",
+        "data.product.update",
+        "data.access.grant",
+        "data.access.refuse",
+        "data.obligation.verify"
+      ]
+    },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "data_product_id": { "type": "string" },
+    "provider_id": { "type": "string" },
+    "consumer_id": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "obligation_id": { "type": "string" },
+    "verification_result": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "data_product_id", "outcome", "evidence_pointer"]
+}
+```
+`consumer_id` and `purpose_id` are required for access decisions (`data.access.*`).  
+`obligation_id` and `verification_result` are required for `data.obligation.verify`.
+
 ## EVID
 - Evidence events for storage (EVID/DATA/SUP example):
 ```json
