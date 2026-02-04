@@ -40,6 +40,9 @@
 - Training MUST reference a dataset boundary object (dataset manifest / DSBOM) that summarizes corpus composition, acquisition mode, exclusion handling, and time window.
 - Dataset policy bindings MUST be recorded for each dataset reference.
 
+#### External exclusion signals (non‑normative)
+ECS does not mandate a specific web standard, but recognizes the need for **machine‑readable content‑use permission signals** (opt‑out/opt‑in, purpose binding). These are best represented as response headers, metadata, or well‑known policy files rather than cookies. Such signals SHOULD be captured by the data‑use posture and referenced via `exclusion_policy_snapshot_id`.
+
 ### Inference envelopes (EXEC, DEP, PHY)
 - Inference workloads MUST declare an execution envelope with accelerator requirements (GPU/TPU).
 - Accelerator isolation/attestation evidence MUST be captured. Providers MUST support at least one:

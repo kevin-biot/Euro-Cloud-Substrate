@@ -22,6 +22,7 @@ Define a profile for **enforceable, auditable data‑space participation** witho
 ### Policy decisions + obligations
 - Policy MUST express **purpose binding** and **post‑access obligations** (e.g., no onward transfer, delete after N days, compute only in approved environment).
 - Obligation verification MUST emit evidence (see events below).
+ - External content‑use permission signals (opt‑out/opt‑in) SHOULD be captured via data‑use posture and exclusion policy snapshots (see `docs/profiles/regulated-ml/spec.md`).
 
 ### Evidence & audit
 - Sharing and access decisions MUST emit evidence using Core10‑05.

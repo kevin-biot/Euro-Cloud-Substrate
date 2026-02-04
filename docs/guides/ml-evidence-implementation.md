@@ -50,6 +50,9 @@ High‑risk and regulated AI systems require **traceable, verifiable evidence** 
 ### Dataset boundary object (DSBOM)
 Training evidence should reference a dataset manifest that summarizes corpus composition, acquisition method, exclusion handling mode, time window, and sensitive‑data posture. This makes dataset_refs auditable without per‑item attribution.
 
+### External content‑use permission signals (non‑normative)
+For web‑sourced data, machine‑readable permission signals (opt‑out/opt‑in, purpose binding) are best carried via response headers, metadata, or well‑known policy files rather than cookies. Capture these via `data_use_posture_id` and `exclusion_policy_snapshot_id` (see `docs/profiles/regulated-ml/spec.md`).
+
 ## Why this impacts deployers
 If you consume a managed ML service for an **agentic workload**, you are still responsible for evidence of compliance. Without standardized evidence outputs from the provider, deployers must create their own wrappers or accept compliance gaps.
 
