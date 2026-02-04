@@ -36,6 +36,13 @@
 - S3-compatible surface; governance headers per `ws2-eosc/spec.md`.
 - Endpoint base: `/storage/{bucket}/objects/*` with required governance metadata headers.
 
+### Data products and permissions (OPTIONAL, MAY)
+These endpoints are OPTIONAL but recommended for data‑space compatibility and ML governance.
+- `GET /v1/data-products/{id}` → data product descriptor (see `docs/invariants/data.md`).
+- `GET /v1/data-products/{id}/permissions` → purpose binding, obligations, and policy snapshot ids.
+- `GET /v1/data-products/{id}/dataset-manifest` → dataset boundary object / DSBOM.
+- `GET /v1/data-use-postures/{id}` → declared data‑use posture and exclusion handling.
+
 ### AuditEvent
 - Read-only: `GET /events`, `GET /events/{id}`.
 - Filtering: by `tenant`, time range, `event_type`, `outcome`.

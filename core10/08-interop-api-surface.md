@@ -37,6 +37,9 @@ Minimum APIs for workload deployment, identity, storage, and audit queries to en
 - Audit events: list/read with cursor-based pagination.
 - Export/import: initiate and verify migration jobs (Core10-10).
 
+**Optional (MAY) data governance resources:**
+Data‑space compatibility and ML governance benefit from optional endpoints that expose data product descriptors, permissions, dataset manifests (DSBOM), and data‑use postures. See `ws4-interop-api/spec.md` for the optional resource shapes.
+
 ## Authentication and authorization (draft)
 - Default auth: OIDC for user/API access; mTLS for service-to-service (S2S) flows.
 - Authn/z MUST map to authority binding and tenant scope (AUTH/POL invariants).
