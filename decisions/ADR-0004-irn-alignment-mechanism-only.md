@@ -4,14 +4,14 @@
 Accepted
 
 ## Context
-The IRN crosswalk (`docs/mappings/irn-mapping.md`) maps IRN “what” to ECS “how” via invariants and evidence. ECS is not a certification or scoring scheme.
+ECS provides crosswalks that map public or programmatic “what” definitions to ECS “how” mechanics via invariants and evidence (e.g., IRN, IPCEI‑CIS, Gaia‑X, Data Act, SUSE CSF). ECS is not a certification or scoring scheme.
 
 ## Decision
-- IRN mapping is non-normative and mechanism-only; it does not define scoring, compliance labels, or certification.
-- ECS will map IRN criteria to existing invariants and evidence expectations; no new invariants are introduced to satisfy IRN.
-- IRN meta-criteria (e.g., executive sponsorship) remain out of scope for ECS.
+- All public‑facing mappings are **non‑normative and mechanism‑only**; they do not define scoring, compliance labels, or certification.
+- ECS maps external criteria to existing invariants and evidence expectations; no new invariants are introduced to satisfy a mapping.
+- Meta‑criteria outside technical scope (e.g., executive sponsorship, organizational governance) remain out of scope for ECS.
 
 ## Consequences
 - Prevents ECS from being treated as a certification scheme.
-- Keeps IRN alignment grounded in existing invariants and evidence.
-- Changes to IRN mappings do not alter ECS semantics; they update crosswalk guidance only.
+- Keeps mappings grounded in existing invariants and evidence.
+- Changes to mappings do not alter ECS semantics; they update crosswalk guidance only.
