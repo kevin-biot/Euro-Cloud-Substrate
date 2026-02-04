@@ -1,0 +1,27 @@
+# IAM Domain (Draft, Non‑Normative)
+
+## Purpose
+Define the Identity & Access Management (IAM) domain across the cloud‑edge continuum, focusing on **who can act**, **under what authority**, and **with what proof**—without prescribing a specific IAM product.
+
+## Capabilities (baseline)
+- **Decentralized identity (DID)** and verifiable credentials
+- **Role‑based access control (RBAC)** and least‑privilege scoping
+- **Zero Trust Architecture (ZTA)** posture (verify explicitly, fail closed)
+- **Multi‑factor authentication (MFA)** / biometrics (credential strength signals)
+- **Identity federation** (OAuth 2.0 / OpenID Connect)
+
+## ECS mapping (no new semantics)
+- **Core10‑04 Policy & Authority Interface** — authority binding, policy evaluation, refusal evidence.
+- **Core10‑01 OLZ‑EU** — tenant authority binding, default‑deny posture at landing zone.
+- **Core10‑09 Fail‑Closed Profile** — explicit refusal on missing/invalid authority or policy.
+- **WS4 Interop API** — OIDC/mTLS expectations for federation and authn/z.
+- **EUDI wallet integration note** — credential verification, delegation, evidence hooks.
+
+## Evidence expectations (IAM‑grade)
+- **Authority snapshots** referenced in every governed action.
+- **Policy decisions** logged with outcome + snapshot id.
+- **Credential verification events** (e.g., wallet.credential.verify) with proof type and evidence pointers.
+- **Delegation events** (issue/revoke) for agent or service delegation.
+
+## Notes
+ECS defines **the contract** (evidence + authority binding), not the IAM implementation. Partners can adopt different IAM stacks as long as they emit the required evidence and support federation requirements.
