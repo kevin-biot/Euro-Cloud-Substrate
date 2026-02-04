@@ -18,6 +18,29 @@ Suppliers MUST provide export bundles that include:
 - `chain-segment.json` and `verifier-inputs.json`.
 - Referenced artifacts (policy snapshots, authority bindings, SBOMs, etc.).
 
+### Suggested submission pack layout (ECS‑aligned)
+```
+catalogue-pack/
+  profile-claims.json
+  evidence-bundle/
+    manifest.json
+    events.jsonl
+    chain-segment.json
+    verifier-inputs.json
+    artifacts/
+  conformance/
+    invariant-coverage.md
+    refusal-evidence-summary.md
+  sbom/
+    platform-sbom.json
+    runtime-sbom.json
+```
+
+Notes:
+- `profile-claims.json` should declare supported `evidence_profile_id` values and defaults.
+- `manifest.json` should include `evidence_profile_id` and any `hash_profile_id` if ML evidence is present.
+- Include refusal evidence for unsupported portability or jurisdictional constraints.
+
 ## Acceptance criteria (verifier checks)
 A third-party verifier MUST be able to:
 - Validate chain continuity (`sequence`, `prev_hash`, `event_hash`).
