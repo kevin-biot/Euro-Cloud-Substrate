@@ -30,7 +30,7 @@ Provide a practical mapping between the Tech Sovereignty Catalogue and ECS, so p
 | **Software Hosted in Europe label** | Jurisdiction metadata enforcement, residency evidence, export bundles | Formal label eligibility or certification |
 
 ## Suggested “catalogue submission pack” (ECS‑aligned)
-1. **Profile claims** (baseline + any stronger profiles such as NCP or regulated‑ML).  
+1. **Profile claims** (baseline + any stronger profiles such as NCP (No‑Control Profile) or regulated‑ML).  
 2. **Evidence export bundle** demonstrating:
    - authority/policy binding events,
    - jurisdiction and residency enforcement,
