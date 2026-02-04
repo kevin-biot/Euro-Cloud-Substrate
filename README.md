@@ -26,6 +26,9 @@ An architectural definition project for a portable, governable, European cloud s
 6. Deliverables map (spec spine): `docs/deliverables.md`
 7. Docs index (navigation): `docs/index.md`
 
+## Competition and differentiation
+ECS standardizes **verifiable governance and portability**, not the commercial layer. Conformance is a minimum contract; providers still compete on performance, managed services, UX, pricing, and regional specialization. See `docs/positioning/competition.md`.
+
 - Core paper: `VISION.md` (v0.2) and `docs/architecture/`
 - Invariants: `docs/invariants/v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/conformance/invariant-coverage.md`
 - Profiles: `crp/README.md` (Crisis Resilience Profile), `docs/profiles/README.md`
