@@ -53,6 +53,11 @@
 - Data access events and lineage MUST be exportable as evidence bundles.
 - Evidence MUST be generated contemporaneously with access decisions (pre-hoc), not reconstructed later.
 
+## Privacy-by-design evidence (draft)
+- Consent and purpose binding evidence SHOULD be emitted for governed data access.
+- Minimization/redaction decisions SHOULD be evidenced where applicable.
+See `docs/privacy-domain.md` for privacy domain expectations.
+
 ## Interoperability & portability (draft)
 - Governed data sharing MUST include standardized metadata and exportable bundles (INT/EXIT).
 - Export packages MUST preserve classification, residency, and policy bindings.
