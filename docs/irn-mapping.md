@@ -11,6 +11,9 @@ Reference sites (non‑normative):
 - https://thedigitalresilience.org
 - https://resiliencenumerique.com
 
+Related mapping:
+- IPCEI‑CIS Reference Architecture v2.0 → ECS: `docs/ipcei-cis-mapping.md`
+
 ## Why this mapping exists
 - IRN highlights **risk areas** and dependencies; ECS defines **technical controls and evidence** to reduce those risks.
 - The crosswalk is intended for **mechanism alignment**, not scoring or certification.
