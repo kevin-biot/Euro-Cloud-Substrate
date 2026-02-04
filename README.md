@@ -23,7 +23,8 @@ An architectural definition project for a portable, governable, European cloud s
 3. Reference Adapter (how to emit it): `adapters/k8s-admission/`
 4. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
 5. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
-6. Docs index (navigation): `docs/index.md`
+6. Deliverables map (spec spine): `docs/deliverables.md`
+7. Docs index (navigation): `docs/index.md`
 
 - Core paper: `VISION.md` (v0.2) and `docs/architecture/`
 - Invariants: `docs/invariants/v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/conformance/invariant-coverage.md`
