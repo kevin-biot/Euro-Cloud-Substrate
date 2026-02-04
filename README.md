@@ -2,6 +2,21 @@
 
 An architectural definition project for a portable, governable, European cloud substrate. This repo hosts the specs, invariants, and profiles that define the minimal shared contracts European providers can implement.
 
+## Who this is for / not for
+**ECS is for:**
+- EU cloud providers
+- Sovereign operators
+- Regulated deployers
+- Auditors / verifiers
+- Procurement authorities
+
+**ECS is not for:**
+- Building a cloud platform
+- Replacing orchestration systems
+- Defining business governance
+- Certifying compliance
+- Competing with IPCEI / 8ra / hyperscalers
+
 ## Start here
 1. Evidence Profiles (what to claim): `docs/profiles/evidence-profiles.md`
 2. Golden Bundles (what correct looks like): `docs/examples/evidence-bundles/`
