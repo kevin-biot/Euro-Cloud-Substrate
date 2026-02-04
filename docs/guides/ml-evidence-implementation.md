@@ -23,6 +23,8 @@ High‑risk and regulated AI systems require **traceable, verifiable evidence** 
 - `model_id`, `model_sbom_ref`
 - `input_hash` / `context_hash`
 - `hash_profile_id` (canonicalization rules)
+- `governance_phase` (infer)
+- `data_use_posture_id` (declared data‑use posture)
 - `output_ref` (subject to data policy and evidence pointer contract)
 - `policy_snapshot_id` / `authority_snapshot_id`
 - `outcome` (accepted/refused/failed) + evidence pointer
@@ -35,10 +37,18 @@ High‑risk and regulated AI systems require **traceable, verifiable evidence** 
 
 **What to capture:**
 - `dataset_refs` + hashes
+- `dataset_manifest_ref` (dataset boundary object / DSBOM)
+- `data_use_posture_id` and `exclusion_policy_snapshot_id`
+- `dataset_policy_bindings` (dataset → policy snapshot)
 - `code_version`, `hyperparameters_hash`
 - `hash_profile_id` (canonicalization rules)
 - `checkpoint_hash` events
-- `policy_snapshot_id` + evidence pointer
+- `policy_snapshot_id` + `authority_snapshot_id`
+- `governance_phase` (pre_ingest/ingest/train/post_train)
+- evidence pointer
+
+### Dataset boundary object (DSBOM)
+Training evidence should reference a dataset manifest that summarizes corpus composition, acquisition method, exclusion handling mode, time window, and sensitive‑data posture. This makes dataset_refs auditable without per‑item attribution.
 
 ## Why this impacts deployers
 If you consume a managed ML service for an **agentic workload**, you are still responsible for evidence of compliance. Without standardized evidence outputs from the provider, deployers must create their own wrappers or accept compliance gaps.
@@ -99,12 +109,13 @@ Use this as a minimum checklist when consuming managed ML services or deploying 
 1. **Policy snapshot binding**: evidence includes policy snapshot id for each governed action.
 2. **Authority binding**: evidence includes authority snapshot id or binding reference.
 3. **Inference evidence**: input/context hashes, model version/SBOM ref, outcome, evidence pointer.
-4. **Training evidence**: dataset hashes, code version, hyperparameter hash, checkpoint hashes.
+4. **Training evidence**: dataset hashes, dataset manifest ref, data‑use posture, exclusion policy snapshot, checkpoint hashes.
 5. **Hashing profile**: evidence includes `hash_profile_id` so hashes can be recomputed deterministically.
-6. **Usage receipts**: data access and sharing events emit usage receipts (URP).
-7. **Exportability**: evidence bundles can be exported via `docs/evidence/export-schema.md`.
-8. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
-9. **Retention**: evidence retained for required period; export is available on request.
+6. **Governance phase**: ML events include `governance_phase` for lifecycle obligations.
+7. **Usage receipts**: data access and sharing events emit usage receipts (URP).
+8. **Exportability**: evidence bundles can be exported via `docs/evidence/export-schema.md`.
+9. **Integrity**: evidence is hash‑chained with sequence/prev_hash continuity.
+10. **Retention**: evidence retained for required period; export is available on request.
 
 ## Regulatory risk if evidence is missing (draft)
 - **AI Act:** inability to demonstrate decision traceability, model version lineage, or post‑market monitoring can trigger non‑compliance findings.
@@ -146,6 +157,8 @@ Verifier input: `evidence_profile_id` MUST match the declared profile in the exp
     "input_hash": "sha256:...",
     "context_hash": "sha256:...",
     "hash_profile_id": "ecs-hash-v1",
+    "governance_phase": "infer",
+    "data_use_posture_id": "dup-001",
     "output_ref": "eosc://output/obj-123",
     "evidence_profile_id": "ecs-evidence-regulated-ml",
     "policy_snapshot_id": "pol-001",

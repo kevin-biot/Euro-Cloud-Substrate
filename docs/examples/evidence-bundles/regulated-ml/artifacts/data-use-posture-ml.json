@@ -1,0 +1,6 @@
+{
+  "data_use_posture_id": "dup-001",
+  "default_rule": "allow_with_exclusions",
+  "exclusion_signals": ["robots.txt", "license-opt-out", "publisher-blocklist"],
+  "obligations": ["no_onward_transfer", "delete_on_notice"]
+}

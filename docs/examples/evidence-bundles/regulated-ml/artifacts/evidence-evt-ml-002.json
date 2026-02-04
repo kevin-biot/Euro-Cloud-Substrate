@@ -9,6 +9,8 @@
     "context_hash": "sha256:beadf00d",
     "hash_profile_id": "ecs-hash-v1",
     "policy_snapshot_id": "pol-ml-001",
-    "authority_snapshot_id": "auth-ml-001"
+    "authority_snapshot_id": "auth-ml-001",
+    "data_use_posture_id": "dup-001",
+    "governance_phase": "infer"
   }
 }

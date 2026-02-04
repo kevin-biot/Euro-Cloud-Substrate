@@ -14,10 +14,17 @@
   "bundle_hash": "sha256:0f27e4480a15f0a998da0962773213824e652db503408564ed19d0c4167318b6",
   "artifacts": {
     "policy_snapshots": [
-      "eosc://artifact/sha256:16f424873661fd818c26faedb6b8c36ecdae07fa1fcf2daa17e7f46bdee96971"
+      "eosc://artifact/sha256:16f424873661fd818c26faedb6b8c36ecdae07fa1fcf2daa17e7f46bdee96971",
+      "eosc://artifact/sha256:3333333333333333333333333333333333333333333333333333333333333333"
     ],
     "authority_bindings": [
       "eosc://artifact/sha256:13aca3f2dae5858ca045af4eba56b4ebc8872f54d7fd6473de3af42087fc251d"
+    ],
+    "data_use_postures": [
+      "eosc://artifact/sha256:2222222222222222222222222222222222222222222222222222222222222222"
+    ],
+    "dataset_manifests": [
+      "eosc://artifact/sha256:1111111111111111111111111111111111111111111111111111111111111111"
     ],
     "sbom_refs": [
       "eosc://artifact/sha256:9fe66cb206f4758a06eb500b978728189ad2c315f7b789b3b00611ce61e988d5"

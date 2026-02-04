@@ -6,6 +6,19 @@
     "training_run_id": "train-001",
     "model_id": "model-123",
     "checkpoint_hash": "sha256:cafebabe",
-    "hash_profile_id": "ecs-hash-v1"
+    "hash_profile_id": "ecs-hash-v1",
+    "dataset_manifest_ref": "eosc://artifact/sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "dataset_policy_bindings": [
+      {
+        "dataset_ref": "dataset-abc",
+        "policy_snapshot_id": "pol-ml-001",
+        "terms_snapshot_id": "terms-001"
+      }
+    ],
+    "data_use_posture_id": "dup-001",
+    "exclusion_policy_snapshot_id": "pol-excl-001",
+    "policy_snapshot_id": "pol-ml-001",
+    "authority_snapshot_id": "auth-ml-001",
+    "governance_phase": "post_train"
   }
 }

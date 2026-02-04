@@ -67,6 +67,8 @@ Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitte
 **Required fields (in addition to baseline):**
 - ML inference/training payload fields as defined in `docs/evidence/catalog.md`.
 - `hash_profile_id` required on ML events.
+- Training events MUST include `policy_snapshot_id` and `authority_snapshot_id`.
+- Training events MUST include `data_use_posture_id`, `exclusion_policy_snapshot_id`, `dataset_manifest_ref`, `dataset_policy_bindings`, and `governance_phase`.
 
 **Required event families:**
 - EVID, EXEC, SUP (ML inference and training events).

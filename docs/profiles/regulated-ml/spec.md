@@ -32,6 +32,13 @@
 - Training runs MUST record: dataset hashes/IDs, code version, hyperparameters, checkpoints with integrity hashes.
 - Checkpoints MUST have integrity metadata and evidence of storage location/jurisdiction.
 - Training MUST honor residency for data, checkpoints, and intermediate artifacts.
+ - Training events MUST bind policy and authority snapshots at decision time.
+
+### Data‑use posture and exclusions (DATA, POL, EVID)
+- Training runs MUST reference a **data‑use posture** (default rule + exclusion handling).
+- Exclusion rules MUST be referenced via an `exclusion_policy_snapshot_id`.
+- Training MUST reference a dataset boundary object (dataset manifest / DSBOM) that summarizes corpus composition, acquisition mode, exclusion handling, and time window.
+- Dataset policy bindings MUST be recorded for each dataset reference.
 
 ### Inference envelopes (EXEC, DEP, PHY)
 - Inference workloads MUST declare an execution envelope with accelerator requirements (GPU/TPU).
@@ -46,6 +53,7 @@
 - Inference events MUST capture: input/context hash, model version/SBOM ref, policy/authority snapshot, decision output/refusal, outcome.
 - Logs MUST be immutable, ordered, and integrity-protected; refusal is first-class.
 - Evidence pointers MUST be associated with inference events for audit/export.
+ - Training events MUST include `governance_phase` to disambiguate training lifecycle obligations.
 
 ### Residency and portability (DATA, EXIT)
 - Models and artifacts MUST declare residency; moves/exports MUST be evidenced.

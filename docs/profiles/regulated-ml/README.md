@@ -16,6 +16,7 @@ Profile goal: tighten ECS invariants for regulated ML workloads (e.g., AI Act, f
 
 ## Draft requirements (to be refined)
 - Model provenance: declare training data lineage, model SBOM, and fine-tuning provenance (SUP, DATA).
+- Data-use posture: bind training to a declared data-use posture and exclusion policy snapshot; reference dataset manifest (DSBOM).
 - Inference envelopes: declare GPU/accelerator envelope with attestation and isolation evidence (EXEC, DEP).
 - Decision logging: capture input/context hashes, policy snapshot, authority, and outputs/refusals (EVID).
 - Residency: enforce jurisdiction for training data, checkpoints, and models (DATA).

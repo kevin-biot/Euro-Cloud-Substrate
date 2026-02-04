@@ -1,0 +1,14 @@
+{
+  "dataset_manifest_id": "dsman-001",
+  "version": "1.0",
+  "composition_summary": {
+    "sources": [
+      { "provider": "provider-x", "category": "public-web", "percent": 60 },
+      { "provider": "provider-y", "category": "licensed", "percent": 40 }
+    ]
+  },
+  "acquisition_method": ["crawl", "licensed"],
+  "exclusion_handling_mode": "standard-opt-out",
+  "time_window": { "start": "2024-01-01", "end": "2024-12-31" },
+  "sensitive_data_posture": "filtered"
+}

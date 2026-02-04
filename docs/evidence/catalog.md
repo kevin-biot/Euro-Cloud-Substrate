@@ -360,6 +360,8 @@ Evidence for ML inference is required for regulatory traceability (e.g., decisio
     "input_hash": { "type": "string" },
     "context_hash": { "type": "string" },
     "hash_profile_id": { "type": "string" },
+    "governance_phase": { "type": "string", "enum": ["infer"] },
+    "data_use_posture_id": { "type": "string" },
     "output_ref": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
     "refusal_reason": { "type": "string" },
@@ -387,11 +389,27 @@ Evidence for ML training is required to demonstrate dataset provenance, model li
     "training_run_id": { "type": "string" },
     "model_id": { "type": "string" },
     "dataset_refs": { "type": "array", "items": { "type": "string" } },
+    "dataset_manifest_ref": { "type": "string" },
+    "dataset_policy_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dataset_ref": { "type": "string" },
+          "policy_snapshot_id": { "type": "string" },
+          "terms_snapshot_id": { "type": "string" }
+        },
+        "required": ["dataset_ref", "policy_snapshot_id"]
+      }
+    },
     "code_version": { "type": "string" },
     "hyperparameters_hash": { "type": "string" },
     "hash_profile_id": { "type": "string" },
     "checkpoint_hash": { "type": "string" },
     "jurisdiction": { "type": "string" },
+    "governance_phase": { "type": "string", "enum": ["pre_ingest", "ingest", "train", "post_train", "deploy"] },
+    "data_use_posture_id": { "type": "string" },
+    "exclusion_policy_snapshot_id": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
@@ -400,6 +418,7 @@ Evidence for ML training is required to demonstrate dataset provenance, model li
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "training_run_id", "model_id", "outcome", "evidence_pointer"]
 }
 ```
+When `ecs-evidence-regulated-ml` is selected, training events MUST include `policy_snapshot_id`, `authority_snapshot_id`, `data_use_posture_id`, `exclusion_policy_snapshot_id`, `dataset_manifest_ref`, `dataset_policy_bindings`, and `governance_phase`.
 
 - Evidence events for OLZ bootstrap (EVID/AUTH/POL/DATA example):
 ```json
