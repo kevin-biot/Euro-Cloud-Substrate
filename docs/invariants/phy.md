@@ -3,6 +3,7 @@
 ## Scope
 - Applies to network and connectivity dependencies required for execution, authority, policy, data, and evidence paths.
 - Covers operator, path, and topology assumptions; excludes performance tuning and telco SLAs.
+- All PHY invariants are required (none are optional in the Core list).
 
 ## Invariants
 - **PHY-01 — Connectivity Dependency Declaration**  
