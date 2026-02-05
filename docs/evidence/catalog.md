@@ -363,6 +363,29 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
 }
 ```
 
+- Optional provenance artifact (AI media, non‑normative):
+```json
+{
+  "type": "object",
+  "properties": {
+    "content_id": { "type": "string" },
+    "content_hash": { "type": "string" },
+    "model_id": { "type": "string" },
+    "model_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "policy_snapshot_id": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "retention": { "type": "string" },
+    "marking_method": { "type": "string" },
+    "disclosure_evidence_ref": { "type": "string" }
+  },
+  "required": ["content_id", "content_hash", "model_id", "generated_at", "policy_snapshot_id", "jurisdiction", "classification", "retention"]
+}
+```
+Provenance artifacts SHOULD be stored under the same jurisdiction and retention policy as the content they describe.
+
 - Evidence events for storage (EVID/DATA/SUP example):
 ```json
 {

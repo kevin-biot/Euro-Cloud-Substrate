@@ -32,3 +32,25 @@ ECS recommends an **optional provenance artifact**:
 - marking method (if any)
 - distribution/disclosure evidence pointer
 
+### Optional provenance artifact (draft JSON)
+```json
+{
+  "type": "object",
+  "properties": {
+    "content_id": { "type": "string" },
+    "content_hash": { "type": "string" },
+    "model_id": { "type": "string" },
+    "model_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "policy_snapshot_id": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "retention": { "type": "string" },
+    "marking_method": { "type": "string" },
+    "disclosure_evidence_ref": { "type": "string" }
+  },
+  "required": ["content_id", "content_hash", "model_id", "generated_at", "policy_snapshot_id", "jurisdiction", "classification", "retention"]
+}
+```
+Provenance artifacts SHOULD be stored under the same jurisdiction and retention policy as the content they describe.
