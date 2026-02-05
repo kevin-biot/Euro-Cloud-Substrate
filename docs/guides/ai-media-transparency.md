@@ -21,8 +21,15 @@ Providers/deployers SHOULD emit evidence events for:
 - `content.marking.verify` (verification at distribution)
 - `content.disclosure.notice` (user‑facing disclosure presented)
 - `content.disclosure.exempt` (exception applied, with reason)
+- `content.generation.refuse` (prohibited‑practice or policy‑blocked generation)
 
 These events should bind to policy snapshots and evidence pointers to support audits.
+
+## Prohibited‑practice bans (emerging, non‑normative)
+If prohibited‑practice bans are introduced (e.g., non‑consensual sexual deepfakes), providers SHOULD emit `content.generation.refuse` with:
+- the policy snapshot in force,
+- refusal reason and category,
+- evidence pointer for audit and dispute resolution.
 
 ### Delegation context (internal evidence only)
 If media actions are performed by delegated agents, evidence events SHOULD include delegation attributes (not for public disclosure):

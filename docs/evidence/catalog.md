@@ -344,7 +344,8 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
         "content.marking.apply",
         "content.marking.verify",
         "content.disclosure.notice",
-        "content.disclosure.exempt"
+        "content.disclosure.exempt",
+        "content.generation.refuse"
       ]
     },
     "occurred_at": { "type": "string", "format": "date-time" },
