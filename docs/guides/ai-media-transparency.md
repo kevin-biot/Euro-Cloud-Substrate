@@ -24,6 +24,12 @@ Providers/deployers SHOULD emit evidence events for:
 
 These events should bind to policy snapshots and evidence pointers to support audits.
 
+### Delegation context (internal evidence only)
+If media actions are performed by delegated agents, evidence events SHOULD include delegation attributes (not for public disclosure):
+- `delegation_id`, `delegator_id`
+- `agent_class_id`, `agent_instance_id`, `session_id`
+- `intent_ref` / `purpose_id` (when disclosure is required)
+
 ## Optional provenance feature (recommended)
 Article 50 does not mandate provenance, but provenance can **close accountability gaps**.  
 ECS recommends an **optional provenance artifact**:
