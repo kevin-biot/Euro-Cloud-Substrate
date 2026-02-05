@@ -41,6 +41,10 @@ For AI media as a service, providers MAY return **jurisdiction and provenance me
 
 Apps SHOULD only display “trusted origin” claims when they can dereference provenance evidence, not merely on provider assertion.
 
+## UI trust defaults (non‑normative)
+Industry can act ahead of regulation here: if provenance or jurisdiction is **unknown**, apps SHOULD treat content as **untrusted** by default (no trust badge or a neutral warning).  
+For high‑impact contexts (elections, public information, crisis response), apps SHOULD require evidence‑backed provenance and jurisdiction metadata before displaying content without warnings.
+
 ### Delegation context (internal evidence only)
 If media actions are performed by delegated agents, evidence events SHOULD include delegation attributes (not for public disclosure):
 - `delegation_id`, `delegator_id`
