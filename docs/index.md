@@ -54,6 +54,7 @@
 - OSS adoption: `docs/oss-adoption.md`
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
 - Pipeline schema: `docs/guides/pipeline-schema.md`
+- Agent delegation: `docs/guides/agent-delegation.md`
 - ML evidence implementation: `docs/guides/ml-evidence-implementation.md`
 
 ## Procurement

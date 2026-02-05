@@ -23,6 +23,7 @@ Define the Identity & Access Management (IAM) domain across the cloud‑edge con
 - **Delegation context** for agents MUST be time‑bounded and scoped:
   - include `delegation_id`, `scope`, and expiry (`exp`/`valid_to`);
   - include `actor_type=delegate` and **intent/purpose reference** when governed actions require explicit intent.
+  - include `agent_class_id`, `agent_instance_id`, and `session_id` for large‑scale agent deployments.
 
 OAuth/OIDC is the baseline for API access; DID/VC‑based credentials MAY be used as proof of authority or identity without mandating a specific DID method.
 
