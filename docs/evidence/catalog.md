@@ -334,6 +334,7 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
 
 ## EVID
 - Evidence events for AI media marking/disclosure (EVID example):
+When AI media generation is capability‑scoped (STA‑L pattern), include the capability token reference and duty flags so auditors can verify what was required at the time of generation.
 ```json
 {
   "type": "object",
@@ -352,6 +353,12 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
     "tenant_id": { "type": "string" },
     "correlation_id": { "type": "string" },
     "sequence": { "type": "integer" },
+    "capability_id": { "type": "string" },
+    "capability_token_ref": { "type": "string" },
+    "content_class": { "type": "string" },
+    "media_risk_class": { "type": "string" },
+    "disclosure_required": { "type": "boolean" },
+    "provenance_required": { "type": "boolean" },
     "content_id": { "type": "string" },
     "content_hash": { "type": "string" },
     "marking_method": { "type": "string" },

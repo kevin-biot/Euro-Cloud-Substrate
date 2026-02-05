@@ -43,6 +43,17 @@ These endpoints are OPTIONAL but recommended for data‑space compatibility and 
 - `GET /v1/data-products/{id}/dataset-manifest` → dataset boundary object / DSBOM.
 - `GET /v1/data-use-postures/{id}` → declared data‑use posture and exclusion handling.
 
+### AI media capability invocations (OPTIONAL, MAY)
+To prevent AI media from being treated as generic content, providers MAY expose explicit AI‑media capability fields on generation requests/responses (or capability declarations):
+- `content_class`: text | image | audio | video | mixed
+- `media_risk_class`: low | moderate | high‑impact (e.g., election‑adjacent)
+- `disclosure_required`: true/false + reason
+- `provenance_required`: true/false + profile
+- `policy_snapshot_id`, `authority_snapshot_id`, `jurisdiction`
+
+If a capability token (STA‑L pattern) is used, include `capability_token_ref` in requests and bind emitted evidence events to that reference.  
+If a required duty (disclosure/provenance) cannot be met, the invocation SHOULD be refused with refusal evidence.
+
 ### AuditEvent
 - Read-only: `GET /events`, `GET /events/{id}`.
 - Filtering: by `tenant`, time range, `event_type`, `outcome`.

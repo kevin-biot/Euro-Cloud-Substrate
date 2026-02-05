@@ -25,6 +25,17 @@ If a media‑generation system is classified as **high‑risk**, then the provid
 - **Disclosure** remains an app/deployer responsibility.
 - ECS should **enable evidence** that marking and disclosure occurred when required.
 
+## Capability‑scoped invocation (STA‑L pattern, non‑normative)
+Where AI media generation is invoked via a capability router (local or remote), providers SHOULD bind the call to a **scoped capability token** (STA‑L pattern) that declares:
+- `content_class` (text | image | audio | video | mixed)
+- `media_risk_class` (low | moderate | high‑impact)
+- `disclosure_required` (true/false) and reason
+- `provenance_required` (true/false) and profile
+- `policy_snapshot_id`, `authority_snapshot_id`, `jurisdiction`
+
+Evidence events SHOULD carry a `capability_token_ref` so auditors can verify the duties that were in force at generation time.  
+If a required duty (disclosure/provenance) cannot be met, the invocation SHOULD be refused with refusal evidence.
+
 ## Enforceability gap (non‑normative)
 Transparency duties without **evidence** are hard to verify.  
 ECS addresses this by defining **evidence hooks** (marking, disclosure, refusal, provenance) so compliance can be audited without mandating a specific watermarking technology.
