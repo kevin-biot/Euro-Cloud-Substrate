@@ -64,3 +64,5 @@ python3 exporter.py \
 ## Notes
 - This is a reference adapter for contract fidelity, not production readiness.
 - TLS/mTLS, authn/z, and Kubernetes deployment manifests are intentionally omitted.
+- Events include `correlation_id`, `policy_snapshot_id`, and `authority_snapshot_id` at the top level via the emitted payload (Core10‑05 envelope).
+- Default snapshot ids (`pol-default`, `auth-default`) are placeholders; real deployments should supply explicit snapshot ids.
