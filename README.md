@@ -49,7 +49,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `docs/call-for-participation.md`
 - Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
 - Competition & differentiation: `docs/positioning/competition.md`
-- Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`
+- Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/aws-minimal-subset.md`
 - IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
 - Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`
 - Gaia-X alignment note (draft): `docs/mappings/gaia-x/README.md`
