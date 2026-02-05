@@ -9,6 +9,10 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Portability requirements (interop + migration).
 - Minimum controls for landing zones and execution envelopes.
 
+## API fragmentation gap (why ECS matters)
+Cloud API fragmentation is a major lock‑in vector: each provider’s proprietary surface slows integration, complicates portability, and raises switching costs.  
+ECS does **not** replace provider APIs. Instead, it standardizes the **governance/evidence contract** so different API surfaces can still be audited, compared, and migrated.
+
 ## What ECS leaves open (competitive differentiation)
 Vendors can still compete on:
 - **Performance tiers** (latency, IOPS, throughput).

@@ -19,6 +19,11 @@ The goal is **evidence‑grade interoperability**, not OSS/BSS unification.
 
 ECS remains a **mechanism‑only substrate**: it defines the evidence and policy hooks that make cross‑provider interactions auditable and portable.
 
+## API fragmentation gap (why this matters)
+Cloud API fragmentation creates **lock‑in** and slows integration.  
+ECS does not attempt to replace TM Forum or CAMARA, but it **standardizes the governance/evidence contract** so different API surfaces can interoperate and be verified.  
+This makes portability and procurement possible even before full API convergence.
+
 ## Suggested alignment hooks (non‑normative)
 - **Capability claims**: ECS interop should allow providers to declare which CAMARA‑like capabilities they expose.
 - **Refusal evidence**: when capabilities cannot be supported (e.g., QoS unavailable), ECS requires refusal evidence with policy snapshot binding.
