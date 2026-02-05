@@ -27,11 +27,11 @@ See `docs/guides/agent-delegation.md` for delegation concepts, identifiers, and 
 - `evidence_pointer`
 
 ## Implementing Acts alignment (non‑normative)
-- **Cross‑border identity matching**: ECS should record matching outcomes when cross‑border authentication is used. citeturn2view0
-- **Electronic attestations of attributes (EAA/QEAA)**: ECS treats these as valid credential proof types; verification outcomes and revocation status should be evidenced. citeturn2view4
-- **Protocols/interfaces**: interoperability between wallets and relying parties is expected; ECS remains mechanism‑only but requires evidence of successful validation. citeturn2view3
-- **Trust framework / certified wallets**: these are external trust infrastructure inputs; ECS does not manage certification but can reference trusted sources in evidence artifacts. citeturn2view5
-- **Qualified archiving / timestamps**: ECS supports anchor references for qualified archiving and qualified time‑stamp services via evidence export manifests. citeturn2view1turn2view2
+- **Cross‑border identity matching**: record matching outcomes when cross‑border authentication is used.
+- **Electronic attestations of attributes (EAA/QEAA)**: treat these as valid credential proof types; evidence verification outcomes and revocation status.
+- **Protocols/interfaces**: interoperability between wallets and relying parties is expected; ECS remains mechanism‑only but requires evidence of successful validation.
+- **Trust framework / certified wallets**: external trust inputs; ECS does not manage certification but can reference trusted sources in evidence artifacts.
+- **Qualified archiving / timestamps**: support anchor references for qualified archiving and qualified time‑stamp services via evidence export manifests.
 
 ## Delegation for agentic workloads (draft)
 - Support **organizational wallets** and **delegated credentials** for agents.
