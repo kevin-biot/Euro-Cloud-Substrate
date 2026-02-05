@@ -11,6 +11,7 @@ Outline the minimum components an open‑source landing zone implementation woul
 2. **Network baseline**
    - Default‑deny segmentation, egress controls, and declared connectivity dependencies.
    - Evidence of network posture and changes.
+   - Optional service mesh for policy enforcement at L7 with evidence emission.
 
 3. **Policy admission**
    - Admission gate enforcing policy snapshot binding and refusal semantics.
@@ -42,3 +43,4 @@ See `docs/guides/pipeline-schema.md` for a minimal pipeline schema and evidence 
 
 ## Notes
 - This is a gap area in the open‑source ecosystem; ECS defines the contract but does not mandate a stack.
+ - Service mesh is a valid optional layer; if used for policy/egress control it should emit evidence and be declared in exit manifests.

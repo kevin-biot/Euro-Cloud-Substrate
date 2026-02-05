@@ -30,3 +30,4 @@ flowchart TB
 - VM profile can be implemented with KubeVirt or equivalent.
 - Policy engines should support deterministic evaluation and refusal evidence.
 - CRDs/operators are valid differentiation layers; if they affect governed behavior or portability, they SHOULD emit evidence and be declared in dependency/exit manifests.
+- Service mesh (e.g., Istio/Linkerd) is optional; if it enforces authz/egress or produces governance decisions, it SHOULD emit evidence and be declared in portability manifests.
