@@ -7,6 +7,24 @@
 - Reference adapter: `adapters/k8s-admission/`
 - RFP guide: `docs/procurement/rfp-guide.md`
 
+## Learning paths
+**Auditors / Verifiers**
+- Evidence export schema: `docs/evidence/export-schema.md`
+- Evidence catalog: `docs/evidence/catalog.md`
+- Verifier responsibilities: `docs/evidence/verifier-responsibilities.md`
+- Evidence profiles: `docs/profiles/evidence-profiles.md`
+
+**Platform engineers**
+- Landing zone reference: `docs/guides/landing-zone-reference.md`
+- Execution envelopes: `ws3-exec-envelopes/` and `core10/07-execution-envelope-profiles.md`
+- Evidence vs logs: `docs/guides/evidence-vs-logs.md`
+- Interop API: `ws4-interop-api/spec.md`
+
+**Procurement / Policy**
+- RFP guide: `docs/procurement/rfp-guide.md`
+- Airbus‑style checklist: `docs/procurement/airbus-2026-checklist.md`
+- Deliverables map: `docs/deliverables.md`
+
 ## Architecture
 - Planes & diagrams: `docs/architecture/overview.md`
 - Control plane definition: `docs/architecture/control-plane.md`
