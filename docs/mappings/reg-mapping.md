@@ -10,8 +10,17 @@ See `docs/domains/grc.md` for the GRC domain overview and evidence expectations.
 - Governance: Authority-before-execution and policy determinism.
 
 ## NIS2 / DORA (resilience, evidence)
-- Resilience/continuity: CRP (local authority/policy, control-plane independence, deterministic degradation).
-- Evidence: WS5 (evidence/audit), hash chaining, provider-neutral exports.
+**NIS2 article mapping (indicative):**
+- **Article 20 (Governance):** management bodies approve and oversee risk‑management measures.  
+  ECS mapping: authority binding + policy/authority interface (Core10‑04) with evidence of decisions and escalation.
+- **Article 21 (Risk‑management measures):** policies for risk analysis, incident handling, business continuity, and supply‑chain security.  
+  ECS mapping: CRP resilience + fail‑closed (Core10‑09), evidence by construction (Core10‑05/06), supply‑chain artifacts (SBOMs, provenance, policy snapshots).
+- **Article 23 (Reporting obligations):** structured incident notifications and timelines.  
+  ECS mapping: WS5 export bundles + audit chains, refusal evidence, and portable incident evidence packages.
+
+Additional ECS mappings:
+- Resilience/continuity: CRP (local authority/policy, control‑plane independence, deterministic degradation).
+- Evidence: WS5 (evidence/audit), hash chaining, provider‑neutral exports.
 - Isolation and segmentation: WS1/WS3 + Tenant Isolation Contract.
 
 ## PSD3 (authority, auditability)
