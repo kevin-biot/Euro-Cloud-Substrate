@@ -19,5 +19,9 @@ Clarify how ECS primitives apply to edge and IoT deployments where connectivity 
 - Export bundles MUST declare `evidence_profile_id` and include chain fields when required.
 - Buffer integrity and reconciliation are mandatory (CRP/WS5).
 
+## TM Forum / CAMARA note (non‑normative)
+CAMARA‑style network capabilities (identity verification, QoS, edge discovery) align with ECS’s interop goals when they emit **policy‑bound evidence** and **refusal events** for unsupported requests.  
+TM Forum Open APIs are broader OSS/BSS lifecycle models and are **out of ECS scope**, except for their governance‑relevant primitives.
+
 ## Notes
 Edge/IoT is a deployment context, not a new ECS layer. ECS remains the contract; implementation choices are left to providers.

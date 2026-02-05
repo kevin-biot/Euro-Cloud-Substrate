@@ -11,3 +11,4 @@ Mappings are non‑normative crosswalks that relate ECS “how” (invariants, p
 - Gaia‑X alignment: `docs/mappings/gaia-x/README.md`
 - SUSE CSF mapping: `docs/mappings/suse-csf-mapping.md`
 - Tech Sovereignty Catalogue mapping: `docs/mappings/techsov-catalogue.md`
+- TM Forum & CAMARA mapping: `docs/mappings/tmforum-camara.md`
