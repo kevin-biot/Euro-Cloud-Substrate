@@ -133,6 +133,7 @@ paths:
   /v1/media/generate:
     post:
       summary: Generate AI media (optional capability)
+      description: Optional endpoint for AI media capability invocation.
       requestBody:
         content:
           application/json:
