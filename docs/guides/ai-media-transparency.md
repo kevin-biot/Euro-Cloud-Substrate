@@ -31,6 +31,16 @@ If prohibited‑practice bans are introduced (e.g., non‑consensual sexual deep
 - refusal reason and category,
 - evidence pointer for audit and dispute resolution.
 
+## Jurisdiction + trusted origin (non‑normative)
+For AI media as a service, providers MAY return **jurisdiction and provenance metadata** (headers or evidence pointers), e.g.:
+- `ai_provider_id`
+- `processing_jurisdiction`
+- `model_id` / `model_version`
+- `policy_snapshot_id`
+- `provenance_ref` (optional)
+
+Apps SHOULD only display “trusted origin” claims when they can dereference provenance evidence, not merely on provider assertion.
+
 ### Delegation context (internal evidence only)
 If media actions are performed by delegated agents, evidence events SHOULD include delegation attributes (not for public disclosure):
 - `delegation_id`, `delegator_id`
