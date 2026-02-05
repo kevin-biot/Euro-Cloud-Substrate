@@ -74,6 +74,10 @@ See `docs/domains/federation.md` for the federation domain summary and evidence 
   - mTLS for service-to-service.
   - OIDC bearer tokens for user/API access (aligned with OLZ federation).
   - API keys: OPTIONAL; if supported, MUST be scoped to tenant and least privilege.
+- Token expectations (baseline):
+  - Required claims: `iss`, `sub`, `aud`, `exp`, `iat`.
+  - Delegated actions MUST include `delegation_id`, `scope`, and expiry; `actor_type=delegate` SHOULD be present.
+  - Delegated actions SHOULD carry intent/purpose reference where governed actions require explicit intent.
 - Authz:
   - Policy evaluation per POL invariants; refusals are first-class and MUST emit evidence with policy/authority snapshot.
   - Auth decisions MUST emit evidence using the Core10-05 envelope.

@@ -27,8 +27,10 @@ See `docs/domains/iam.md` for the broader IAM domain mapping and baseline capabi
 
 ## Delegation for agentic workloads (draft)
 - Support **organizational wallets** and **delegated credentials** for agents.
-- Delegation MUST be time‑bounded and evidenced.
+- Delegation MUST be time‑bounded, scoped, and evidenced.
+- Delegation SHOULD bind to the delegator’s intent (purpose/intent reference) and be revocable without delegator participation.
 - Agent actions MUST bind to delegated credential proofs and policy snapshots.
+ - Delegation credentials MAY be Verifiable Credentials (DID/VC) presented via OAuth/OIDC token exchange (on‑behalf‑of).
 
 ## Agentic delegation and payment binding (draft)
 - Delegation SHOULD include scope, time window, and permitted payment/usage policies.

@@ -108,12 +108,15 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
     "scope": { "type": "array", "items": { "type": "string" } },
     "valid_from": { "type": "string", "format": "date-time" },
     "valid_to": { "type": "string", "format": "date-time" },
+    "intent_ref": { "type": "string" },
+    "purpose_id": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
     "evidence_pointer": { "type": "string" }
   },
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "delegation_id", "delegator_id", "delegate_id", "scope", "valid_from", "valid_to", "outcome", "evidence_pointer"]
 }
 ```
+`intent_ref`/`purpose_id` SHOULD be captured when delegation is tied to explicit user intent or purpose binding.
 
 - Evidence events for payment/usage binding (AUTH/DATA example):
 ```json
