@@ -36,6 +36,39 @@ Where AI media generation is invoked via a capability router (local or remote), 
 Evidence events SHOULD carry a `capability_token_ref` so auditors can verify the duties that were in force at generation time.  
 If a required duty (disclosure/provenance) cannot be met, the invocation SHOULD be refused with refusal evidence.
 
+### Example (request + refusal evidence)
+Media generation request (capability‑scoped):
+```json
+{
+  "capability_token_ref": "sta:local:media:7f4b",
+  "content_class": "image",
+  "media_risk_class": "high-impact",
+  "disclosure_required": true,
+  "provenance_required": true,
+  "policy_snapshot_id": "pol-2026-02",
+  "authority_snapshot_id": "auth-2026-01",
+  "jurisdiction": "EU",
+  "input_ref": "prompt://tenant/briefs/election-visual-v3"
+}
+```
+
+Refusal evidence (Core10‑05 envelope):
+```json
+{
+  "id": "7b7b2a9d-8cc0-43b5-8e2b-3cb6a6d2a3c1",
+  "event_type": "content.generation.refuse",
+  "occurred_at": "2026-02-05T13:58:12Z",
+  "tenant_id": "tenant-123",
+  "sequence": 41821,
+  "outcome": "refused",
+  "capability_token_ref": "sta:local:media:7f4b",
+  "content_class": "image",
+  "media_risk_class": "high-impact",
+  "refusal_reason": "provenance_required_not_supported",
+  "evidence_pointer": "eosc://evidence/tenant-123/refusals/7b7b2a9d.json"
+}
+```
+
 ## Enforceability gap (non‑normative)
 Transparency duties without **evidence** are hard to verify.  
 ECS addresses this by defining **evidence hooks** (marking, disclosure, refusal, provenance) so compliance can be audited without mandating a specific watermarking technology.

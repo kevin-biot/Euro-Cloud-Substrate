@@ -38,6 +38,12 @@ channels:
         name: NoControlEvent
         payload:
           $ref: '#/components/schemas/NoControlEvent'
+  /events/media:
+    subscribe:
+      message:
+        name: AiMediaEvent
+        payload:
+          $ref: '#/components/schemas/AiMediaEvent'
 components:
   schemas:
     EventEnvelope:
@@ -166,3 +172,33 @@ components:
                 artifact_ref: { type: string }
                 artifact_hash: { type: string }
           description: No-control profile proof event with attached artifact references.
+    AiMediaEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            event_type:
+              type: string
+              enum:
+                - content.marking.apply
+                - content.marking.verify
+                - content.disclosure.notice
+                - content.disclosure.exempt
+                - content.generation.refuse
+            payload:
+              type: object
+              properties:
+                capability_id: { type: string }
+                capability_token_ref: { type: string }
+                content_class: { type: string, enum: [text, image, audio, video, mixed] }
+                media_risk_class: { type: string, enum: [low, moderate, high-impact] }
+                disclosure_required: { type: boolean }
+                provenance_required: { type: boolean }
+                policy_snapshot_id: { type: string }
+                authority_snapshot_id: { type: string }
+                jurisdiction: { type: string }
+                content_id: { type: string }
+                content_hash: { type: string }
+                marking_method: { type: string }
+                refusal_reason: { type: string }
+          description: AI media evidence events with duty binding and capability token reference.

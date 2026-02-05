@@ -130,6 +130,26 @@ paths:
         '404': { $ref: '#/components/responses/ErrorResponse' }
         '429': { $ref: '#/components/responses/ErrorResponse' }
         '500': { $ref: '#/components/responses/ErrorResponse' }
+  /v1/media/generate:
+    post:
+      summary: Generate AI media (optional capability)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AiMediaRequest'
+      responses:
+        '200':
+          description: Generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AiMediaResponse'
+        '400': { $ref: '#/components/responses/ErrorResponse' }
+        '401': { $ref: '#/components/responses/ErrorResponse' }
+        '403': { $ref: '#/components/responses/ErrorResponse' }
+        '429': { $ref: '#/components/responses/ErrorResponse' }
+        '500': { $ref: '#/components/responses/ErrorResponse' }
     delete:
       summary: Delete workload
       responses:
@@ -214,6 +234,7 @@ components:
             - $ref: '#/components/schemas/MlInferencePayload'
             - $ref: '#/components/schemas/MlTrainingPayload'
             - $ref: '#/components/schemas/NoControlProofPayload'
+            - $ref: '#/components/schemas/AiMediaPayload'
             - type: object
       required: [id, event_type, occurred_at, tenant_id, outcome, evidence_pointer, sequence]
     ActorDetails:
@@ -258,6 +279,48 @@ components:
           enum: [authority_graph, key_custody_model, controlplane_ownership, telemetry_egress_map]
         artifact_ref: { type: string }
         artifact_hash: { type: string }
+    AiMediaPayload:
+      type: object
+      properties:
+        capability_id: { type: string }
+        capability_token_ref: { type: string }
+        content_class: { type: string, enum: [text, image, audio, video, mixed] }
+        media_risk_class: { type: string, enum: [low, moderate, high-impact] }
+        disclosure_required: { type: boolean }
+        provenance_required: { type: boolean }
+        policy_snapshot_id: { type: string }
+        authority_snapshot_id: { type: string }
+        jurisdiction: { type: string }
+        content_id: { type: string }
+        content_hash: { type: string }
+        marking_method: { type: string }
+        disclosure_evidence_ref: { type: string }
+        refusal_reason: { type: string }
+    AiMediaRequest:
+      type: object
+      properties:
+        capability_token_ref: { type: string }
+        content_class: { type: string, enum: [text, image, audio, video, mixed] }
+        media_risk_class: { type: string, enum: [low, moderate, high-impact] }
+        disclosure_required: { type: boolean }
+        provenance_required: { type: boolean }
+        policy_snapshot_id: { type: string }
+        authority_snapshot_id: { type: string }
+        jurisdiction: { type: string }
+        input_ref: { type: string, description: Reference to input prompt or source material }
+        output_format: { type: string }
+      required: [content_class, policy_snapshot_id]
+    AiMediaResponse:
+      type: object
+      properties:
+        content_id: { type: string }
+        content_hash: { type: string }
+        marking_method: { type: string }
+        provenance_ref: { type: string }
+        disclosure_required: { type: boolean }
+        policy_snapshot_id: { type: string }
+        authority_snapshot_id: { type: string }
+        evidence_pointer: { type: string }
     Tenant:
       type: object
       properties:
