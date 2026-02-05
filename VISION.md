@@ -17,6 +17,9 @@ This document remains intentionally non-implementational. Its goal is to define 
 
 ECS standardizes **verifiable governance and portability**, not the commercial layer. Conformance is a minimum contract; providers still compete on performance, managed services, UX, pricing, and regional specialization.
 
+If ECS gains traction, a **separate Cloud API standard** could define common service interfaces.  
+ECS would remain the **contract layer**, while the API standard defines the **interface layer**; vendors compete above both.
+
 For regulatory context and how ECS primitives map to EU obligations, see `docs/mappings/reg-mapping.md`. For the French IRN “what” versus ECS “how” crosswalk, see `docs/mappings/irn-mapping.md`.
 
 ### External context (aDRI)

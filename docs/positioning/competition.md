@@ -40,3 +40,7 @@ while the other competes on lower cost or local presence.
 
 ## Summary
 ECS defines **minimum interoperability and auditability**. Everything above that is where competition thrives.
+
+## Companion standard (future‑looking)
+If ECS gains traction, a **separate Cloud API standard** could emerge to define common service surfaces.  
+ECS would remain the **contract layer**, while the API standard defines the **interface layer**; vendors would then compete above both.
