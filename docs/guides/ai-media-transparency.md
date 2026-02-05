@@ -11,8 +11,9 @@ Explain the practical obligations around AI‑generated media (AI Act Article 50
 ECS does **not** implement these rules; it provides **evidence hooks** so providers/deployers can prove what was done.
 
 ## High‑risk vs transparency (clarifying note)
-- **Election‑influence systems are already high‑risk** under Annex III (democratic processes). citeturn0open0
-- **General media generation** is governed by **Article 50 transparency duties** (marking + disclosure). citeturn0open1
+Election‑influence systems are already treated as **high‑risk** under Annex III (democratic processes).  
+If a system is intended to influence electoral outcomes or voting behavior, high‑risk controls apply (risk management, logging, conformity assessment).  
+By contrast, **general media generation** is governed by **Article 50 transparency duties** (marking + disclosure) unless the use‑case itself falls into a high‑risk category.
 
 ## CE mark vs transparency (clarifying note)
 The **CE mark applies to high‑risk AI systems**, not to media outputs themselves.  
