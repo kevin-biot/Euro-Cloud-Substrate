@@ -4,7 +4,8 @@
 - Architecture overview: `docs/architecture/ecs-architecture-overview.md`
 - Evidence profiles: `docs/profiles/evidence-profiles.md`
 - Golden bundles: `docs/examples/evidence-bundles/`
-- Reference adapter: `adapters/k8s-admission/`
+- Reference adapter: `adapters/k8s-admission/` (K8s admission)
+- ML inference sidecar (draft): `adapters/ml-inference-sidecar/`
 - RFP guide: `docs/procurement/rfp-guide.md`
 
 ## Learning paths
