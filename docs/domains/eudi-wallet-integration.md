@@ -9,6 +9,7 @@ Describe minimum platform capabilities for integrating with EUDI wallets without
 - Root of trust is implementation‑agnostic (device SE, eSIM, hardware token, HSM).
 
 See `docs/domains/iam.md` for the broader IAM domain mapping and baseline capabilities.
+See `docs/guides/agent-delegation.md` for delegation concepts, identifiers, and evidence guidance.
 
 ## Minimum platform capabilities
 - **Credential verification interface**: verify credential signatures and validity.
