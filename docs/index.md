@@ -6,6 +6,7 @@
 - Golden bundles: `docs/examples/evidence-bundles/`
 - Reference adapter: `adapters/k8s-admission/` (K8s admission)
 - ML inference sidecar (draft): `adapters/ml-inference-sidecar/`
+- Object storage proxy (draft): `adapters/object-storage-proxy/`
 - RFP guide: `docs/procurement/rfp-guide.md`
 
 ## Learning paths

@@ -22,6 +22,7 @@ An architectural definition project for a portable, governable, European cloud s
 2. Golden Bundles (what correct looks like): `docs/examples/evidence-bundles/`
 3. Reference Adapter (how to emit it): `adapters/k8s-admission/`
 4. ML Inference Sidecar (draft): `adapters/ml-inference-sidecar/`
+5. Object Storage Proxy (draft): `adapters/object-storage-proxy/`
 4. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
 5. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
 6. Deliverables map (spec spine): `docs/deliverables.md`
