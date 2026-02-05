@@ -99,7 +99,7 @@ class EvidenceStore:
         with open(path, "rb") as f:
             h = sha256_hex(f.read())
         ref = f"eosc://evidence/sha256:{h}"
-        self._record_artifact("evidence_artifacts", f"eosc://artifact/sha256:{h}")
+        self._record_artifact("evidence_artifacts", ref)
         return ref
 
     def emit_event(

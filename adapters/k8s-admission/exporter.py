@@ -76,8 +76,7 @@ def export_bundle(store: str, out_dir: str, from_seq: int, to_seq: int,
     artifacts = load_artifact_index(index_path)
     evidence_artifacts = []
     for ev in events:
-        ref = ev["evidence_pointer"].replace("eosc://evidence/", "eosc://artifact/")
-        evidence_artifacts.append(ref)
+        evidence_artifacts.append(ev["evidence_pointer"])
     artifacts["evidence_artifacts"] = sorted(set(evidence_artifacts))
 
     manifest = {
