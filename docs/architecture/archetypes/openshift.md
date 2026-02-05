@@ -32,3 +32,8 @@ flowchart TB
 - CRDs/operators are valid differentiation layers; if they affect governed behavior or portability, they SHOULD emit evidence and be declared in dependency/exit manifests.
 - Service mesh (e.g., Istio/Linkerd) is optional; if it enforces authz/egress or produces governance decisions, it SHOULD emit evidence and be declared in portability manifests.
 - MetalLB/L4 LB and WAF/Ingress are optional; if they enforce policy or jurisdictional routing (e.g., block non‑sovereign failover), they SHOULD emit evidence and be declared in dependency/exit manifests.
+
+### Examples (jurisdictional routing evidence)
+- **Failover blocked**: LB attempts to route to a non‑sovereign region → refusal evidence with jurisdiction rule + target region.
+- **WAF geo‑policy**: request denied due to geo/jurisdiction policy → refusal evidence with policy snapshot id.
+- **Ingress routing**: tenant traffic routed only to approved zone/cluster → routing decision evidence with policy snapshot id.

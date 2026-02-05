@@ -45,4 +45,9 @@ See `docs/guides/pipeline-schema.md` for a minimal pipeline schema and evidence 
 ## Notes
 - This is a gap area in the open‑source ecosystem; ECS defines the contract but does not mandate a stack.
 - Service mesh is a valid optional layer; if used for policy/egress control it should emit evidence and be declared in exit manifests.
- - Load balancers and WAF/Ingress are optional; if they influence jurisdictional routing (e.g., failover across borders), refusal or routing decisions MUST be evidenced.
+- Load balancers and WAF/Ingress are optional; if they influence jurisdictional routing (e.g., failover across borders), refusal or routing decisions MUST be evidenced.
+
+### Examples (jurisdictional routing evidence)
+- **Failover blocked**: L4 LB attempts to route to a non‑sovereign region → refusal evidence with jurisdiction rule + target region.
+- **WAF geo‑policy**: request denied due to geo/jurisdiction policy → refusal evidence with policy snapshot id.
+- **Ingress routing**: tenant traffic routed only to approved zone/cluster → routing decision evidence with policy snapshot id.
