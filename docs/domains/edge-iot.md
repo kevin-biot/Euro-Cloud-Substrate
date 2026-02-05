@@ -23,5 +23,15 @@ Clarify how ECS primitives apply to edge and IoT deployments where connectivity 
 CAMARA‑style network capabilities (identity verification, QoS, edge discovery) align with ECS’s interop goals when they emit **policy‑bound evidence** and **refusal events** for unsupported requests.  
 TM Forum Open APIs are broader OSS/BSS lifecycle models and are **out of ECS scope**, except for their governance‑relevant primitives.
 
+## IoT interoperability gaps (practical note)
+Common IoT “best practice” lists emphasize connectivity (protocols, APIs, OTA), but often omit:
+- **Authority + policy binding** at decision time (with refusal evidence).
+- **Evidence exportability** (bundles, chains, verifier inputs), not just logs.
+- **Device identity + firmware provenance** (who signed, what version).
+- **Jurisdictional routing controls** (policy‑checked failover across borders).
+- **Purpose/consent binding** for data access and sharing.
+
+ECS focuses on these missing primitives so IoT interoperability is **governable and auditable**, not only connected.
+
 ## Notes
 Edge/IoT is a deployment context, not a new ECS layer. ECS remains the contract; implementation choices are left to providers.
