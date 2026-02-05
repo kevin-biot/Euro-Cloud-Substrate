@@ -30,6 +30,7 @@ CRP defines the minimum execution posture for workloads that must continue opera
 - Invariants: `crp/invariants.md`
 - Conformance outline: `crp/conformance-outline.md`
 - Diagrams: `crp/diagrams/`
+- Edge/IoT note: `docs/domains/edge-iot.md`
 
 ## Dependencies
 - WS3 (Execution Envelopes)

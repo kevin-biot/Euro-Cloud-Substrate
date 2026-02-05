@@ -17,6 +17,7 @@
 - EUDI wallet integration: `docs/domains/eudi-wallet-integration.md`
 - Data security: `docs/domains/data-security.md`
 - Data services (queues/streams): `docs/domains/data-services.md`
+- Edge & IoT: `docs/domains/edge-iot.md`
 - GRC: `docs/domains/grc.md`
 - Privacy & user control: `docs/domains/privacy.md`
 - Federation: `docs/domains/federation.md`
