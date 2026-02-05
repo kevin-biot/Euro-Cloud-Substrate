@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented here.
 
+## 2026-02-05
+- Milestone: repo reached ~296 unique clones (Jan 17–Feb 4, 2026).
+- Docs reorganized; architecture consolidated under `docs/architecture/` with diagrams index and deliverables map.
+- CRP README added; CRP spec tightened with activation/exit criteria and evidence alignment.
+- Federation minimum contract clarified; optional federation claims + portability limits added.
+- New mappings: SUSE CSF and Tech Sovereignty Catalogue; mappings index added.
+- New domains: data services (queues/streams) and edge/IoT notes.
+- Data space compatibility profile added (non‑normative).
+- Regulated‑ML evidence upgraded with data‑use posture, dataset manifests (DSBOM), and governance phases; examples updated.
+- Optional data governance endpoints added to WS4/Core10 interop (data products, permissions, dataset manifest, data‑use posture).
+- IAM clarified (authn vs authz, delegation scope/time bounds); EUDI delegation guidance expanded.
+- Competition/differentiation notes added (CRDs, service mesh, LB/WAF/Ingress evidence expectations).
+
 ## 2026-02-03
 - Core10 deep-dives expanded (01–10) with requirements, evidence, and conformance outlines.
 - Evidence export schema added; evidence catalog aligned to envelopes, outcomes, usage receipts, and anchoring.
