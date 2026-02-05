@@ -31,6 +31,9 @@ python3 proxy.py \
   --profile ecs-evidence-baseline
 ```
 
+## Example manifest
+See `example-manifest.yaml` for a minimal deployment manifest.
+
 ### Example request
 ```bash
 curl -X PUT http://localhost:8082/bucket/key.txt \

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecs-object-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecs-object-proxy
+  template:
+    metadata:
+      labels:
+        app: ecs-object-proxy
+    spec:
+      containers:
+        - name: storage-proxy
+          image: ghcr.io/kevin-biot/ecs-object-proxy:dev
+          args:
+            - "--listen=0.0.0.0"
+            - "--port=8082"
+            - "--upstream=http://minio:9000"
+            - "--store=/var/lib/ecs-evidence"
+            - "--profile=ecs-evidence-baseline"
+            - "--provider=provider-A"
+            - "--tenant=tenant-123"
+            - "--fail-closed"
+          env:
+            - name: ECS_EVIDENCE_PROFILE
+              value: "ecs-evidence-baseline"
+            - name: ECS_HASH_PROFILE
+              value: ""
+            - name: ECS_EVIDENCE_STORE
+              value: "/var/lib/ecs-evidence"
+          ports:
+            - containerPort: 8082
+          volumeMounts:
+            - name: evidence-store
+              mountPath: /var/lib/ecs-evidence
+      volumes:
+        - name: evidence-store
+          emptyDir: {}
