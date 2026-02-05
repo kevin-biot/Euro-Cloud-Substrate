@@ -10,6 +10,10 @@ Explain the practical obligations around AI‑generated media (AI Act Article 50
 
 ECS does **not** implement these rules; it provides **evidence hooks** so providers/deployers can prove what was done.
 
+## High‑risk vs transparency (clarifying note)
+- **Election‑influence systems are already high‑risk** under Annex III (democratic processes). citeturn0open0
+- **General media generation** is governed by **Article 50 transparency duties** (marking + disclosure). citeturn0open1
+
 ## CE mark vs transparency (clarifying note)
 The **CE mark applies to high‑risk AI systems**, not to media outputs themselves.  
 Most AI‑generated media use cases fall under **Article 50 transparency duties** (marking + disclosure), not CE marking.  
@@ -19,6 +23,10 @@ If a media‑generation system is classified as **high‑risk**, then the provid
 - **Watermarking/labeling** remains a product/provider choice.
 - **Disclosure** remains an app/deployer responsibility.
 - ECS should **enable evidence** that marking and disclosure occurred when required.
+
+## Enforceability gap (non‑normative)
+Transparency duties without **evidence** are hard to verify.  
+ECS addresses this by defining **evidence hooks** (marking, disclosure, refusal, provenance) so compliance can be audited without mandating a specific watermarking technology.
 
 ## Evidence hooks (recommended, non‑normative)
 Providers/deployers SHOULD emit evidence events for:

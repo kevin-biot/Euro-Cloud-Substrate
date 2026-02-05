@@ -33,5 +33,7 @@ ECS provides:
 ## Relationship to the Compliance Pattern Library
 ECS evidence aligns to the patterns in `docs/compliance/pattern-library.md` (e.g., usage receipts, policy snapshots, audit chains).
 
+See `docs/guides/ai-media-transparency.md` for a concrete example of why evidence makes transparency duties enforceable.
+
 ## Practical takeaway
 If you can export evidence bundles, you reduce the need for bespoke post‑hoc reporting and make audits repeatable across providers.
