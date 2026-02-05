@@ -26,6 +26,37 @@ Outline the minimum components an open‑source landing zone implementation woul
    - Standard interop API surface for tenant operations.
    - Explicit exit/migration hooks for governance artifacts.
 
+## Landing‑zone setup best practices (generic)
+These are implementation‑agnostic principles to set up clusters, users, and workloads in a governed way.
+
+1. **Tenant first, workloads last**
+   - Create tenant/project boundaries before any workload admission.
+   - Require authority binding and policy baseline at tenant creation.
+
+2. **Identity is scoped and minimal**
+   - Use least‑privilege roles; avoid global admin for tenants.
+   - Bind users and services to tenant‑scoped identities with explicit authority.
+
+3. **Default‑deny networking**
+   - Start with deny‑all; open egress/ingress by explicit policy only.
+   - Record all changes as evidence events with policy snapshots.
+
+4. **Admission as a control point**
+   - All workload creation/updates pass through policy admission.
+   - Refusals are first‑class and evidenced.
+
+5. **Evidence by construction**
+   - Emit evidence for identity, policy, network, and workload actions.
+   - Ensure evidence exports are available from day one.
+
+6. **Explicit data governance**
+   - Apply governance metadata (jurisdiction/classification/retention) at data creation.
+   - Refuse data flows that violate jurisdictional policy.
+
+7. **Operational boundaries**
+   - Separate operator actions from tenant actions; log and evidence both.
+   - Keep break‑glass access time‑bounded and auditable.
+
 ## Portable control surface (draft)
 A practical ECS landing zone should include a portable **control surface** for provisioning and workload movement:
 - **CLI/IaC** for repeatable provisioning across providers.
