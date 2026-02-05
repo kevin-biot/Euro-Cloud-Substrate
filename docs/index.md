@@ -64,6 +64,7 @@
 - Data Act constraint: `docs/mappings/data-act-architecture-constraint.md`
 - SUSE CSF mapping: `docs/mappings/suse-csf-mapping.md`
 - Tech Sovereignty Catalogue mapping: `docs/mappings/techsov-catalogue.md`
+- AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
 - Gaia‑X alignment: `docs/mappings/gaia-x/README.md`
 
 ## Guides & Adoption
