@@ -10,6 +10,11 @@ Explain the practical obligations around AI‑generated media (AI Act Article 50
 
 ECS does **not** implement these rules; it provides **evidence hooks** so providers/deployers can prove what was done.
 
+## CE mark vs transparency (clarifying note)
+The **CE mark applies to high‑risk AI systems**, not to media outputs themselves.  
+Most AI‑generated media use cases fall under **Article 50 transparency duties** (marking + disclosure), not CE marking.  
+If a media‑generation system is classified as **high‑risk**, then the provider must complete the **conformity assessment** path and affix CE marking for the system.
+
 ## ECS position (non‑normative)
 - **Watermarking/labeling** remains a product/provider choice.
 - **Disclosure** remains an app/deployer responsibility.
