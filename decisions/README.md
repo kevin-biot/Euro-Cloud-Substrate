@@ -14,6 +14,7 @@ ADRs capture decisions that shape ECS semantics, scope, or governance. They are 
 3. `ADR-0003-profiles-reference-invariants.md` — Profiles can only tighten existing invariants.
 4. `ADR-0004-irn-alignment-mechanism-only.md` — IRN alignment is mechanism‑only, not certification.
 5. `ADR-0005-capability-scoped-ai-media.md` — AI media invocations should be capability‑scoped (STA‑L pattern).
+6. `ADR-0006-adapters-reference-only.md` — Adapters are reference implementations only.
 
 ## When to add an ADR
 - Changes to invariant semantics or scope.
