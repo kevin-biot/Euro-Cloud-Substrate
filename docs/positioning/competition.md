@@ -16,6 +16,7 @@ Vendors can still compete on:
 - **Managed services** (databases, AI/ML, analytics, observability).
 - **Security add‑ons** (HSMs, advanced KMS, higher isolation profiles).
 - **Operational UX** (dashboards, incident tooling, developer workflow).
+- **Platform extensions** (e.g., CRDs/operators) that add capabilities beyond the core contract.
 - **Cost models** (pricing, discounts, egress strategies).
 - **Regional specialization** (local expertise, jurisdictional support).
 - **Vertical bundles** (healthcare, public sector, defense‑grade profiles).
