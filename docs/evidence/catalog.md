@@ -290,6 +290,40 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
 `consumer_id` and `purpose_id` are required for access decisions (`data.access.*`).  
 `obligation_id` and `verification_result` are required for `data.obligation.verify`.
 
+## DATA SERVICES (queues/streams)
+- Evidence events for queues/streams (DATA/EVID example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": {
+      "enum": [
+        "queue.publish",
+        "queue.consume",
+        "stream.publish",
+        "stream.subscribe",
+        "data.route.refuse"
+      ]
+    },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "topic": { "type": "string" },
+    "queue": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "classification": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
+}
+```
+
 ## EVID
 - Evidence events for storage (EVID/DATA/SUP example):
 ```json

@@ -193,6 +193,11 @@ Content-Type: application/octet-stream
 - Governed read/export operations SHOULD emit `data.usage.receipt` events with `data_product_id`, `purpose_id`, and `policy_snapshot_id`.
 - Usage receipts SHOULD be included in evidence export bundles to support neutral usage attribution.
 
+### Data services alignment (queues/streams) — draft
+- Queues/streams are out of scope for EOSC as a strict object contract, but MUST align on governance metadata, policy enforcement, and evidence emission.
+- Publish/subscribe/route decisions MUST be evidenced with policy/authority context.
+- Sovereignty boundary routing MUST default‑deny unless explicitly authorized and evidenced.
+
 ### Backend mapping (non-normative)
 - Ceph: RGW (object), RBD (block), CephFS (file); OpenShift Data Foundation wraps Ceph for ODF deployments.
 - MinIO/SeaweedFS: object storage surfaces compatible with EOSC object contract.
