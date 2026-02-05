@@ -82,6 +82,8 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
     "sequence": { "type": "integer" },
     "credential_id": { "type": "string" },
     "proof_type": { "type": "string", "enum": ["device_se", "esim", "token", "hsm", "other"] },
+    "credential_type": { "type": "string", "enum": ["eudi", "vlei", "did_vc", "other"] },
+    "vlei_id": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },

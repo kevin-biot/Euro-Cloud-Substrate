@@ -5,6 +5,7 @@ Define the Identity & Access Management (IAM) domain across the cloud‑edge con
 
 ## Capabilities (baseline)
 - **Decentralized identity (DID)** and verifiable credentials
+- **Verifiable Legal Entity Identifier (vLEI)** credentials for organizational identity (optional)
 - **Role‑based access control (RBAC)** and least‑privilege scoping
 - **Zero Trust Architecture (ZTA)** posture (verify explicitly, fail closed)
 - **Multi‑factor authentication (MFA)** / biometrics (credential strength signals)
@@ -37,7 +38,8 @@ OAuth/OIDC is the baseline for API access; DID/VC‑based credentials MAY be use
 - **Policy decisions** logged with outcome + snapshot id.
 - **Credential verification events** (e.g., wallet.credential.verify) with proof type and evidence pointers.
 - **Delegation events** (issue/revoke) for agent or service delegation.
- - **Delegation scope + time bounds** MUST be evidenced; intent/purpose references SHOULD be captured when applicable.
+- **Delegation scope + time bounds** MUST be evidenced; intent/purpose references SHOULD be captured when applicable.
+ - vLEI credentials MAY be used as authority‑binding proofs for organizational identity.
 
 ## Notes
 ECS defines **the contract** (evidence + authority binding), not the IAM implementation. Partners can adopt different IAM stacks as long as they emit the required evidence and support federation requirements.
