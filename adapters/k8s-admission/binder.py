@@ -77,20 +77,42 @@ def build_patch(meta: dict, profile_id: str, hash_profile_id: Optional[str], cor
 
 
 class AdmissionHandler(BaseHTTPRequestHandler):
+    def _write_response(self, response: dict, code: int = 200) -> None:
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json")
+        self.end_headers()
+        self.wfile.write(json.dumps(response).encode("utf-8"))
+
+    def _error_response(self, uid: str, message: str, code: int = 400) -> dict:
+        return {
+            "apiVersion": "admission.k8s.io/v1",
+            "kind": "AdmissionReview",
+            "response": {
+                "uid": uid,
+                "allowed": False,
+                "status": {"code": code, "message": message},
+            },
+        }
+
     def do_POST(self):
         length = int(self.headers.get("Content-Length", "0"))
         body = self.rfile.read(length)
         try:
             review = json.loads(body)
         except json.JSONDecodeError:
-            self.send_response(400)
-            self.end_headers()
+            response = self._error_response("", "Invalid JSON", 400)
+            self._write_response(response, 400)
             return
 
         req = review.get("request", {})
         uid = req.get("uid", "")
         obj = req.get("object", {})
         meta = obj.get("metadata", {})
+
+        if not uid:
+            response = self._error_response("", "Missing request.uid", 400)
+            self._write_response(response, 400)
+            return
 
         evidence_profile_id = resolve_profile(meta, self.server.default_profile)
         hash_profile_id = resolve_hash_profile(meta, evidence_profile_id)
@@ -157,10 +179,7 @@ class AdmissionHandler(BaseHTTPRequestHandler):
         if not allowed:
             response["response"]["status"] = {"code": 403, "message": "Denied by ecs.policy/deny"}
 
-        self.send_response(200)
-        self.send_header("Content-Type", "application/json")
-        self.end_headers()
-        self.wfile.write(json.dumps(response).encode("utf-8"))
+        self._write_response(response, 200)
 
 
 def main():
