@@ -15,6 +15,12 @@ Deterministic policy evaluation service that:
 - Supports explicit refusal semantics and fail-closed behavior.
 - Emits evidence events with policy snapshot id and authority context.
 
+### Trust root acceptance
+Authority verification MUST be bound to explicit trust anchors (IdPs, CAs, credential issuers). The control plane MUST:
+- Evaluate requests against the **declared authority snapshot** (time‑scoped trust roots).
+- Refuse actions when trust roots are missing, expired, or out of scope.
+- Emit evidence that records the `authority_snapshot_id` used for verification.
+
 ### Admission gate
 Decision point that MUST be invoked before any governed action (create/update/delete/execute). It:
 - Calls the policy engine (or embedded policy logic) with required inputs.

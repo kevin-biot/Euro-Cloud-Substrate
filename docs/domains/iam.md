@@ -28,6 +28,13 @@ Define the Identity & Access Management (IAM) domain across the cloud‑edge con
 
 OAuth/OIDC is the baseline for API access; DID/VC‑based credentials MAY be used as proof of authority or identity without mandating a specific DID method.
 
+## Trust roots and authority snapshots
+- **Trust anchors are explicit**: each tenant/authority binding MUST declare which IdPs, CAs, or credential issuers are trusted for which scopes.
+- **No transitive trust by default**: cross‑provider acceptance requires explicit federation claims and acceptance policies.
+- **Jurisdiction‑aware acceptance**: trust roots are valid only for declared jurisdictions and scopes.
+- **Time‑bounded**: authority snapshots are versioned and time‑scoped so policy engines can verify *what was trusted at decision time*.
+- **Evidence‑bound**: every governed action MUST reference the `authority_snapshot_id` used for verification.
+
 ## ECS mapping (no new semantics)
 - **Core10‑04 Policy & Authority Interface** — authority binding, policy evaluation, refusal evidence.
 - **Core10‑01 OLZ‑EU** — tenant authority binding, default‑deny posture at landing zone.
@@ -41,7 +48,7 @@ OAuth/OIDC is the baseline for API access; DID/VC‑based credentials MAY be use
 - **Credential verification events** (e.g., wallet.credential.verify) with proof type and evidence pointers.
 - **Delegation events** (issue/revoke) for agent or service delegation.
 - **Delegation scope + time bounds** MUST be evidenced; intent/purpose references SHOULD be captured when applicable.
- - vLEI credentials MAY be used as authority‑binding proofs for organizational identity.
+- vLEI credentials MAY be used as authority‑binding proofs for organizational identity.
 
 ## Notes
 ECS defines **the contract** (evidence + authority binding), not the IAM implementation. Partners can adopt different IAM stacks as long as they emit the required evidence and support federation requirements.

@@ -23,6 +23,12 @@ Define inter‑cloud federation that enables collaboration and resource sharing 
 - **Refusal evidence** when policy/authority blocks federation actions.
 - **Audit chain** for integrity and traceability across federation events.
 
+## Trust‑root interoperability (federation‑grade)
+- **No shared trust roots are assumed** across providers or jurisdictions.
+- **Accepted trust anchors** (IdPs, CAs, credential issuers) MUST be declared in federation claims.
+- **Acceptance policies** MUST be explicit (which roots are accepted for which scopes).
+- **Refusals** MUST emit evidence when trust roots are missing, invalid, or out of scope.
+
 ## Federation minimum contract (draft)
 - **Capability claims** MUST be published for:
   - identity federation model and claim mappings,
