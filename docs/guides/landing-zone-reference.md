@@ -37,23 +37,28 @@ These are implementation‑agnostic principles to set up clusters, users, and wo
    - Use least‑privilege roles; avoid global admin for tenants.
    - Bind users and services to tenant‑scoped identities with explicit authority.
 
-3. **Default‑deny networking**
+3. **Org groups and role mapping**
+   - Define org groups (e.g., platform operators, security, app teams) and map them to roles explicitly.
+   - Use group‑based access for routine actions; avoid ad‑hoc user grants.
+   - Require time‑bounded elevation for privileged actions and evidence it.
+
+4. **Default‑deny networking**
    - Start with deny‑all; open egress/ingress by explicit policy only.
    - Record all changes as evidence events with policy snapshots.
 
-4. **Admission as a control point**
+5. **Admission as a control point**
    - All workload creation/updates pass through policy admission.
    - Refusals are first‑class and evidenced.
 
-5. **Evidence by construction**
+6. **Evidence by construction**
    - Emit evidence for identity, policy, network, and workload actions.
    - Ensure evidence exports are available from day one.
 
-6. **Explicit data governance**
+7. **Explicit data governance**
    - Apply governance metadata (jurisdiction/classification/retention) at data creation.
    - Refuse data flows that violate jurisdictional policy.
 
-7. **Operational boundaries**
+8. **Operational boundaries**
    - Separate operator actions from tenant actions; log and evidence both.
    - Keep break‑glass access time‑bounded and auditable.
 
