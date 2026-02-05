@@ -23,10 +23,14 @@ An architectural definition project for a portable, governable, European cloud s
 3. Reference Adapter (how to emit it): `adapters/k8s-admission/`
 4. ML Inference Sidecar (draft): `adapters/ml-inference-sidecar/`
 5. Object Storage Proxy (draft): `adapters/object-storage-proxy/`
-4. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
-5. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
-6. Deliverables map (spec spine): `docs/deliverables.md`
-7. Docs index (navigation): `docs/index.md`
+6. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
+7. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
+8. Deliverables map (spec spine): `docs/deliverables.md`
+9. Docs index (navigation): `docs/index.md`
+
+## Adapters (what they are)
+Adapters are **reference implementations** that show how to emit ECS evidence at key control points (admission, inference, storage).  
+They are **not production frameworks**; they exist to prove contract fidelity, refusal semantics, and exportability in minimal code.
 
 ## Competition and differentiation
 ECS standardizes **verifiable governance and portability**, not the commercial layer. Conformance is a minimum contract; providers still compete on performance, managed services, UX, pricing, and regional specialization. See `docs/positioning/competition.md`.
