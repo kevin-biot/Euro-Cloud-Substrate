@@ -20,6 +20,7 @@ Define the Identity & Access Management (IAM) domain across the cloud‑edge con
 - **Required baseline claims**: `iss`, `sub`, `aud`, `exp`, `iat`.
 - **Recommended claims**: `org_id`, `tenant_id`, `roles`/`groups`, `jurisdiction`.
 - **Validation evidence** MUST record signature validation, issuer allowlist, audience, and expiry checks.
+- **Cross‑border identity matching** outcomes SHOULD be recorded when applicable. citeturn2view0
 - **Delegation context** for agents MUST be time‑bounded and scoped:
   - include `delegation_id`, `scope`, and expiry (`exp`/`valid_to`);
   - include `actor_type=delegate` and **intent/purpose reference** when governed actions require explicit intent.

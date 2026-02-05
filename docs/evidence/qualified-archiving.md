@@ -26,4 +26,5 @@ Explain how evidence chains can be anchored to qualified archiving services with
 - Audit chain baseline: `core10/06-audit-chain-baseline.md`
 
 ## Notes
+- Qualified electronic archiving services and qualified electronic time stamps are defined in EUDI Implementing Acts; ECS supports anchor references without mandating a provider. citeturn2view1turn2view2
 - This is non‑normative guidance; implementations may vary by qualified trust service provider.
