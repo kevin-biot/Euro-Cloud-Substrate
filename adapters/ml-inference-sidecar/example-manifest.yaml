@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecs-ml-inference
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecs-ml-inference
+  template:
+    metadata:
+      labels:
+        app: ecs-ml-inference
+    spec:
+      containers:
+        - name: model
+          image: ghcr.io/example/model-server:dev
+          ports:
+            - containerPort: 9000
+        - name: ecs-ml-sidecar
+          image: ghcr.io/kevin-biot/ecs-ml-sidecar:dev
+          args:
+            - "--listen=0.0.0.0"
+            - "--port=8081"
+            - "--upstream=http://localhost:9000/infer"
+            - "--store=/var/lib/ecs-evidence"
+            - "--profile=ecs-evidence-baseline"
+            - "--provider=provider-A"
+            - "--tenant=tenant-123"
+          env:
+            - name: ECS_EVIDENCE_PROFILE
+              value: "ecs-evidence-baseline"
+            - name: ECS_HASH_PROFILE
+              value: "ecs-hash-v1"
+            - name: ECS_EVIDENCE_STORE
+              value: "/var/lib/ecs-evidence"
+            - name: ECS_MODEL_ID
+              value: "model-001"
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+            - name: evidence-store
+              mountPath: /var/lib/ecs-evidence
+      volumes:
+        - name: evidence-store
+          emptyDir: {}
