@@ -1,5 +1,39 @@
 # Immutable AI Workload Log Primitives (IALP) — Diagram
 
+## Authorization flow (IALP)
+```mermaid
+flowchart TD
+    Input[Inputs and context]
+    Auth[Authority snapshot vN]
+    Policy[Policy snapshot vN]
+    Cache[Policy cache state]
+    PDP[Policy decision]
+    Admit[Admission gate]
+    Execute[Execute or route]
+    Refuse[Refuse or escalate]
+    Evidence[Evidence event]
+    Chain[Hash chain]
+    Export[Provider-neutral export]
+
+    Input --> Auth
+    Auth --> PDP
+    Policy --> Cache
+    Cache --> PDP
+    PDP --> Admit
+    Admit --> Execute
+    Admit --> Refuse
+    Execute --> Evidence
+    Refuse --> Evidence
+    Evidence --> Chain
+    Chain --> Export
+```
+
+Notes:
+- Authority and policy snapshots are versioned and referenced in each decision event.
+- Cache state influences whether decisions proceed or fail closed.
+- Refusals are first-class outcomes with evidence, not silent failures.
+
+## Primitives
 ```mermaid
 flowchart TD
     Auth[Authority Assertion Log]
