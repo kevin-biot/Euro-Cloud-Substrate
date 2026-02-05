@@ -68,6 +68,9 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 ## Purpose
 Define an open, adoptable Euro Cloud Substrate that delivers portability, governability, auditability, and industrialisation by reusing proven primitives and specifying the missing contract layer (identity, policy, execution envelopes, evidence).
 
+## Why this matters
+Most platforms handle compute and storage well, but **portable governance evidence** is still fragmented. ECS fills that gap by defining a verifiable contract for authority, policy, portability, and evidence export—so providers can compete commercially while customers retain auditability and exit options.
+
 ## How to get involved
 - Read `VISION.md` for the problem framing and objectives.
 - Read `crp/` for partition/continuity posture.
