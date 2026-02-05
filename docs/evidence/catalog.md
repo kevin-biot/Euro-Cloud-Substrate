@@ -333,6 +333,36 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
 ```
 
 ## EVID
+- Evidence events for AI media marking/disclosure (EVID example):
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": {
+      "enum": [
+        "content.marking.apply",
+        "content.marking.verify",
+        "content.disclosure.notice",
+        "content.disclosure.exempt"
+      ]
+    },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "content_id": { "type": "string" },
+    "content_hash": { "type": "string" },
+    "marking_method": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "content_id", "outcome", "evidence_pointer"]
+}
+```
+
 - Evidence events for storage (EVID/DATA/SUP example):
 ```json
 {

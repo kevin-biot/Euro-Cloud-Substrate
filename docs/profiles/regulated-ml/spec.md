@@ -56,7 +56,10 @@ ECS does not mandate a specific web standard, but recognizes the need for **mach
 - Inference events MUST capture: input/context hash, model version/SBOM ref, policy/authority snapshot, decision output/refusal, outcome.
 - Logs MUST be immutable, ordered, and integrity-protected; refusal is first-class.
 - Evidence pointers MUST be associated with inference events for audit/export.
- - Training events MUST include `governance_phase` to disambiguate training lifecycle obligations.
+- Training events MUST include `governance_phase` to disambiguate training lifecycle obligations.
+
+### AI‑generated media transparency (non‑normative)
+Article 50 places marking obligations on providers of generative systems and disclosure obligations on deployers. ECS does not mandate watermarking but should enable evidence of marking and disclosure (see `docs/guides/ai-media-transparency.md`).
 
 ### Residency and portability (DATA, EXIT)
 - Models and artifacts MUST declare residency; moves/exports MUST be evidenced.

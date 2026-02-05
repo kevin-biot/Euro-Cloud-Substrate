@@ -55,6 +55,7 @@
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
 - Pipeline schema: `docs/guides/pipeline-schema.md`
 - Agent delegation: `docs/guides/agent-delegation.md`
+- AI media transparency: `docs/guides/ai-media-transparency.md`
 - ML evidence implementation: `docs/guides/ml-evidence-implementation.md`
 
 ## Procurement

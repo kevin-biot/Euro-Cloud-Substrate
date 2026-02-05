@@ -6,6 +6,8 @@ Document the practical gap between regulatory evidence requirements (AI Act–al
 ## Why this matters (AI Act context)
 High‑risk and regulated AI systems require **traceable, verifiable evidence** of decisions, model lineage, and policy/authority context. In practice, most cloud ML services do not emit portable, deterministic evidence for inference or training by default. This gap impacts **providers** and **users** (deployers) who must demonstrate compliance.
 
+For AI‑generated media transparency obligations (Article 50), see `docs/guides/ai-media-transparency.md`.
+
 ## The gap in today’s platforms (summary)
 - **Inference evidence** is often limited to application logs; it lacks standardized, portable records of model version, policy snapshot, and refusal semantics.
 - **Training evidence** is fragmented across pipeline tools; dataset provenance and checkpoint lineage are not deterministically captured.
