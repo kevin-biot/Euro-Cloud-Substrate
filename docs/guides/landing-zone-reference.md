@@ -12,6 +12,7 @@ Outline the minimum components an open‑source landing zone implementation woul
    - Default‑deny segmentation, egress controls, and declared connectivity dependencies.
    - Evidence of network posture and changes.
    - Optional service mesh for policy enforcement at L7 with evidence emission.
+   - Optional L4/L7 ingress, WAF, and load‑balancer layers; if they enforce policy or route governed traffic, they SHOULD emit evidence (allow/refuse, geo/jurisdiction rules).
 
 3. **Policy admission**
    - Admission gate enforcing policy snapshot binding and refusal semantics.
@@ -43,4 +44,5 @@ See `docs/guides/pipeline-schema.md` for a minimal pipeline schema and evidence 
 
 ## Notes
 - This is a gap area in the open‑source ecosystem; ECS defines the contract but does not mandate a stack.
- - Service mesh is a valid optional layer; if used for policy/egress control it should emit evidence and be declared in exit manifests.
+- Service mesh is a valid optional layer; if used for policy/egress control it should emit evidence and be declared in exit manifests.
+ - Load balancers and WAF/Ingress are optional; if they influence jurisdictional routing (e.g., failover across borders), refusal or routing decisions MUST be evidenced.
