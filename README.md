@@ -35,6 +35,8 @@ They are **not production frameworks**; they exist to prove contract fidelity, r
 ## Competition and differentiation
 ECS standardizes **verifiable governance and portability**, not the commercial layer. Conformance is a minimum contract; providers still compete on performance, managed services, UX, pricing, and regional specialization. See `docs/positioning/competition.md`.
 
+- Jurisdiction‑aware routing (agentic + ML) is treated as a contract requirement with refusal evidence; routing protocols remain implementation‑specific.
+
 - Core paper: `VISION.md` (v0.2) and `docs/architecture/`
 - Invariants: `docs/invariants/v0.3.md` (authoritative), deep-dives: `docs/invariants/`, coverage: `docs/conformance/invariant-coverage.md`
 - Profiles: `crp/README.md` (Crisis Resilience Profile), `docs/profiles/README.md`
