@@ -23,6 +23,11 @@ Define inter‑cloud federation that enables collaboration and resource sharing 
 - **Refusal evidence** when policy/authority blocks federation actions.
 - **Audit chain** for integrity and traceability across federation events.
 
+## Jurisdiction‑aware routing (non‑normative)
+ECS requires **jurisdiction‑aware routing with refusal evidence** for cross‑provider flows.  
+Specific routing standards (e.g., forthcoming AARP‑class RFCs) can implement that capability.  
+ECS does not prescribe the routing protocol; it only defines **evidence/contract expectations**.
+
 ## Trust‑root interoperability (federation‑grade)
 - **No shared trust roots are assumed** across providers or jurisdictions.
 - **Accepted trust anchors** (IdPs, CAs, credential issuers) MUST be declared in federation claims.

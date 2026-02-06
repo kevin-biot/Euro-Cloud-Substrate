@@ -75,6 +75,11 @@ See `docs/domains/privacy.md` for privacy domain expectations.
 - Governed data sharing MUST include standardized metadata and exportable bundles (INT/EXIT).
 - Export packages MUST preserve classification, residency, and policy bindings.
 
+## Jurisdiction‑aware routing (non‑normative)
+ECS requires **jurisdiction‑aware routing** for governed data flows, with refusal evidence when a route violates policy.  
+Specific routing standards (e.g., AARP‑class protocols) can implement that capability.  
+ECS does not prescribe the routing protocol, only the **evidence/contract expectations**.
+
 ## Usage metering evidence (draft)
 - Governed data access SHOULD emit a usage receipt record suitable for attribution or billing, without prescribing pricing.
 - Usage receipts MUST be exportable as evidence bundles and tied to policy/consent references.
