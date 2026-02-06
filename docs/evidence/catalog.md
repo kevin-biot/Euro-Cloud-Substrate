@@ -262,6 +262,36 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
 Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpose_id` for `data.purpose.bind`, `consent_token_ref` for `data.consent.bind`, `terms_snapshot_id` for `data.terms.attach`, `lineage_sources` for `data.lineage.link`).
 `data.purpose.bind` and `data.consent.bind` are **decision events**: they MUST emit `accepted`/`refused`/`failed` outcomes with policy/authority snapshot references and occur **before** governed access.
 
+## DATA LINEAGE & REVOCATION (draft)
+- Evidence events for lineage links and revocation:
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": {
+      "enum": [
+        "data.lineage.link",
+        "data.derived.publish",
+        "data.revocation.notice"
+      ]
+    },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "source_ref": { "type": "string" },
+    "derived_ref": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
+}
+```
+
 - Evidence events for data‑space sharing and obligations (DATA example):
 ```json
 {

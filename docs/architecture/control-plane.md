@@ -54,6 +54,11 @@ Response:
   "policy_snapshot_id": "pol-001",
   "authority_snapshot_id": "auth-789",
   "evidence_pointer": "eosc://evidence/evt-123",
+  "obligations": [
+    { "type": "purpose", "value": "inference-only" },
+    { "type": "retention", "value": "P30D" },
+    { "type": "no_onward_transfer", "value": true }
+  ],
   "refusal_reason": "policy_missing"
 }
 ```

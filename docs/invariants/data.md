@@ -56,6 +56,12 @@
 - Consent/intent token references for governed access (CITP).
 - Export bundles per `docs/evidence/export-schema.md`.
 
+## Obligations enforcement (draft)
+Policy is only real if it is enforced **at execution time**. For governed data:
+- **Obligations MUST be evaluated pre‑hoc** (before access/use), not after the fact.
+- **Refusal evidence** is required when obligations cannot be satisfied.
+- Obligations should include **purpose binding**, **retention**, **residency**, and **no‑onward‑transfer** constraints where applicable.
+
 ## Deterministic evidence export (draft)
 - Data access events and lineage MUST be exportable as evidence bundles.
 - Evidence MUST be generated contemporaneously with access decisions (pre-hoc), not reconstructed later.
