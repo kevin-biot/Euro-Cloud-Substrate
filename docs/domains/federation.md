@@ -28,6 +28,12 @@ ECS requires **jurisdiction‑aware routing with refusal evidence** for cross‑
 Specific routing standards (e.g., forthcoming AARP‑class RFCs) can implement that capability.  
 ECS does not prescribe the routing protocol; it only defines **evidence/contract expectations**.
 
+Routing intents include:
+- `agent.invoke` (agent‑to‑agent delegation)
+- `ml.inference.route` (inference endpoint routing)
+- `ml.training.route` (training environment routing)
+- `data.transfer` (general data movement)
+
 ## Trust‑root interoperability (federation‑grade)
 - **No shared trust roots are assumed** across providers or jurisdictions.
 - **Accepted trust anchors** (IdPs, CAs, credential issuers) MUST be declared in federation claims.

@@ -35,11 +35,13 @@ To keep routing enforceable without prescribing a protocol, ECS expects **minima
 **Minimal routing decision input (example):**
 ```json
 {
-  "route_intent": "data.transfer",
+  "route_intent": "agent.invoke|ml.inference.route|ml.training.route|data.transfer",
   "jurisdiction_path": ["EU", "DE"],
   "data_class": "restricted",
   "policy_snapshot_id": "pol-2026-02",
-  "corridor_ref": "eosc://corridor/sha256:..."
+  "corridor_ref": "eosc://corridor/sha256:...",
+  "capability_id": "cap:agent.search.v1",
+  "model_id": "model-001"
 }
 ```
 
