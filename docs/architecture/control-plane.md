@@ -25,6 +25,40 @@ Authority verification MUST be bound to explicit trust anchors (IdPs, CAs, crede
 The control plane SHOULD enforce jurisdiction‑aware routing and emit refusal evidence when a route violates policy.  
 ECS remains routing‑protocol‑agnostic; specific routing standards can satisfy this requirement as long as **evidence and contract expectations** are met.
 
+### Routing control primitives (draft, protocol‑agnostic)
+To keep routing enforceable without prescribing a protocol, ECS expects **minimal routing primitives**:
+- **Route intent**: action + jurisdiction path + data class.
+- **Route policy snapshot**: policy version used for routing decision.
+- **Corridor proof reference**: pointer to the route eligibility proof (token, matrix, signed feed).
+- **Route decision evidence**: allow/refuse with refusal reason.
+
+**Minimal routing decision input (example):**
+```json
+{
+  "route_intent": "data.transfer",
+  "jurisdiction_path": ["EU", "DE"],
+  "data_class": "restricted",
+  "policy_snapshot_id": "pol-2026-02",
+  "corridor_ref": "eosc://corridor/sha256:..."
+}
+```
+
+**Minimal routing decision event (example):**
+```json
+{
+  "event_type": "route.decision",
+  "occurred_at": "2026-02-05T12:02:00Z",
+  "tenant_id": "tenant-123",
+  "sequence": 1901,
+  "outcome": "accepted|refused|failed",
+  "jurisdiction_path": ["EU", "DE"],
+  "policy_snapshot_id": "pol-2026-02",
+  "corridor_ref": "eosc://corridor/sha256:...",
+  "refusal_reason": "corridor_invalid",
+  "evidence_pointer": "eosc://evidence/sha256:..."
+}
+```
+
 ### Admission gate
 Decision point that MUST be invoked before any governed action (create/update/delete/execute). It:
 - Calls the policy engine (or embedded policy logic) with required inputs.

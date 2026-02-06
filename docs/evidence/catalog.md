@@ -362,6 +362,31 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
 }
 ```
 
+## ROUTING CONTROL (INT/EVID) — draft
+- Evidence events for jurisdiction‑aware routing decisions:
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "event_type": { "enum": ["route.decision", "route.refuse"] },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "tenant_id": { "type": "string" },
+    "correlation_id": { "type": "string" },
+    "sequence": { "type": "integer" },
+    "route_intent": { "type": "string" },
+    "jurisdiction_path": { "type": "array", "items": { "type": "string" } },
+    "data_class": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "corridor_ref": { "type": "string" },
+    "outcome": { "enum": ["accepted", "refused", "failed"] },
+    "refusal_reason": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
+}
+```
+
 ## EVID
 - Evidence events for AI media marking/disclosure (EVID example):
 When AI media generation is capability‑scoped (STA‑L pattern), include the capability token reference and duty flags so auditors can verify what was required at the time of generation.
