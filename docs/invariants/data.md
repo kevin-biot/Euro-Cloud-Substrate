@@ -62,6 +62,10 @@ Policy is only real if it is enforced **at execution time**. For governed data:
 - **Refusal evidence** is required when obligations cannot be satisfied.
 - Obligations should include **purpose binding**, **retention**, **residency**, and **no‑onward‑transfer** constraints where applicable.
 
+## Owner‑rooted trust (non‑normative)
+ECS allows **owner‑rooted trust** models where authority keys originate with the data owner (not the platform).  
+Such systems are compatible as long as authority snapshots and evidence bundles are exportable and verifiable.
+
 ## Deterministic evidence export (draft)
 - Data access events and lineage MUST be exportable as evidence bundles.
 - Evidence MUST be generated contemporaneously with access decisions (pre-hoc), not reconstructed later.

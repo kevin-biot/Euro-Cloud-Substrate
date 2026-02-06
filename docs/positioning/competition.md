@@ -44,3 +44,7 @@ ECS defines **minimum interoperability and auditability**. Everything above that
 ## Companion standard (future‑looking)
 If ECS gains traction, a **separate Cloud API standard** could emerge to define common service surfaces.  
 ECS would remain the **contract layer**, while the API standard defines the **interface layer**; vendors would then compete above both.
+
+## Proprietary enforcement stacks (non‑normative)
+End‑to‑end rights stacks (capsules, enforcement membranes, private ledgers, agent “twins”) can be **fully compatible** with ECS as long as they export **evidence bundles** and bind decisions to authority/policy snapshots.  
+ECS does not standardize those stacks; it standardizes the **evidence/contract outputs** so customers can verify outcomes and retain portability.
