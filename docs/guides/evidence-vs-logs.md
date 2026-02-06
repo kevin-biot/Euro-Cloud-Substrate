@@ -37,3 +37,7 @@ See `docs/guides/ai-media-transparency.md` for a concrete example of why evidenc
 
 ## Practical takeaway
 If you can export evidence bundles, you reduce the need for bespoke post‑hoc reporting and make audits repeatable across providers.
+
+## Summary note
+Policies only matter when **enforced at execution time**.  
+ECS treats evidence as the proof that enforcement happened; logs alone are not control.
