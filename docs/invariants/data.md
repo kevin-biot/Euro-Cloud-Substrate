@@ -98,3 +98,6 @@ ECS does not prescribe the routing protocol, only the **evidence/contract expect
 ## Climate / public‑infrastructure data (non‑normative)
 Global public‑infrastructure data exchange (e.g., climate observations and forecasts) depends on **cross‑border standards, auditable sharing, and jurisdiction‑aware routing**.  
 ECS supports this by requiring exportable evidence, policy‑bound access, and refusal semantics without prescribing a sector‑specific platform.
+
+## Training provenance risk (note)
+Weak training data provenance undermines downstream compliance. ECS therefore elevates **dataset boundary objects, exclusion policy snapshots, and lineage evidence** for regulated‑ML workflows.
