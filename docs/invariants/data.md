@@ -94,3 +94,7 @@ ECS does not prescribe the routing protocol, only the **evidence/contract expect
 ## Non-goals
 - No mandated encryption algorithm or KMS vendor.
 - No data governance policy beyond enforceable controls.
+
+## Climate / public‑infrastructure data (non‑normative)
+Global public‑infrastructure data exchange (e.g., climate observations and forecasts) depends on **cross‑border standards, auditable sharing, and jurisdiction‑aware routing**.  
+ECS supports this by requiring exportable evidence, policy‑bound access, and refusal semantics without prescribing a sector‑specific platform.
