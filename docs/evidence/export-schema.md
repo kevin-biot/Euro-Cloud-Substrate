@@ -100,6 +100,10 @@ Evidence pointers MUST be trustworthy, not just present:
 - Chain segments MUST be exportable and independently verifiable (see Core10-06).
 - Signatures are OPTIONAL but, if present, MUST cover the manifest and bundle hash.
 
+## Witness / notary signatures (non‑normative)
+Evidence bundles MAY include **witness or notary signatures** (multi‑party attestations) as additional artifacts.  
+These signatures do not replace core integrity requirements; they add optional external verification.
+
 ## ETSI/eIDAS alignment (non-normative)
 - Evidence bundles MAY be sealed or timestamped using qualified trust services to increase legal admissibility.
 - Implementations SHOULD support references to qualified electronic timestamps, seals, or evidence records in the export manifest.

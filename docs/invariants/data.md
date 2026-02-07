@@ -66,6 +66,8 @@ Policy is only real if it is enforced **at execution time**. For governed data:
 ECS allows **owner‑rooted trust** models where authority keys originate with the data owner (not the platform).  
 Such systems are compatible as long as authority snapshots and evidence bundles are exportable and verifiable.
 
+Self‑certifying identifiers (e.g., DID:web or micro‑ledger‑backed identifiers) MAY be used as trust anchors when their verification proofs are exportable.
+
 ## Deterministic evidence export (draft)
 - Data access events and lineage MUST be exportable as evidence bundles.
 - Evidence MUST be generated contemporaneously with access decisions (pre-hoc), not reconstructed later.

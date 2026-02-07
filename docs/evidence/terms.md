@@ -8,3 +8,7 @@ An evidence artifact is the **content-addressed, immutable object** referenced b
 
 ## Evidence bundle / export
 An evidence bundle (export) is a **manifest + event range + referenced artifacts + verification inputs** (chain segment, hashes, signatures/seals, anchor refs). Bundles are the portable unit for audit, procurement, and regulator review.
+
+## Micro‑ledger backends (non‑normative)
+Evidence chains MAY be implemented as **append‑only micro‑ledgers** (per‑tenant or per‑asset).  
+ECS does not require a blockchain; it requires verifiable, content‑addressed evidence with integrity proofs.

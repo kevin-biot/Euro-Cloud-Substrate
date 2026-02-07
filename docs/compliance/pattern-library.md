@@ -233,6 +233,21 @@ Each pattern includes:
 
 ---
 
+## Pattern 7 — Witness Signature Pattern (optional)
+**Legal norm:** High‑assurance auditability, disputed transactions, multi‑party attestations.
+
+**Purpose:** Allow independent parties (witnesses/notaries) to co‑sign critical evidence bundles.
+
+**Inputs:** Evidence bundle hash, witness identity, timestamp.
+
+**Outputs:** Witness signature artifact linked to the bundle.
+
+**Runtime artefact:** Additional signature records; does not alter primary evidence chain.
+
+**Evidence:** Witness signatures included as optional artifacts in the export manifest.
+
+---
+
 ## Pattern 7 — Evidence-Delta Pattern (EDP)
 **Legal norm:** AI Act "substantial modification"; DORA change management; PSD3 updates.
 
