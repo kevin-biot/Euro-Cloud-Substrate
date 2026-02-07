@@ -67,6 +67,7 @@ ECS allows **owner‑rooted trust** models where authority keys originate with t
 Such systems are compatible as long as authority snapshots and evidence bundles are exportable and verifiable.
 
 Self‑certifying identifiers (e.g., DID:web or micro‑ledger‑backed identifiers) MAY be used as trust anchors when their verification proofs are exportable.
+KERI is an example of a self‑certifying identifier system that uses append‑only key event logs instead of global blockchains.
 
 ## Deterministic evidence export (draft)
 - Data access events and lineage MUST be exportable as evidence bundles.

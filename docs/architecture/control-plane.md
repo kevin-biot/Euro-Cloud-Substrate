@@ -21,6 +21,8 @@ Authority verification MUST be bound to explicit trust anchors (IdPs, CAs, crede
 - Refuse actions when trust roots are missing, expired, or out of scope.
 - Emit evidence that records the `authority_snapshot_id` used for verification.
 
+Note: self‑certifying identifier systems (e.g., KERI) can serve as trust anchors when their verification proofs are exportable.
+
 ### Jurisdiction‑aware routing (non‑normative)
 The control plane SHOULD enforce jurisdiction‑aware routing and emit refusal evidence when a route violates policy.  
 ECS remains routing‑protocol‑agnostic; specific routing standards can satisfy this requirement as long as **evidence and contract expectations** are met.
