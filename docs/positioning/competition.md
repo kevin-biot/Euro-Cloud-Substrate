@@ -48,3 +48,7 @@ ECS would remain the **contract layer**, while the API standard defines the **in
 ## Proprietary enforcement stacks (non‑normative)
 End‑to‑end rights stacks (capsules, enforcement membranes, private ledgers, agent “twins”) can be **fully compatible** with ECS as long as they export **evidence bundles** and bind decisions to authority/policy snapshots.  
 ECS does not standardize those stacks; it standardizes the **evidence/contract outputs** so customers can verify outcomes and retain portability.
+
+## Reverse‑playbook portability (non‑normative)
+Some vendors take hyperscaler‑originated open‑source components and **package them as portable managed capabilities** outside the hyperscaler environment.  
+This pattern aligns with ECS: it reduces lock‑in and makes common capabilities available across providers without sacrificing governance or evidence requirements.

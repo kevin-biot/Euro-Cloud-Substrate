@@ -24,3 +24,7 @@ vCluster focuses on tenancy mechanics; ECS adds governance contracts:
 
 ## Compatibility summary
 vCluster can be an **execution envelope implementation** within ECS, but it must emit ECS‑compatible evidence events and support export bundles to meet ECS profiles.
+
+## Reverse‑playbook portability (context)
+vCluster Auto Nodes reuses AWS‑originated Karpenter, but packages it as a **portable managed capability** outside AWS.  
+This is a practical example of “reverse‑playbook portability” aligned with ECS: extract a capability from a hyperscaler stack and make it portable across environments.
