@@ -7,6 +7,10 @@ Clarify how ECS treats agents, delegation, and accountability. This is meant to 
 **Agents are delegates, not legal principals.**  
 Accountability remains with the delegator (human or organization). Agents do not “own” authority; they operate under a scoped, time‑bounded delegation.
 
+## Access layer ≠ governance (context)
+Making systems “accessible” to agents is not the same as **governed access**.  
+ECS requires that every delegated action is bound to authority/policy snapshots and produces refusal evidence when obligations cannot be met.
+
 ## Minimal identity model
 Use **four identifiers** to avoid ambiguity:
 - **delegation_id** — the grant (who delegated, scope, time bounds, intent).

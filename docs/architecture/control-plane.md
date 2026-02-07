@@ -15,6 +15,10 @@ Deterministic policy evaluation service that:
 - Supports explicit refusal semantics and fail-closed behavior.
 - Emits evidence events with policy snapshot id and authority context.
 
+### Access layer ≠ governance (context)
+Access enablement (APIs, graphs, connectors) does **not** imply governance.  
+ECS requires that access is **policy‑bound at execution time** with refusal evidence when obligations cannot be met.
+
 ### Trust root acceptance
 Authority verification MUST be bound to explicit trust anchors (IdPs, CAs, credential issuers). The control plane MUST:
 - Evaluate requests against the **declared authority snapshot** (time‑scoped trust roots).
