@@ -15,6 +15,7 @@ Mappings are non‑normative crosswalks that relate ECS “how” (invariants, p
 - EUCS mapping: `docs/mappings/eucs-mapping.md`
 - EU Cloud CoC mapping: `docs/mappings/eu-cloud-coc-mapping.md`
 - Certification intake matrix: `docs/mappings/certification-intake-matrix.md`
+- EC Cloud Sovereignty Framework mapping: `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`
 - AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
 - vCluster mapping: `docs/mappings/vcluster.md`
 - EU cloud provider selection matrix: `docs/mappings/eu-cloud-provider-selection-matrix.md`

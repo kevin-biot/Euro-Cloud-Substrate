@@ -33,6 +33,7 @@ Recommended baseline package:
 
 ## Related ECS references
 - `docs/domains/sovereignty-assurance.md`
+- `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`
 - `docs/mappings/reg-mapping.md`
 - `docs/profiles/no-control-profile.md`
 - `docs/profiles/evidence-profiles.md`

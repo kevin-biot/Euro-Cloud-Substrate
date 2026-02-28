@@ -3,6 +3,8 @@
 ## Purpose
 Provide a crosswalk between the SUSE Cloud Sovereignty Framework Self‑Assessment (SOV‑1…SOV‑8) and ECS components. This is informational only; ECS does not claim certification or endorsement.
 
+For European Commission CSF mapping, see `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`.
+
 ## CSF summary (from SUSE assessment)
 - SEAL scale: 0–4 (SEAL‑0 no sovereignty → SEAL‑4 full digital sovereignty).
 - Eight sovereignty objectives (SOV‑1…SOV‑8) with weighted scoring.
