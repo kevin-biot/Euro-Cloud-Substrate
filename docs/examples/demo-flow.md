@@ -49,12 +49,16 @@ python3 adapters/k8s-admission/exporter.py \
   --out ./bundle \
   --from-seq 1 \
   --to-seq 10 \
-  --profile ecs-evidence-baseline
+  --profile ecs-evidence-baseline \
+  --profile-version 1.0 \
+  --producer-id ecs-reference-exporter \
+  --verifier-expectations-ref docs/evidence/verifier-responsibilities.md
 ```
 
 5) **Verify inputs**
 - Check `bundle/verifier-inputs.json` and confirm:
   - `evidence_profile_id` matches the manifest.
+  - `profile_version`, `producer_identity`, and `verifier_expectations_ref` are present.
   - `chain_id`, `from_sequence`, `to_sequence` are present.
 
 ## Notes

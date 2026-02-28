@@ -26,6 +26,7 @@
 ## 5. Export behavior
 - **Export format:** evidence bundle + manifest + verifier inputs
 - **Integrity:** chain_id, event_hash, prev_hash
+- **Profile self-description:** `evidence_profile_id`, `profile_version`, `producer_identity`, `verifier_expectations_ref`
 - **Evidence pointer contract:** immutability, tenant scoping, retrievability
 
 ## 6. Security & trust

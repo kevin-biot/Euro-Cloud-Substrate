@@ -151,8 +151,22 @@ class EvidenceStore:
         return event
 
 
-def build_profile_claim(profile_id: str, hash_profile_id: Optional[str]) -> dict:
+def build_profile_claim(
+    profile_id: str,
+    hash_profile_id: Optional[str],
+    profile_version: str = "1.0",
+    producer_id: str = "ecs-reference-exporter",
+    issuer_id: Optional[str] = None,
+    verifier_expectations_ref: str = "docs/evidence/verifier-responsibilities.md",
+) -> dict:
     return {
+        "evidence_profile_id": profile_id,
+        "profile_version": profile_version,
+        "producer_identity": {
+            "issuer_id": issuer_id or "provider-unknown",
+            "producer_id": producer_id,
+        },
+        "verifier_expectations_ref": verifier_expectations_ref,
         "implements": {
             "evidence_profiles": [profile_id],
             "default_evidence_profile": profile_id,
@@ -163,10 +177,30 @@ def build_profile_claim(profile_id: str, hash_profile_id: Optional[str]) -> dict
     }
 
 
-def write_profile_claim(path: str, profile_id: str, hash_profile_id: Optional[str]) -> None:
+def write_profile_claim(
+    path: str,
+    profile_id: str,
+    hash_profile_id: Optional[str],
+    profile_version: str = "1.0",
+    producer_id: str = "ecs-reference-exporter",
+    issuer_id: Optional[str] = None,
+    verifier_expectations_ref: str = "docs/evidence/verifier-responsibilities.md",
+) -> None:
     ensure_dir(os.path.dirname(path))
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(build_profile_claim(profile_id, hash_profile_id), f, indent=2, ensure_ascii=True)
+        json.dump(
+            build_profile_claim(
+                profile_id,
+                hash_profile_id,
+                profile_version=profile_version,
+                producer_id=producer_id,
+                issuer_id=issuer_id,
+                verifier_expectations_ref=verifier_expectations_ref,
+            ),
+            f,
+            indent=2,
+            ensure_ascii=True,
+        )
         f.write("\n")
 
 

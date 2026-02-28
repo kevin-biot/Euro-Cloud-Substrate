@@ -23,6 +23,7 @@ An export package MUST include:
 
 ## Manifest schema (draft JSON)
 Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.
+Manifests MUST be self-describing for profile verification and include `profile_version`, `producer_identity`, and `verifier_expectations_ref`.
 ```json
 {
   "schema_version": "1.0",
@@ -31,6 +32,12 @@ Verifier input: `evidence_profile_id` MUST match the declared profile in the exp
   "provider_id": "provider-A",
   "tenant_id": "tenant-123",
   "evidence_profile_id": "ecs-evidence-baseline",
+  "profile_version": "1.0",
+  "producer_identity": {
+    "issuer_id": "provider-A",
+    "producer_id": "ecs-reference-exporter"
+  },
+  "verifier_expectations_ref": "docs/evidence/verifier-responsibilities.md",
   "hash_profile_id": "ecs-hash-v1",
   "scope": {
     "from_sequence": 100,
@@ -64,6 +71,7 @@ Verifier input: `evidence_profile_id` MUST match the declared profile in the exp
 - Outcome values MUST be `accepted`, `refused`, or `failed`.
 - Evidence events MUST reference relevant artifacts (policy snapshot, authority binding, consent token, duty token, corridor proof, risk rubric) when applicable.
 - Export manifests MUST declare `evidence_profile_id` and SHOULD declare a default `hash_profile_id` when hashes are used (see `docs/profiles/evidence-profiles.md`).
+- Export manifests MUST declare `profile_version`, `producer_identity`, and `verifier_expectations_ref`.
 
 ### Procurement clause (example)
 ```

@@ -1,6 +1,7 @@
 # Euro Cloud Substrate (ECS)
 
 An architectural definition project for a portable, governable, European cloud substrate. This repo hosts the specs, invariants, and profiles that define the minimal shared contracts European providers can implement.
+If you cannot export verifier-friendly evidence, you do not have sovereignty - you have hosting.
 
 ## Who this is for / not for
 **ECS is for:**
@@ -24,9 +25,11 @@ An architectural definition project for a portable, governable, European cloud s
 4. ML Inference Sidecar (draft): `adapters/ml-inference-sidecar/`
 5. Object Storage Proxy (draft): `adapters/object-storage-proxy/`
 6. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
-7. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
-8. Deliverables map (spec spine): `docs/deliverables.md`
-9. Docs index (navigation): `docs/index.md`
+7. Pilot pack (how to run Day 0/7/30): `pilots/README.md`
+8. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
+9. Core10 -> Workstreams -> Profiles -> Bundles pipeline: `docs/architecture/implementation-pipeline.md`
+10. Deliverables map (spec spine): `docs/deliverables.md`
+11. Docs index (navigation): `docs/index.md`
 
 ## Adapters (what they are)
 Adapters are **reference implementations** that show how to emit ECS evidence at key control points (admission, inference, storage).  
@@ -45,6 +48,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Minimal metrics (draft): `docs/conformance/metrics.md`
 - SOC/log control profile (draft): `docs/compliance/soc-log-control.md`
 - Evidence export: `docs/evidence/export-schema.md`, catalog: `docs/evidence/catalog.md`
+- Refusal semantics quick spec: `docs/evidence/refusal-semantics.md`
 - Data security domain note (draft): `docs/domains/data-security.md`
 - IAM domain note (draft): `docs/domains/iam.md`
 - GRC domain note (draft): `docs/domains/grc.md`
@@ -98,6 +102,11 @@ Most platforms handle compute and storage well, but **portable governance eviden
 - For evidence export and admissibility, see `docs/evidence/export-schema.md`, `docs/evidence/qualified-archiving.md`, and `docs/evidence/catalog.md`.
 - For ML-specific evidence gaps and implementation guidance, see `docs/guides/ml-evidence-implementation.md`.
 - For wallet/identity binding guidance, see `docs/domains/eudi-wallet-integration.md`.
+- Role guides:
+  - Provider implementation: `docs/guides/provider-implementation-guide.md`
+  - Deployer/operator: `docs/guides/deployer-operator-guide.md`
+  - Auditor/verifier: `docs/guides/auditor-verifier-guide.md`
+  - Procurement evaluator: `docs/guides/procurement-evaluator-guide.md`
 - For a high-level overview, see the GitHub wiki.
 
 ## Out of scope by design
@@ -132,6 +141,7 @@ Most platforms handle compute and storage well, but **portable governance eviden
 - `docs/compliance/soc-log-control.md` — SOC/log control profile (draft)
 - `core10/` — mandatory ECS components
 - `ws*/` — workstream folders with scope, invariants, conformance outlines, diagrams
+- `pilots/` — pilot-ready templates and Day 0/7/30 execution pack
 - `decisions/` — architectural decision records (`decisions/README.md`)
 - `docs/mappings/irn-mapping.md` — IRN crosswalk (draft)
 - `docs/evidence/export-schema.md` — portable evidence bundles

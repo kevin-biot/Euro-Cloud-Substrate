@@ -28,6 +28,7 @@
 
 ## Procurement, examples, and guides
 - Procurement: `docs/procurement/`
+- Pilot pack: `pilots/`
 - Examples & bundles: `docs/examples/`
 - Guides: `docs/guides/`
 

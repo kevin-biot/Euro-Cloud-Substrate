@@ -53,7 +53,10 @@ python3 exporter.py \
   --out ./bundle \
   --from-seq 1 \
   --to-seq 10 \
-  --profile ecs-evidence-baseline
+  --profile ecs-evidence-baseline \
+  --profile-version 1.0 \
+  --producer-id ecs-reference-exporter \
+  --verifier-expectations-ref docs/evidence/verifier-responsibilities.md
 ```
 
 ## Evidence profile selection
@@ -66,3 +69,4 @@ python3 exporter.py \
 - TLS/mTLS, authn/z, and Kubernetes deployment manifests are intentionally omitted.
 - Events include `correlation_id`, `policy_snapshot_id`, and `authority_snapshot_id` at the top level via the emitted payload (Core10‑05 envelope).
 - Default snapshot ids (`pol-default`, `auth-default`) are placeholders; real deployments should supply explicit snapshot ids.
+- Export bundles are self-describing and include `evidence_profile_id`, `profile_version`, `producer_identity`, and `verifier_expectations_ref`.

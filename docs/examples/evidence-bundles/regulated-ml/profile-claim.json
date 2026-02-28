@@ -17,5 +17,12 @@
       "event_hash",
       "archive_ref"
     ]
-  }
+  },
+  "evidence_profile_id": "ecs-evidence-regulated-ml",
+  "profile_version": "1.0",
+  "producer_identity": {
+    "issuer_id": "provider-A",
+    "producer_id": "ecs-reference-exporter"
+  },
+  "verifier_expectations_ref": "docs/evidence/verifier-responsibilities.md"
 }

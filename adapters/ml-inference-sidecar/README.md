@@ -29,3 +29,8 @@ curl -s -X POST http://localhost:8081/infer \\
 ```
 
 ## Expected evidence events
+- Exported bundles SHOULD include self-describing profile metadata:
+  - `evidence_profile_id`
+  - `profile_version`
+  - `producer_identity`
+  - `verifier_expectations_ref`

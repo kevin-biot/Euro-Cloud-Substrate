@@ -7,5 +7,11 @@
   "event_hash_method": "sha256(canonical_json(event) without event_hash)",
   "segment_hash_method": "sha256(newline-joined event_hash values)",
   "bundle_hash_method": "sha256(newline-joined event_hash values)",
-  "chain_segment_ref": "eosc://evidence/chain/sha256:142d9257c6186c06ed66694ad4beb4a28ce799fd623457c6745aaca7bb7de40d"
+  "chain_segment_ref": "eosc://evidence/chain/sha256:142d9257c6186c06ed66694ad4beb4a28ce799fd623457c6745aaca7bb7de40d",
+  "profile_version": "1.0",
+  "producer_identity": {
+    "issuer_id": "integrator-ops",
+    "producer_id": "ecs-reference-exporter"
+  },
+  "verifier_expectations_ref": "docs/evidence/verifier-responsibilities.md"
 }

@@ -48,3 +48,8 @@ curl -X PUT http://localhost:8082/bucket/key.txt \
 ## Notes
 - This is a reference adapter; it does not implement S3 auth/signing.
 - Use `--fail-closed` (or `ECS_FAIL_CLOSED=true`) to refuse requests missing required snapshots.
+- Exported bundles SHOULD include self-describing profile metadata:
+  - `evidence_profile_id`
+  - `profile_version`
+  - `producer_identity`
+  - `verifier_expectations_ref`

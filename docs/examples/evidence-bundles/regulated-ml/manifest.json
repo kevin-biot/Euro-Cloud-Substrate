@@ -45,5 +45,11 @@
   "trust_services": {
     "archive_ref": "qes://archive/archive-ml-001",
     "anchor_interval": "P1D"
-  }
+  },
+  "profile_version": "1.0",
+  "producer_identity": {
+    "issuer_id": "provider-A",
+    "producer_id": "ecs-reference-exporter"
+  },
+  "verifier_expectations_ref": "docs/evidence/verifier-responsibilities.md"
 }

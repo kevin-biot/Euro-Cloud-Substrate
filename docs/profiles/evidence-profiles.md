@@ -11,6 +11,11 @@ Export bundles SHOULD declare one of the following `evidence_profile_id` values:
 - `ecs-evidence-regulated-ml`
 
 Manifests SHOULD also declare a default `hash_profile_id` when hashes are emitted (see `docs/evidence/hash-profiles.md`).
+Manifests MUST include self-describing profile metadata:
+- `evidence_profile_id`
+- `profile_version`
+- `producer_identity` (`issuer_id`, `producer_id`)
+- `verifier_expectations_ref`
 
 ## Baseline profile
 **Scope:** default evidence envelope for governed actions.

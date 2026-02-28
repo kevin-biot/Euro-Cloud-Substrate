@@ -13,6 +13,7 @@
 - **Core10-05 envelope**: Canonical evidence event envelope.
 - **evidence profile**: Selected profile that defines additional integrity/chaining requirements.
 - **evidence pointer**: Content‑addressed reference to artifacts (see pointer contract in `docs/evidence/export-schema.md`).
+- **refusal semantics**: Required refusal anchors and reason classes (see `docs/evidence/refusal-semantics.md`).
 - **evidence export**: Manifest + event range + artifacts + verifier inputs.
 - **evidence buffer**: Local, tamper‑evident store for evidence emitted during partitions.
 
@@ -47,9 +48,12 @@ Evidence events SHOULD include:
 - `ialp_context_ref` (links to IALP decision context/artifact)
 - `chain_id`, `event_hash`, `prev_hash` (when required by profile)
 
+For `outcome=refused`, events MUST include:
+- `refusal_reason_class`, `refusal_reason_code`, `refusal_subject`
+
 Optional metadata MAY include:
 - `actor_details`, `delegation_id`, `jurisdiction`, `classification`
-- `refusal_reason` (when `outcome=refused`)
+- `refusal_reason` (human-readable summary)
 
 ## Example events (IALP decision → evidence → audit chain)
 
@@ -81,6 +85,9 @@ Access event (refused):
   "tenant_id": "tenant-123",
   "sequence": 1202,
   "outcome": "refused",
+  "refusal_reason_class": "policy_denied",
+  "refusal_reason_code": "missing_required_snapshot",
+  "refusal_subject": "object.get",
   "refusal_reason": "policy_denied",
   "authority_snapshot_id": "auth-2026-01",
   "policy_snapshot_id": "pol-2026-02",

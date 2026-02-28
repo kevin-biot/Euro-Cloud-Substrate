@@ -8,6 +8,7 @@
 - ML inference sidecar (draft): `adapters/ml-inference-sidecar/`
 - Object storage proxy (draft): `adapters/object-storage-proxy/`
 - RFP guide: `docs/procurement/rfp-guide.md`
+- Pilot pack: `pilots/README.md`
 - Deployment profile: `docs/deployment-profile.md`
 - Interim coherence report: `docs/interim-coherence-report.md`
 
@@ -16,21 +17,26 @@
 - Evidence export schema: `docs/evidence/export-schema.md`
 - Evidence catalog: `docs/evidence/catalog.md`
 - Verifier responsibilities: `docs/evidence/verifier-responsibilities.md`
+- Auditor/verifier guide: `docs/guides/auditor-verifier-guide.md`
 - Evidence profiles: `docs/profiles/evidence-profiles.md`
 
 **Platform engineers**
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
+- Provider implementation guide: `docs/guides/provider-implementation-guide.md`
+- Deployer/operator guide: `docs/guides/deployer-operator-guide.md`
 - Execution envelopes: `ws3-exec-envelopes/` and `core10/07-execution-envelope-profiles.md`
 - Evidence vs logs: `docs/guides/evidence-vs-logs.md`
 - Interop API: `ws4-interop-api/spec.md`
 
 **Procurement / Policy**
 - RFP guide: `docs/procurement/rfp-guide.md`
+- Procurement evaluator guide: `docs/guides/procurement-evaluator-guide.md`
 - Airbus‑style checklist: `docs/procurement/airbus-2026-checklist.md`
 - Deliverables map: `docs/deliverables.md`
 
 ## Architecture
 - Planes & diagrams: `docs/architecture/overview.md`
+- Implementation pipeline: `docs/architecture/implementation-pipeline.md`
 - Control plane definition: `docs/architecture/control-plane.md`
 - Core10 status: `docs/architecture/core10-status.md`
 
@@ -49,6 +55,7 @@
 - Evidence catalog: `docs/evidence/catalog.md`
 - Evidence export schema: `docs/evidence/export-schema.md`
 - Verifier responsibilities: `docs/evidence/verifier-responsibilities.md`
+- Refusal semantics quick spec: `docs/evidence/refusal-semantics.md`
 - Hash profiles: `docs/evidence/hash-profiles.md`
 - Evidence terms: `docs/evidence/terms.md`
 - Qualified archiving: `docs/evidence/qualified-archiving.md`
@@ -89,10 +96,15 @@
 - AI media transparency (CE mark applies to high‑risk systems; Article 50 = transparency): `docs/guides/ai-media-transparency.md`
 - Evidence vs logs: `docs/guides/evidence-vs-logs.md`
 - ML evidence implementation: `docs/guides/ml-evidence-implementation.md`
+- Provider implementation guide: `docs/guides/provider-implementation-guide.md`
+- Deployer/operator guide: `docs/guides/deployer-operator-guide.md`
+- Auditor/verifier guide: `docs/guides/auditor-verifier-guide.md`
+- Procurement evaluator guide: `docs/guides/procurement-evaluator-guide.md`
 
 ## Procurement
 - RFP guide: `docs/procurement/rfp-guide.md`
 - Airbus‑style checklist: `docs/procurement/airbus-2026-checklist.md`
+- Pilot pack templates: `pilots/README.md`
 
 ## Compliance tools
 - Compliance pattern library: `docs/compliance/pattern-library.md`

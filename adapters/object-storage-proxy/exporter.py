@@ -28,9 +28,21 @@ def write_json(path: str, obj: dict) -> None:
         f.write("\n")
 
 
-def export_bundle(store: str, out_dir: str, from_seq: int, to_seq: int,
-                  evidence_profile_id: str, hash_profile_id: Optional[str],
-                  provider_id: str, tenant_id: str, trust_services: Optional[dict]) -> None:
+def export_bundle(
+    store: str,
+    out_dir: str,
+    from_seq: int,
+    to_seq: int,
+    evidence_profile_id: str,
+    hash_profile_id: Optional[str],
+    provider_id: str,
+    tenant_id: str,
+    trust_services: Optional[dict],
+    profile_version: str,
+    producer_id: str,
+    issuer_id: Optional[str],
+    verifier_expectations_ref: str,
+) -> None:
     events_path = os.path.join(store, "events.jsonl")
     events = [e for e in load_events(events_path) if from_seq <= e.get("sequence", 0) <= to_seq]
     if not events:
@@ -45,6 +57,7 @@ def export_bundle(store: str, out_dir: str, from_seq: int, to_seq: int,
         "segment_id": f"seg-{from_seq}-{to_seq}",
         "tenant_id": tenant_id,
         "evidence_profile_id": evidence_profile_id,
+        "profile_version": profile_version,
         "from_sequence": from_seq,
         "to_sequence": to_seq,
         "algorithm": "sha256",
@@ -86,6 +99,12 @@ def export_bundle(store: str, out_dir: str, from_seq: int, to_seq: int,
         "provider_id": provider_id,
         "tenant_id": tenant_id,
         "evidence_profile_id": evidence_profile_id,
+        "profile_version": profile_version,
+        "producer_identity": {
+            "issuer_id": issuer_id or provider_id,
+            "producer_id": producer_id,
+        },
+        "verifier_expectations_ref": verifier_expectations_ref,
         "scope": {"from_sequence": from_seq, "to_sequence": to_seq},
         "chain_id": chain_id,
         "chain_segment_ref": chain_segment_ref,
@@ -111,7 +130,13 @@ def export_bundle(store: str, out_dir: str, from_seq: int, to_seq: int,
     # Verifier inputs
     verifier_inputs = {
         "evidence_profile_id": evidence_profile_id,
+        "profile_version": profile_version,
         "hash_profile_id": hash_profile_id,
+        "producer_identity": {
+            "issuer_id": issuer_id or provider_id,
+            "producer_id": producer_id,
+        },
+        "verifier_expectations_ref": verifier_expectations_ref,
         "chain_id": chain_id,
         "from_sequence": from_seq,
         "to_sequence": to_seq,
@@ -125,7 +150,15 @@ def export_bundle(store: str, out_dir: str, from_seq: int, to_seq: int,
     write_json(os.path.join(out_dir, "verifier-inputs.json"), verifier_inputs)
 
     # Profile claim
-    write_profile_claim(os.path.join(out_dir, "profile-claim.json"), evidence_profile_id, hash_profile_id)
+    write_profile_claim(
+        os.path.join(out_dir, "profile-claim.json"),
+        evidence_profile_id,
+        hash_profile_id,
+        profile_version=profile_version,
+        producer_id=producer_id,
+        issuer_id=issuer_id or provider_id,
+        verifier_expectations_ref=verifier_expectations_ref,
+    )
 
 
 def main():
@@ -139,6 +172,14 @@ def main():
     parser.add_argument("--provider", default="provider-A", help="Provider id")
     parser.add_argument("--tenant", default="tenant-123", help="Tenant id")
     parser.add_argument("--trust-services", default=None, help="JSON trust_services object")
+    parser.add_argument("--profile-version", default="1.0", help="Selected profile version")
+    parser.add_argument("--producer-id", default="ecs-reference-exporter", help="Export producer id")
+    parser.add_argument("--issuer-id", default=None, help="Issuer identity id (defaults to provider id)")
+    parser.add_argument(
+        "--verifier-expectations-ref",
+        default="docs/evidence/verifier-responsibilities.md",
+        help="Verifier expectations pointer",
+    )
     args = parser.parse_args()
 
     trust_services = json.loads(args.trust_services) if args.trust_services else None
@@ -152,6 +193,10 @@ def main():
         provider_id=args.provider,
         tenant_id=args.tenant,
         trust_services=trust_services,
+        profile_version=args.profile_version,
+        producer_id=args.producer_id,
+        issuer_id=args.issuer_id,
+        verifier_expectations_ref=args.verifier_expectations_ref,
     )
 
 

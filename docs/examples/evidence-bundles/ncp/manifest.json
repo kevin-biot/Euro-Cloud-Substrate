@@ -33,5 +33,11 @@
       "key_id": "key-001",
       "signature": "base64..."
     }
-  ]
+  ],
+  "profile_version": "1.0",
+  "producer_identity": {
+    "issuer_id": "integrator-ops",
+    "producer_id": "ecs-reference-exporter"
+  },
+  "verifier_expectations_ref": "docs/evidence/verifier-responsibilities.md"
 }
