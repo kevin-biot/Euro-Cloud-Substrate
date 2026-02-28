@@ -32,6 +32,7 @@
 - Post‑migration validation MUST complete before governed execution resumes.
 - Rollback MUST be supported when validation fails or cutover is aborted.
 - Dependency manifests MUST be included to identify non‑substitutable components affecting portability.
+- Deployments SHOULD declare a provider-neutral deployment profile (`docs/deployment-profile.md`) so identical ECS instances can be reproduced across providers without changing governance semantics.
 
 ## Migration scenarios (draft)
 - **Container**: image + config + policy/authority snapshots + evidence; validate admission in target.
@@ -58,3 +59,4 @@ In the IPCEI‑CIS reference architecture, the Federation Manager role coordinat
 The Federation Broker role maps to discoverability and claims (profile claims, bundle examples), which ECS treats as contract inputs rather than a mandated broker product.
 
 See `docs/domains/federation.md` for the federation domain summary and evidence expectations.
+See `docs/deployment-profile.md` for deployment shape standardization and tool-neutral portability guidance.

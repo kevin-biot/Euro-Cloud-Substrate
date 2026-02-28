@@ -50,6 +50,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - GRC domain note (draft): `docs/domains/grc.md`
 - Privacy & user control note (draft): `docs/domains/privacy.md`
 - Federation domain note (draft): `docs/domains/federation.md`
+- Deployment profile (draft): `docs/deployment-profile.md`
 - Control-plane capabilities: `docs/architecture/control-plane.md`
 - EUDI wallet integration note (draft): `docs/domains/eudi-wallet-integration.md`
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
@@ -57,7 +58,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `docs/call-for-participation.md`
 - Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
 - Competition & differentiation: `docs/positioning/competition.md`
-- Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/aws-minimal-subset.md`, `docs/mappings/vcluster.md`
+- Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/aws-minimal-subset.md`, `docs/mappings/vcluster.md`, `docs/mappings/eu-cloud-provider-selection-matrix.md`
 - IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
 - Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`
 - Gaia-X alignment note (draft): `docs/mappings/gaia-x/README.md`

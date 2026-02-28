@@ -8,6 +8,8 @@
 - ML inference sidecar (draft): `adapters/ml-inference-sidecar/`
 - Object storage proxy (draft): `adapters/object-storage-proxy/`
 - RFP guide: `docs/procurement/rfp-guide.md`
+- Deployment profile: `docs/deployment-profile.md`
+- Interim coherence report: `docs/interim-coherence-report.md`
 
 ## Learning paths
 **Auditors / Verifiers**
@@ -68,6 +70,7 @@
 - Tech Sovereignty Catalogue mapping: `docs/mappings/techsov-catalogue.md`
 - AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
 - vCluster mapping: `docs/mappings/vcluster.md`
+- EU cloud provider selection matrix: `docs/mappings/eu-cloud-provider-selection-matrix.md`
 - Gaia‑X alignment: `docs/mappings/gaia-x/README.md`
 
 ## Guides & Adoption
