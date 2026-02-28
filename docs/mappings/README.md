@@ -15,3 +15,4 @@ Mappings are non‑normative crosswalks that relate ECS “how” (invariants, p
 - AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
 - vCluster mapping: `docs/mappings/vcluster.md`
 - EU cloud provider selection matrix: `docs/mappings/eu-cloud-provider-selection-matrix.md`
+- EU sovereignty assurance matrix: `docs/mappings/eu-sovereignty-assurance-matrix.md`
