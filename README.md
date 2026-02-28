@@ -50,6 +50,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - GRC domain note (draft): `docs/domains/grc.md`
 - Privacy & user control note (draft): `docs/domains/privacy.md`
 - Federation domain note (draft): `docs/domains/federation.md`
+- Sovereignty assurance note (draft): `docs/domains/sovereignty-assurance.md`
 - Deployment profile (draft): `docs/deployment-profile.md`
 - Control-plane capabilities: `docs/architecture/control-plane.md`
 - EUDI wallet integration note (draft): `docs/domains/eudi-wallet-integration.md`

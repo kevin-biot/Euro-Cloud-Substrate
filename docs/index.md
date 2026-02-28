@@ -43,6 +43,7 @@
 - GRC: `docs/domains/grc.md`
 - Privacy & user control: `docs/domains/privacy.md`
 - Federation: `docs/domains/federation.md`
+- Sovereignty assurance: `docs/domains/sovereignty-assurance.md`
 
 ## Evidence
 - Evidence catalog: `docs/evidence/catalog.md`

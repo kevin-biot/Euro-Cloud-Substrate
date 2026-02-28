@@ -27,5 +27,6 @@
 ## Evidence profiles (draft)
 - Evidence profiles define required evidence fields, event families, allowed hash profiles, and verifier checks.
 - Draft definition in `docs/profiles/evidence-profiles.md`.
+- Sovereignty assurance surfaces that profiles may tighten: `docs/domains/sovereignty-assurance.md`.
 
 Profiles are how ECS becomes context-usable without fragmenting the invariant contract.

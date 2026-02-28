@@ -23,6 +23,7 @@ See `docs/evidence/terms.md` for canonical evidence event/artifact/bundle termin
 - A conformance claim specifies: scope, invariants included/excluded (with rationale), evidence locations/ids, date/version of policies used, and the selected evidence profile.
 - Evidence profile selection (e.g., baseline, admissible, NCP, regulated‑ML) constrains required fields, hash profile ids, and verifier checks (see `docs/profiles/evidence-profiles.md`).
 - Profiles (e.g., CRP) should reference invariant IDs to indicate their required subset.
+- Sovereignty-oriented claims should also reference assurance artifacts (legal authority chain, trust-root provenance, delegation evidence) as described in `docs/domains/sovereignty-assurance.md`.
 
 ### Profile claims (template)
 ```yaml
