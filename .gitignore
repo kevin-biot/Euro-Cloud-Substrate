@@ -2,3 +2,6 @@
 ~$*.docx
 *.docx
 docs/ECS-White-Paper.md
+
+__pycache__/
+*.pyc
