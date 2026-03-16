@@ -5,6 +5,14 @@ This mapping shows how MetaVox file metadata can be used as an ECS metadata inpu
 
 MetaVox metadata alone is not a substitute for ECS evidence chain, refusal semantics, or verifier-ready export.
 
+## Storage model and portability implication
+MetaVox metadata is stored as Nextcloud app data keyed to Nextcloud object IDs (file/team-folder), not embedded into file formats such as PDF metadata blocks, EXIF, or XMP.
+
+Implications:
+- Metadata is non-intrusive and format-agnostic.
+- Moving files outside Nextcloud without an export/mapping step can lose governance context.
+- ECS adapters should export metadata + evidence as portable artifacts/bundles so verifier workflows are independent of Nextcloud internals.
+
 ## Integration pattern (minimal)
 1. Define MetaVox fields aligned to ECS keys.
 2. Trigger adapter emission on file + metadata lifecycle events.
