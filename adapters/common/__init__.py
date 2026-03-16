@@ -1,0 +1,1 @@
+"""Common ECS adapter helpers."""

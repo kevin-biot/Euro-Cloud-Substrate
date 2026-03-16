@@ -80,3 +80,7 @@ The model is designed to align with:
 ## Non-goals
 - ECS does not mandate one storage API or one metadata mechanism.
 - ECS does not require embedding governance metadata in file formats.
+
+## Reference helper code
+- Neutral binding helper (draft): `adapters/common/object_binding.py`
+- Usage notes: `adapters/common/README.md`
