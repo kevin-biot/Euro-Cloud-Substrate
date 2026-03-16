@@ -5,3 +5,5 @@ docs/ECS-White-Paper.md
 
 __pycache__/
 *.pyc
+
+docs/examples/runtime/.run/

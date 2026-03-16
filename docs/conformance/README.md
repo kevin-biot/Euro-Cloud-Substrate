@@ -8,3 +8,4 @@ Conformance submissions should declare a selected evidence profile and include `
 - `sup.md` — supply‑chain invariants
 - `ops.md` — human/operations invariants
 - `phy.md` — physical/connectivity invariants
+- `runtime-smoke-tests.md` — runtime bundle pass/fail checks

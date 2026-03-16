@@ -26,10 +26,11 @@ If you cannot export verifier-friendly evidence, you do not have sovereignty - y
 5. Object Storage Proxy (draft): `adapters/object-storage-proxy/`
 6. RFP Guide (how to buy it): `docs/procurement/rfp-guide.md`
 7. Pilot pack (how to run Day 0/7/30): `pilots/README.md`
-8. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
-9. Core10 -> Workstreams -> Profiles -> Bundles pipeline: `docs/architecture/implementation-pipeline.md`
-10. Deliverables map (spec spine): `docs/deliverables.md`
-11. Docs index (navigation): `docs/index.md`
+8. Runtime Quickstart (run it now): `docs/guides/runtime-quickstart.md`
+9. Architecture Overview (big picture): `docs/architecture/ecs-architecture-overview.md`
+10. Core10 -> Workstreams -> Profiles -> Bundles pipeline: `docs/architecture/implementation-pipeline.md`
+11. Deliverables map (spec spine): `docs/deliverables.md`
+12. Docs index (navigation): `docs/index.md`
 
 ## Adapters (what they are)
 Adapters are **reference implementations** that show how to emit ECS evidence at key control points (admission, inference, storage).  
@@ -63,7 +64,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `docs/call-for-participation.md`
 - Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
 - Competition & differentiation: `docs/positioning/competition.md`
-- Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/eucs-mapping.md`, `docs/mappings/eu-cloud-coc-mapping.md`, `docs/mappings/certification-intake-matrix.md`, `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`, `docs/mappings/aws-minimal-subset.md`, `docs/mappings/vcluster.md`, `docs/mappings/eu-cloud-provider-selection-matrix.md`, `docs/mappings/eu-sovereignty-assurance-matrix.md`
+- Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/eucs-mapping.md`, `docs/mappings/eu-cloud-coc-mapping.md`, `docs/mappings/certification-intake-matrix.md`, `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`, `docs/mappings/aws-minimal-subset.md`, `docs/mappings/aws-to-eu-cloud-service-map.md`, `docs/mappings/vcluster.md`, `docs/mappings/eu-cloud-provider-selection-matrix.md`, `docs/mappings/eu-sovereignty-assurance-matrix.md`
 - IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
 - Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`
 - Gaia-X alignment note (draft): `docs/mappings/gaia-x/README.md`

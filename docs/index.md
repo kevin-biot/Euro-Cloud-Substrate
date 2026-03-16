@@ -23,6 +23,9 @@
 **Platform engineers**
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
 - Provider implementation guide: `docs/guides/provider-implementation-guide.md`
+- Runtime quickstart: `docs/guides/runtime-quickstart.md`
+- Runtime reference architecture: `docs/guides/runtime-reference-architecture.md`
+- Vendor integration playbook: `docs/guides/vendor-integration-playbook.md`
 - Deployer/operator guide: `docs/guides/deployer-operator-guide.md`
 - Execution envelopes: `ws3-exec-envelopes/` and `core10/07-execution-envelope-profiles.md`
 - Evidence vs logs: `docs/guides/evidence-vs-logs.md`
@@ -68,6 +71,7 @@
 - Data Space Compatibility (draft): `docs/profiles/data-space-compatibility.md`
 - Conformance model: `docs/conformance/model.md`
 - Conformance checklists: `docs/conformance/README.md`
+- Runtime smoke tests: `docs/conformance/runtime-smoke-tests.md`
 - Metrics: `docs/conformance/metrics.md`
 
 ## Mappings
@@ -83,6 +87,7 @@
 - Certification intake matrix: `docs/mappings/certification-intake-matrix.md`
 - EC Cloud Sovereignty Framework mapping: `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`
 - AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
+- AWS to EU cloud service map: `docs/mappings/aws-to-eu-cloud-service-map.md`
 - vCluster mapping: `docs/mappings/vcluster.md`
 - EU cloud provider selection matrix: `docs/mappings/eu-cloud-provider-selection-matrix.md`
 - EU sovereignty assurance matrix: `docs/mappings/eu-sovereignty-assurance-matrix.md`
@@ -95,6 +100,10 @@
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
 - Pipeline schema: `docs/guides/pipeline-schema.md`
 - Data object binding model: `docs/guides/data-object-binding-model.md`
+- Runtime quickstart: `docs/guides/runtime-quickstart.md`
+- Runtime reference architecture: `docs/guides/runtime-reference-architecture.md`
+- Vendor integration playbook: `docs/guides/vendor-integration-playbook.md`
+- Runtime example kit: `docs/examples/runtime/`
 - Agent delegation: `docs/guides/agent-delegation.md`
 - AI media transparency (CE mark applies to high‑risk systems; Article 50 = transparency): `docs/guides/ai-media-transparency.md`
 - Evidence vs logs: `docs/guides/evidence-vs-logs.md`
