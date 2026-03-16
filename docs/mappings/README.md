@@ -12,6 +12,7 @@ Mappings are non‑normative crosswalks that relate ECS “how” (invariants, p
 - SUSE CSF mapping: `docs/mappings/suse-csf-mapping.md`
 - Tech Sovereignty Catalogue mapping: `docs/mappings/techsov-catalogue.md`
 - TM Forum & CAMARA mapping: `docs/mappings/tmforum-camara.md`
+- MetaVox + Nextcloud mapping: `docs/mappings/metavox-nextcloud.md`
 - EUCS mapping: `docs/mappings/eucs-mapping.md`
 - EU Cloud CoC mapping: `docs/mappings/eu-cloud-coc-mapping.md`
 - Certification intake matrix: `docs/mappings/certification-intake-matrix.md`
