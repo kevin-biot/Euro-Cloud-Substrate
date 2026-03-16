@@ -35,6 +35,39 @@
 }
 ```
 
+### Data lineage record (draft JSON)
+```json
+{
+  "type": "object",
+  "properties": {
+    "lineage_record_id": { "type": "string" },
+    "data_product_id": { "type": "string" },
+    "parent_refs": { "type": "array", "items": { "type": "string" } },
+    "transform_type": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "consent_token_ref": { "type": "string" },
+    "terms_snapshot_id": { "type": "string" },
+    "quality_score": { "type": "number" },
+    "quality_method_ref": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "retention": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": [
+    "lineage_record_id",
+    "data_product_id",
+    "parent_refs",
+    "transform_type",
+    "purpose_id",
+    "policy_snapshot_id",
+    "authority_snapshot_id",
+    "evidence_pointer"
+  ]
+}
+```
+
 ## Invariants
 - **DATA-01 — Data Residency Enforceability**  
   Residency requirements MUST be enforced and evidenced.

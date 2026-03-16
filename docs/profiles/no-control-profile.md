@@ -24,6 +24,8 @@ This profile is particularly relevant where integrators or managed‑service par
 - `controlplane.ownership.declare`
 - `telemetry.path.audit`
 - `delegation.access.grant` / `delegation.access.revoke`
+- `data.product.publish` / `data.transform.link` (when governed data transformations are in scope)
+- `policy.outcome.measure` / `policy.rule.update` (when policy-learning loops are claimed)
 
 Each “declare”/“publish” event is expected to **reference a verifiable artifact** (e.g., authority graph, custody model, ownership map, telemetry egress map) via an artifact reference and hash, not just a statement.
 
@@ -40,6 +42,7 @@ Each “declare”/“publish” event is expected to **reference a verifiable a
 }
 ```
 Export bundles that contain NCP events MUST declare `evidence_profile_id: ecs-evidence-ncp` in their manifest.
+When data transformations are in scope, bundles SHOULD include lineage continuity evidence (parent-child links, purpose/consent propagation, deletion propagation evidence).
 
 ## Subpoena pressure‑test (illustrative)
 **Scenario:** A foreign subpoena demands customer data from an integrator.  

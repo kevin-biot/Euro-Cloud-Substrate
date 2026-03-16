@@ -177,13 +177,19 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
   "type": "object",
   "properties": {
     "id": { "type": "string", "format": "uuid" },
-    "event_type": { "enum": ["policy.snapshot.publish", "policy.evaluate"] },
+    "event_type": { "enum": ["policy.snapshot.publish", "policy.evaluate", "policy.outcome.measure", "policy.rule.update"] },
     "occurred_at": { "type": "string", "format": "date-time" },
     "tenant_id": { "type": "string" },
     "correlation_id": { "type": "string" },
     "sequence": { "type": "integer" },
     "policy_snapshot_id": { "type": "string" },
     "action": { "type": "string" },
+    "measured_event_type": { "type": "string" },
+    "metric_id": { "type": "string" },
+    "metric_value": { "type": "number" },
+    "rule_id": { "type": "string" },
+    "updated_rule_hash": { "type": "string" },
+    "supersedes_snapshot_id": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
     "refusal_reason": { "type": "string" },
     "evidence_pointer": { "type": "string" }
@@ -191,6 +197,8 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "policy_snapshot_id", "outcome", "evidence_pointer"]
 }
 ```
+`policy.outcome.measure` is used to tie measured outcomes back to policy snapshots.  
+`policy.rule.update` is used to evidence controlled policy iteration and snapshot supersession.
 
 ## EXEC
 - Evidence types (draft):
@@ -244,7 +252,7 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
   "type": "object",
   "properties": {
     "id": { "type": "string", "format": "uuid" },
-    "event_type": { "enum": ["data.purpose.bind", "data.consent.bind", "data.terms.attach", "data.lineage.link"] },
+    "event_type": { "enum": ["data.purpose.bind", "data.consent.bind", "data.terms.attach", "data.lineage.link", "data.transform.link"] },
     "occurred_at": { "type": "string", "format": "date-time" },
     "tenant_id": { "type": "string" },
     "correlation_id": { "type": "string" },
@@ -254,16 +262,51 @@ Evidence pointers are expected to be content‑addressed and tenant‑scoped; se
     "consent_token_ref": { "type": "string" },
     "terms_snapshot_id": { "type": "string" },
     "lineage_sources": { "type": "array", "items": { "type": "string" } },
+    "lineage_record_ref": { "type": "string" },
+    "transform_type": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
     "evidence_pointer": { "type": "string" }
   },
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "data_product_id", "outcome", "evidence_pointer"]
 }
 ```
-Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpose_id` for `data.purpose.bind`, `consent_token_ref` for `data.consent.bind`, `terms_snapshot_id` for `data.terms.attach`, `lineage_sources` for `data.lineage.link`).
+Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpose_id` for `data.purpose.bind`, `consent_token_ref` for `data.consent.bind`, `terms_snapshot_id` for `data.terms.attach`, `lineage_sources` for `data.lineage.link`, `transform_type` + `lineage_record_ref` for `data.transform.link`).
 `data.purpose.bind` and `data.consent.bind` are **decision events**: they MUST emit `accepted`/`refused`/`failed` outcomes with policy/authority snapshot references and occur **before** governed access.
 
 ## DATA LINEAGE & REVOCATION (draft)
+- Lineage record schema (draft):
+```json
+{
+  "type": "object",
+  "properties": {
+    "lineage_record_id": { "type": "string" },
+    "data_product_id": { "type": "string" },
+    "parent_refs": { "type": "array", "items": { "type": "string" } },
+    "transform_type": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "consent_token_ref": { "type": "string" },
+    "terms_snapshot_id": { "type": "string" },
+    "quality_score": { "type": "number" },
+    "quality_method_ref": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "retention": { "type": "string" },
+    "policy_snapshot_id": { "type": "string" },
+    "authority_snapshot_id": { "type": "string" },
+    "evidence_pointer": { "type": "string" }
+  },
+  "required": [
+    "lineage_record_id",
+    "data_product_id",
+    "parent_refs",
+    "transform_type",
+    "purpose_id",
+    "policy_snapshot_id",
+    "authority_snapshot_id",
+    "evidence_pointer"
+  ]
+}
+```
+
 - Evidence events for lineage links and revocation:
 ```json
 {
@@ -273,6 +316,7 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
     "event_type": {
       "enum": [
         "data.lineage.link",
+        "data.transform.link",
         "data.derived.publish",
         "data.revocation.notice"
       ]
@@ -283,6 +327,14 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
     "sequence": { "type": "integer" },
     "source_ref": { "type": "string" },
     "derived_ref": { "type": "string" },
+    "lineage_record_ref": { "type": "string" },
+    "transform_type": { "type": "string" },
+    "purpose_id": { "type": "string" },
+    "consent_token_ref": { "type": "string" },
+    "terms_snapshot_id": { "type": "string" },
+    "quality_score": { "type": "number" },
+    "jurisdiction": { "type": "string" },
+    "retention": { "type": "string" },
     "policy_snapshot_id": { "type": "string" },
     "authority_snapshot_id": { "type": "string" },
     "outcome": { "enum": ["accepted", "refused", "failed"] },
@@ -292,6 +344,12 @@ Purpose/consent/terms/lineage fields are required when applicable (e.g., `purpos
   "required": ["id", "event_type", "occurred_at", "tenant_id", "sequence", "outcome", "evidence_pointer"]
 }
 ```
+
+- Lineage minimum required events (for governed data-product flows):
+  - `data.product.publish`
+  - `data.transform.link`
+  - `policy.outcome.measure`
+  - `policy.rule.update`
 
 - Evidence events for data‑space sharing and obligations (DATA example):
 ```json

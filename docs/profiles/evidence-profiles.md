@@ -59,12 +59,14 @@ Manifests MUST include self-describing profile metadata:
 
 **Required event families:**
 - AUTH, DEP, EVID (with NCP events).
+- For sovereignty scenarios with governed data transformations: DATA + POL lineage events (`data.product.publish`, `data.transform.link`, `policy.outcome.measure`, `policy.rule.update`).
 
 **Hash profiles:**
 - Allowed `hash_profile_id`: `ecs-hash-v1` for any ML‑related NCP evidence.
 
 **Verifier checks:**
 - Validate proof artifacts for authority graph, custody model, ownership map, and telemetry egress map.
+- Validate lineage continuity where transformations are in scope (parent-child links, purpose/consent/terms propagation, deletion propagation evidence).
 
 ## Regulated‑ML profile
 **Scope:** ML inference/training evidence for regulated or high‑risk AI.
@@ -77,6 +79,7 @@ Manifests MUST include self-describing profile metadata:
 
 **Required event families:**
 - EVID, EXEC, SUP (ML inference and training events).
+- DATA and POL lineage/feedback events (`data.product.publish`, `data.transform.link`, `policy.outcome.measure`, `policy.rule.update`) when data products are transformed or policy-learning loops are claimed.
 
 **Hash profiles:**
 - Allowed `hash_profile_id`: `ecs-hash-v1`.
@@ -84,6 +87,7 @@ Manifests MUST include self-describing profile metadata:
 **Verifier checks:**
 - Recompute hashes using `ecs-hash-v1` rules.
 - Verify policy/authority snapshot references on ML events.
+- Validate lineage continuity checks (parent-child continuity, purpose/consent propagation, deletion propagation evidence for downstream derived data).
 
 ## Notes
 - Profiles MAY tighten requirements but MUST NOT redefine invariants.

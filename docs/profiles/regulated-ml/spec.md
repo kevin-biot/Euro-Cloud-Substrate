@@ -32,7 +32,12 @@
 - Training runs MUST record: dataset hashes/IDs, code version, hyperparameters, checkpoints with integrity hashes.
 - Checkpoints MUST have integrity metadata and evidence of storage location/jurisdiction.
 - Training MUST honor residency for data, checkpoints, and intermediate artifacts.
- - Training events MUST bind policy and authority snapshots at decision time.
+- Training events MUST bind policy and authority snapshots at decision time.
+- Governed data-product flows MUST emit lineage/feedback events:
+  - `data.product.publish`
+  - `data.transform.link`
+  - `policy.outcome.measure`
+  - `policy.rule.update`
 
 ### Data‑use posture and exclusions (DATA, POL, EVID)
 - Training runs MUST reference a **data‑use posture** (default rule + exclusion handling).

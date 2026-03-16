@@ -29,6 +29,11 @@ See `docs/evidence/terms.md` for evidence event/artifact/bundle definitions.
    - Validate that “declare/publish” events reference proof artifacts (authority graph, custody model, ownership map, telemetry egress map).
    - Confirm artifact hashes match the referenced content.
 
+7. **Lineage continuity and propagation**
+   - Validate parent-child continuity for lineage records/events (`data.transform.link` and related refs).
+   - Validate purpose/consent/terms propagation from source to derived products where required.
+   - Validate deletion/rectification propagation evidence for downstream derived products when erasure/revocation events are present.
+
 ## Minimum verifier inputs
 - Evidence export bundle (manifest + chain segment + events).
 - Referenced artifacts or resolvable artifact pointers.
