@@ -8,6 +8,8 @@ Refusal-specific fields and verifier checks are defined in `docs/evidence/refusa
 This catalog lists event families and shapes; Evidence Profiles determine which events and fields are required. Emitters MUST declare the selected `evidence_profile_id` in exports/manifests, and verifiers validate against the declared profile (`docs/profiles/evidence-profiles.md`).
 For data security expectations (encryption posture, key custody, DLP evidence), see `docs/domains/data-security.md`.
 For privacy expectations (consent, purpose binding, minimization), see `docs/domains/privacy.md`.
+Canonical operation-level JSONL examples are available in `docs/examples/evidence-operations/`.
+A semantic overlay vocabulary for these events is defined in `docs/evidence/ontology.md`.
 
 ## Base envelope (draft)
 Verifier input: `evidence_profile_id` MUST match the declared profile in the export manifest.

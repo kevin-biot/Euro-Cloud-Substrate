@@ -1,0 +1,76 @@
+{
+  "@context": {
+    "ecs": "https://ecs.example.org/ontology#",
+    "id": "@id",
+    "type": "@type",
+
+    "EvidenceEvent": "ecs:EvidenceEvent",
+    "Actor": "ecs:Actor",
+    "Action": "ecs:Action",
+    "Decision": "ecs:Decision",
+    "PolicySnapshot": "ecs:PolicySnapshot",
+    "AuthoritySnapshot": "ecs:AuthoritySnapshot",
+    "Artifact": "ecs:Artifact",
+    "ObjectRef": "ecs:ObjectRef",
+    "ChainSegment": "ecs:ChainSegment",
+    "EvidenceBundle": "ecs:EvidenceBundle",
+
+    "acted_by": {
+      "@id": "ecs:acted_by",
+      "@type": "@id"
+    },
+    "performs_action": {
+      "@id": "ecs:performs_action",
+      "@type": "@id"
+    },
+    "governed_by_policy": {
+      "@id": "ecs:governed_by_policy",
+      "@type": "@id"
+    },
+    "governed_by_authority": {
+      "@id": "ecs:governed_by_authority",
+      "@type": "@id"
+    },
+    "targets_object": {
+      "@id": "ecs:targets_object",
+      "@type": "@id"
+    },
+    "produces_decision": {
+      "@id": "ecs:produces_decision",
+      "@type": "@id"
+    },
+    "references_artifact": {
+      "@id": "ecs:references_artifact",
+      "@type": "@id"
+    },
+    "prev_event": {
+      "@id": "ecs:prev_event",
+      "@type": "@id"
+    },
+    "included_in_segment": {
+      "@id": "ecs:included_in_segment",
+      "@type": "@id"
+    },
+    "included_in_bundle": {
+      "@id": "ecs:included_in_bundle",
+      "@type": "@id"
+    },
+
+    "event_type": "ecs:event_type",
+    "occurred_at": "ecs:occurred_at",
+    "tenant_id": "ecs:tenant_id",
+    "actor": "ecs:actor",
+    "sequence": "ecs:sequence",
+    "outcome": "ecs:outcome",
+    "refusal_reason": "ecs:refusal_reason",
+    "policy_snapshot_id": "ecs:policy_snapshot_id",
+    "authority_snapshot_id": "ecs:authority_snapshot_id",
+    "evidence_pointer": "ecs:evidence_pointer",
+    "chain_id": "ecs:chain_id",
+    "event_hash": "ecs:event_hash",
+    "prev_hash": "ecs:prev_hash",
+    "object_ref": "ecs:object_ref",
+    "data_product_id": "ecs:data_product_id",
+    "workload_id": "ecs:workload_id"
+  }
+}

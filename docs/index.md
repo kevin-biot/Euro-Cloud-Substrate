@@ -54,6 +54,8 @@
 ## Evidence
 - Evidence catalog: `docs/evidence/catalog.md`
 - Evidence export schema: `docs/evidence/export-schema.md`
+- Evidence ontology (semantic overlay): `docs/evidence/ontology.md`
+- Operation emission samples (JSONL): `docs/examples/evidence-operations/`
 - Verifier responsibilities: `docs/evidence/verifier-responsibilities.md`
 - Refusal semantics quick spec: `docs/evidence/refusal-semantics.md`
 - Hash profiles: `docs/evidence/hash-profiles.md`

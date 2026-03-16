@@ -12,3 +12,6 @@ An evidence bundle (export) is a **manifest + event range + referenced artifacts
 ## Micro‑ledger backends (non‑normative)
 Evidence chains MAY be implemented as **append‑only micro‑ledgers** (per‑tenant or per‑asset).  
 ECS does not require a blockchain; it requires verifiable, content‑addressed evidence with integrity proofs.
+
+## Semantic overlay
+See `docs/evidence/ontology.md` for the ECS evidence ontology overlay and typed relations.
