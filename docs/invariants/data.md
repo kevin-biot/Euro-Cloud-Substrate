@@ -3,6 +3,7 @@
 ## Scope
 - Applies to data residency, classification, lineage, and portability.
 - Covers cryptographic authority control and enforceable erasure/export.
+- For attachment semantics across object classes, see `docs/guides/data-object-binding-model.md`.
 
 ## Data-space artifacts (draft)
 - **Data product descriptor:** minimum metadata for governed data sharing.

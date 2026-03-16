@@ -92,6 +92,7 @@
 - OSS adoption: `docs/oss-adoption.md`
 - Landing zone reference: `docs/guides/landing-zone-reference.md`
 - Pipeline schema: `docs/guides/pipeline-schema.md`
+- Data object binding model: `docs/guides/data-object-binding-model.md`
 - Agent delegation: `docs/guides/agent-delegation.md`
 - AI media transparency (CE mark applies to high‑risk systems; Article 50 = transparency): `docs/guides/ai-media-transparency.md`
 - Evidence vs logs: `docs/guides/evidence-vs-logs.md`
