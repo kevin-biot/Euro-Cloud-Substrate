@@ -88,6 +88,7 @@
 - EC Cloud Sovereignty Framework mapping: `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`
 - AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
 - AWS to EU cloud service map: `docs/mappings/aws-to-eu-cloud-service-map.md`
+- CDMC mapping: `docs/mappings/cdmc-mapping.md`
 - vCluster mapping: `docs/mappings/vcluster.md`
 - EU cloud provider selection matrix: `docs/mappings/eu-cloud-provider-selection-matrix.md`
 - EU sovereignty assurance matrix: `docs/mappings/eu-sovereignty-assurance-matrix.md`
