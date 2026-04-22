@@ -86,6 +86,7 @@
 - EU Cloud CoC mapping: `docs/mappings/eu-cloud-coc-mapping.md`
 - Certification intake matrix: `docs/mappings/certification-intake-matrix.md`
 - EC Cloud Sovereignty Framework mapping: `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`
+- ES3 mapping: `docs/mappings/es3-mapping.md`
 - AWS minimal subset mapping: `docs/mappings/aws-minimal-subset.md`
 - AWS to EU cloud service map: `docs/mappings/aws-to-eu-cloud-service-map.md`
 - CDMC mapping: `docs/mappings/cdmc-mapping.md`
