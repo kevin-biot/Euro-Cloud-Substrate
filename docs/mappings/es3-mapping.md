@@ -39,6 +39,32 @@ CSF defines a procurement baseline. ES3 appears to translate that baseline into 
 If ES3 becomes commercially influential, providers will need a concrete answer to: **what evidence proves my claimed maturity level?**
 ECS is one candidate answer to that implementation gap.
 
+## ES3 strengths and remaining gaps
+
+### Strengths
+- **Commercial legibility:** a four-stage maturity model is easier for buyers and operators to consume than raw procurement criteria.
+- **Industry targeting:** the stated focus on industry, Mittelstand, and regulated sectors is directionally right. Public-sector procurement language alone is too narrow.
+- **CSF alignment:** if ES3 really does stay structurally aligned to the Commission CSF, that reduces vocabulary drift.
+- **Independent model verification:** BDO verification is useful as a governance signal, even if it is not a substitute for open technical proof.
+
+### Remaining gaps
+- **Evidence model gap:** public ES3 material does not yet define a concrete runtime evidence grammar for authority, policy, refusal, custody, lineage, or chain integrity.
+- **Portability gap:** there is no public provider-neutral export contract showing that a customer can take sovereignty evidence out of the originating vendor environment and verify it independently.
+- **Runtime enforcement gap:** public descriptions focus on assessment and classification, not on how a running system refuses out-of-policy actions at execution time.
+- **Crisis posture gap:** there is no public hard specification for partition mode, degraded mode, or compelled-access events. Sovereignty that disappears during disruption is not sovereignty.
+- **AI proof gap:** if AI is a dedicated dimension, the public material still does not show the necessary technical proof set for model provenance, training lineage, inference routing, or blocked AI actions.
+- **Reproducibility gap:** public claims do not yet show whether third parties can reproduce the same ES3 result without vendor-specific tools, vendor-hosted dashboards, or privileged access.
+
+### Why this matters
+The market already has too many sovereignty assertions and too little runtime proof.
+If ES3 remains primarily a maturity label without an open evidence contract, it will improve vocabulary but not resolve the underlying implementation problem.
+ECS is useful precisely because it pressures the discussion toward:
+- exportable evidence bundles,
+- refusal semantics,
+- verifier modes,
+- decision-time policy state,
+- portable proofs across providers.
+
 ## CSF vs ES3 vs ECS
 | Aspect | EC CSF | ES3 | ECS |
 |---|---|---|---|
