@@ -62,6 +62,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Workstreams: `ws1-olz-eu/`, `ws2-eosc/`, `ws3-exec-envelopes/`, `ws4-interop-api/`, `ws5-evidence-audit/`, `ws6-migration/`
 - Core 10: `core10/`
 - Governance and contribution: `GOVERNANCE.md`, `CONTRIBUTING.md`, `docs/call-for-participation.md`
+- Release history: `CHANGELOG.md`
 - Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
 - Competition & differentiation: `docs/positioning/competition.md`
 - Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/eucs-mapping.md`, `docs/mappings/eu-cloud-coc-mapping.md`, `docs/mappings/certification-intake-matrix.md`, `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`, `docs/mappings/es3-mapping.md`, `docs/mappings/aws-minimal-subset.md`, `docs/mappings/aws-to-eu-cloud-service-map.md`, `docs/mappings/cdmc-mapping.md`, `docs/mappings/vcluster.md`, `docs/mappings/eu-cloud-provider-selection-matrix.md`, `docs/mappings/eu-sovereignty-assurance-matrix.md`
