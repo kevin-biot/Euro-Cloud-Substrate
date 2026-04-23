@@ -7,7 +7,16 @@ Entries through `2026-04-23` are reconstructed from git history and grouped by m
 architecture and implementation milestones rather than by every individual commit.
 
 ## Unreleased
-- No unreleased entries yet.
+- Added `docs/mappings/deployer-utility-top3-eu-vendors.md` to compare OVHcloud, Scaleway, and STACKIT on terminal-first deployer utility.
+- Added `docs/mappings/sme-trial-billing-top3-eu-vendors.md` as a dated SME experimentation and billing-risk snapshot.
+- Expanded `docs/mappings/aws-core-to-top3-eu-vendors.md` with:
+  - parity classification,
+  - PoC priority,
+  - ECS relevance,
+  - official source links,
+  - smoke-test command patterns,
+  - expected outputs,
+  - pass/fail notes.
 
 ## v0.1.0 - 2026-04-23
 - Fixed reference binding semantics in `adapters/common/object_binding.py`:

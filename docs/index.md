@@ -91,6 +91,8 @@
 - AWS to EU cloud service map: `docs/mappings/aws-to-eu-cloud-service-map.md`
 - AWS core to top-3 EU vendors crosswalk: `docs/mappings/aws-core-to-top3-eu-vendors.md`
 - AWS against ECS gap matrix: `docs/mappings/aws-against-ecs-gap-matrix.md`
+- Deployer utility top-3 EU vendors: `docs/mappings/deployer-utility-top3-eu-vendors.md`
+- SME trial and billing top-3 EU vendors: `docs/mappings/sme-trial-billing-top3-eu-vendors.md`
 - CDMC mapping: `docs/mappings/cdmc-mapping.md`
 - vCluster mapping: `docs/mappings/vcluster.md`
 - EU cloud provider selection matrix: `docs/mappings/eu-cloud-provider-selection-matrix.md`
