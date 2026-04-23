@@ -18,6 +18,28 @@ cleanup() {
 }
 trap cleanup EXIT
 
+wait_for_http() {
+  local name="$1"
+  local url="$2"
+  local log_file="$3"
+  local attempt=0
+
+  while (( attempt < 50 )); do
+    if curl -sS -o /dev/null --max-time 1 "$url" >/dev/null 2>&1; then
+      return 0
+    fi
+    sleep 0.2
+    attempt=$(( attempt + 1 ))
+  done
+
+  echo "$name did not become ready: $url" >&2
+  if [[ -f "$log_file" ]]; then
+    echo "--- $name log ---" >&2
+    tail -n 50 "$log_file" >&2 || true
+  fi
+  exit 1
+}
+
 rm -rf "$RUN_DIR"
 mkdir -p "$RUN_DIR"
 
@@ -35,7 +57,8 @@ python3 "$ROOT_DIR/adapters/object-storage-proxy/proxy.py" \
   --fail-closed >"$PROXY_LOG" 2>&1 &
 PROXY_PID=$!
 
-sleep 1
+wait_for_http "mock backend" "http://127.0.0.1:${BACKEND_PORT}/__ecs_ready__" "$BACKEND_LOG"
+wait_for_http "object proxy" "http://127.0.0.1:${PROXY_PORT}/__ecs_ready__" "$PROXY_LOG"
 
 curl -sS -X PUT "http://127.0.0.1:${PROXY_PORT}/eu-bucket/contracts/demo.txt" \
   -H 'X-ECS-Policy-Snapshot: pol-demo-001' \

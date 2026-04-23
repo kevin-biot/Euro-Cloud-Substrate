@@ -27,6 +27,48 @@ def _require_fields(data: Dict[str, Any], fields: List[str]) -> None:
         raise ValueError(f"missing required fields: {', '.join(missing)}")
 
 
+def _binding_identity_payload(
+    object_ref: Dict[str, Any],
+    purpose_id: str,
+    consent_token_ref: Optional[str] = None,
+) -> Dict[str, Any]:
+    return {
+        "object_ref": object_ref,
+        "purpose_id": purpose_id,
+        "consent_token_ref": consent_token_ref or "",
+    }
+
+
+def _binding_revision_payload(
+    object_ref: Dict[str, Any],
+    purpose_id: str,
+    policy_snapshot_id: str,
+    authority_snapshot_id: str,
+    evidence_profile_id: str,
+    evidence_pointer: str,
+    consent_token_ref: Optional[str] = None,
+    terms_snapshot_id: Optional[str] = None,
+    classification: Optional[str] = None,
+    jurisdiction: Optional[str] = None,
+    retention: Optional[str] = None,
+    outcome: str = "accepted",
+) -> Dict[str, Any]:
+    return {
+        "object_ref": object_ref,
+        "purpose_id": purpose_id,
+        "policy_snapshot_id": policy_snapshot_id,
+        "authority_snapshot_id": authority_snapshot_id,
+        "evidence_profile_id": evidence_profile_id,
+        "evidence_pointer": evidence_pointer,
+        "consent_token_ref": consent_token_ref or "",
+        "terms_snapshot_id": terms_snapshot_id or "",
+        "classification": classification or "",
+        "jurisdiction": jurisdiction or "",
+        "retention": retention or "",
+        "outcome": outcome,
+    }
+
+
 def build_object_ref(
     object_class: str,
     locator: str,
@@ -90,15 +132,20 @@ def build_binding_record(
     retention: Optional[str] = None,
     outcome: str = "accepted",
 ) -> Dict[str, Any]:
-    record = {
-        "object_ref": object_ref,
-        "purpose_id": purpose_id,
-        "policy_snapshot_id": policy_snapshot_id,
-        "authority_snapshot_id": authority_snapshot_id,
-        "evidence_profile_id": evidence_profile_id,
-        "evidence_pointer": evidence_pointer,
-        "outcome": outcome,
-    }
+    record = _binding_revision_payload(
+        object_ref=object_ref,
+        purpose_id=purpose_id,
+        policy_snapshot_id=policy_snapshot_id,
+        authority_snapshot_id=authority_snapshot_id,
+        evidence_profile_id=evidence_profile_id,
+        evidence_pointer=evidence_pointer,
+        consent_token_ref=consent_token_ref,
+        terms_snapshot_id=terms_snapshot_id,
+        classification=classification,
+        jurisdiction=jurisdiction,
+        retention=retention,
+        outcome=outcome,
+    )
 
     if consent_token_ref:
         record["consent_token_ref"] = consent_token_ref
@@ -111,15 +158,18 @@ def build_binding_record(
     if retention:
         record["retention"] = retention
 
-    digest_source = {
-        "object_ref": object_ref,
-        "purpose_id": purpose_id,
-        "policy_snapshot_id": policy_snapshot_id,
-        "authority_snapshot_id": authority_snapshot_id,
-        "terms_snapshot_id": terms_snapshot_id or "",
-    }
-    digest = sha256_hex(canonical_json(digest_source).encode("utf-8"))
-    record["binding_id"] = f"bind-{digest[:12]}"
+    key_digest = sha256_hex(
+        canonical_json(
+            _binding_identity_payload(
+                object_ref=object_ref,
+                purpose_id=purpose_id,
+                consent_token_ref=consent_token_ref,
+            )
+        ).encode("utf-8")
+    )
+    revision_digest = sha256_hex(canonical_json(record).encode("utf-8"))
+    record["binding_key"] = f"bkey-{key_digest[:12]}"
+    record["binding_id"] = f"bind-{revision_digest[:12]}"
     return record
 
 
@@ -187,11 +237,28 @@ def build_native_mirror(
     if target == "nextcloud_fields":
         return {k: v for k, v in base.items() if v}
     if target == "queue_headers":
-        return {f"x-{k}": v for k, v in base.items() if v}
+        return {_header_name(k): v for k, v in base.items() if v}
     if target == "api_headers":
-        return {f"x-{k}": v for k, v in base.items() if v}
+        return {_header_name(k): v for k, v in base.items() if v}
 
     raise ValueError(f"unsupported mirror target: {target}")
+
+
+def _header_name(field_name: str) -> str:
+    explicit = {
+        "ecs_binding_id": "X-ECS-Binding-Id",
+        "ecs_purpose_id": "X-ECS-Purpose-Id",
+        "ecs_policy_snapshot_id": "X-ECS-Policy-Snapshot",
+        "ecs_authority_snapshot_id": "X-ECS-Authority-Snapshot",
+        "ecs_evidence_profile_id": "X-ECS-Evidence-Profile",
+        "ecs_classification": "X-ECS-Classification",
+        "ecs_jurisdiction": "X-ECS-Jurisdiction",
+        "ecs_retention": "X-ECS-Retention",
+    }
+    if field_name in explicit:
+        return explicit[field_name]
+    suffix = field_name.removeprefix("ecs_").replace("_", "-")
+    return f"X-ECS-{suffix.title()}"
 
 
 def build_example_bindings() -> Dict[str, Dict[str, Any]]:

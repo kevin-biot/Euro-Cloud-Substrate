@@ -33,6 +33,7 @@ Verifier input: `evidence_profile_id` MUST match the declared profile in the exp
 ## Binding record (draft JSON)
 ```json
 {
+  "binding_key": "bkey-001",
   "binding_id": "bind-001",
   "object_ref": {
     "object_class": "object",
@@ -51,6 +52,9 @@ Verifier input: `evidence_profile_id` MUST match the declared profile in the exp
   "evidence_pointer": "eosc://evidence/evt-123"
 }
 ```
+
+- `binding_key` is the stable identity for the object/purpose attachment scope.
+- `binding_id` identifies the specific immutable binding revision, including governance fields such as policy snapshot, jurisdiction, retention, and evidence profile.
 
 ## Object-class attachment matrix
 | Object class | Typical locator | Native metadata mirror | Canonical ECS attachment |

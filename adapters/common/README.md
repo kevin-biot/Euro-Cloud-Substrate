@@ -7,7 +7,7 @@ The same governance fields (purpose, terms, policy snapshot, authority snapshot,
 
 The helper in `object_binding.py` demonstrates an overlay-first model:
 - canonical `object_ref`
-- canonical binding record
+- canonical binding record (`binding_key` for stable scope, `binding_id` for immutable revision)
 - event payload helpers
 - optional provider-native metadata mirror projection
 
@@ -58,3 +58,4 @@ api_headers = build_native_mirror(binding, target="api_headers")
 ## Notes
 - This is a reference helper, not a mandatory runtime dependency.
 - Overlay records remain authoritative; native metadata mirrors are convenience projections.
+- API and queue header mirrors use the same hyphenated `X-ECS-*` wire shape used by the adapter examples.
