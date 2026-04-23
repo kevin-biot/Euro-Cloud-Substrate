@@ -65,6 +65,7 @@ ECS standardizes **verifiable governance and portability**, not the commercial l
 - Release history: `CHANGELOG.md`
 - Guardrails: `docs/non-goals.md`, `docs/anti-capture.md`, `SECURITY.md`
 - Competition & differentiation: `docs/positioning/competition.md`
+- Cloud coherence note: `docs/positioning/cloud-coherence.md`
 - Mappings: `docs/mappings/README.md`, `docs/mappings/reg-mapping.md`, `docs/mappings/irn-mapping.md`, `docs/mappings/suse-csf-mapping.md`, `docs/mappings/techsov-catalogue.md`, `docs/mappings/tmforum-camara.md`, `docs/mappings/eucs-mapping.md`, `docs/mappings/eu-cloud-coc-mapping.md`, `docs/mappings/certification-intake-matrix.md`, `docs/mappings/ec-cloud-sovereignty-framework-mapping.md`, `docs/mappings/es3-mapping.md`, `docs/mappings/aws-minimal-subset.md`, `docs/mappings/aws-to-eu-cloud-service-map.md`, `docs/mappings/aws-core-to-top3-eu-vendors.md`, `docs/mappings/aws-against-ecs-gap-matrix.md`, `docs/mappings/cdmc-mapping.md`, `docs/mappings/vcluster.md`, `docs/mappings/eu-cloud-provider-selection-matrix.md`, `docs/mappings/eu-sovereignty-assurance-matrix.md`
 - IPCEI‑CIS mapping (draft): `docs/mappings/ipcei-cis-mapping.md`
 - Data Act architecture constraint (draft): `docs/mappings/data-act-architecture-constraint.md`

@@ -119,6 +119,10 @@
 - Auditor/verifier guide: `docs/guides/auditor-verifier-guide.md`
 - Procurement evaluator guide: `docs/guides/procurement-evaluator-guide.md`
 
+## Positioning
+- Cloud coherence: `docs/positioning/cloud-coherence.md`
+- Competition and differentiation: `docs/positioning/competition.md`
+
 ## Procurement
 - RFP guide: `docs/procurement/rfp-guide.md`
 - Airbus‑style checklist: `docs/procurement/airbus-2026-checklist.md`
